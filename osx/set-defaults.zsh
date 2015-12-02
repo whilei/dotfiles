@@ -19,6 +19,9 @@ defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
+# Disable DS_Store for network file systems.
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
 # Set a really fast key repeat.
 defaults write NSGlobalDomain KeyRepeat -int 0
 

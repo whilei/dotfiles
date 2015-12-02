@@ -4,3 +4,5 @@ export VISUAL=nano
 
 # usage: $ slime . \or $ slime ../some/where/there
 alias slime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
+
