@@ -7,4 +7,6 @@ mv ~/Downloads/*.zip ~/Downloads/zippers/
 mv ~/Downloads/*.pkg ~/Downloads/pkgs/
 
 # delete DS_Stores, for what its worth
-find ~ -iname .DS_Store -delete
+# Recursively delete `.DS_Store` files
+command cleanup_dsstore
+
