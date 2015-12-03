@@ -2,7 +2,7 @@
 alias ll='gls -lAh --color'
 
 # find beautiful process
-alias psg="ps aux | grep -v grep | gre -i -e VSZ -e"
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 # make dir and cd into it
 mkcd(){
