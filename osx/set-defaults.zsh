@@ -22,7 +22,7 @@
 # sudo pmset -a standbydelay 86400
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+# sudo nvram SystemAudioVolume=" "
 
 # Disable transparency in the menu bar and elsewhere on Yosemite
 # defaults write com.apple.universalaccess reduceTransparency -bool true
@@ -420,15 +420,18 @@ defaults write com.apple.dock showhidden -bool true
 # 10: Put display to sleep
 # 11: Launchpad
 # 12: Notification Center
-# Top left screen corner → Mission Control
-# defaults write com.apple.dock wvous-tl-corner -int 2
-# defaults write com.apple.dock wvous-tl-modifier -int 0
+# Top left screen corner → Show app windows
+defaults write com.apple.dock wvous-tl-corner -int 3
+defaults write com.apple.dock wvous-tl-modifier -int 0
 # # Top right screen corner → Desktop
-# defaults write com.apple.dock wvous-tr-corner -int 4
-# defaults write com.apple.dock wvous-tr-modifier -int 0
-# # Bottom left screen corner → Start screen saver
-# defaults write com.apple.dock wvous-bl-corner -int 5
-# defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-tr-corner -int 4
+defaults write com.apple.dock wvous-tr-modifier -int 0
+# # Bottom left screen corner → Mission Control
+defaults write com.apple.dock wvous-bl-corner -int 2
+defaults write com.apple.dock wvous-bl-modifier -int 0
+# Bottom left screen corner -> Disable screen saver
+defaults write com.apple.dock wvous-br-corner -int 6
+defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
 # Safari & WebKit                                                             #
