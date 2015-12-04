@@ -1,6 +1,6 @@
 #!/bin/sh
 
-todo(){
+just(){
 	set -e
 	touch ~/Desktop/"$*"
 }
