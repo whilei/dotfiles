@@ -13,7 +13,7 @@ done
 
 unset config_files
 ```
-## Table of contents in load order
+## Table of zshers in load order
 ```bash
 scrapie(){
 local folder=$1
