@@ -37,4 +37,16 @@ GIT_PS1_SHOWUPSTREAM="auto,verbose"
 #     git           always compare HEAD to @{upstream}
 #     svn           always compare HEAD to your SVN upstream
 
+
+
+
 PS1='\u@\h:'${color_yellow_bg}'\w'${color_reset}' '${color_white_on_blue}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
+
+
+prompt_on() {
+	PS1='\u@\h:'${color_yellow_bg}'\w'${color_reset}' '${color_white_on_blue}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
+}
+prompt_off() {
+    PS1='\u@\h:\w \$ '
+}
+prompt_on
