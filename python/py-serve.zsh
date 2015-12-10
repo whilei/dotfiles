@@ -19,6 +19,10 @@
 
 #!/bin/bash 
 
+# Python 2.x ->
 pyserv(){
 	python -m SimpleHTTPServer $1
 }
+
+# Python 3.x ->
+# $ python -m http.server 8000
