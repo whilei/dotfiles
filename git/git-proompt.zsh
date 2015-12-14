@@ -44,7 +44,7 @@ PS1='\u@\h:'${color_yellow_bg}'\w'${color_reset}' '${color_white_on_blue}'$(__gi
 
 
 prompt_on() {
-	PS1='\u@\h:'${color_yellow_bg}'\w'${color_reset}' '${color_white_on_blue}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
+	PS1='\u@\h:'${color_white_on_blue}'\w'${color_reset}' '${color_yellow_bg}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
 }
 prompt_off() {
     PS1='\u@\h:\w \$ '
