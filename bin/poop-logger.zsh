@@ -1,5 +1,5 @@
 #!/bin/bash
 
-ipooped(){
-	date >> ~/logs/poop.log
+pooped(){
+	echo `date`" - $1" >> ~/logs/poop.log
 }

@@ -1,0 +1,75 @@
+\i = INSERT MODE
+\esc = COMMAND MODE
+
+MOVEMENT COMMANDS
+* general form = (command)(number)(text object) :: (number)(command)(text object)
+
+\j = down line
+\h = back one character
+\l = forward one character
+\k = up line
+
+\w = forward word
+\b = back word
+
+\0 = start of line
+\$ = end of line
+
+	\2w = forward two words
+	\4l = forward four characters
+
+EDIT TEXT COMMANDS
+\i = INSERT;
+	\I = INSERT at beginning of line
+\a = APPEND; like \i, but text inserted after cursor rather than before
+
+\c = CHANGE; combine \c with a movement command 
+	\cw = change word
+	\c2b = change back two words
+	\c0
+	\c$
+	\cc = replace entire line
+	\C :: \c$ = replace chararacter from cursor until end of line
+
+\r = REPLACE; 
+	\ra = replace character under cursor with 'a'
+\s = SUBSTITUTE; 
+	\4s = substitue four characters from cursor
+
+\R = OVERSTRIKE REPLACE; 
+
+\~ = TOGGLE CASE;
+
+\d = DELETE; 
+	\dw = delete word including following space
+	\de = delete word excluding following space
+	\dE = delete to end of word including punctuation
+	\db = delete backword
+	\dd = alias \d$
+	\2dd = delete two lines
+	\D = delete from cursor to end of line
+	
+\x = DELETE SINGLE CHARACTER;
+
+
+COMMAND MODE COMMANDS
+\u = undo one 
+\U = restore line to pristine state
+\p = PUT; puts the text that's in the buffer after the cursor position
+\y = YANK; copy to buffer
+	\y$
+	\yw
+	\yy = yanks the whole line (:: \Y)
+\O = BLANK LINE ABOVE cursor	
+\o = BLANK LINE BELOW cursor
+\J = JOIN the line the cursor is on with the one below
+
+\ZZ = SAVE EDITS and QUIT FILE
+\:q! = DON'T SAVE EDITS and QUIT FILE
+
+This is my monkey habitat. 
+Where is my monkey habit at?
+
+
+
+
