@@ -1,5 +1,5 @@
-# prefer nano over vim
-export VISUAL=nano
+# prefer vim over nano
+export VISUAL=vim
 #export EDITOR='slime -w'
 
 # usage: $ slime . \or $ slime ../some/where/there
