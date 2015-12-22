@@ -1,5 +1,6 @@
 get_contacts(){
 	. ~/.dotfiles/private/contacts.sh
+	echo Got contacts. 
 }
 
 msg(){
