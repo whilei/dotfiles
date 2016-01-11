@@ -11,4 +11,4 @@ do
         echo "\`\`\`" >> README.md
 done
 
-unset config_files
+unset config_files, file

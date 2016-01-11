@@ -1,3 +1,4 @@
+# $ scrapie put/it/here www.cats.com
 scrapie(){
 local folder=$1
 local site=$2

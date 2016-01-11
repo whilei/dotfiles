@@ -5,13 +5,14 @@ get_contacts(){
 	echo Got contacts. 
 }
 
+# add_contact JIM_BEAM 2185550123
 add_contact(){
-	local name="$1m"
+	local name="$1"
 	echo "export $name"\="$2" >> $contact_sheet
 	. $contact_sheet
 	echo Added "$name" @ "$2" to contacts. 
 }
 
-msg(){
+sms(){
 	curl http://textbelt.com/text -d number=$1 -d "message=$2"
 }

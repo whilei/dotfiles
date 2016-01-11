@@ -35,5 +35,5 @@ command gls -lAh --color
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 
-
+alias cleaningladies="source ~/.dotfiles/system/housekeep.sh"
 
