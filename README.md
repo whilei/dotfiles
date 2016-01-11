@@ -1,22 +1,18 @@
 ```bash
-msg(){
-curl http://textbelt.com/text -d number=$1 -d "message=$2"
-}
-```
-```bash
-scrapie(){
-local folder=$1
-local site=$2
-image-scraper -s ~/Pictures/scrapy/$folder $site
-}
-```
-```bash
 checkups() {
 isitup rstacks.org
 # isitup staging.rstacks.org
 isitup areteh.co
 isitup isaacardis.com
 # isitup frogxo.us
+}
+```
+```bash
+# $ scrapie put/it/here www.cats.com
+scrape(){
+local folder=$1
+local site=$2
+image-scraper -s ~/Pictures/scrapy/$folder $site
 }
 ```
 ```bash
@@ -32,19 +28,20 @@ just(){
 #!/bin/bash
 
 mirrormirror(){
-	tail -f ~/logs/self-portrait.log; 
+	tail -f ~/logs/self-portrait.log | cat; 
 }
 ```
 ```bash
 #!/bin/bash
 
-ipooped(){
-	date >> ~/logs/poop.log
+pooped(){
+	echo `date`" - $1" >> ~/logs/poop.log
 }
 ```
 ```bash
 
 # rename all files from where $arg1 to $arg2
+# primary for changing extensions
 # ie $ rename .text .sh
 rename(){
 local from=$1
@@ -56,6 +53,26 @@ done
 }
 ```
 ```bash
+export contact_sheet=$HOME/.dotfiles/private/contacts.sh
+
+get_contacts(){
+	. $contact_sheet
+	echo Got contacts. 
+}
+
+# add_contact JIM_BEAM 2185550123
+add_contact(){
+	local name="$1"
+	echo "export $name"\="$2" >> $contact_sheet
+	. $contact_sheet
+	echo Added "$name" @ "$2" to contacts. 
+}
+
+sms(){
+	curl http://textbelt.com/text -d number=$1 -d "message=$2"
+}
+```
+```bash
 alias gg='git grep'
 alias gitit='git add -A && git commit -m'
 alias gs='git status -sb'
@@ -63,6 +80,60 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gll="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an$"
 alias gpo="git push origin"
 alias gco="git checkout"
+```
+```bash
+# Set bash prompt with git status.
+color_red='\[\e[31m\]'
+color_blue='\[\e[34m\]'
+color_reset='\[\e[0m\]'
+color_white_back='\[\e[47m\]'
+color_white='\[\e[37m\]'
+color_white_on_blue='\[\e[0;37;44m\]'
+color_yellow_bg='\[\e[43m\]'
+
+# git prompt settings from git-prompt
+# 'set to nonempty value to turn on'
+# In addition, if you set GIT_PS1_SHOWDIRTYSTATE to a nonempty value,
+# unstaged (*) and staged (+) changes will be shown next to the branch
+# name.  You can configure this per-repository with the
+# bash.showDirtyState variable, which defaults to true once
+# GIT_PS1_SHOWDIRTYSTATE is enabled.
+# If you would like to see if there're untracked files, then you can set
+# GIT_PS1_SHOWUNTRACKEDFILES to a nonempty value. If there're untracked
+# files, then a '%' will be shown next to the branch name.  You can
+# configure this per-repository with the bash.showUntrackedFiles
+# variable, which defaults to true once GIT_PS1_SHOWUNTRACKEDFILES is
+# enabled.
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM="auto,verbose"
+# If you would like to see the difference between HEAD and its upstream,
+# set GIT_PS1_SHOWUPSTREAM="auto".  A "<" indicates you are behind, ">"
+# indicates you are ahead, "<>" indicates you have diverged and "="
+# indicates that there is no difference. You can further control
+# behaviour by setting GIT_PS1_SHOWUPSTREAM to a space-separated list
+# of values:
+#
+#     verbose       show number of commits ahead/behind (+/-) upstream
+#     name          if verbose, then also show the upstream abbrev name
+#     legacy        don't use the '--count' option available in recent
+#                   versions of git-rev-list
+#     git           always compare HEAD to @{upstream}
+#     svn           always compare HEAD to your SVN upstream
+
+
+
+
+PS1='\u@\h:'${color_yellow_bg}'\w'${color_reset}' '${color_white_on_blue}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
+
+
+prompt_on() {
+	PS1='\u@\h:'${color_white_on_blue}'\w'${color_reset}' '${color_yellow_bg}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
+}
+prompt_off() {
+    PS1='\u@\h:\w \$ '
+}
+prompt_on
 ```
 ```bash
 # bash/zsh git prompt support
@@ -598,60 +669,6 @@ __git_ps1 ()
 }
 ```
 ```bash
-# Set bash prompt with git status.
-color_red='\[\e[31m\]'
-color_blue='\[\e[34m\]'
-color_reset='\[\e[0m\]'
-color_white_back='\[\e[47m\]'
-color_white='\[\e[37m\]'
-color_white_on_blue='\[\e[0;37;44m\]'
-color_yellow_bg='\[\e[43m\]'
-
-# git prompt settings from git-prompt
-# 'set to nonempty value to turn on'
-# In addition, if you set GIT_PS1_SHOWDIRTYSTATE to a nonempty value,
-# unstaged (*) and staged (+) changes will be shown next to the branch
-# name.  You can configure this per-repository with the
-# bash.showDirtyState variable, which defaults to true once
-# GIT_PS1_SHOWDIRTYSTATE is enabled.
-# If you would like to see if there're untracked files, then you can set
-# GIT_PS1_SHOWUNTRACKEDFILES to a nonempty value. If there're untracked
-# files, then a '%' will be shown next to the branch name.  You can
-# configure this per-repository with the bash.showUntrackedFiles
-# variable, which defaults to true once GIT_PS1_SHOWUNTRACKEDFILES is
-# enabled.
-GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWUPSTREAM="auto,verbose"
-# If you would like to see the difference between HEAD and its upstream,
-# set GIT_PS1_SHOWUPSTREAM="auto".  A "<" indicates you are behind, ">"
-# indicates you are ahead, "<>" indicates you have diverged and "="
-# indicates that there is no difference. You can further control
-# behaviour by setting GIT_PS1_SHOWUPSTREAM to a space-separated list
-# of values:
-#
-#     verbose       show number of commits ahead/behind (+/-) upstream
-#     name          if verbose, then also show the upstream abbrev name
-#     legacy        don't use the '--count' option available in recent
-#                   versions of git-rev-list
-#     git           always compare HEAD to @{upstream}
-#     svn           always compare HEAD to your SVN upstream
-
-
-
-
-PS1='\u@\h:'${color_yellow_bg}'\w'${color_reset}' '${color_white_on_blue}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
-
-
-prompt_on() {
-	PS1='\u@\h:'${color_white_on_blue}'\w'${color_reset}' '${color_yellow_bg}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
-}
-prompt_off() {
-    PS1='\u@\h:\w \$ '
-}
-prompt_on
-```
-```bash
 # Recursively delete `.DS_Store` files
 alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 ```
@@ -732,6 +749,8 @@ command gls -lAh --color
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
+
+alias cleaningladies="source ~/.dotfiles/system/housekeep.sh"
 ```
 ```bash
 #
@@ -793,13 +812,10 @@ return 1
 }
 ```
 ```bash
-# prefer nano over vim
-export VISUAL=nano
+# prefer vim over nano
+export VISUAL=vim
 #export EDITOR='slime -w'
 
 # usage: $ slime . \or $ slime ../some/where/there
 alias slime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-```
-```bash
-alias wimpb="more ~/.ssh/id_rsa_mh.pub | pbcopy | e_success 'Public key copied to pasteboard.'"
 ```
