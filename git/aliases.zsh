@@ -16,3 +16,4 @@ alias gcb="git checkout -b"
 
 alias greb="git rebase"
 
+alias pushit="!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""

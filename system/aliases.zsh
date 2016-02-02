@@ -31,9 +31,28 @@ command cd ..
 command gls -lAh --color
 }
 
+
+# Navigate to folders by name. 
+
+alias dl="cd ~/Downloads/"
+alias pics="cd ~/Pictures/"
+alias dropbox="cd ~/Dropbox"
+alias dev="cd ~/dev"
+alias dots="cd ~/.dotfiles"
+
+
+# Open applications. 
+
+alias safari="open -a safari"
+alias firefox="open -a firefox"
+alias chrome="open -a google\ chrome"
+
+
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 
-alias cleaningladies="source ~/.dotfiles/system/housekeep.sh"
 
+# Venezuelans. 
+
+alias cleaningladies="source ~/.dotfiles/system/housekeep.sh"
