@@ -28,9 +28,9 @@ alias external 1920x1080;
 
 ## Binding aliases
 
-alias shiftcontrol ctrl;shift
-alias mash         ctrl;cmd;alt
-alias hyper        ctrl;alt;cmd;shift
+alias shiftcontrol ctrl;shift # shiftcontrol to, well, shiftcontrol
+alias mash         ctrl;cmd;alt # mash, for most stuff
+alias hyper        ctrl;alt;cmd;shift # because it was there. just for nudges and layouts. 
 
 ## Misc aliases
 
@@ -76,21 +76,38 @@ layout terminal 'Terminal' ${toplefttwothird} | ${toprightthird} | ${bottomhalf}
 
 ## Abstract position binders
 
-bind f:${mash}     ${full}
+### Per halfs, bound a la vim. 
 
+bind k:${mash}    ${tophalf}
+bind j:${mash}  ${bottomhalf}
+bind h:${mash}  ${lefthalf}
+bind l:${mash} ${righthalf}
+
+### Top shelf, bound top shelf. 
+
+bind f:${mash}     ${full}
 bind q:${mash}     ${topleftthird}
 bind w:${mash}     ${topleft} 
 bind e:${mash}     ${toplefttwothird}
-
 bind p:${mash}     ${toprightthird}
 bind o:${mash}    ${topright}
 bind i:${mash}     ${toprighttwothird}
-bind up:${mash}    ${tophalf}
-bind down:${mash}  ${bottomhalf}
-bind left:${mash}  ${lefthalf}
-bind right:${mash} ${righthalf}
 
-bind l:${mash} chain throw next
+#bind l:${mash} chain throw next
+
+## Size binders
+
+bind right:${mash}       resize +10% +0
+bind left:${mash}        resize -10% +0
+bind up:${mash}          resize +0   -10%
+bind down:${mash}        resize +0   +10%
+
+## Nudge binders
+
+bind right:${hyper} nudge +10% +0
+bind left:${hyper}  nudge -10% +0
+bind up:${hyper}    nudge +0   -10%
+bind down:${hyper}  nudge +0   +10%
 
 ## Concrete position binders
 
@@ -109,11 +126,12 @@ bind i:${shiftcontrol} focus 'iA Writer'
 
 ## Layout binders
 
+# don't use it that much
 bind t:${hyper} layout terminal
 
 ## Grid binders
 
-bind g:${mash} grid padding:5 0:6,2 1:8,3
+bind g:${mash} grid padding:5 0:6,3 1:8,3
 
 
 # Window hints
