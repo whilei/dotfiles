@@ -1,0 +1,122 @@
+# This is not the default .slate file.
+# This is my .slate file.
+# There are many like it, 
+# but this one is mine.
+
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config orderScreensLeftToRight false
+# config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config checkDefaultsOnLoad true
+
+# Aliases
+
+## General aliases
+
+alias sox screenOriginX
+alias soy screenOriginY
+alias ssx screenSizeX
+alias ssy screenSizeY
+
+## Monitor aliases
+
+alias laptop 1440x900;
+alias external 1920x1080;
+
+## Binding aliases
+
+alias shiftcontrol ctrl;shift
+alias mash         ctrl;cmd;alt
+alias hyper        ctrl;alt;cmd;shift
+
+## Misc aliases
+
+alias showHintsLeftHand hint QAWSZXEDC
+
+
+# Positions
+
+## Abstract positions
+
+alias fullsize      resize  ${ssx};${ssy}                      ${sox};${soy}
+alias full          move    ${sox};${soy}                  ${ssx};${ssy}
+alias topleft       move    ${sox};${soy}                  ${ssx}/2;${ssy}/2
+alias topright      move    ${sox}+${ssx}/2;${soy}    ${ssx}/2;${ssy}/2
+alias bottomhalf    move    ${sox};${soy}+${ssy}/2    ${ssx};${ssy}/2
+alias tophalf       move    ${sox};${soy}                  ${ssx};${ssy}/2
+alias lefthalf      move    ${sox};${soy}                  ${ssx}/2;${ssy}
+alias righthalf     move    ${sox}+${ssx}/2;${soy}    ${ssx}/2;${ssy}
+alias toprightthird  move    ${sox}+${ssx}-${ssx}/3;${soy} ${ssx}/3;${ssy}/2
+alias topleftthird move ${sox};${soy} ${ssx}/3;${ssy}/2
+alias toprighttwothird move ${sox}+${ssx}/3;${soy} ${ssx}/3*2;${ssy}/2
+alias toplefttwothird move ${sox};${soy}                  ${ssx}/3*2;${ssy}/2
+
+## Concrete positions (actual where on which monitor)
+
+alias lap-full       ${full}       ${laptop}
+alias lap-topleft    ${topleft}    ${laptop}
+alias lap-topright   ${topright}   ${laptop}
+alias lap-bottomhalf ${bottomhalf} ${laptop}
+
+alias ext-full       ${full}       ${external}
+alias ext-topleft    ${topleft}    ${external}
+alias ext-topright   ${topright}   ${external}
+alias ext-bottomhalf ${bottomhalf} ${external}
+
+
+# Layouts
+
+layout terminal 'Terminal' ${toplefttwothird} | ${toprightthird} | ${bottomhalf}
+
+
+# Binders
+
+## Abstract position binders
+
+bind f:${mash}     ${full}
+
+bind q:${mash}     ${topleftthird}
+bind w:${mash}     ${topleft} 
+bind e:${mash}     ${toplefttwothird}
+
+bind p:${mash}     ${toprightthird}
+bind o:${mash}    ${topright}
+bind i:${mash}     ${toprighttwothird}
+bind up:${mash}    ${tophalf}
+bind down:${mash}  ${bottomhalf}
+bind left:${mash}  ${lefthalf}
+bind right:${mash} ${righthalf}
+
+bind l:${mash} chain throw next
+
+## Concrete position binders
+
+bind u:${hyper} throw ${external} ${fullsize}
+
+## Focus binders
+
+bind s:${shiftcontrol} focus 'Sublime Text'
+bind e:${shiftcontrol} focus 'Eclipse'
+bind z:${shiftcontrol} focus 'Terminal'
+bind a:${shiftcontrol} focus 'Safari'
+bind c:${shiftcontrol} focus 'Google Chrome'
+bind p:${shiftcontrol} focus 'Spotify'
+bind u:${shiftcontrol} focus 'Ulysses'
+bind i:${shiftcontrol} focus 'iA Writer'
+
+## Layout binders
+
+bind t:${hyper} layout terminal
+
+## Grid binders
+
+bind g:${mash} grid padding:5 0:6,2 1:8,3
+
+
+# Window hints
+
+bind esc:cmd ${showHintsLeftHand}
+

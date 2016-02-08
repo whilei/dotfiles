@@ -1,6 +1,7 @@
 alias gg='git grep'
 
 alias ga="git add"
+alias gc="git commit -m"
 alias gitit='git add -A && git commit -m'
 
 alias gs='git status -sb'
