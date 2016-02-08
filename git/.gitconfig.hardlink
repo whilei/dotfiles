@@ -1,0 +1,20 @@
+[user]
+	name = Mr. Is
+	email = isaac.ardis@gmail.com
+[core]
+	excludesfile = /Users/ia/.gitignore_global
+[push]
+    default = current
+[pull]
+    default = current
+[alias]
+	save = !git add -A && git commit -m 'SAVEPOINT'
+        wip = commit -am "WIP"
+        pushit = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""
+
+        diffstat = diff --stat -r
+	changes = diff --name-status -r
+	recent-branches = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname)' refs/heads refs/remotes
+	recent = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
