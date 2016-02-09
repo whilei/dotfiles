@@ -6,4 +6,6 @@ export VISUAL=vim
 alias slime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # set date string
-DATE=`date +%d-%m-%y@%H_%M_%S`
+date_stamp() {
+	date +%d-%m-%y@%H_%M_%S
+}
