@@ -14,7 +14,7 @@ cd $1
 alias chx="chmod +x"
 
 # edit .bash_profile and re-source after
-alias bro="nano ~/.bash_profile; source ~/.bash_profile;"
+alias bro="$EDITOR ~/.bash_profile; source ~/.bash_profile;"
 
 # Navigation
 alias ..="cd .."

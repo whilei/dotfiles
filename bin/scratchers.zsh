@@ -3,5 +3,5 @@ function scratch {
 }
 
 function paper {
-  vim ~/Dropbox/paper/$DATE.txt
+  vim ~/Dropbox/paper/`date +%d-%m-%y@%H_%M_%S`.txt
 }
