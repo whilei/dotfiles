@@ -33,6 +33,9 @@ e_bold() { printf "${bold}%s${reset}\n" "$@"
 e_note() { printf "${underline}${bold}${blue}Note:${reset}  ${blue}%s${reset}\n" "$@"
 }
 
+export -f e_header
+export -f e_success
+export -f e_bold
 
 # Seek confirmation.
 # seek_confirmation "Do you really want to?"

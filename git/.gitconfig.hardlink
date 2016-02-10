@@ -8,13 +8,29 @@
 [pull]
     default = current
 [alias]
+	# Undo all changes since last commit and leave no evidence.
+	wipe = !git stash && git stash drop
+	# Undo your last commit as though you had never made it. 
+	uncommit = reset --soft HEAD~
 	save = !git add -A && git commit -m 'SAVEPOINT'
-        wip = commit -am "WIP"
+        # Could use this in conjunction with uncommit to store intermediate changes without stashing.
+	wip = commit -am "WIP"
+	# Not that useful now that [push]default is set to current.
         pushit = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""
 
-        diffstat = diff --stat -r
+	# Diff with stats. 
+        diffstats = diff --stat -r
+	# Diff show changes. 
 	changes = diff --name-status -r
+	
+	## Loggers
+	# Short and sweet. 
+	brief = !git --no-pager log --oneline -n 10
+	# Bespoke.
 	recent-branches = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname)' refs/heads refs/remotes
-	recent = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+	# Recently commits __on this branch__.
+	recently = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+	# List files that were changed. 
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	# Flow da chart. 
 	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative

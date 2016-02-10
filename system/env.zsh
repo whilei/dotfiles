@@ -9,3 +9,5 @@ alias slime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 date_stamp() {
 	date +%d-%m-%y@%H_%M_%S
 }
+# Export the function so it can be used anywhere in another command, ie $ vim `date_stamp`.md
+export -f date_stamp
