@@ -34,7 +34,7 @@ command gls -lAh --color
 
 # Navigate to folders by name. 
 
-alias dl="cd ~/Downloads/"
+alias dls="cd ~/Downloads/"
 alias pics="cd ~/Pictures/"
 alias dropbox="cd ~/Dropbox"
 alias dev="cd ~/dev"
