@@ -1,6 +1,6 @@
 
 # Save last command to .dotfiles/bashers/
-savethatone(){
+savecommand(){
 	local namefunction=$1
 	local namescript=$2
 	local file=~/.dotfiles/bashers/$2.zsh
