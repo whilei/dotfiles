@@ -1,5 +1,6 @@
 
-# Save last command to .dotfiles/bashers/
+# Saves last command to .dotfiles/bashers/ as arg1=nameoffunction with arg2=scriptfilename(.zsh, so it will be automatically sourced by .bash_profile)
+# Resources that file so you can use the function right away (in that terminal login). 
 savecommand(){
 	local namefunction=$1
 	local namescript=$2
