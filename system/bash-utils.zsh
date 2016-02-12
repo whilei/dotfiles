@@ -33,6 +33,7 @@ e_bold() { printf "${bold}%s${reset}\n" "$@"
 e_note() { printf "${underline}${bold}${blue}Note:${reset}  ${blue}%s${reset}\n" "$@"
 }
 
+# The only ones I use so far. 
 export -f e_header
 export -f e_success
 export -f e_bold

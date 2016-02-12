@@ -1,10 +1,5 @@
 export contact_sheet=$HOME/.dotfiles/private/contacts.sh
 
-get_contacts(){
-	. $contact_sheet
-	echo Got contacts. 
-}
-
 # add_contact JIM_BEAM 2185550123
 add_contact(){
 	local name="$1"
@@ -13,6 +8,8 @@ add_contact(){
 	echo Added "$name" @ "$2" to contacts. 
 }
 
+# ie., $ sms $ISAAC "hey hey"
+# contacts imported in private/
 sms(){
 	curl http://textbelt.com/text -d number=$1 -d "message=$2"
 }

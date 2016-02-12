@@ -6,8 +6,8 @@ alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 # make dir and cd into it
 mkcd(){
-mkdir -p $1
-cd $1
+	mkdir -p $1
+	cd $1
 }
 
 # make executable
@@ -23,12 +23,12 @@ alias ....="cd ../../.."
 
 # cd into dir and show contents
 cdl(){
-command cd $1
-command gls -lAh --color
+	command cd $1
+	command gls -lAh --color
 }
 ..l(){
-command cd ..
-command gls -lAh --color
+	command cd ..
+	command gls -lAh --color
 }
 
 
@@ -49,7 +49,8 @@ alias chrome="open -a google\ chrome"
 alias joyce="open -a ulysses"
 
 
-# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
+# Stuff I never really use but cannot delete either because of http://xkcd.com/530/,
+# so says holman. What he said. 
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 

@@ -1,4 +1,5 @@
-
+# This could be a lot cooler.
+# What it should do is look for all different file types and create folders for them if none exist; none of this specifying by hand each and every different possible file type. That is dumb.
 
 # PACKAGE_FILES=~/Downloads/*.pkg 
 # ZIP_FILES=~/Downloads/*.zip

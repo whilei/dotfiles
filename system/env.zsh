@@ -2,7 +2,7 @@
 export VISUAL=vim
 #export EDITOR='slime -w'
 
-# usage: $ slime . \or $ slime ../some/where/there
+# usage: $ slime . \or $ slime ../some/where/else
 alias slime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # set date string
