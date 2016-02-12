@@ -26,11 +26,15 @@
 	## Loggers
 	# Short and sweet. 
 	brief = !git --no-pager log --oneline -n 10
-	# Bespoke.
+
+	# As bespoke.
 	recent-branches = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname)' refs/heads refs/remotes
+
 	# Recently commits __on this branch__.
 	recently = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+	
 	# List files that were changed. 
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	# I don't use these nearly as much as $ gl and $ glp aliases. 
+	lg = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	# Flow da chart. 
-	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
+	ll = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %Cgreen(%cr)%Creset %s' --date=relative
