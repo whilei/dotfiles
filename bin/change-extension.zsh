@@ -1,8 +1,8 @@
 
 # rename all files from where $arg1 to $arg2
 # primary for changing extensions
-# ie $ rename .text .sh
-rename(){
+# ie $ changeextension .text .sh
+changeextension(){
 local from=$1
 local to=$2
 for file in *"$from"

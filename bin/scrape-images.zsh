@@ -1,6 +1,6 @@
 # $ scrapie put/it/here www.cats.com
-scrape(){
+scrapeimages(){
 local folder=$1
 local site=$2
-image-scraper -s ~/Pictures/scrapy/$folder $site
+image-scraper -s ~/Pictures/scraped/$folder $site
 }
