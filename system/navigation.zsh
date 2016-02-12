@@ -15,14 +15,17 @@ cdl(){
 	command gls -lAh --color
 }
 
-# Absolute shortcuts.  
+## Absolute shortcuts.  
 
 alias dls="cd ~/Downloads/"
 alias pics="cd ~/Pictures/"
 alias dropbox="cd ~/Dropbox"
-alias dev="cd ~/dev"
 alias sandbox="cd ~/sandbox"
 
 function dots {
-	cd ~/.dotfiles/$1/
+	cd ~/.dotfiles/$1
+}
+
+function dev {
+	cd ~/dev/$1
 }

@@ -33,10 +33,15 @@ e_bold() { printf "${bold}%s${reset}\n" "$@"
 e_note() { printf "${underline}${bold}${blue}Note:${reset}  ${blue}%s${reset}\n" "$@"
 }
 
-# The only ones I use so far. 
+# Export for use anywhere. 
 export -f e_header
+export -f e_arrow
 export -f e_success
+export -f e_error
+export -f e_warning
+export -f e_underline
 export -f e_bold
+export -f e_note
 
 # Seek confirmation.
 # seek_confirmation "Do you really want to?"
@@ -51,6 +56,7 @@ seek_confirmation() {
   read -p " (y/n) " -n 1
   printf "\n"
 }
+export -f seek_confirmation
 
 # Test whether the result of an 'ask' is a confirmation
 is_confirmed() {
@@ -59,3 +65,4 @@ if [[ "$REPLY" =~ ^[Yy]$ ]]; then
 fi
 return 1
 }
+export -f is_confirmed
