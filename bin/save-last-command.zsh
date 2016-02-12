@@ -4,7 +4,7 @@
 savecommand(){
 	local namefunction=$1
 	local namescript=$2
-	local file=~/.dotfiles/bashers/$2.zsh
+	local file=~/.dotfiles/bashers/$2
 	echo "$1(){" >> $file
 	echo "`fc -nl $((HISTCMD - 1))`" >> $file
 	echo "}" >> $file

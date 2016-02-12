@@ -123,6 +123,7 @@ bind c:${shiftcontrol} focus 'Google Chrome'
 bind p:${shiftcontrol} focus 'Spotify'
 bind u:${shiftcontrol} focus 'Ulysses'
 bind i:${shiftcontrol} focus 'iA Writer'
+bind v:${shiftcontrol} focus 'VLC'
 
 ## Layout binders
 
