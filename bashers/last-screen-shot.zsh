@@ -1,0 +1,3 @@
+lastscreenshot(){
+	 lmodifiedfile ~/Pictures/screenshots
+}

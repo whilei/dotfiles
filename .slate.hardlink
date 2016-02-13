@@ -124,6 +124,7 @@ bind p:${shiftcontrol} focus 'Spotify'
 bind u:${shiftcontrol} focus 'Ulysses'
 bind i:${shiftcontrol} focus 'iA Writer'
 bind v:${shiftcontrol} focus 'VLC'
+bind l:${shiftcontrol} focus 'Slack'
 
 ## Layout binders
 
