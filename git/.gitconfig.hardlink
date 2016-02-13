@@ -12,7 +12,7 @@
 	wipe = !git stash && git stash drop
 	# Undo your last commit as though you had never made it. 
 	uncommit = reset --soft HEAD~
-	save = !git add -A && git commit -m 'SAVEPOINT'
+	save = !git add -A && git commit -m 'SAVE'
         # Could use this in conjunction with uncommit to store intermediate changes without stashing.
 	wip = commit -am "WIP"
 	# Not that useful now that [push]default is set to current.
