@@ -13,13 +13,11 @@ alias chx="chmod +x"
 # edit .bash_profile and re-source after
 alias bro="$EDITOR ~/.bash_profile; source ~/.bash_profile;"
 
-
 # Open applications. 
 alias safari="open -a safari"
 alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome"
 alias joyce="open -a ulysses"
-
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/,
 # so says holman. What he said. 
