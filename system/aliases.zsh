@@ -19,6 +19,9 @@ alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome"
 alias joyce="open -a ulysses"
 
+alias cdulysses="cd ~/Library/Containers/com.soulmen.ulysses3/Data/Documents/Library"
+alias cdiawriter="cd ~/Library/Mobile Documents/74ZAFF46HB~jp~informationarchitects~Writer/Documents"
+
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/,
 # so says holman. What he said. 
 alias stfu="osascript -e 'set volume output muted true'"
