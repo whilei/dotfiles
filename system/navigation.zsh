@@ -9,6 +9,8 @@ export listy="command gls -lAh --color"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias ..4="cd ../../../../"
+alias ..5="cd ../../../../../"
 
 # cd into dir and show contents
 cdl(){ command cd $1; $listy; }
