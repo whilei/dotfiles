@@ -17,9 +17,12 @@ function paper {
 		vim ~/Dropbox/paper/`date +%d-%m-%y@%H_%M_%S`.md
 	elif [[ $# -eq 1 ]]; then
 		vim ~/Dropbox/paper/"$1".md
-	# else 
-	# 	mkdir -p ~/Dropbox/paper/"$1"
-	# 	vim ~/Dropbox/paper/"$1"/"$2".md
+	elif [[ "$2" = "x" ]]; then
+		mkdir -p ~/Dropbox/paper/"$1"
+		vim ~/Dropbox/paper/"$1"/`date +%d-%m-%y@%H_%M_%S`.md
+	else 
+		mkdir -p ~/Dropbox/paper/"$1"
+		vim ~/Dropbox/paper/"$1"/"$2".md
 	fi
 }
 			#statements
