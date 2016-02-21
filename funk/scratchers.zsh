@@ -6,25 +6,30 @@ function scratch {
 # Export function for interpolateable reuse.
 export -f scratch
 
-function paper {
+# function paper {
 
-	# default file name
-	# filenamer=`date +%d-%m-%y@%H_%M_%S`
-	# dirnamer=""
-	# customdir=0
+# 	# default file name
+# 	# filenamer=`date +%d-%m-%y@%H_%M_%S`
+# 	# dirnamer=""
+# 	# customdir=0
 
-	if [[ $# -eq 0 ]]; then
-		vim ~/Dropbox/paper/`date +%d-%m-%y@%H_%M_%S`.md
-	elif [[ $# -eq 1 ]]; then
-		vim ~/Dropbox/paper/"$1".md
-	elif [[ "$2" = "x" ]]; then
-		mkdir -p ~/Dropbox/paper/"$1"
-		vim ~/Dropbox/paper/"$1"/`date +%d-%m-%y@%H_%M_%S`.md
-	else 
-		mkdir -p ~/Dropbox/paper/"$1"
-		vim ~/Dropbox/paper/"$1"/"$2".md
-	fi
-}
+# 	if [[ $# -eq 0 ]]; then
+# 		vim ~/Dropbox/paper/`date +%d-%m-%y@%H_%M_%S`.md
+# 	elif [[ $# -eq 1 ]]; then
+# 		vim ~/Dropbox/paper/"$1".md
+# 	elif [[ "$2" = "x" ]]; then
+# 		mkdir -p ~/Dropbox/paper/"$1"
+# 		vim ~/Dropbox/paper/"$1"/`date +%d-%m-%y@%H_%M_%S`.md
+# 	else 
+# 		mkdir -p ~/Dropbox/paper/"$1"
+# 		vim ~/Dropbox/paper/"$1"/"$2".md
+# 	fi
+# }
+
+# function papery {
+	
+	
+# }
 			#statements
   
   # else there are args
