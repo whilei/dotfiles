@@ -1,0 +1,1 @@
+alias lastmod="bash $HOME/.dotfiles/bashers/last-modified.sh"
