@@ -5,7 +5,7 @@
 # Whatever, we'll just delete those after.  
 
 function sortdownloads {
-	local dldir=~/Downloads
+	local dldir="$HOME/Downloads"
 	local filetypesdl=`find $dldir -type f -name '*.*' | sed 's|.*\.||' | sort -u`
 
 	for i in $filetypesdl; do
