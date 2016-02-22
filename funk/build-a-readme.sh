@@ -4,15 +4,12 @@
 
 readempath="$HOME"/.dotfiles/README.md
 
-echo "
-## 5 files recently modified
-" > $readempath # overwrites the previous README
-echo "\`\`\`" >> $readempath
-gfind . -not -path "*.git*" -type f -printf "%-.22T+ %M %n %-8u %-8g %8s %Tx %.8TX %p\n" | sort | cut -f 2- -d ' ' | tail -5	>> $readempath
-echo "\`\`\`" >> $readempath
+echo "" > $readempath # overwrites the previous README
 
 echo "
 ## Table of contents
+> \`tree --dirsfirst -alLhtDFC 4 -I .git >> $readempath\`
+
 " >> $readempath 
 echo "\`\`\`" >> $readempath
 tree --dirsfirst -alLhtDFC 4 -I .git >> $readempath
@@ -20,8 +17,19 @@ echo "\`\`\`" >> $readempath
 echo
 
 echo "
-## All of my brews
+## ... and the 5 most recently modified
+> gfind . -not -path \"*.git*\" -type f -printf \"%-.22T+ %M %n %-8u %-8g %8s %Tx %.8TX %p\\n\" | sort | cut -f 2- -d ' ' | tail -5	>> $readempath
+
+" >> $readempath 
+echo "\`\`\`" >> $readempath
+gfind . -not -path "*.git*" -type f -printf "%-.22T+ %M %n %-8u %-8g %8s %Tx %.8TX %p\n" | sort | cut -f 2- -d ' ' | tail -5	>> $readempath
+echo "\`\`\`" >> $readempath
+
+echo "
+## Dependencies
+> \`$ brew leaves >> README.md \`
+
 " >> $readempath
 echo "\`\`\`" >> $readempath
-brew list >> $readempath
+brew leaves >> $readempath
 echo "\`\`\`" >> $readempath

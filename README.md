@@ -1,15 +1,8 @@
 
-## 5 files recently modified
-
-```
--rw-r--r-- 1 ia       staff        6812 02/21/2016 20:39:33 ./taiga/taiga_import_story.sh
--rw-r--r-- 1 ia       staff          11 02/21/2016 20:39:47 ./taiga/aliases.sh
--rwxr-xr-x 1 ia       staff        1706 02/21/2016 21:03:46 ./system/navigation.zsh
--rwxr-xr-x 1 ia       staff         652 02/21/2016 21:20:44 ./funk/build-a-readme.sh
--rw-r--r-- 1 ia       staff          35 02/21/2016 21:20:45 ./README.md
-```
 
 ## Table of contents
+> `tree --dirsfirst -alLhtDFC 4 -I .git >> /Users/ia/.dotfiles/README.md`
+
 
 ```
 [01;34m.[00m
@@ -94,39 +87,37 @@
 │   ├── [1.0K Feb 21 13:39]  [01;32mpaper.sh[00m*
 │   ├── [ 221 Feb 21 13:41]  aliases.zsh
 │   ├── [ 143 Feb 21 15:25]  scrape-images.zsh
-│   └── [ 652 Feb 21 21:20]  [01;32mbuild-a-readme.sh[00m*
+│   └── [ 929 Feb 21 21:34]  [01;32mbuild-a-readme.sh[00m*
 ├── [3.7K Feb 13 11:12]  .slate.hardlink
 ├── [ 11K Feb 21 13:26]  .vimrc.hardlink
 ├── [  37 Feb 21 20:44]  .gitignore
-└── [ 476 Feb 21 21:20]  README.md
+└── [ 103 Feb 21 21:34]  README.md
 
 12 directories, 74 files
 ```
 
-## All of my brews
+## ... and the 5 most recently modified
+> gfind . -not -path "*.git*" -type f -printf "%-.22T+ %M %n %-8u %-8g %8s %Tx %.8TX %p\n" | sort | cut -f 2- -d ' ' | tail -5	>> /Users/ia/.dotfiles/README.md
+
 
 ```
-autoconf
-automake
-boost
-cairo
-cgal
+-rw-r--r-- 1 ia       staff        6812 02/21/2016 20:39:33 ./taiga/taiga_import_story.sh
+-rw-r--r-- 1 ia       staff          11 02/21/2016 20:39:47 ./taiga/aliases.sh
+-rwxr-xr-x 1 ia       staff        1706 02/21/2016 21:03:46 ./system/navigation.zsh
+-rwxr-xr-x 1 ia       staff         929 02/21/2016 21:34:12 ./funk/build-a-readme.sh
+-rw-r--r-- 1 ia       staff        5208 02/21/2016 21:34:16 ./README.md
+```
+
+## Dependencies
+> `$ brew leaves >> README.md `
+
+
+```
 cloc
 coreutils
 ffmpeg
 findutils
-fontconfig
-freetype
-freexl
-gdal
-gdbm
-geos
-gettext
 ghostscript
-giflib
-glib
-gmp
-gobject-introspection
 graphicsmagick
 grc
 heroku-toolbelt
@@ -135,55 +126,24 @@ imagemagick
 imagesnap
 isl
 jbig2dec
-jpeg
 jq
-json-c
-lame
-libevent
-libffi
-libgeotiff
-libgpg-error
 libksba
-liblwgeom
 libmpc
-libpng
-libspatialite
-libtiff
-libtool
-libvo-aacenc
-libxml2
 libyaml
-little-cms
-little-cms2
-lzlib
-mpfr
 mysql
 node
-oniguruma
-openjpeg
-openssl
 pandoc
-pixman
-pkg-config
 poppler
 postgis
-proj
-pyenv
 pyenv-virtualenv
 pyenv-virtualenvwrapper
 python
 python3
-readline
-sfcgal
 spark
-sqlite
 tmux
 tree
 unoconv
 wdiff
 wget
-x264
-xvid
-xz
-zlib
+homebrew/dupes/zlib
 ```
