@@ -39,20 +39,14 @@
 ├── [ 136 Feb 13 20:01]  [01;34mpython[00m/
 │   ├── [  69 Nov 30  9:16]  env.zsh
 │   └── [ 742 Dec 10 10:39]  py-serve.zsh
-├── [ 238 Feb 15 19:52]  [01;34mprivate[00m/
-│   ├── [ 121 Nov 30  9:27]  checkups.zsh
-│   ├── [  37 Feb  4 12:15]  bbi.zsh
-│   ├── [ 166 Feb 12 10:23]  contacts.zsh
-│   ├── [ 459 Feb 15 19:52]  env.zsh
-│   └── [ 455 Feb 19  8:23]  aliases.zsh
 ├── [ 306 Feb 18 11:20]  [01;34msystem[00m/
 │   ├── [1.3K Feb 12 15:42]  [01;32mbash-utils.zsh[00m*
-│   ├── [ 750 Feb 13 12:15]  [01;32msort-downloads.zsh[00m*
 │   ├── [  72 Feb 13 12:16]  [01;32mhousekeep.sh[00m*
 │   ├── [ 243 Feb 16  8:46]  [01;32menv.zsh[00m*
 │   ├── [1.7K Feb 19  7:39]  aliases.zsh
 │   ├── [ 216 Feb 19  7:40]  [01;32mtophify.zsh[00m*
-│   └── [1.7K Feb 21 21:03]  [01;32mnavigation.zsh[00m*
+│   ├── [1.7K Feb 21 21:03]  [01;32mnavigation.zsh[00m*
+│   └── [ 756 Feb 22  8:33]  [01;32msort-downloads.zsh[00m*
 ├── [ 170 Feb 18 11:51]  [01;34mwhiteboard[00m/
 │   ├── [1.6K Dec 22 13:46]  vi-commands-basic.txt
 │   ├── [ 120 Feb 18 11:24]  stuff.md
@@ -75,23 +69,29 @@
 ├── [ 136 Feb 21 20:39]  [01;34mtaiga[00m/
 │   ├── [6.7K Feb 21 20:39]  taiga_import_story.sh
 │   └── [  11 Feb 21 20:39]  aliases.sh
-├── [ 476 Feb 21 21:15]  [01;34mfunk[00m/
+├── [ 238 Feb 22  8:22]  [01;34mprivate[00m/
+│   ├── [ 121 Nov 30  9:27]  checkups.zsh
+│   ├── [ 455 Feb 19  8:23]  aliases.zsh
+│   ├── [ 166 Feb 22  8:22]  [01;32mcontacts.sh[00m*
+│   ├── [  74 Feb 22  8:30]  bbi.zsh
+│   └── [ 499 Feb 22  8:31]  env.zsh
+├── [ 476 Feb 22  8:36]  [01;34mfunk[00m/
 │   ├── [ 552 Dec  3 11:55]  [01;32mpandocdo.sh[00m*
 │   ├── [  91 Dec 10  9:10]  just.zsh
 │   ├── [  64 Dec 21  9:13]  poop-logger.zsh
 │   ├── [  74 Jan  4  8:41]  mirror-mirror.zsh
-│   ├── [ 362 Feb 12 10:25]  sms.zsh
 │   ├── [ 121 Feb 12 13:27]  dev-whiteboard.zsh
 │   ├── [ 707 Feb 19  8:00]  video-to-gif.sh
 │   ├── [2.2K Feb 21 12:58]  scratchers.zsh
 │   ├── [1.0K Feb 21 13:39]  [01;32mpaper.sh[00m*
-│   ├── [ 221 Feb 21 13:41]  aliases.zsh
 │   ├── [ 143 Feb 21 15:25]  scrape-images.zsh
-│   └── [ 929 Feb 21 21:34]  [01;32mbuild-a-readme.sh[00m*
+│   ├── [ 472 Feb 22  8:25]  sms.zsh
+│   ├── [ 929 Feb 22  8:36]  [01;32mreadem.sh[00m*
+│   └── [ 297 Feb 22  8:37]  aliases.zsh
 ├── [3.7K Feb 13 11:12]  .slate.hardlink
 ├── [ 11K Feb 21 13:26]  .vimrc.hardlink
 ├── [  37 Feb 21 20:44]  .gitignore
-└── [ 103 Feb 21 21:34]  README.md
+└── [ 103 Feb 22  8:39]  README.md
 
 12 directories, 74 files
 ```
@@ -101,11 +101,11 @@
 
 
 ```
--rw-r--r-- 1 ia       staff        6812 02/21/2016 20:39:33 ./taiga/taiga_import_story.sh
--rw-r--r-- 1 ia       staff          11 02/21/2016 20:39:47 ./taiga/aliases.sh
--rwxr-xr-x 1 ia       staff        1706 02/21/2016 21:03:46 ./system/navigation.zsh
--rwxr-xr-x 1 ia       staff         929 02/21/2016 21:34:12 ./funk/build-a-readme.sh
--rw-r--r-- 1 ia       staff        5208 02/21/2016 21:34:16 ./README.md
+-rw-r--r-- 1 ia       staff         499 02/22/2016 08:31:48 ./private/env.zsh
+-rwxr-xr-x 1 ia       staff         756 02/22/2016 08:33:03 ./system/sort-downloads.zsh
+-rwxr-xr-x 1 ia       staff         929 02/22/2016 08:36:59 ./funk/readem.sh
+-rw-r--r-- 1 ia       staff         297 02/22/2016 08:37:22 ./funk/aliases.zsh
+-rw-r--r-- 1 ia       staff        5213 02/22/2016 08:39:02 ./README.md
 ```
 
 ## Dependencies
