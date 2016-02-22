@@ -1,4 +1,14 @@
 
+## 5 files recently modified
+
+```
+-rw-r--r-- 1 ia       staff        6812 02/21/2016 20:39:33 ./taiga/taiga_import_story.sh
+-rw-r--r-- 1 ia       staff          11 02/21/2016 20:39:47 ./taiga/aliases.sh
+-rwxr-xr-x 1 ia       staff        1706 02/21/2016 21:03:46 ./system/navigation.zsh
+-rwxr-xr-x 1 ia       staff         652 02/21/2016 21:20:44 ./funk/build-a-readme.sh
+-rw-r--r-- 1 ia       staff          35 02/21/2016 21:20:45 ./README.md
+```
+
 ## Table of contents
 
 ```
@@ -54,19 +64,6 @@
 │   ├── [1.6K Dec 22 13:46]  vi-commands-basic.txt
 │   ├── [ 120 Feb 18 11:24]  stuff.md
 │   └── [3.4K Feb 18 12:02]  tree-help.md
-├── [ 476 Feb 21 13:33]  [01;34mfunk[00m/
-│   ├── [ 552 Dec  3 11:55]  [01;32mpandocdo.sh[00m*
-│   ├── [  91 Dec 10  9:10]  just.zsh
-│   ├── [  64 Dec 21  9:13]  poop-logger.zsh
-│   ├── [  74 Jan  4  8:41]  mirror-mirror.zsh
-│   ├── [ 362 Feb 12 10:25]  sms.zsh
-│   ├── [ 121 Feb 12 13:27]  dev-whiteboard.zsh
-│   ├── [ 707 Feb 19  8:00]  video-to-gif.sh
-│   ├── [2.2K Feb 21 12:58]  scratchers.zsh
-│   ├── [1.0K Feb 21 13:39]  [01;32mpaper.sh[00m*
-│   ├── [ 221 Feb 21 13:41]  aliases.zsh
-│   ├── [ 143 Feb 21 15:25]  scrape-images.zsh
-│   └── [ 359 Feb 21 21:12]  [01;32mcreate-table-of-contents.sh[00m*
 ├── [ 544 Feb 21 16:18]  [01;34mbashers[00m/
 │   ├── [  79 Feb 12 13:32]  distinct-file-types.zsh
 │   ├── [  51 Feb 12 14:08]  print-empty-dirs.zsh.zsh
@@ -85,10 +82,23 @@
 ├── [ 136 Feb 21 20:39]  [01;34mtaiga[00m/
 │   ├── [6.7K Feb 21 20:39]  taiga_import_story.sh
 │   └── [  11 Feb 21 20:39]  aliases.sh
+├── [ 476 Feb 21 21:15]  [01;34mfunk[00m/
+│   ├── [ 552 Dec  3 11:55]  [01;32mpandocdo.sh[00m*
+│   ├── [  91 Dec 10  9:10]  just.zsh
+│   ├── [  64 Dec 21  9:13]  poop-logger.zsh
+│   ├── [  74 Jan  4  8:41]  mirror-mirror.zsh
+│   ├── [ 362 Feb 12 10:25]  sms.zsh
+│   ├── [ 121 Feb 12 13:27]  dev-whiteboard.zsh
+│   ├── [ 707 Feb 19  8:00]  video-to-gif.sh
+│   ├── [2.2K Feb 21 12:58]  scratchers.zsh
+│   ├── [1.0K Feb 21 13:39]  [01;32mpaper.sh[00m*
+│   ├── [ 221 Feb 21 13:41]  aliases.zsh
+│   ├── [ 143 Feb 21 15:25]  scrape-images.zsh
+│   └── [ 652 Feb 21 21:20]  [01;32mbuild-a-readme.sh[00m*
 ├── [3.7K Feb 13 11:12]  .slate.hardlink
 ├── [ 11K Feb 21 13:26]  .vimrc.hardlink
 ├── [  37 Feb 21 20:44]  .gitignore
-└── [  27 Feb 21 21:12]  README.md
+└── [ 476 Feb 21 21:20]  README.md
 
 12 directories, 74 files
 ```
