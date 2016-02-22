@@ -1,15 +1,17 @@
-# Load from dotfiles.
-# do like holman
-export ZSH=$HOME/.dotfiles
-config_files=$ZSH/**/*.zsh
+readempath="$HOME"/.dotfiles/README.md
 
-## except load everything
-for file in $config_files
-do
-				echo "\`\`\`bash" >> README.md
-        echo "$(cat $file)" >> README.md
-        echo "\`\`\`" >> README.md
-done
 
-unset config_files
-unset file
+echo "
+## Table of contents
+" > $readempath # overwrites the previous README
+echo "\`\`\`" >> $readempath
+tree --dirsfirst -alLhtDFC 4 -I .git >> $readempath
+echo "\`\`\`" >> $readempath
+echo
+
+echo "
+## All of my brews
+" >> $readempath
+echo "\`\`\`" >> $readempath
+brew list >> $readempath
+echo "\`\`\`" >> $readempath
