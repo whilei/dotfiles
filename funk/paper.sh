@@ -26,11 +26,11 @@
 dadropbase="$HOME/Dropbox/paper"
 daname=`date +%d-%m-%y@%H_%M_%S`
 
-while getopts 'n:d:' opt; do
+while getopts 'f:d:' opt; do
 	case $opt in
-		n) daname="$OPTARG" ;;
+		f) daname="$OPTARG" ;;
 		d) dadropbase="$HOME/Dropbox/paper/$OPTARG" ;;
-		\?) echo "Use either or both -n <name> -d <dirname>"; exit 1 ;;
+		\?) echo "Use either or both -f <filename> -d <dirname>"; exit 1 ;;
 		*) exit 1 ;;
 	esac
 done

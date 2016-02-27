@@ -33,3 +33,11 @@ echo "
 echo "\`\`\`" >> $readempath
 brew leaves >> $readempath
 echo "\`\`\`" >> $readempath
+
+echo "
+## Gems
+> \`env GEM_PATH=$GEM_HOME gem list\`
+" >> $readempath
+echo "\`\`\`" >> $readempath
+env GEM_PATH=$GEM_HOME gem list >> $readempath
+echo "\`\`\`" >> $readempath

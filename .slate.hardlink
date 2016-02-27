@@ -125,6 +125,8 @@ bind u:${shiftcontrol} focus 'Ulysses'
 bind i:${shiftcontrol} focus 'iA Writer'
 bind v:${shiftcontrol} focus 'VLC'
 bind l:${shiftcontrol} focus 'Slack'
+bind f:${shiftcontrol} focus 'Finder'
+bind m:${shiftcontrol} focus 'Messages'
 
 ## Layout binders
 
