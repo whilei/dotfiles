@@ -32,14 +32,6 @@ alias dropbox="cd ~/Dropbox; $listy;"
 alias sandbox="cd ~/sandbox; $listy;"
 alias desk="cd ~/Desktop; $listy;"
 
-function dots {
-	cd ~/.dotfiles/$1
-}
-
-function dev {
-	cd ~/dev/$1
-}
-
 # --> http://askubuntu.com/questions/110922/climb-up-the-directory-tree-faster
 # Go up directory tree X number of directories
 # function up() {

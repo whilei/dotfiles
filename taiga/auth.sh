@@ -36,7 +36,7 @@ fi
 PROJECT_RESOLVER=$( curl -X GET \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${TAIGA_AUTH_TOKEN}" \
-  https://api.taiga.io/api/v1/resolver?project="$TAIGA_PROJECT_RS" 2>/dev/null)
+  https://api.taiga.io/api/v1/resolver?project="$TAIGA_PROJECT_SLUG" 2>/dev/null)
 
 PROJECT_ID=$( echo ${PROJECT_RESOLVER} | jq -r '.project' )
 

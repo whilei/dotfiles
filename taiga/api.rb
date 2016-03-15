@@ -14,7 +14,7 @@ class Userstory < Taiga
 			us_id_json = %x(curl -X GET \
 			  -H "Content-Type: application/json" \
 			  -H "Authorization: Bearer ${TAIGA_AUTH_TOKEN}" \
-			  https://api.taiga.io/api/v1/resolver?project="${TAIGA_PROJECT_RS}"\\&us=#{ref} 2>/dev/null)
+			  https://api.taiga.io/api/v1/resolver?project="${TAIGA_PROJECT_SLUG}"\\&us=#{ref} 2>/dev/null)
 
 			us_id_parsed = JSON.parse us_id_json
 			# puts us_id_parsed["project"] # test
@@ -49,7 +49,7 @@ class Userstory < Taiga
 			us_list.each do |us|
 				puts "#{us['ref']}: (#{us['status_extra_info']['name']}) #{us['subject']}"
 			end
-			
+
 	end
 
 end
@@ -88,6 +88,50 @@ class Task < Taiga
 			puts "#{task['ref']}: (#{task['status_extra_info']['name']}) #{task['subject']}"
 		end
 			
+	end
+
+	def Task.status ref, status_name
+		# Get task statuses so we have access to status id's. 
+		stats = Status.task_statuses #=> array of hashes
+		# status_id = stats[]
+	end
+
+end
+
+class Status < Taiga
+
+	def Status.userstory_statuses
+		reqq = %x(curl -X GET \
+						  -H "Content-Type: application/json" \
+						  -H "Authorization: Bearer ${TAIGA_AUTH_TOKEN}" \
+						  https://api.taiga.io/api/v1/userstory-statuses?project="${TAIGA_PROJECT_ID}" 2>/dev/null)
+		req_parse = JSON.parse reqq
+		ret = []
+		req_parse.each do |r|
+			ret.push({
+				id: r['id'],
+				name: r['name'],
+				is_closed: r['is_closed']
+			})
+		end
+		ret #=> [{id: 123, name: 'ready', is_close: false },...]
+	end
+
+	def Status.task_statuses
+		reqq = %x(curl -X GET \
+						  -H "Content-Type: application/json" \
+						  -H "Authorization: Bearer ${TAIGA_AUTH_TOKEN}" \
+						  https://api.taiga.io/api/v1/task-statuses?project="${TAIGA_PROJECT_ID}" 2>/dev/null)
+		req_parse = JSON.parse reqq
+		ret = []
+		req_parse.each do |r|
+			ret.push({
+				id: r['id'],
+				name: r['name'],
+				is_closed: r['is_closed']
+			})
+		end
+		ret #=> [{id: 123, name: 'ready', is_close: false },...]
 	end
 
 end

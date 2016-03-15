@@ -1,16 +1,3 @@
-# This is not the default .slate file.
-# This is my .slate file.
-# There are many like it, 
-# but this one is mine.
-
-
-config defaultToCurrentScreen true
-config nudgePercentOf screenSize
-config resizePercentOf screenSize
-config orderScreensLeftToRight false
-# config windowHintsShowIcons true
-config windowHintsIgnoreHiddenWindows false
-config checkDefaultsOnLoad true
 
 # Aliases
 
@@ -127,6 +114,7 @@ bind v:${shiftcontrol} focus 'VLC'
 bind l:${shiftcontrol} focus 'Slack'
 bind f:${shiftcontrol} focus 'Finder'
 bind m:${shiftcontrol} focus 'Messages'
+bind x:${shiftcontrol} focus 'Xcode'
 
 ## Layout binders
 

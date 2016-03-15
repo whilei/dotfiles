@@ -8,3 +8,4 @@ date_stamp() {
 }
 # Export the function so it can be used anywhere in another command, ie $ vim `date_stamp`.md
 export -f date_stamp
+
