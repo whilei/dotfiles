@@ -26,6 +26,7 @@ alias bro="$EDITOR ~/.bash_profile; source ~/.bash_profile;"
 
 # usage: $ slime . \or $ slime ../some/where/else
 alias slime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias atom='/usr/local/bin/atom'
 alias safari="open -a safari"
 alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome"
