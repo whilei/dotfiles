@@ -116,6 +116,7 @@ bind f:${shiftcontrol} focus 'Finder'
 bind m:${shiftcontrol} focus 'Messages'
 bind x:${shiftcontrol} focus 'Xcode'
 bind t:${shiftcontrol} focus 'iTunes'
+bind w:${shiftcontrol} focus 'Atom'
 
 ## Layout binders
 
