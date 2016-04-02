@@ -5,8 +5,11 @@ alias gcm="git commit -m"
 alias gitit='git add -A && git commit -m'
 
 alias gs='git status -sb'
+function gl() {
+  git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+}
 alias gll='git --no-pager log --oneline --decorate --color --graph'
-# Accepts -<3> arg to limit number shown. 
+# Accepts -<3> arg to limit number shown.
 alias glg='git --no-pager log --pretty=format:"%cr [%h] %s" --graph --stat'
 
 alias gpo="git push origin"
@@ -22,4 +25,3 @@ alias gbd="git branch -d"
 
 # Rebase.
 alias greb="git rebase"
-

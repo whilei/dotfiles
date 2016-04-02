@@ -12,7 +12,7 @@
 [alias]
 	# Undo all changes since last commit and leave no evidence.
 	wipe = !git stash && git stash drop
-	# Undo your last commit as though you had never made it. 
+	# Undo your last commit as though you had never made it.
 	uncommit = reset --soft HEAD~
 	save = !git add -A && git commit -m 'SAVE'
         # Could use this in conjunction with uncommit to store intermediate changes without stashing.
@@ -20,13 +20,21 @@
 	# Not that useful now that [push]default is set to current.
         pushit = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""
 
-	# Diff with stats. 
-        diffstats = diff --stat -r
-	# Diff show changes. 
+	# Branchables.
+	go = checkout -B
+
+	# Remotes.
+	remotes = remote -v
+
+
+	# Diffables.
+	# with stats.
+  diffstats = diff --stat -r
+	# show changes.
 	changes = diff --name-status -r
-	
+
 	## Loggers
-	# Short and sweet. 
+	# Short and sweet.
 	brief = !git --no-pager log --oneline -n 10
 
 	# As bespoke.
@@ -34,9 +42,10 @@
 
 	# Recent branch action by last commit per. I think.
 	recently = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
-	
-	# List files that were changed. 
-	# I don't use these nearly as much as $ gl and $ glp aliases. 
+
+	# List files that were changed.
+	# I don't use these nearly as much as $ gl and $ glp aliases.
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 	lg = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	# Flow da chart. 
+	# Flow da chart.
 	ll = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %Cgreen(%cr)%Creset %s' --date=relative

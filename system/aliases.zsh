@@ -22,7 +22,7 @@ alias chx="chmod +x"
 # edit .bash_profile and re-source after
 alias bro="$EDITOR ~/.bash_profile; source ~/.bash_profile;"
 
-# Open applications. 
+# Open applications.
 
 # usage: $ slime . \or $ slime ../some/where/else
 alias slime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
@@ -34,11 +34,15 @@ alias joyce="open -a ulysses"
 alias vlc="vlc *.mp3"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/,
-# so says holman. What he said. 
+# so says holman. What he said.
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 
-# Venezuelans. 
+# Venezuelans.
 alias cleaningladies="source ~/.dotfiles/system/housekeep.sh"
+
+# Hide/show all desktop icons (useful when presenting)
+alias underbed="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias shesgone="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
