@@ -15,18 +15,18 @@
 	# Undo your last commit as though you had never made it.
 	uncommit = reset --soft HEAD~
 	save = !git add -A && git commit -m 'SAVE'
-        # Could use this in conjunction with uncommit to store intermediate changes without stashing.
+  
+  # Could use this in conjunction with uncommit to store intermediate changes without stashing.
 	wip = commit -am "WIP"
 	# Not that useful now that [push]default is set to current.
-        pushit = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""
+  pushit = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""
 
 	# Branchables.
 	go = checkout -B
 
 	# Remotes.
 	remotes = remote -v
-
-
+	
 	# Diffables.
 	# with stats.
   diffstats = diff --stat -r

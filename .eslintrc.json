@@ -7,7 +7,7 @@
     "jquery": true
   },
 
-  # ES6
+  // # ES6
   "ecmaFeatures": {
     "arrowFunctions": true,
     "binaryLiterals": true,
@@ -32,10 +32,10 @@
     "globalReturn": true
   },
   "rules": {
-    /**
-     * Strict mode
-     */
-    # "strict": [2, "never"],
+    // *
+    //  * Strict mode
+
+    // # "strict": [2, "never"],
     "no-var": 2,
     /**
      * Basic errors
@@ -118,7 +118,7 @@
     /**
      * Style
      */
-    # "indent": [2, "tab"],
+    // "indent": [1, "tab"],
     "brace-style": [2,
       "1tbs", {
       "allowSingleLine": true
@@ -158,11 +158,11 @@
       "before": false,
       "after": true
     }],
-    "space-after-keywords": 1,
+    // "space-after-keywords": 1,
     "space-before-blocks": 1,
     "space-before-function-paren": [1, "never"],
     "space-infix-ops": 2,
-    "space-return-throw-case": 2,
+    // "space-return-throw-case": 2,
     "spaced-comment": 1
   }
 }

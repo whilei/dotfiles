@@ -40,7 +40,7 @@ echo
 
 
 echo "
-## Dependencies
+## Brewed dependencies
 > \`$ brew leaves >> README.md \`
 
 " >> $readempath
@@ -51,9 +51,25 @@ echo
 
 
 echo "
-## Gems
+## Ruby gems
 > \`env GEM_PATH=$GEM_HOME gem list\`
 " >> $readempath
 echo "\`\`\`" >> $readempath
 env GEM_PATH=$GEM_HOME gem list >> $readempath
+echo "\`\`\`" >> $readempath
+
+echo "
+## NPM modules
+> \`pushd ~/.node/lib/; npm ls >> $readempath; popd;\`
+" >> $readempath
+echo "\`\`\`" >> $readempath
+pushd ~/.node/lib/; npm ls >> $readempath; popd;
+echo "\`\`\`" >> $readempath
+
+echo "
+## NPM modules
+> \`pushd ~/.node/lib/; npm ls >> $readempath; popd;\`
+" >> $readempath
+echo "\`\`\`" >> $readempath
+pushd ~/.node/lib/; npm ls >> $readempath; popd;
 echo "\`\`\`" >> $readempath
