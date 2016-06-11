@@ -1,6 +1,9 @@
 alias lastmod="bash $HOME/.dotfiles/bashers/last-modified.sh"
 
 # http://stackoverflow.com/questions/3510673/find-and-kill-a-process-in-one-line-using-bash-and-regex
-killkillkill(){
+killer(){
 	kill $(ps aux | grep "$1" | awk '{print $2}')
 }
+
+# Sorts dirs and/or files by size. 
+alias sizes="du -a -h --max-depth=1 | sort -hr"

@@ -15,3 +15,6 @@ export DEV_PATH="$HOME"/dev
 # These don't work right.
 # alias dots="cd $DOTS_PATH"
 # alias dev="cd $DEV_PATH"
+# 
+
+

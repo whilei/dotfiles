@@ -9,3 +9,8 @@ alias rdbr="rake db:rollback"
 
 alias capdr="cap $1 deploy:restart"
 alias captl="cap $1 rubber:tail_logs"
+
+
+
+export GEM_HOME=~/.gem
+export GEM_PATH=~/.gem

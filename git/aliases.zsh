@@ -32,3 +32,25 @@ alias gbd="git branch -D" # definitely delete. no fucking around.
 # Merge, rebase.
 alias gm="git merge"
 alias greb="git rebase"
+
+# https://github.com/paulmillr/dotfiles/blob/master/home/.zshrc.sh
+function cherry() {
+  args=$@
+  for commit in "$@"; do
+    echo $commit
+    git cherry-pick -n "$commit"
+  done
+}
+
+# http://stackoverflow.com/questions/7539382/how-can-i-deploy-push-only-a-subdirectory-of-my-git-repo-to-heroku
+function gitpushsub() {
+	# git subtree push --prefix output heroku master
+	git subtree push --prefix "$3" "$1" "$2"
+	# ie gitpushsub heroku master spoop-web/
+}
+
+function gitpushsubforce() {
+	# git push heroku `git subtree split --prefix output master`:master --force
+	git push "$1" `git subtree split --prefix "$3" "$2"`:master --force
+}
+

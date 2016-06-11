@@ -80,3 +80,4 @@ fi
 # is required for external aliases/functions to be used as commands), vars
 # can be local and return can be used to exit.
 _eachdir "$@"
+
