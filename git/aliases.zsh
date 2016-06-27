@@ -16,6 +16,8 @@ alias glg='git --no-pager log --pretty=format:"%cr [%h] %s" --graph --stat'
 
 alias gpo="git push origin"
 alias gpu="git push upstream"
+alias gpg="git push github"
+alias gpa="git push gogs"
 
 alias gpullo="git pull origin"
 alias gpullu="git pull upstream"

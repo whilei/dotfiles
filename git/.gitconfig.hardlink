@@ -26,6 +26,7 @@
 
 	# Remotes.
 	remotes = remote -v
+	r = remote -v
 	
 	# Diffables.
 	# with stats.

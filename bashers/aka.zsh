@@ -1,3 +1,4 @@
+AKA=~/.dotfiles/bashers/aka.zsh
 alias aka=". ~/.dotfiles/bashers/aka.zsh"
 alias hp="gitpushsub web master web"
 alias lr="guard -P livereload"
