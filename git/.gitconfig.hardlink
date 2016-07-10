@@ -27,10 +27,12 @@
 	# Remotes.
 	remotes = remote -v
 	r = remote -v
+	rr = remote rename
+	rurl = remote set-url
 	
 	# Diffables.
 	# with stats.
-  diffstats = diff --stat -r
+  diffstat = diff --stat -r
 	# show changes.
 	changes = diff --name-status -r
 

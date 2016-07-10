@@ -17,10 +17,11 @@ alias glg='git --no-pager log --pretty=format:"%cr [%h] %s" --graph --stat'
 alias gpo="git push origin"
 alias gpu="git push upstream"
 alias gpg="git push github"
+alias gpb="git push bitbucket"
 alias gpa="git push gogs"
+alias gph="git push heroku"
 
-alias gpullo="git pull origin"
-alias gpullu="git pull upstream"
+alias pull="git pull"
 
 alias gf="git fetch"
 
@@ -30,10 +31,13 @@ alias gco="git checkout"
 alias gcb="git checkout -b"
 # Delete branch.
 alias gbd="git branch -D" # definitely delete. no fucking around. 
+alias gbl="git branch --list"
 
 # Merge, rebase.
 alias gm="git merge"
 alias greb="git rebase"
+
+alias gui="gitup"
 
 # https://github.com/paulmillr/dotfiles/blob/master/home/.zshrc.sh
 function cherry() {
