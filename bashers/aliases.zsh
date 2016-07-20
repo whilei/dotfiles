@@ -7,3 +7,7 @@ killer(){
 
 # Sorts dirs and/or files by size. 
 alias sizes="du -a -h --max-depth=1 | sort -hr"
+
+# executable lives at $HOME/bin/syncthing
+# edits were made to replace USERNAME with my local username in the .plist file below
+alias gosync="launchctl -w load ~/Library/LaunchAgents/syncthing.plist"

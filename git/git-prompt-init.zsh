@@ -4,8 +4,28 @@ color_blue='\[\e[34m\]'
 color_reset='\[\e[0m\]'
 color_white_back='\[\e[47m\]'
 color_white='\[\e[37m\]'
-color_white_on_blue='\[\e[0;37;44m\]'
 color_yellow_bg='\[\e[43m\]'
+color_white_on_blue='\[\e[0;37;44m\]'
+
+# color_yellow='\[\e['
+
+COLOR_NC='\e[0m' # No Color
+COLOR_WHITE='\e[1;37m'
+COLOR_BLACK='\e[0;30m'
+COLOR_BLUE='\e[0;34m'
+COLOR_LIGHT_BLUE='\e[1;34m'
+COLOR_GREEN='\e[0;32m'
+COLOR_LIGHT_GREEN='\e[1;32m'
+COLOR_CYAN='\e[0;36m'
+COLOR_LIGHT_CYAN='\e[1;36m'
+COLOR_RED='\e[0;31m'
+COLOR_LIGHT_RED='\e[1;31m'
+COLOR_PURPLE='\e[0;35m'
+COLOR_LIGHT_PURPLE='\e[1;35m'
+COLOR_BROWN='\e[0;33m'
+COLOR_YELLOW='\e[1;33m'
+COLOR_GRAY='\e[0;30m'
+COLOR_LIGHT_GRAY='\e[0;37m'
 
 # git prompt settings from git-prompt
 # 'set to nonempty value to turn on'
@@ -40,11 +60,11 @@ GIT_PS1_SHOWUPSTREAM="auto,verbose"
 
 
 
-PS1='\u@\h:'${color_yellow_bg}'\w'${color_reset}' '${color_white_on_blue}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
+PS1='\u@\h:'${color_white_on_blue}'\w'${color_reset}' '${COLOR_GREEN}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
 
 
 prompt_on() {
-	PS1='\u@\h:'${color_white_on_blue}'\w'${color_reset}' '${color_yellow_bg}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
+	PS1='\u@\h:'${color_white_on_blue}'\w'${color_reset}' '${COLOR_GREEN}'$(__git_ps1 "(%s)")'${color_reset}' \$ '
 }
 prompt_off() {
     PS1='\u@\h:\w \$ '

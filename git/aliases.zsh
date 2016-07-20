@@ -37,7 +37,7 @@ alias gbl="git branch --list"
 alias gm="git merge"
 alias greb="git rebase"
 
-alias gui="gitup"
+alias ggui="gitup"
 
 # https://github.com/paulmillr/dotfiles/blob/master/home/.zshrc.sh
 function cherry() {

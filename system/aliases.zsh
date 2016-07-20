@@ -16,6 +16,8 @@ alias yp="rsync -avz -L --progress"
 # EZ v
 alias v="vim"
 
+alias t="touch"
+
 # make executable
 alias chx="chmod +x"
 

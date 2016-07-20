@@ -2,6 +2,7 @@
 
 ## Better ls
 alias ll='gls -lAh --color'
+alias l="gls -ltAh --color"
 # Reusable `ll`-as-command. 
 export listy="command gls -lAh --color"
 

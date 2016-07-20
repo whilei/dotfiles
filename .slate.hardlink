@@ -104,7 +104,7 @@ bind u:${hyper} throw ${external} ${fullsize}
 
 bind s:${shiftcontrol} focus 'Sublime Text'
 bind e:${shiftcontrol} focus 'Eclipse'
-bind z:${shiftcontrol} focus 'Terminal'
+bind z:${shiftcontrol} focus 'HyperTerm'
 bind a:${shiftcontrol} focus 'Safari'
 bind c:${shiftcontrol} focus 'Google Chrome'
 bind p:${shiftcontrol} focus 'Spotify'
