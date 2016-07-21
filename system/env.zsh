@@ -1,6 +1,11 @@
 # prefer vim over nano
 export VISUAL=vim
 #export EDITOR='slime -w'
+export EDITOR="$VISUAL"
+
+
+
+
 
 # set date string
 date_stamp() {

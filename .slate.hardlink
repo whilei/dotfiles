@@ -15,7 +15,7 @@ alias external 1920x1080;
 
 ## Binding aliases
 
-alias shiftcontrol ctrl;shift # shiftcontrol to, well, shiftcontrol
+alias shiftcontrol ctrl;shift # shiftcontrol to, well, shift control
 alias mash         ctrl;cmd;alt # mash, for most stuff
 alias hyper        ctrl;alt;cmd;shift # because it was there. just for nudges and layouts. 
 
@@ -103,20 +103,29 @@ bind u:${hyper} throw ${external} ${fullsize}
 ## Focus binders
 
 bind s:${shiftcontrol} focus 'Sublime Text'
+bind w:${shiftcontrol} focus 'Atom'
+bind x:${shiftcontrol} focus 'Xcode'
 bind e:${shiftcontrol} focus 'Eclipse'
-bind z:${shiftcontrol} focus 'HyperTerm'
+
+bind z:${shiftcontrol} focus 'Terminal'
+bind h:${shiftcontrol} focus 'HyperTerm'
+
 bind a:${shiftcontrol} focus 'Safari'
 bind c:${shiftcontrol} focus 'Google Chrome'
-bind p:${shiftcontrol} focus 'Spotify'
+
 bind u:${shiftcontrol} focus 'Ulysses'
 bind i:${shiftcontrol} focus 'iA Writer'
-bind v:${shiftcontrol} focus 'VLC'
-bind l:${shiftcontrol} focus 'Slack'
+
 bind f:${shiftcontrol} focus 'Finder'
+
 bind m:${shiftcontrol} focus 'Messages'
-bind x:${shiftcontrol} focus 'Xcode'
+bind l:${shiftcontrol} focus 'Slack'
+
+bind v:${shiftcontrol} focus 'VLC'
+bind p:${shiftcontrol} focus 'Spotify'
 bind t:${shiftcontrol} focus 'iTunes'
-bind w:${shiftcontrol} focus 'Atom'
+
+
 
 ## Layout binders
 

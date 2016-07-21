@@ -13,7 +13,7 @@ module.exports = {
     foregroundColor: '#fff',
 
     // terminal background color
-    backgroundColor: '#000',
+    backgroundColor: '#000', 
 
     // border color (window, tabs)
     borderColor: '#310000',
@@ -47,7 +47,9 @@ module.exports = {
       '#cc00ff',
       '#00ffff',
       '#ffffff'
-    ]
+    ],
+
+    shell: '/bin/bash'
     // visor: {
     //   // https://github.com/electron/electron/blob/master/docs/api/accelerator.md
     //   hotkey: 'Ctrl+Shift+Space',

@@ -11,7 +11,9 @@ alias eachdir=". ~/.dotfiles/bashers/each-dir.sh"
 # The best rysyncer.
 # The -a flag is for archive, which "ensures that symbolic links, devices, attributes, permissions, ownerships, etc. are preserved in the transfer"; the -z flag compresses files during the transfer; -v is for verbose; and --progress shows you your progress. I've enshrined this in an alias:
 # Copy the files pointed to by the symbolic links ("transform symlink into referent file/dir") with the --L flag:
-alias yp="rsync -avz -L --progress"
+alias yp="rsync -avz -L --progress -h" # copy (?)
+alias ypu="rsync -avzu --progress -h" # update
+alias yps="rsync -avzu --delete --progress -h" # synchronize
 
 # EZ v
 alias v="vim"
@@ -20,9 +22,6 @@ alias t="touch"
 
 # make executable
 alias chx="chmod +x"
-
-# edit .bash_profile and re-source after
-alias bro="$EDITOR ~/.bash_profile; source ~/.bash_profile;"
 
 # Open applications.
 
@@ -42,9 +41,8 @@ alias pumpitup="osascript -e 'set volume 7'"
 
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 
-# Venezuelans.
 alias cleaningladies="source ~/.dotfiles/system/housekeep.sh"
 
 # Hide/show all desktop icons (useful when presenting)
-alias underbed="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias shesgone="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hidedesk="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesk="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"

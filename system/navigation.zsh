@@ -1,8 +1,8 @@
 # Navigation
 
 ## Better ls
-alias ll='gls -lAh --color'
-alias l="gls -ltAh --color"
+alias ll='gls -lAhp --color'
+alias l="gls -ltAhp --color"
 # Reusable `ll`-as-command. 
 export listy="command gls -lAh --color"
 
