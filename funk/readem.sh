@@ -9,7 +9,6 @@ echo "" > $readempath # overwrites the previous README
 echo "
 ## Cloc
 > \`cloc . >> $readempath\`
-
 " >> $readempath
 echo "\`\`\`" >> $readempath
 cloc . >> $readempath
@@ -20,7 +19,6 @@ echo
 echo "
 ## Table of contents
 > \`tree >> $readempath\`
-
 " >> $readempath
 echo "\`\`\`" >> $readempath
 tree >> $readempath # --dirsfirst -alLhtDFC 4 -I .git
@@ -31,7 +29,6 @@ echo
 echo "
 ## ... and the 5 most recently modified
 > gfind . -not -path \"*.git*\" -type f -printf \"%-.22T+ %M %n %-8u %-8g %8s %Tx %.8TX %p\\n\" | sort | cut -f 2- -d ' ' | tail -5	>> $readempath
-
 " >> $readempath
 echo "\`\`\`" >> $readempath
 gfind . -not -path "*.git*" -type f -printf "%-.22T+ %M %n %-8u %-8g %8s %Tx %.8TX %p\n" | sort | cut -f 2- -d ' ' | tail -5	>> $readempath
@@ -42,7 +39,6 @@ echo
 echo "
 ## Brewed dependencies
 > \`$ brew leaves >> README.md \`
-
 " >> $readempath
 echo "\`\`\`" >> $readempath
 brew leaves >> $readempath
@@ -61,7 +57,7 @@ echo "\`\`\`" >> $readempath
 
 echo "
 ## Go src packages
-> \`pushd $GOPATH; tree -L 3 >> $readempath; popd;\`
+> \`pushd $GOPATH/src; tree -L 3 >> $readempath; popd;\`
 " >> $readempath
 echo "\`\`\`" >> $readempath
 pushd $GOPATH; tree -L 3 >> $readempath; popd;

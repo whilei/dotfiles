@@ -3,30 +3,28 @@
 ## Cloc
 > `cloc . >> /Users/ia/.dotfiles/README.md`
 
-
 ```
      100 files     104 text files.
 classified 104 filesDuplicate file check 104 files (100 known unique)Unique:      100 files                                               104 unique files.                              
 Counting:  100      24 files ignored.
 
-http://cloc.sourceforge.net v 1.64  T=1.75 s (47.4 files/s, 3999.6 lines/s)
+http://cloc.sourceforge.net v 1.64  T=1.11 s (74.8 files/s, 6311.1 lines/s)
 --------------------------------------------------------------------------------
 Language                      files          blank        comment           code
 --------------------------------------------------------------------------------
 Bourne Again Shell               46            382            681           3166
-Bourne Shell                     27            530            778            774
+Bourne Shell                     27            526            778            774
 Ruby                              6             79             57            202
 JSON                              2              2              0            167
 Java                              1             53              2             56
 Javascript                        1             12             28             37
 --------------------------------------------------------------------------------
-SUM:                             83           1058           1546           4402
+SUM:                             83           1054           1546           4402
 --------------------------------------------------------------------------------
 ```
 
 ## Table of contents
 > `tree >> /Users/ia/.dotfiles/README.md`
-
 
 ```
 .
@@ -150,18 +148,16 @@ SUM:                             83           1058           1546           4402
 ## ... and the 5 most recently modified
 > gfind . -not -path "*.git*" -type f -printf "%-.22T+ %M %n %-8u %-8g %8s %Tx %.8TX %p\n" | sort | cut -f 2- -d ' ' | tail -5	>> /Users/ia/.dotfiles/README.md
 
-
 ```
--rw-r--r-- 1 ia       staff        1326 07/22/2016 19:09:43 ./bashers/last-modified.sh
--rw-r--r-- 1 ia       staff         506 07/22/2016 19:09:55 ./bashers/aliases.bash
--rw-r--r-- 1 ia       staff         519 07/22/2016 19:11:00 ./system/paths.bash
--rwxr-xr-x 1 ia       staff        1658 07/22/2016 19:22:05 ./funk/readem.sh
--rw-r--r-- 1 ia       staff        5335 07/22/2016 19:22:10 ./README.md
+-rwxr-xr-x 1 ia       staff         756 07/22/2016 19:24:51 ./system/sort-downloads.bash
+-rwxr-xr-x 1 ia       staff        1319 07/22/2016 19:24:51 ./system/bash-utils.bash
+-rwxr-xr-x 1 ia       staff        1667 07/22/2016 19:24:51 ./system/navigation.bash
+-rwxr-xr-x 1 ia       staff        1658 07/22/2016 19:26:28 ./funk/readem.sh
+-rw-r--r-- 1 ia       staff        5332 07/22/2016 19:26:35 ./README.md
 ```
 
 ## Brewed dependencies
 > `$ brew leaves >> README.md `
-
 
 ```
 cloc
@@ -363,7 +359,7 @@ yajl-ruby (1.1.0)
 ```
 
 ## Go src packages
-> `pushd /Users/ia/gocode; tree -L 3 >> /Users/ia/.dotfiles/README.md; popd;`
+> `pushd /Users/ia/gocode/src; tree -L 3 >> /Users/ia/.dotfiles/README.md; popd;`
 
 ```
 .
