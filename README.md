@@ -8,7 +8,7 @@
 classified 104 filesDuplicate file check 104 files (100 known unique)Unique:      100 files                                               104 unique files.                              
 Counting:  100      24 files ignored.
 
-http://cloc.sourceforge.net v 1.64  T=1.11 s (74.8 files/s, 6311.1 lines/s)
+http://cloc.sourceforge.net v 1.64  T=1.23 s (67.2 files/s, 5669.7 lines/s)
 --------------------------------------------------------------------------------
 Language                      files          blank        comment           code
 --------------------------------------------------------------------------------
@@ -152,8 +152,8 @@ SUM:                             83           1054           1546           4402
 -rwxr-xr-x 1 ia       staff         756 07/22/2016 19:24:51 ./system/sort-downloads.bash
 -rwxr-xr-x 1 ia       staff        1319 07/22/2016 19:24:51 ./system/bash-utils.bash
 -rwxr-xr-x 1 ia       staff        1667 07/22/2016 19:24:51 ./system/navigation.bash
--rwxr-xr-x 1 ia       staff        1658 07/22/2016 19:26:28 ./funk/readem.sh
--rw-r--r-- 1 ia       staff        5332 07/22/2016 19:26:35 ./README.md
+-rwxr-xr-x 1 ia       staff        1664 07/22/2016 19:29:31 ./funk/readem.sh
+-rw-r--r-- 1 ia       staff        5332 07/22/2016 19:29:38 ./README.md
 ```
 
 ## Brewed dependencies
@@ -359,54 +359,101 @@ yajl-ruby (1.1.0)
 ```
 
 ## Go src packages
-> `pushd /Users/ia/gocode/src; tree -L 3 >> /Users/ia/.dotfiles/README.md; popd;`
+> `pushd /Users/ia/gocode/src/; tree -L 3 >> /Users/ia/.dotfiles/README.md; popd;`
 
 ```
 .
-├── bin
-│   ├── gin-boilerplate
-│   ├── godep
-│   ├── goimports
-│   └── oracle
-├── pkg
-│   └── darwin_amd64
-│       ├── github.com
-│       ├── golang.org
-│       └── gopkg.in
-└── src
-    ├── github.com
-    │   ├── Massad
-    │   ├── PuerkitoBio
-    │   ├── Unknwon
-    │   ├── andybalholm
-    │   ├── boj
-    │   ├── boltdb
-    │   ├── daviddengcn
-    │   ├── ddo
-    │   ├── garyburd
-    │   ├── gin-gonic
-    │   ├── go-gorp
-    │   ├── gogits
-    │   ├── golang
-    │   ├── gorilla
-    │   ├── lib
-    │   ├── manucorporat
-    │   ├── microcosm-cc
-    │   ├── olahol
-    │   ├── oschwald
-    │   ├── russross
-    │   ├── sergi
-    │   ├── shurcooL
-    │   ├── sourcegraph
-    │   └── tools
-    ├── golang.org
-    │   └── x
-    └── gopkg.in
-        ├── dietsche
-        ├── go-playground
-        └── yaml.v2
+├── github.com
+│   ├── Massad
+│   │   └── gin-boilerplate
+│   ├── PuerkitoBio
+│   │   └── goquery
+│   ├── Unknwon
+│   │   └── cae
+│   ├── andybalholm
+│   │   └── cascadia
+│   ├── boj
+│   │   └── redistore
+│   ├── boltdb
+│   │   └── bolt
+│   ├── daviddengcn
+│   │   └── go-colortext
+│   ├── ddo
+│   │   └── go-spin
+│   ├── garyburd
+│   │   └── redigo
+│   ├── gin-gonic
+│   │   ├── contrib
+│   │   └── gin
+│   ├── go-gorp
+│   │   └── gorp
+│   ├── gogits
+│   │   └── git
+│   ├── golang
+│   │   └── protobuf
+│   ├── gorilla
+│   │   ├── context
+│   │   ├── securecookie
+│   │   ├── sessions
+│   │   └── websocket
+│   ├── lib
+│   │   └── pq
+│   ├── manucorporat
+│   │   └── sse
+│   ├── microcosm-cc
+│   │   └── bluemonday
+│   ├── olahol
+│   │   └── melody
+│   ├── oschwald
+│   │   ├── geoip2-golang
+│   │   └── maxminddb-golang
+│   ├── russross
+│   │   └── blackfriday
+│   ├── sergi
+│   │   └── go-diff
+│   ├── shurcooL
+│   │   ├── github_flavored_markdown
+│   │   ├── highlight_diff
+│   │   ├── highlight_go
+│   │   └── sanitized_anchor_name
+│   ├── sourcegraph
+│   │   ├── annotate
+│   │   └── syntaxhighlight
+│   └── tools
+│       └── godep
+├── golang.org
+│   └── x
+│       ├── crypto
+│       ├── net
+│       ├── sys
+│       └── tools
+└── gopkg.in
+    ├── dietsche
+    │   └── textbelt.v1
+    ├── go-playground
+    │   └── validator.v8
+    └── yaml.v2
+        ├── LICENSE
+        ├── LICENSE.libyaml
+        ├── README.md
+        ├── apic.go
+        ├── decode.go
+        ├── decode_test.go
+        ├── emitterc.go
+        ├── encode.go
+        ├── encode_test.go
+        ├── parserc.go
+        ├── readerc.go
+        ├── resolve.go
+        ├── scannerc.go
+        ├── sorter.go
+        ├── suite_test.go
+        ├── writerc.go
+        ├── yaml.go
+        ├── yamlh.go
+        └── yamlprivateh.go
 
-38 directories, 4 files
+70 directories, 19 files
 ```
 
 ## NPM modules

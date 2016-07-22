@@ -57,10 +57,10 @@ echo "\`\`\`" >> $readempath
 
 echo "
 ## Go src packages
-> \`pushd $GOPATH/src; tree -L 3 >> $readempath; popd;\`
+> \`pushd $GOPATH/src/; tree -L 3 >> $readempath; popd;\`
 " >> $readempath
 echo "\`\`\`" >> $readempath
-pushd $GOPATH; tree -L 3 >> $readempath; popd;
+pushd $GOPATH/src/; tree -L 3 >> $readempath; popd;
 echo "\`\`\`" >> $readempath
 
 
