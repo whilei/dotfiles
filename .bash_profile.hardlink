@@ -1,0 +1,20 @@
+# loads .node and .rvm dirs to path
+[[ -s "$HOME/.path" ]] && source "$HOME/.path"
+
+# Load from dotfiles. 
+# do like holman
+export DOTS=$HOME/.dotfiles
+
+# mostly bashy dotfiles
+config_files=$DOTS/**/*.bash
+
+## except load everything 
+for file in $config_files
+do
+	source $file
+done
+
+unset config_files
+unset DOTS
+
+

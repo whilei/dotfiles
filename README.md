@@ -5,155 +5,146 @@
 
 
 ```
-     100 files     103 text files.
-classified 103 filesDuplicate file check 103 files (100 known unique)Unique:      100 files                                               103 unique files.                              
-Counting:  100      62 files ignored.
+     100 files     104 text files.
+classified 104 filesDuplicate file check 104 files (100 known unique)Unique:      100 files                                               104 unique files.                              
+Counting:  100      24 files ignored.
 
-http://cloc.sourceforge.net v 1.64  T=1.77 s (24.8 files/s, 3211.2 lines/s)
+http://cloc.sourceforge.net v 1.64  T=1.75 s (47.4 files/s, 3999.6 lines/s)
 --------------------------------------------------------------------------------
 Language                      files          blank        comment           code
 --------------------------------------------------------------------------------
-Bourne Again Shell                6            207            290           2429
-Bourne Shell                     28            524            778            773
+Bourne Again Shell               46            382            681           3166
+Bourne Shell                     27            530            778            774
 Ruby                              6             79             57            202
 JSON                              2              2              0            167
 Java                              1             53              2             56
 Javascript                        1             12             28             37
 --------------------------------------------------------------------------------
-SUM:                             44            877           1155           3664
+SUM:                             83           1058           1546           4402
 --------------------------------------------------------------------------------
 ```
 
 ## Table of contents
-> `tree --dirsfirst -alLhtDFC 4 -I .git >> /Users/ia/.dotfiles/README.md`
+> `tree >> /Users/ia/.dotfiles/README.md`
 
 
 ```
-[01;34m.[00m
-├── [ 476 Dec  3  2015]  [01;34mjlwarez[00m/
-│   ├── [2.1K Dec  3  2015]  Awkedy\ AwkAWk.sh
-│   ├── [1.8K Dec  3  2015]  CUrl.sh
-│   ├── [1.6K Dec  3  2015]  Externalized\ Random\ access\ objects\ backup.java
-│   ├── [ 644 Dec  3  2015]  batch\ genome.sh
-│   ├── [2.0K Dec  3  2015]  dbGaP\ decrypt.sh
-│   ├── [2.1K Dec  3  2015]  Piechart\ R.sh
-│   ├── [ 360 Dec  3  2015]  RsyncFlyDie.sh
-│   ├── [ 232 Dec  3  2015]  S3cmd.sh
-│   ├── [2.3K Dec  3  2015]  SED.sh
-│   ├── [ 618 Dec  3  2015]  mappability.sh
-│   ├── [ 238 Dec  3  2015]  touchSpecific.sh
-│   └── [ 174 Feb 13 12:10]  find\ and\ list\ subfolders.sh
-├── [ 272 Feb 12 10:19]  [01;34mgit[00m/
-│   ├── [ 16K Dec 10  2015]  git-prompt.zsh
-│   ├── [ 56K Feb  5 12:36]  git-completion.zsh
-│   ├── [  75 Apr  6 20:35]  .gitignore_global.hardlink
-│   ├── [1.7K Jul 19  3:52]  .gitconfig.hardlink
-│   ├── [1.6K Jul 19  3:52]  aliases.zsh
-│   └── [2.6K Jul 21 12:37]  git-prompt-init.zsh
-├── [ 170 Feb 12 14:56]  [01;34mosx[00m/
-│   ├── [ 170 Dec  4  2015]  [01;34mterminals[00m/
-│   │   ├── [2.8K Dec  4  2015]  Homebrew\ -\ transparent.terminal
-│   │   ├── [1.9K Dec  4  2015]  Stars\ -\ transparent.terminal
-│   │   └── [2.5K Dec  4  2015]  Stripes\ -\ transparent.terminal
-│   ├── [ 109 Feb 12 14:56]  aliases.zsh
-│   └── [ 52K Jul 15 10:00]  set-defaults.sh
-├── [ 136 Feb 13 20:01]  [01;34mpython[00m/
-│   ├── [  69 Nov 30  2015]  env.zsh
-│   └── [ 742 Dec 10  2015]  py-serve.zsh
-├── [ 170 Feb 18 11:51]  [01;34mwhiteboard[00m/
-│   ├── [1.6K Dec 22  2015]  vi-commands-basic.txt
-│   ├── [ 120 Feb 18 11:24]  stuff.md
-│   └── [3.4K Feb 18 12:02]  tree-help.md
-├── [ 272 Feb 28  9:43]  [01;34mprivate[00m/
-│   ├── [ 121 Nov 30  2015]  checkups.zsh
-│   ├── [ 166 Feb 22  8:22]  [01;32mcontacts.sh[00m*
-│   ├── [  74 Feb 22  8:30]  bbi.zsh
-│   ├── [ 84K Feb 29  9:00]  us-list.json
-│   ├── [ 969 Apr 25 20:51]  [01;32menv.zsh[00m*
-│   └── [ 580 Jun  1 19:27]  aliases.zsh
-├── [ 340 Feb 29 17:55]  [01;34mtaiga[00m/
-│   ├── [ 340 Feb 29 16:21]  [01;34mscratchers[00m/
-│   │   ├── [1.1K Feb 29 16:20]  [01;32mlist-userstories.rb[00m*
-│   │   ├── [ 496 Feb 29 16:20]  list-userstories.sh
-│   │   ├── [ 541 Feb 29 16:20]  rb-test-auth.rb
-│   │   ├── [ 983 Feb 29 16:20]  resolve-task.sh
-│   │   ├── [ 679 Feb 29 16:20]  resolve-userstory.sh
-│   │   ├── [ 225 Feb 29 16:21]  ruby-options-parse-test.rb
-│   │   ├── [6.7K Feb 29 16:21]  taiga_import_story.sh
-│   │   └── [ 641 Feb 29 16:21]  resolve-project.sh
-│   ├── [ 568 Feb 29 16:41]  taiga-rb.rb
-│   ├── [ 103 Feb 29 16:41]  aliases.zsh
-│   ├── [1.4K Feb 29 17:24]  [01;32mauth.sh[00m*
-│   ├── [1.0K Feb 29 17:51]  LICENSE
-│   ├── [ 780 Feb 29 17:53]  README.md
-│   ├── [3.6K Mar  1  4:44]  api.rb
-│   └── [2.1K Mar  1  4:44]  interface.rb
-├── [ 102 Mar 25  6:59]  [01;34mfreya[00m/
-│   └── [ 170 Mar 25  7:00]  [01;34msystem[00m/
-│       ├── [ 244 Mar 25  6:58]  [01;32menv.zsh[00m*
-│       ├── [ 754 Mar 25  7:00]  aliases.zsh
-│       └── [ 528 Mar 25  7:07]  [01;32mnavigation.zsh[00m*
-├── [ 374 Mar 30 19:30]  [01;34msystem[00m/
-│   ├── [1.3K Feb 12 15:42]  [01;32mbash-utils.zsh[00m*
-│   ├── [  72 Feb 13 12:16]  [01;32mhousekeep.sh[00m*
-│   ├── [ 216 Feb 19  7:40]  [01;32mtophify.zsh[00m*
-│   ├── [ 756 Feb 22  8:33]  [01;32msort-downloads.zsh[00m*
-│   ├── [1.3K Mar 30 19:47]  postgres.zsh
-│   ├── [ 519 May  7 12:22]  paths.zsh
-│   ├── [ 272 Jul 21  5:12]  [01;32menv.zsh[00m*
-│   ├── [1.8K Jul 21  6:32]  aliases.zsh
-│   └── [1.6K Jul 21  6:40]  [01;32mnavigation.zsh[00m*
-├── [ 578 Apr 13  7:59]  [01;34mfunk[00m/
-│   ├── [ 552 Dec  3  2015]  [01;32mpandocdo.sh[00m*
-│   ├── [  91 Dec 10  2015]  just.zsh
-│   ├── [  64 Dec 21  2015]  poop-logger.zsh
-│   ├── [  74 Jan  4  2016]  mirror-mirror.zsh
-│   ├── [ 121 Feb 12 13:27]  dev-whiteboard.zsh
-│   ├── [ 707 Feb 19  8:00]  video-to-gif.sh
-│   ├── [2.2K Feb 21 12:58]  scratchers.zsh
-│   ├── [ 143 Feb 21 15:25]  scrape-images.zsh
-│   ├── [ 472 Feb 22  8:25]  sms.zsh
-│   ├── [1.0K Feb 28 21:05]  [01;32mpaper.sh[00m*
-│   ├── [1.6K Mar 16  9:56]  [01;32mscreenshotter.sh[00m*
-│   ├── [1.3K Apr 10  7:32]  paulmiller.zsh
-│   ├── [ 525 Apr 10  7:35]  aliases.zsh
-│   ├── [ 147 Apr 13  8:34]  i-changed-my-git-username.zsh
-│   └── [1.4K Jul 22 18:53]  [01;32mreadem.sh[00m*
-├── [ 170 Jun 13  5:43]  [01;34mruby[00m/
-│   ├── [ 118 May  7 12:22]  env.zsh
-│   ├── [  23 May 29 13:01]  .gemrc.hardlink
-│   └── [ 275 Jun 27 18:54]  aliases.zsh
-├── [ 136 Jun 13  5:44]  [01;34mvim[00m/
-│   ├── [ 11K Feb 27  8:17]  .vimrc.hardlink
-│   └── [   0 Feb 27  8:19]  env.zsh
-├── [ 102 Jul  7  5:29]  [01;34mgo[00m/
-│   └── [  56 Jul  7  5:30]  env.zsh
-├── [ 646 Jul 20 12:45]  [01;34mbashers[00m/
-│   ├── [  79 Feb 12 13:32]  distinct-file-types.zsh
-│   ├── [  51 Feb 12 14:08]  print-empty-dirs.zsh.zsh
-│   ├── [  53 Feb 12 14:09]  delete-empty-dirs.zsh.zsh
-│   ├── [  59 Feb 13 11:21]  last-screen-shot.zsh
-│   ├── [ 156 Feb 13 11:32]  last-modified-dir.zsh
-│   ├── [ 196 Feb 18 11:25]  edit-then-source.zsh
-│   ├── [ 603 Feb 18 11:43]  isip.zsh
-│   ├── [1.9K Feb 18 11:43]  save-command.zsh
-│   ├── [ 249 Feb 21 15:28]  substitute-extensions.zsh
-│   ├── [ 151 Feb 21 15:32]  search-in-files.zsh
-│   ├── [1.3K Feb 21 16:18]  last-modified.sh
-│   ├── [   0 Apr 11 10:24]  sort-by-size.zsh
-│   ├── [2.4K Apr 13  8:13]  each-dir.sh
-│   ├── [ 228 Jul 10  5:54]  aka-meta.zsh
-│   ├── [ 509 Jul 19 18:30]  aliases.zsh
-│   ├── [ 393 Jul 20 12:46]  [01;32maka.zsh[00m*
-│   └── [ 143 Jul 20 12:47]  aka-func.zsh
-├── [  30 Feb 28 21:06]  .gitignore
-├── [3.7K Apr  3  9:08]  .eslintrc.json
-├── [ 324 Jul 20 11:51]  .path.hardlink
-├── [1.7K Jul 21 11:46]  .hyperterm.hardlink.js
-├── [3.6K Jul 21 12:01]  .slate.hardlink
-└── [1.4K Jul 22 18:54]  README.md
+.
+├── README.md
+├── bashers
+│   ├── aka-func.bash
+│   ├── aka-meta.bash
+│   ├── aka.bash
+│   ├── aliases.bash
+│   ├── delete-empty-dirs.bash
+│   ├── distinct-file-types.bash
+│   ├── each-dir.sh
+│   ├── edit-then-source.bash
+│   ├── isip.bash
+│   ├── last-modified-dir.bash
+│   ├── last-modified.sh
+│   ├── last-screen-shot.bash
+│   ├── print-empty-dirs.bash.zsh
+│   ├── save-command.bash
+│   ├── search-in-files.bash
+│   ├── sort-by-size.bash
+│   └── substitute-extensions.bash
+├── freya
+│   └── system
+│       ├── aliases.zsh
+│       ├── env.zsh
+│       └── navigation.zsh
+├── funk
+│   ├── aliases.bash
+│   ├── dev-whiteboard.bash
+│   ├── i-changed-my-git-username.bash
+│   ├── just.bash
+│   ├── mirror-mirror.bash
+│   ├── pandocdo.sh
+│   ├── paper.sh
+│   ├── paulmiller.bash
+│   ├── poop-logger.bash
+│   ├── readem.sh
+│   ├── scrape-images.bash
+│   ├── scratchers.bash
+│   ├── screenshotter.sh
+│   ├── sms.bash
+│   └── video-to-gif.sh
+├── git
+│   ├── aliases.bash
+│   ├── git-completion.bash
+│   ├── git-prompt-init.bash
+│   └── git-prompt.bash
+├── go
+│   └── env.bash
+├── jlwarez
+│   ├── Awkedy\ AwkAWk.sh
+│   ├── CUrl.sh
+│   ├── Externalized\ Random\ access\ objects\ backup.java
+│   ├── Piechart\ R.sh
+│   ├── RsyncFlyDie.sh
+│   ├── S3cmd.sh
+│   ├── SED.sh
+│   ├── batch\ genome.sh
+│   ├── dbGaP\ decrypt.sh
+│   ├── find\ and\ list\ subfolders.sh
+│   ├── mappability.sh
+│   └── touchSpecific.sh
+├── osx
+│   ├── aliases.bash
+│   ├── set-defaults.sh
+│   └── terminals
+│       ├── Homebrew\ -\ transparent.terminal
+│       ├── Stars\ -\ transparent.terminal
+│       └── Stripes\ -\ transparent.terminal
+├── private
+│   ├── aliases.bash
+│   ├── bbi.bash
+│   ├── checkups.bash
+│   ├── contacts.sh
+│   ├── env.bash
+│   └── us-list.json
+├── python
+│   ├── env.bash
+│   └── py-serve.bash
+├── ruby
+│   ├── aliases.bash
+│   └── env.bash
+├── system
+│   ├── aliases.bash
+│   ├── bash-utils.bash
+│   ├── env.bash
+│   ├── housekeep.sh
+│   ├── navigation.bash
+│   ├── paths.bash
+│   ├── postgres.bash
+│   ├── sort-downloads.bash
+│   └── tophify.bash
+├── taiga
+│   ├── LICENSE
+│   ├── README.md
+│   ├── aliases.bash
+│   ├── api.rb
+│   ├── auth.sh
+│   ├── interface.rb
+│   ├── scratchers
+│   │   ├── list-userstories.rb
+│   │   ├── list-userstories.sh
+│   │   ├── rb-test-auth.rb
+│   │   ├── resolve-project.sh
+│   │   ├── resolve-task.sh
+│   │   ├── resolve-userstory.sh
+│   │   ├── ruby-options-parse-test.rb
+│   │   └── taiga_import_story.sh
+│   └── taiga-rb.rb
+├── vim
+│   └── env.bash
+└── whiteboard
+    ├── stuff.md
+    ├── tree-help.md
+    └── vi-commands-basic.txt
 
-17 directories, 105 files
+17 directories, 96 files
 ```
 
 ## ... and the 5 most recently modified
@@ -161,11 +152,11 @@ SUM:                             44            877           1155           3664
 
 
 ```
--rw-r--r-- 2 ia       staff        1780 07/21/2016 11:46:58 ./.hyperterm.hardlink.js
--rw-r--r-- 2 ia       staff        3672 07/21/2016 12:01:39 ./.slate.hardlink
--rw-r--r-- 1 ia       staff        2690 07/21/2016 12:37:17 ./git/git-prompt-init.zsh
--rwxr-xr-x 1 ia       staff        1480 07/22/2016 18:53:58 ./funk/readem.sh
--rw-r--r-- 1 ia       staff        8679 07/22/2016 18:54:09 ./README.md
+-rw-r--r-- 1 ia       staff        1326 07/22/2016 19:09:43 ./bashers/last-modified.sh
+-rw-r--r-- 1 ia       staff         506 07/22/2016 19:09:55 ./bashers/aliases.bash
+-rw-r--r-- 1 ia       staff         519 07/22/2016 19:11:00 ./system/paths.bash
+-rwxr-xr-x 1 ia       staff        1658 07/22/2016 19:22:05 ./funk/readem.sh
+-rw-r--r-- 1 ia       staff        5335 07/22/2016 19:22:10 ./README.md
 ```
 
 ## Brewed dependencies
@@ -204,6 +195,7 @@ pyenv-virtualenv
 pyenv-virtualenvwrapper
 python
 python3
+rename
 spark
 tmux
 tree
@@ -368,6 +360,57 @@ websocket-driver (0.6.3)
 websocket-extensions (0.1.2)
 xpath (2.0.0)
 yajl-ruby (1.1.0)
+```
+
+## Go src packages
+> `pushd /Users/ia/gocode; tree -L 3 >> /Users/ia/.dotfiles/README.md; popd;`
+
+```
+.
+├── bin
+│   ├── gin-boilerplate
+│   ├── godep
+│   ├── goimports
+│   └── oracle
+├── pkg
+│   └── darwin_amd64
+│       ├── github.com
+│       ├── golang.org
+│       └── gopkg.in
+└── src
+    ├── github.com
+    │   ├── Massad
+    │   ├── PuerkitoBio
+    │   ├── Unknwon
+    │   ├── andybalholm
+    │   ├── boj
+    │   ├── boltdb
+    │   ├── daviddengcn
+    │   ├── ddo
+    │   ├── garyburd
+    │   ├── gin-gonic
+    │   ├── go-gorp
+    │   ├── gogits
+    │   ├── golang
+    │   ├── gorilla
+    │   ├── lib
+    │   ├── manucorporat
+    │   ├── microcosm-cc
+    │   ├── olahol
+    │   ├── oschwald
+    │   ├── russross
+    │   ├── sergi
+    │   ├── shurcooL
+    │   ├── sourcegraph
+    │   └── tools
+    ├── golang.org
+    │   └── x
+    └── gopkg.in
+        ├── dietsche
+        ├── go-playground
+        └── yaml.v2
+
+38 directories, 4 files
 ```
 
 ## NPM modules

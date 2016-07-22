@@ -19,11 +19,11 @@ echo
 
 echo "
 ## Table of contents
-> \`tree --dirsfirst -alLhtDFC 4 -I .git >> $readempath\`
+> \`tree >> $readempath\`
 
 " >> $readempath
 echo "\`\`\`" >> $readempath
-tree --dirsfirst -alLhtDFC 4 -I .git >> $readempath
+tree >> $readempath # --dirsfirst -alLhtDFC 4 -I .git
 echo "\`\`\`" >> $readempath
 echo
 
@@ -58,6 +58,16 @@ echo "\`\`\`" >> $readempath
 env GEM_PATH=$GEM_HOME gem list >> $readempath
 echo "\`\`\`" >> $readempath
 
+
+echo "
+## Go src packages
+> \`pushd $GOPATH; tree -L 3 >> $readempath; popd;\`
+" >> $readempath
+echo "\`\`\`" >> $readempath
+pushd $GOPATH; tree -L 3 >> $readempath; popd;
+echo "\`\`\`" >> $readempath
+
+
 echo "
 ## NPM modules
 > \`pushd ~/.node/lib/; npm ls >> $readempath; popd;\`
@@ -65,4 +75,8 @@ echo "
 echo "\`\`\`" >> $readempath
 pushd ~/.node/lib/; npm ls >> $readempath; popd;
 echo "\`\`\`" >> $readempath
+
+
+
+
 
