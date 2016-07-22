@@ -7,10 +7,8 @@ color_white='\[\e[37m\]'
 color_yellow_bg='\[\e[43m\]'
 color_white_on_blue='\[\e[0;37;44m\]'
 
-# color_white_on_purp='\[\e[0;37;35m\]'
 color_white_on_purp='\[\e[37;45m\]'
 color_white_on_red='\[\e[37;41m'
-# color_yellow='\[\e['
 
 COLOR_NC='\e[0m' # No Color
 COLOR_WHITE='\e[1;37m'

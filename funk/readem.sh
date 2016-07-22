@@ -66,10 +66,3 @@ echo "\`\`\`" >> $readempath
 pushd ~/.node/lib/; npm ls >> $readempath; popd;
 echo "\`\`\`" >> $readempath
 
-echo "
-## NPM modules
-> \`pushd ~/.node/lib/; npm ls >> $readempath; popd;\`
-" >> $readempath
-echo "\`\`\`" >> $readempath
-pushd ~/.node/lib/; npm ls >> $readempath; popd;
-echo "\`\`\`" >> $readempath
