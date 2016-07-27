@@ -6,7 +6,7 @@ killer(){
 }
 
 # Sorts dirs and/or files by size. 
-alias sizes="du -a -h --max-depth=1 | sort -hr"
+alias sizes="du -d 1 -h | sort"
 
 # executable lives at $HOME/bin/syncthing
 # edits were made to replace USERNAME with my local username in the .plist file below

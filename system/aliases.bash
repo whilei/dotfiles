@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # find beautiful process
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 
@@ -13,7 +15,7 @@ alias eachdir=". ~/.dotfiles/bashers/each-dir.sh"
 # Copy the files pointed to by the symbolic links ("transform symlink into referent file/dir") with the --L flag:
 alias yp="rsync -avz -L --progress -h" # copy (?)
 alias ypu="rsync -avzu --progress -h" # update
-alias yps="rsync -avzu --delete --progress -h" # synchronize
+alias yps="rsync -avzu --delete --progress -h --backup --backup-dir='backup_$(date +\%Y-\%m-\%d)'" # synchronize
 
 # EZ v
 alias v="vim"
@@ -22,6 +24,10 @@ alias t="touch"
 
 # make executable
 alias chx="chmod +x"
+
+lh(){
+	open -a "Safari" "http://localhost:$1"
+}
 
 # Open applications.
 

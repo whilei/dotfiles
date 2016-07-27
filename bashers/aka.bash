@@ -3,6 +3,7 @@ alias hr="heroku run"
 alias hrw="heroku run --remote web"
 alias rsp="rails s -p3002"
 alias lr="guard -P livereload"
+alias gwno="gulp watch --no-open"
 alias bios="gulp --cordova 'build ios'"
 alias dockstart="docker-machine start"
 alias dockapp="docker-compose run app" # + rake db:migrate/etc

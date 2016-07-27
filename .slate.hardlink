@@ -17,7 +17,7 @@ alias external 1920x1080;
 
 alias shiftcontrol ctrl;shift # shiftcontrol to, well, shift control
 alias mash         ctrl;cmd;alt # mash, for most stuff
-alias hyper        ctrl;alt;cmd;shift # because it was there. just for nudges and layouts. 
+alias hyper        ctrl;alt;cmd;shift # because it was there. just for nudges and layouts.
 
 ## Misc aliases
 
@@ -63,18 +63,18 @@ layout terminal 'Terminal' ${toplefttwothird} | ${toprightthird} | ${bottomhalf}
 
 ## Abstract position binders
 
-### Per halfs, bound a la vim. 
+### Per halfs, bound a la vim.
 
 bind k:${mash}    ${tophalf}
 bind j:${mash}  ${bottomhalf}
 bind h:${mash}  ${lefthalf}
 bind l:${mash} ${righthalf}
 
-### Top shelf, bound top shelf. 
+### Top shelf, bound top shelf.
 
 bind f:${mash}     ${full}
 bind q:${mash}     ${topleftthird}
-bind w:${mash}     ${topleft} 
+bind w:${mash}     ${topleft}
 bind e:${mash}     ${toplefttwothird}
 bind p:${mash}     ${toprightthird}
 bind o:${mash}    ${topright}
@@ -106,6 +106,8 @@ bind s:${shiftcontrol} focus 'Sublime Text'
 bind w:${shiftcontrol} focus 'Atom'
 bind x:${shiftcontrol} focus 'Xcode'
 bind e:${shiftcontrol} focus 'Eclipse'
+
+bind o:${shiftcontrol} focus 'Postman'
 
 bind z:${shiftcontrol} focus 'Terminal'
 bind h:${shiftcontrol} focus 'HyperTerm'

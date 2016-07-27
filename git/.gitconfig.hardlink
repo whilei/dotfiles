@@ -15,8 +15,8 @@
 	# Undo your last commit as though you had never made it.
 	uncommit = reset --soft HEAD~
 	
-	save = !git add -A && git commit -m 'save'
-	wip = commit -am "wip"
+	save = !git add -A && git commit -m ':floppy_disk:'
+	wip = commit -am ":hammer:"
 	
 	# Not that useful now that [push]default is set to current.
   pushit = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""

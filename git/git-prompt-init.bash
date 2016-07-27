@@ -63,11 +63,11 @@ GIT_PS1_SHOWUPSTREAM="auto,verbose"
 
 
 
-PS1='\u@\h:'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' \$ '
+PS1=${COLOR_PURPLE}'\u@\h'${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' \$ '
 
 
 prompt_on() {
-	PS1='\u@\h:'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' \$ '
+	PS1=${COLOR_PURPLE}'\u@\h'${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' \$ '
 }
 prompt_off() {
     PS1='\u@\h:\w \$ '
