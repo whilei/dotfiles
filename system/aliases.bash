@@ -25,9 +25,14 @@ alias t="touch"
 # make executable
 alias chx="chmod +x"
 
+# Open Safari on a localhost port $1.
 lh(){
 	open -a "Safari" "http://localhost:$1"
 }
+
+# Power management; ie [sleepnow | displaysleepnow | lock | boot]
+# -a, -b, -c :: all, battery, charger
+alias pms="pmset" # [-a | -b | -c ]... (0 for sleep, displaysleep, disksleep is never)
 
 # Open applications.
 

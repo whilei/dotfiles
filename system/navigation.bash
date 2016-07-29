@@ -20,6 +20,7 @@ alias ..5="cd ../../../../../"
 # cd into dir and show contents
 cdl(){ command cd "$1"; $listy; }
 ..l(){ command cd ..; $listy; }
+alias cl="cdl"
 
 # Directory listing -- tree, if available.
 if [[ "$(type -P tree)" ]]; then
