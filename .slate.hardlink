@@ -30,6 +30,7 @@ alias showHintsLeftHand hint QAWSZXEDC
 
 alias fullsize      resize  ${ssx};${ssy}                      ${sox};${soy}
 alias full          move    ${sox};${soy}                  ${ssx};${ssy}
+alias wtfull    move    ${sox}+20;${soy}    ${ssx}-35;${ssy}-5
 alias topleft       move    ${sox};${soy}                  ${ssx}/2;${ssy}/2
 alias topright      move    ${sox}+${ssx}/2;${soy}    ${ssx}/2;${ssy}/2
 alias bottomhalf    move    ${sox};${soy}+${ssy}/2    ${ssx};${ssy}/2
@@ -48,7 +49,7 @@ alias lap-topleft    ${topleft}    ${laptop}
 alias lap-topright   ${topright}   ${laptop}
 alias lap-bottomhalf ${bottomhalf} ${laptop}
 
-alias ext-full       ${full}       ${external}
+alias ext-full       ${wtfull}       ${external}
 alias ext-topleft    ${topleft}    ${external}
 alias ext-topright   ${topright}   ${external}
 alias ext-bottomhalf ${bottomhalf} ${external}
@@ -73,6 +74,7 @@ bind l:${mash} ${righthalf}
 ### Top shelf, bound top shelf.
 
 bind f:${mash}     ${full}
+bind y:${mash}     ${wtfull}
 bind q:${mash}     ${topleftthird}
 bind w:${mash}     ${topleft}
 bind e:${mash}     ${toplefttwothird}
