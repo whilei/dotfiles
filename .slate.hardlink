@@ -109,7 +109,7 @@ bind e:${shiftcontrol} focus 'Eclipse'
 
 bind o:${shiftcontrol} focus 'Postman'
 
-bind z:${shiftcontrol} focus 'Terminal'
+bind z:${shiftcontrol} focus 'iTerm2'
 bind h:${shiftcontrol} focus 'HyperTerm'
 
 bind a:${shiftcontrol} focus 'Safari'

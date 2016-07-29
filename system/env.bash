@@ -4,7 +4,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 
-
+export RBGOGS_PATH=/Users/ia/rotblauer/rbgogs
 
 
 # set date string

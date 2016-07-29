@@ -61,9 +61,27 @@ GIT_PS1_SHOWUPSTREAM="auto,verbose"
 #     svn           always compare HEAD to your SVN upstream
 
 
+## Set color if sshing..... or?
+# if [[ -n $SSH_CLIENT ]]; then
+
+# 	# COLOR_SSHER=color_white_on_red
+#   # case $HOSTNAME in
+#   #   # *.example.com) prompt_user_host_color='1;35';; # magenta on example.com
+#   #   # *) prompt_user_host_color='1;33';; # yellow elsewhere
+#   # esac
+# # else
+# # 	COLOR_SSHER=
+#   # unset prompt_user_host_color; # omitted on the local machine
+# fi
+# if [[ -n $prompt_user_host_color ]]; then
+#   # PS1='\[\e['$prompt_user_host_color'm\]\u@\h'
+# else
+#   # PS1=
+# fi
+# PS1+='\[\e[1;34m\] \w\[\e[1;31m\]$(__git_ps1)\[\e[1;0;37m\] \$\[\e[0m\] '
 
 
-PS1=${COLOR_PURPLE}'\u@\h'${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' \$ '
+# PS1=${COLOR_PURPLE}'\u@\h'${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' \$ '
 
 
 prompt_on() {
