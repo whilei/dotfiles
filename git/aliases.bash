@@ -20,6 +20,14 @@ alias gpg="git push github"
 alias gpb="git push bitbucket"
 alias gpa="git push gogs"
 alias gph="git push heroku"
+alias gpall="git remote | xargs -L1 git push --all" # push to all remotes for a given repo
+gpallr() {
+	branch=$1
+	for r in $(git remote);
+	do
+		git push $r $branch;
+	done
+}
 
 alias pull="git pull"
 
@@ -28,9 +36,9 @@ alias gf="git fetch"
 # Checkout branch.
 alias gco="git checkout"
 # Checkout new branch.
-alias gcb="git checkout -b"
+alias gcb="git checkout -b" # note .gitconfig has git go, which is like a gnarly version of this
 # Delete branch.
-alias gbd="git branch -D" # definitely delete. no fucking around. 
+alias gbd="git branch -D" # definitely delete. no fucking around.
 alias gbl="git branch --list"
 
 # Merge, rebase.
