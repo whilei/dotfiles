@@ -2,7 +2,7 @@
 
 # run it from ~/.dotfiles/
 
-readempath="$HOME"/.dotfiles/README.md
+readempath="$HOME"/.dotfiles/TOC.md
 
 echo "" > $readempath # overwrites the previous README
 
