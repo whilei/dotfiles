@@ -6,10 +6,10 @@ export EDITOR="$VISUAL"
 # the emacs train...
 # start a daemon on launchctrl for fast startup??...
 # per HN folk @ ycombi
-# emacs -nw --daemon
+# emacs -nw --daemon # (no-window-system)
 # then,
 # emacsclient -new
-alias e="emacsclient -t" # requires $1
+alias e="emacsclient -t" # (requires $1)
 # alias vim="e"
 # alias vi="e"
 # alias v="e"
@@ -17,6 +17,7 @@ alias e="emacsclient -t" # requires $1
 # useless for a guy like me
 # alias emacsbare="emacs -new -Q --eval \"(load-them 'monokai')\""
 alias eb="emacsbare"
+alias starte="emacs -nw --daemon > ~/logs/emacs.log &"
 
 export RBGOGS_PATH=/Users/ia/rotblauer/rbgogs
 
