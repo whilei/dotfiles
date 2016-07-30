@@ -1,9 +1,9 @@
 search(){
-	local pattern=$1
-	local dir=$2
-	if [[ ! $# -eq 2 ]]; then 
+	local pattern=$2
+	local dir=$1
+	if [[ ! $# -eq 2 ]]; then
 		e_warning "Usage: search <pattern> <dir>"
-	else 
+	else
 		grep -R $pattern $dir
 	fi
 }
