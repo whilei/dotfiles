@@ -9,5 +9,5 @@ I'm all about
 - archiving bash one-liners (so even if I don't remember the function off the
   top of my head, at least I know where I might look before googling again)
 - inpenetrable slang, shorthand, personal preferences, opinions, errors,
-  gotcha, comments, and all the other things from actually using the shit out
+  gotcha, comments, and all the other things from just using the shit out
   of these fuckers
