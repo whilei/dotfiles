@@ -36,3 +36,16 @@ alias dbx="cd ~/Dropbox; $listy;"
 alias sbx="cd ~/sandbox; $listy;"
 alias desk="cd ~/Desktop; $listy;"
 
+# Read filenames containing $2 along with line of matched occurence
+fff() {
+	find $1 -type f -print0 | xargs grep "$2"
+}
+# Just filenames (no matching line)
+ffn() {
+	find $1 -type f -print0 | xargs grep -l "$2"
+}
+
+# Fasd.
+# open fuzzy and popular file with vim
+alias fv="f -e vim"
+

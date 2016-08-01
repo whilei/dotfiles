@@ -47,6 +47,7 @@ values."
      theming
      typescript
      unimpaired
+     uniquify
      version-control
      yaml
      )
@@ -249,6 +250,7 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup 'changed
+   uniquify-buffer-name-style 'reverse
    ))
 
 (defun dotspacemacs/user-init ()

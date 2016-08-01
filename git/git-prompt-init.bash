@@ -1,4 +1,4 @@
-# Set bash prompt with git status.
+# Set bash ps1 with git status.
 color_red='\[\e[31m\]'
 color_blue='\[\e[34m\]'
 color_reset='\[\e[0m\]'
@@ -30,7 +30,7 @@ COLOR_LIGHT_GRAY='\e[0;37m'
 
 # COLOR_WHITE_ON_PURPLE='\[\e[37;35m\]'
 
-# git prompt settings from git-prompt
+# git ps1 settings from git-prompt
 # 'set to nonempty value to turn on'
 # In addition, if you set GIT_PS1_SHOWDIRTYSTATE to a nonempty value,
 # unstaged (*) and staged (+) changes will be shown next to the branch
@@ -61,33 +61,21 @@ GIT_PS1_SHOWUPSTREAM="auto,verbose"
 #     svn           always compare HEAD to your SVN upstream
 
 
-## Set color if sshing..... or?
-# if [[ -n $SSH_CLIENT ]]; then
-
-# 	# COLOR_SSHER=color_white_on_red
-#   # case $HOSTNAME in
-#   #   # *.example.com) prompt_user_host_color='1;35';; # magenta on example.com
-#   #   # *) prompt_user_host_color='1;33';; # yellow elsewhere
-#   # esac
-# # else
-# # 	COLOR_SSHER=
-#   # unset prompt_user_host_color; # omitted on the local machine
-# fi
-# if [[ -n $prompt_user_host_color ]]; then
-#   # PS1='\[\e['$prompt_user_host_color'm\]\u@\h'
-# else
-#   # PS1=
-# fi
-# PS1+='\[\e[1;34m\] \w\[\e[1;31m\]$(__git_ps1)\[\e[1;0;37m\] \$\[\e[0m\] '
-
 
 # PS1=${COLOR_PURPLE}'\u@\h'${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' \$ '
 
-
-prompt_on() {
+ps1_lg() {
 	PS1=${COLOR_PURPLE}'\u@\h'${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' \$ '
 }
-prompt_off() {
+# For when I'm using a small terminal and a long $CWD.
+# Just set the input on a newline beneath CWD, GITINFO, ie
+# $
+ps1_dlg(){
+	PS1=${COLOR_PURPLE}'\u@\h'${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n\$ '
+}
+ps1_sm() {
     PS1='\u@\h:\w \$ '
 }
-prompt_on
+# Turn it on.
+ps1_lg
+
