@@ -69,8 +69,10 @@ ps1_lg() {
 }
 # For when I'm using a small terminal and a long $CWD.
 # Just set the input on a newline beneath CWD, GITINFO, ie
-# $
-ps1_dlg(){
+# --------------------
+# ia@mh cwd `git status`
+# $ echo
+ps1_llg(){
 	PS1=${COLOR_PURPLE}'\u@\h'${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n\$ '
 }
 ps1_sm() {
