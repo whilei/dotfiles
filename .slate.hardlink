@@ -107,11 +107,12 @@ bind u:${hyper} throw ${external} ${fullsize}
 bind s:${shiftcontrol} focus 'Emacs'
 bind w:${shiftcontrol} focus 'Atom'
 bind x:${shiftcontrol} focus 'Xcode'
-bind e:${shiftcontrol} focus 'Eclipse'
+# bind e:${shiftcontrol} focus 'Eclipse'
 
 bind o:${shiftcontrol} focus 'Postman'
 
 bind z:${shiftcontrol} focus 'iTerm2'
+bind t:${shiftcontrol} focus 'Terminal'
 bind h:${shiftcontrol} focus 'HyperTerm'
 
 bind a:${shiftcontrol} focus 'Safari'
@@ -124,11 +125,11 @@ bind f:${shiftcontrol} focus 'Finder'
 
 bind m:${shiftcontrol} focus 'Messages'
 bind l:${shiftcontrol} focus 'Sublime Text'
+bind n:${shiftcontrol} focus 'iTunes'
 
 bind v:${shiftcontrol} focus 'VLC'
-bind p:${shiftcontrol} focus 'Spotify'
-bind t:${shiftcontrol} focus 'iTunes'
-
+bind p:${shiftcontrol} focus 'Photos'
+bind e:${shiftcontrol} focus 'Preview'
 
 
 ## Layout binders
