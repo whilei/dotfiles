@@ -18,10 +18,10 @@ do
         b)
             bflag=1
             bval="$OPTARG"
-            echo "Will create PDF bundle named $bval"
+            echo "Will create PDF bundle at $bval"
             ;;
         \?)
-            echo "Invalid option.\nUsage: %s: [-b] name-of-pdf-bundle.pdf\n" $0
+            echo "Invalid option.\nUsage: %s: [-b] relative/name/of/pdf-bundle.pdf\n" $0
             exit 1
             ;;
         :)
@@ -33,25 +33,7 @@ done
 
 # Shift global var OPTIND to reset ARG count after possible option args.
 # http://stackoverflow.com/questions/21753340/script-with-non-option-and-option-arguments
-			shift $((OPTIND-1))
-
-# EXAMPLE
-# http://wiki.bash-hackers.org/howto/getopts_tutorial
-# while getopts ":a:" opt; do
-#   case $opt in
-#     a)
-#       echo "-a was triggered, Parameter: $OPTARG" >&2
-#       ;;
-#     \?)
-#       echo "Invalid option: -$OPTARG" >&2
-#       exit 1
-#       ;;
-#     :)
-#       echo "Option -$OPTARG requires an argument." >&2
-#       exit 1
-#       ;;
-#   esac
-# done
+shift $((OPTIND-1))
 
 # if [ ! -z "$bflag" ]; then
 #     printf 'Option -b "%s" specified\n' "$bval"
@@ -62,17 +44,17 @@ done
 # $ dp_pages honey_fat pdf $HONEY_FAT_ID
 drive pull --export "$2" --exports-dir ~/gdrive/"$1"/"$2"s/ --same-exports-dir --id "$3"
 
-# Remove anything in the gdrive directory names Pages* so syncing works as expected
-# because sometimes folder is called Pages v2, Pages-v3,...
-echo "Removing ~/gdrive/Pages..."
-rm -rf ~/gdrive/Pages*
-
 # if -p flag specified, create unified pdf draft
 if [ ! -z "$bflag" ]; then
     # printf "Option -a specified\n
     # "
-    echo "Combining pdfs into pdf_drafts/$bval"
-    pdftk "$1"/pdfs/*.pdf cat output pdf_drafts/"$bval"
+    echo "Combining pdfs into $bval"
+    pdftk "$1"/pdfs/*.pdf cat output "$bval"
 fi
+
+# Remove anything in the gdrive directory names Pages* so syncing works as expected
+# because sometimes folder is called Pages v2, Pages-v3,...
+echo "Removing ~/gdrive/Pages..."
+rm -rf ~/gdrive/Pages*
 
 OPTIND=1 # reset global where-argument-count-starts variable
