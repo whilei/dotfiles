@@ -15,12 +15,12 @@ bval=
 while getopts ':b:' pdf_bundle
 do
     case $pdf_bundle in
-        b)    
+        b)
             bflag=1
             bval="$OPTARG"
             echo "Will create PDF bundle named $bval"
             ;;
-        \?)   
+        \?)
             echo "Invalid option.\nUsage: %s: [-b] name-of-pdf-bundle.pdf\n" $0
             exit 1
             ;;
@@ -33,7 +33,7 @@ done
 
 # Shift global var OPTIND to reset ARG count after possible option args.
 # http://stackoverflow.com/questions/21753340/script-with-non-option-and-option-arguments
-shift $((OPTIND-1))
+			shift $((OPTIND-1))
 
 # EXAMPLE
 # http://wiki.bash-hackers.org/howto/getopts_tutorial
@@ -74,3 +74,5 @@ if [ ! -z "$bflag" ]; then
     echo "Combining pdfs into pdf_drafts/$bval"
     pdftk "$1"/pdfs/*.pdf cat output pdf_drafts/"$bval"
 fi
+
+OPTIND=1 # reset global where-argument-count-starts variable
