@@ -35,11 +35,9 @@ done
 # http://stackoverflow.com/questions/21753340/script-with-non-option-and-option-arguments
 shift $((OPTIND-1))
 
-# if [ ! -z "$bflag" ]; then
-#     printf 'Option -b "%s" specified\n' "$bval"
-# fi
-# shift $(($OPTIND - 1))
-# printf "Remaining arguments are: %s\n" "$*"
+# Remove existing pdfs from specified folder (this avoids have-been-deleted-or-renamed documents persisting)
+echo "Removing existing $2s from $1/$2s"
+rm -rf "$1"/"$2"s/*
 
 # $ dp_pages honey_fat pdf $HONEY_FAT_ID
 drive pull --export "$2" --exports-dir ~/gdrive/"$1"/"$2"s/ --same-exports-dir --id "$3"
@@ -54,7 +52,7 @@ fi
 
 # Remove anything in the gdrive directory names Pages* so syncing works as expected
 # because sometimes folder is called Pages v2, Pages-v3,...
-echo "Removing ~/gdrive/Pages..."
+echo "Removing ~/gdrive/Pages*..."
 rm -rf ~/gdrive/Pages*
 
 OPTIND=1 # reset global where-argument-count-starts variable
