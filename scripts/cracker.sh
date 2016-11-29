@@ -6,7 +6,7 @@ airport -s # where `airport` is an alias for the longass /System/Lib/208.28/bin/
 
 # -I is monitoring mode
 # -U is packet-buffered
-# -i is to specify interface
+# -i is to specify interface (see `$ ifconfig`)
 # -vvv is very, very verbose
 # -w is writefile
 # Note that you can check multiple hosts with `($BSSID1 or $BSSID2)` -- see tcpdump.org/tcpdump_man.html
