@@ -7,4 +7,8 @@
 drive push PAGES
 # will prompt after resolve
 
-yp PAGES/ freya:~/ze-pub/tree_of_miracles/draft2
+# draft1
+yp PAGES/ freya:~/ze-pub/tree_of_miracles/draft2 --exclude '.git'
+
+
+
