@@ -129,7 +129,7 @@ bind n:${shiftcontrol} focus 'iTunes'
 
 bind v:${shiftcontrol} focus 'VLC'
 bind p:${shiftcontrol} focus 'Photos'
-bind e:${shiftcontrol} focus 'Preview'
+bind r:${shiftcontrol} focus 'Preview'
 
 
 ## Layout binders
