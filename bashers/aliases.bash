@@ -5,7 +5,7 @@ killer(){
 	kill $(ps aux | grep "$1" | awk '{print $2}')
 }
 
-# Sorts dirs and/or files by size. 
+# Sorts dirs and/or files by size.
 alias sizes="du -d 1 -h | sort"
 
 # executable lives at $HOME/bin/syncthing
