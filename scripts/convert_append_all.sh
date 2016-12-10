@@ -27,10 +27,10 @@ mkdir -p "$out_dir"
 counter=1
 for file in ${arr[@]}; do
 	if [[ "$counter" -eq 1 ]]; then
-		echo "First file: $file, not appending anything."
+		e_warning "First file: $file, not appending anything."
 
 	elif [[ "$counter" -eq "$length" ]]; then
-		echo "Last file: $file, not appending anything."
+		e_warning "Last file: $file, not appending anything."
 
 	else
 		if ! (("$counter" % 2)); then
@@ -38,10 +38,10 @@ for file in ${arr[@]}; do
 		  arr_location=$(($counter-1))
 		  # Handle naming with placeholder 0's.
 		  if [[ "$counter" -lt 10 ]]; then
-		  	echo "convert +append ${arr[$arr_location]} ${arr[$counter]} $out_dir/0$counter.png"
+		  	e_success "convert +append ${arr[$arr_location]} ${arr[$counter]} $out_dir/0$counter.png"
 		  	convert +append "${arr[$arr_location]}" "${arr[$counter]}" "$out_dir/0$counter.png"
 		  else
-		  	echo "convert +append ${arr[$arr_location]} ${arr[$counter]} $out_dir/$counter.png"
+		  	e_success "convert +append ${arr[$arr_location]} ${arr[$counter]} $out_dir/$counter.png"
 		  	convert +append "${arr[$arr_location]}" "${arr[$counter]}" "$out_dir/$counter.png"
 		  fi
 		else
