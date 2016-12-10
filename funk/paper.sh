@@ -20,7 +20,7 @@
 
 
 ## note that in order for vim to make the directory if it doesn't exist requires some tinkering with .vimrc,
-# which seems to me like a cleaner way to do it than handle a `mkdir -p` here, because the dir needs to be 
+# which seems to me like a cleaner way to do it than handle a `mkdir -p` here, because the dir needs to be
 # written via buffer zone time thingey (because don't want to make a dir if not actually going to save the file)
 
 dadropbase="$HOME/Dropbox/paper"
