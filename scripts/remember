@@ -1,0 +1,1 @@
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=drafts/draft1-lowres.pdf PAGES-prod-single/*.pdf
