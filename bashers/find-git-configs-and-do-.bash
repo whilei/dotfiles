@@ -4,6 +4,7 @@
 #   $ find_git_configs examples-dir echo
 #   $ find_git_configs examples-dir cat
 # 	$ find_git_configs examples-dir "sed -i.bak s/:3000//g"
+# 	$ find_git_configs examples-dir "sed -i.bak s/oldusername/newusername/g"
 
 find_git_configs() {
 	find $1 -path "*/.git/config" -exec $2 {} \;

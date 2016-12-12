@@ -9,5 +9,5 @@
 #      : remember "drive pull -export png -explicitly-export ..."
 
 remember() {
-	echo "$1" >> "$DOTS_PATH"/remember
+	echo "$1 # $2" >> "$DOTS_PATH"/remembered
 }

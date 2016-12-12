@@ -45,7 +45,7 @@ convert_append_all() {
 			  	e_success "convert +append ${arr[$arr_location]} ${arr[$counter]} $out_dir/$counter.png"
 			  	convert +append "${arr[$arr_location]}" "${arr[$counter]}" "$out_dir/$counter.png"
 			  fi
-			else
+			#else
 			# 	echo "$counter is odd"
 			fi
 		fi

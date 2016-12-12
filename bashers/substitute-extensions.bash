@@ -4,7 +4,7 @@
 # ie $ changeextension .text .sh
 
 # works in current directory
-subext(){
+rename_all(){
 	local from=$1
 	local to=$2
 	for file in *"$from"
