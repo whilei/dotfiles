@@ -43,7 +43,6 @@ values."
      sql
      evil-snipe
      (syntax-checking :variables syntax-checking-enable-by-default nil)
-     themes-megapack
      theming
      typescript
      unimpaired
@@ -285,7 +284,6 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (with-eval-after-load 'smartparens
     (show-smartparens-global-mode -1))
-  (dolist (e '(("tmpl" . web-mode))))
   (use-package editorconfig
     :config (editorconfig-mode 1))
   )
