@@ -10,4 +10,4 @@ alias dockapp="docker-compose run app" # + rake db:migrate/etc
 alias dockbuild="docker-compose build"
 alias dockup="docker-compose up"
 alias grm="go run main.go"
-alias gd_exp_pdf="drive pull --export pdf --exports-dir ~/gdrive/bbg_pdfs/ --same-exports-dir --id 0By_eWz3gwQwnQUNYVnlXOXhCNG8"
+alias drive_export_png="drive pull --export png --explicitly-export --exports-dir png_exports --same-exports-dir directory"
