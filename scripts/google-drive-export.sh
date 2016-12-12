@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# ANTIQUATED. From back when I wazn't using `drive` wholesomely.
+# Does very misguidedly specific stuff related to exporting
+# pdfs from Google Drawings.
 
 # USAGE:
 #   dp_pages [-b name-of-combo-pdf.pdf] honey_cook pdf $HONEY_COOK_ID
