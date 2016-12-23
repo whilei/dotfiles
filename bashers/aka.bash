@@ -11,3 +11,4 @@ alias dockbuild="docker-compose build"
 alias dockup="docker-compose up"
 alias grm="go run main.go"
 alias drive_export_png="drive pull --export png --explicitly-export --exports-dir png_exports --same-exports-dir directory"
+alias gogogs='./darwin.gitea web -c custom/conf/dev.app.ini'

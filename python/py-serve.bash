@@ -17,11 +17,15 @@
 
 # $ python -m SimpleHTTPServer 8080
 
-#!/bin/bash 
+#!/bin/bash
 
 # Python 2.x ->
 pyserv(){
-	python -m SimpleHTTPServer $1
+	if [[ $# -eq 0 ]]; then
+		echo "Use: pyserv [req:8000] [opt:path]"
+	else
+		python -m SimpleHTTPServer $1
+	fi
 }
 
 # Python 3.x ->
