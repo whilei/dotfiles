@@ -17,7 +17,7 @@ alias e="emacsclient -t" # (requires $1)
 # useless for a guy like me
 # alias emacsbare="emacs -new -Q --eval \"(load-them 'monokai')\""
 alias eb="emacsbare"
-alias starte="emacs -nw --daemon > ~/logs/emacs.log &"
+alias starte="emacs -nw --daemon > ~/logs/emacs.log 2>&1 &"
 
 export RBGOGS_PATH=/Users/ia/rotblauer/rbgogs
 

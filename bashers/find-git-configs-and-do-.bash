@@ -23,3 +23,8 @@ find_git_configs() {
 # /Users/ia/dev/CodeforBoston/bikeways4everybody/.git/config
 # /Users/ia/dev/CodeforBoston/bypath/.git/config
 # ...
+
+# don't work
+#git2whilei() {
+#	exec find $1 -path "*/.git/config" -exec "sed -i.bak s/irstacks/whilei/g" {} \;
+#}
