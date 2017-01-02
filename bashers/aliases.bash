@@ -32,4 +32,4 @@ alias dp="drive push -verbose"
 
 # because i'm going to mess this up
 alias catimg="imgcat"
-alias lsimg="imgls
+alias lsimg="imgls"
