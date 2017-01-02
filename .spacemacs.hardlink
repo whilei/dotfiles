@@ -1,7 +1,4 @@
-;; -*- mode: emacs-lisp -*-
-;; This file is loaded by Spacemacs at startup.
-;; It must be stored in your home directory.
-
+;; -*- mode: emacs-lisp -*- ;; This file is loaded by Spacemacs at startup. ;; It must be stored in your home directory.
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
@@ -23,30 +20,41 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     ;; ag
      auto-completion
      ;; better-defaults
      emoji
+     ;; emoji-cheat-sheet-plus
      emacs-lisp
+     eyebrowse
+     ;; evil-surround
      git
      go
      html
      javascript
+     latex
      markdown
      org
+     pandoc
+     python
+     (ranger :variables
+             ranger-show-preview t)
      ruby
      ruby-on-rails
+     semantic
      (shell :variables
+            shell-default-shell 'multi-term
             shell-default-height 30
-            shell-default-position 'bottom)
+            shell-default-position 'bottom
+            shell-default-term-shell "/usr/local/bin/fish")
      shell-scripts
      smex
      sql
      evil-snipe
-     (syntax-checking :variables syntax-checking-enable-by-default nil)
-     theming
+     (syntax-checking :variables syntax-checking-enable-by-default t)
+     themes-megapack
      typescript
      unimpaired
-     uniquify
      version-control
      yaml
      )
@@ -112,14 +120,12 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai
-                         spacemacs-light
-                         spacemacs-dark
-                         solarized-light
-                         solarized-dark
-                         leuven
+   dotspacemacs-themes '(base16-github
+                         base16-google-light
+                         base16-google-dark
                          monokai
-                         zenburn)
+                         cyberpunk
+                         inkpot)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -220,11 +226,11 @@ values."
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters the
    ;; point when it reaches the top or bottom of the screen. (default t)
-   dotspacemacs-smooth-scrolling t
+   dotspacemacs-smooth-scrolling nil
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode t
@@ -249,29 +255,55 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup 'changed
-   uniquify-buffer-name-style 'reverse
    ))
 
 (defun dotspacemacs/user-init ()
   (setq-default
 
+   ;; Center point mode.
+   center-line 1
+
+    ;; Evil matchit mode. Match tags with `%`.
+   global-evil-matchit-mode 1
+
+    ;; Evil surround.
+    global-evil-surround-mode 1
+
+    ;; Go mode.
+    go-tab-width 4
+
+    ;; Indent guide
+    indent-guide-mode t
+
+    ;; JS indents.
+    js2-basic-offset 2 ;; JS
+    js-indent-level 2 ;; JSON
+
+    ;; Golden ratio mode.
+    golden-ratio-mode t
+
+    ;; Pandoc binary where it is.
+    pandoc-binary "/usr/local/bin/pandoc"
+
   	;; Smartparens
   	sp-highlight-pair-overlay nil
   	sp-highlight-wrap-overlay nil
   	sp-highlight-wrap-tag-overlay nil
-  	
-  	;; Whitespace mode
+
+    ;; Whitespace mode
+    ;; direct from TheBB
   	whitespace-style '(face tab tab-mark newline-mark)
   	whitespace-display-mappings
   	'((newline-mark 10 [172 10])
   	  (tab-mark 9 [9655 9]))
-  	
+
   	;; Flycheck
   	flycheck-check-sytax-automatically '(save mode-enabled)
 
   	;; Web
   	web-mode-markup-indent-offset 2
-  	web-mode-css-indent-offset 2
+    web-mode-css-indent-offset 2
+
   )
   )
 
@@ -284,9 +316,38 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (with-eval-after-load 'smartparens
     (show-smartparens-global-mode -1))
+  ;; (dolist (e '(("tmpl" . web-mode))))
+  ;; (dolist (e '(("\\.tmpl\\" . web-mode))))
+  ;; (addto-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
   (use-package editorconfig
     :config (editorconfig-mode 1))
-  )
+  ;; try to fix golang color syntax...
+  ;; https://github.com/syl20bnr/spacemacs/issues/7393
+  ;; (fset 'xterm-color-unfontify-region 'font-lock-default-unfontify-region)
+  (add-hook 'markdown-mode-hook 'pandoc-mode)
+  (add-hook 'pandoc-mode-hook 'pandoc-load-default-settings)
+  (add-hook 'web-mode-hook 'evil-matchit-mode)
+  (add-hook 'after-make-frame-functions
+            (lambda (frame)
+              (let ((mode (if (display-graphic-p frame) 'light 'dark)))
+                (set-frame-parameter frame 'background-mode mode)
+                (set-terminal-parameter frame 'background-mode mode))
+                          (enable-theme 'monokai)))
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(paradox-github-token t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background nil))))
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))

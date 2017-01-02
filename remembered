@@ -1,3 +1,5 @@
 gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=drafts/draft1-lowres.pdf PAGES-prod-single/*.pdf
 pdftk *.pdf cat output out.pdf
 find_git_configs ./ sed # -i.back
+identify IMG_2004.jpg  # 
+ipconfig getifaddr en1 # 
