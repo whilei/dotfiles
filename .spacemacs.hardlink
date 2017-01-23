@@ -15,6 +15,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     swift
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -26,7 +27,7 @@ values."
      emoji
      ;; emoji-cheat-sheet-plus
      emacs-lisp
-     eyebrowse
+     ;; eyebrowse
      ;; evil-surround
      git
      go
@@ -35,6 +36,9 @@ values."
      latex
      markdown
      org
+     (org :variables
+          org-enable-reveal-js-support t
+          )
      pandoc
      python
      (ranger :variables
@@ -54,7 +58,7 @@ values."
      (syntax-checking :variables syntax-checking-enable-by-default t)
      themes-megapack
      typescript
-     unimpaired
+     ;; unimpaired
      version-control
      yaml
      )
@@ -64,7 +68,8 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(base16-theme
-     editorconfig)
+     editorconfig
+     )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
    '(ido)
@@ -120,8 +125,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(base16-github
-                         base16-google-light
+   dotspacemacs-themes '(base16-google-light
+                         base16-github
                          base16-google-dark
                          monokai
                          cyberpunk
@@ -260,11 +265,11 @@ values."
 (defun dotspacemacs/user-init ()
   (setq-default
 
-   ;; Center point mode.
-   center-line 1
+    ;; Center point mode.
+    center-line 1
 
     ;; Evil matchit mode. Match tags with `%`.
-   global-evil-matchit-mode 1
+    global-evil-matchit-mode 1
 
     ;; Evil surround.
     global-evil-surround-mode 1
@@ -282,6 +287,9 @@ values."
     ;; Golden ratio mode.
     golden-ratio-mode t
 
+    ;; enable reveal
+    org-enable-reveal-js t
+
     ;; Pandoc binary where it is.
     pandoc-binary "/usr/local/bin/pandoc"
 
@@ -292,7 +300,7 @@ values."
 
     ;; Whitespace mode
     ;; direct from TheBB
-  	whitespace-style '(face tab tab-mark newline-mark)
+    whitespace-style '(face tab tab-mark newline-mark)
   	whitespace-display-mappings
   	'((newline-mark 10 [172 10])
   	  (tab-mark 9 [9655 9]))
@@ -316,9 +324,9 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (with-eval-after-load 'smartparens
     (show-smartparens-global-mode -1))
-  ;; (dolist (e '(("tmpl" . web-mode))))
-  ;; (dolist (e '(("\\.tmpl\\" . web-mode))))
-  ;; (addto-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
+    (dolist (e '(("tmpl" . web-mode))))
+    (dolist (e '(("\\.tmpl\\" . web-mode))))
+    (addto-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
   (use-package editorconfig
     :config (editorconfig-mode 1))
   ;; try to fix golang color syntax...
@@ -332,7 +340,32 @@ you should place your code here."
               (let ((mode (if (display-graphic-p frame) 'light 'dark)))
                 (set-frame-parameter frame 'background-mode mode)
                 (set-terminal-parameter frame 'background-mode mode))
-                          (enable-theme 'monokai)))
+
+  ;; from Jay
+  (with-eval-after-load 'org
+    (setq org-reveal-title-slide "")
+    ;; Place all org mode related items in here! (see FAQ for why)
+    ;; ....
+    ;; from: http://orgmode.org/worg/org-contrib/babel/languages/ob-doc-clojure.html
+    (require 'ob-clojure)
+    (setq org-babel-clojure-backend 'cider)
+    (require 'cider)
+    ;; These languages are available to execute org-mode code blocks.
+    ;; Emacs Lisp is on by default.
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '((sh . t)
+       (racket . t)))
+
+    ;; The following lines were added to fix racket execution in babel.
+    ;; See https://github.com/greghendershott/racket-mode#configure
+    ;; (setq racket-racket-program "/Applications/Racket v6.2.1/bin/racket")
+    ;; (setq racket-raco-program "/Applications/Racket v6.2.1/bin/raco")
+
+    ;; (setq org-reveal-title-slide "<h1 class='title'>%t</h1><h2 class='author'>%a</h2><h2 style='text-transform: lowercase'>&#64;webappzero</h2>")
+
+    (setq org-reveal-title-slide "")
+    (require 'org-drill))                         (enable-theme 'monokai)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
