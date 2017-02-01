@@ -1,0 +1,1 @@
+alias sf="ssh freya"
