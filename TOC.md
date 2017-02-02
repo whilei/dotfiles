@@ -1,78 +1,66 @@
 
-
 ## Cloc
-> `cloc . >> /Users/ia/.dotfiles/README.md`
+> `cloc . >> /Users/ia/.dotfiles/TOC.md`
 
 ```
-     100 files     104 text files.
-classified 104 filesDuplicate file check 104 files (100 known unique)Unique:      100 files                                               104 unique files.                              
-Counting:  100      24 files ignored.
+      93 text files.
+classified 93 files      92 unique files.                              
+      22 files ignored.
 
-http://cloc.sourceforge.net v 1.64  T=1.23 s (67.2 files/s, 5669.7 lines/s)
+http://cloc.sourceforge.net v 1.64  T=0.98 s (74.8 files/s, 6596.7 lines/s)
 --------------------------------------------------------------------------------
 Language                      files          blank        comment           code
 --------------------------------------------------------------------------------
-Bourne Again Shell               46            382            681           3166
-Bourne Shell                     27            526            778            774
-Ruby                              6             79             57            202
-JSON                              2              2              0            167
+Bourne Again Shell               47            400            732           3232
+Bourne Shell                     23            460            675            585
+JSON                              1              2              0            166
 Java                              1             53              2             56
 Javascript                        1             12             28             37
 --------------------------------------------------------------------------------
-SUM:                             83           1054           1546           4402
+SUM:                             73            927           1437           4076
 --------------------------------------------------------------------------------
 ```
 
 ## Table of contents
-> `tree >> /Users/ia/.dotfiles/README.md`
+> `tree >> /Users/ia/.dotfiles/TOC.md`
 
 ```
 .
 ├── README.md
+├── TOC.md
 ├── bashers
-│   ├── aka-func.bash
-│   ├── aka-meta.bash
+│   ├── 10-random-alphanum.bash
 │   ├── aka.bash
 │   ├── aliases.bash
+│   ├── bash-utils.bash
+│   ├── curl.bash
 │   ├── delete-empty-dirs.bash
 │   ├── distinct-file-types.bash
-│   ├── each-dir.sh
-│   ├── edit-then-source.bash
-│   ├── isip.bash
-│   ├── last-modified-dir.bash
-│   ├── last-modified.sh
-│   ├── last-screen-shot.bash
-│   ├── print-empty-dirs.bash.zsh
-│   ├── save-command.bash
-│   ├── search-in-files.bash
-│   ├── sort-by-size.bash
+│   ├── find-git-configs-and-do-.bash
+│   ├── last-modified.bash
+│   ├── list-dir-contents-without-cd.bash
+│   ├── print-empty-dirs.bash
+│   ├── sort-downloads.bash
 │   └── substitute-extensions.bash
-├── freya
-│   └── system
-│       ├── aliases.zsh
-│       ├── env.zsh
-│       └── navigation.zsh
 ├── funk
+│   ├── README.md
 │   ├── aliases.bash
+│   ├── alot.bash
 │   ├── dev-whiteboard.bash
-│   ├── i-changed-my-git-username.bash
+│   ├── housekeep.sh
 │   ├── just.bash
-│   ├── mirror-mirror.bash
-│   ├── pandocdo.sh
 │   ├── paper.sh
 │   ├── paulmiller.bash
-│   ├── poop-logger.bash
-│   ├── readem.sh
+│   ├── rememberer.bash
 │   ├── scrape-images.bash
 │   ├── scratchers.bash
-│   ├── screenshotter.sh
-│   ├── sms.bash
-│   └── video-to-gif.sh
+│   └── sms.bash
 ├── git
 │   ├── aliases.bash
 │   ├── git-completion.bash
 │   ├── git-prompt-init.bash
-│   └── git-prompt.bash
+│   ├── git-prompt.bash
+│   └── gitimg.bash
 ├── go
 │   └── env.bash
 ├── jlwarez
@@ -88,6 +76,8 @@ SUM:                             83           1054           1546           4402
 │   ├── find\ and\ list\ subfolders.sh
 │   ├── mappability.sh
 │   └── touchSpecific.sh
+├── network
+│   └── aliases.bash
 ├── osx
 │   ├── aliases.bash
 │   ├── set-defaults.sh
@@ -101,89 +91,94 @@ SUM:                             83           1054           1546           4402
 │   ├── checkups.bash
 │   ├── contacts.sh
 │   ├── env.bash
-│   └── us-list.json
+│   ├── github.bash
+│   └── twitter.bash
 ├── python
 │   ├── env.bash
 │   └── py-serve.bash
+├── remembered
 ├── ruby
 │   ├── aliases.bash
 │   └── env.bash
+├── scripts
+│   ├── convert_append_all.bash
+│   ├── cracker.sh
+│   ├── dreamhost_python_setup.sh
+│   ├── emacs.daemon.sh
+│   ├── every-other-file.sh
+│   ├── google-drive-export.sh
+│   ├── local.macspoof.plist
+│   ├── readem.sh
+│   ├── screenshotter.sh
+│   └── shit-i-changed-my-github-username.sh
+├── sedawk
+│   └── aliases.bash
 ├── system
 │   ├── aliases.bash
-│   ├── bash-utils.bash
 │   ├── env.bash
-│   ├── housekeep.sh
 │   ├── navigation.bash
 │   ├── paths.bash
-│   ├── postgres.bash
-│   ├── sort-downloads.bash
-│   └── tophify.bash
-├── taiga
-│   ├── LICENSE
-│   ├── README.md
-│   ├── aliases.bash
-│   ├── api.rb
-│   ├── auth.sh
-│   ├── interface.rb
-│   ├── scratchers
-│   │   ├── list-userstories.rb
-│   │   ├── list-userstories.sh
-│   │   ├── rb-test-auth.rb
-│   │   ├── resolve-project.sh
-│   │   ├── resolve-task.sh
-│   │   ├── resolve-userstory.sh
-│   │   ├── ruby-options-parse-test.rb
-│   │   └── taiga_import_story.sh
-│   └── taiga-rb.rb
-├── vim
-│   └── env.bash
-└── whiteboard
-    ├── stuff.md
-    ├── tree-help.md
+│   └── postgres.bash
+└── vim
+    ├── env.bash
     └── vi-commands-basic.txt
 
-17 directories, 96 files
+15 directories, 81 files
 ```
 
 ## ... and the 5 most recently modified
-> gfind . -not -path "*.git*" -type f -printf "%-.22T+ %M %n %-8u %-8g %8s %Tx %.8TX %p\n" | sort | cut -f 2- -d ' ' | tail -5	>> /Users/ia/.dotfiles/README.md
+> gfind . -not -path "*.git*" -type f -printf "%-.22T+ %M %n %-8u %-8g %8s %Tx %.8TX %p\n" | sort | cut -f 2- -d ' ' | tail -5	>> /Users/ia/.dotfiles/TOC.md
 
 ```
--rwxr-xr-x 1 ia       staff         756 07/22/2016 19:24:51 ./system/sort-downloads.bash
--rwxr-xr-x 1 ia       staff        1319 07/22/2016 19:24:51 ./system/bash-utils.bash
--rwxr-xr-x 1 ia       staff        1667 07/22/2016 19:24:51 ./system/navigation.bash
--rwxr-xr-x 1 ia       staff        1664 07/22/2016 19:29:31 ./funk/readem.sh
--rw-r--r-- 1 ia       staff        5332 07/22/2016 19:29:38 ./README.md
+-rw-r--r-- 1 ia       staff         154 02/02/2017 13:59:27 ./private/checkups.bash
+-rwxr-xr-x 1 ia       staff         394 02/02/2017 14:02:23 ./funk/paper.sh
+-rw-r--r-- 1 ia       staff        1414 02/02/2017 14:02:51 ./funk/paulmiller.bash
+-rwxr-xr-x 1 ia       staff        1548 02/02/2017 14:05:14 ./scripts/readem.sh
+-rw-r--r-- 1 ia       staff        4490 02/02/2017 14:05:34 ./TOC.md
 ```
 
 ## Brewed dependencies
 > `$ brew leaves >> README.md `
 
 ```
+aircrack-ng
+app-engine-go-64
+bash
+bash-completion
 cloc
 coreutils
+crunch
+dos2unix
+d12frosted/emacs-plus/emacs-plus
+exiftool
+fasd
 ffmpeg
 findutils
+fish
+gcc
 ghostscript
-go
+tcnksm/ghr/ghr
+gist
+git-lfs
+goaccess
 graphicsmagick
 grc
 heroku
 htop-osx
-imagemagick
+httpie
+hub
 imagesnap
-isl
 jbig2dec
 jq
+staticfloat/julia/julia
 libksba
-libmpc
 libvo-aacenc
 libyaml
 mysql
 ngrep
 nmap
 node
-pandoc
+homebrew/science/opencv
 phantomjs
 poppler
 postgis
@@ -191,11 +186,18 @@ pyenv-virtualenv
 pyenv-virtualenvwrapper
 python
 python3
+reaver
+redis
 rename
+shellcheck
 spark
+spoof-mac
+the_silver_searcher
 tmux
 tree
 unoconv
+watch
+watson
 wdiff
 wget
 homebrew/dupes/zlib
@@ -214,9 +216,10 @@ activemodel (4.2.5, 4.2.2)
 activerecord (4.2.5, 4.2.2)
 activeresource (4.0.0)
 activesupport (4.2.5, 4.2.2)
-addressable (2.4.0)
+addressable (2.5.0, 2.4.0)
 ahoy_matey (1.4.0)
 arel (6.0.3)
+ast (2.3.0)
 autoprefixer-rails (6.3.6.1)
 backports (3.6.8)
 bcrypt (3.1.11, 3.1.10)
@@ -227,11 +230,13 @@ bootstrap (4.0.0.alpha3)
 bootstrap-sass (3.3.6, 3.2.0.0)
 bower-rails (0.10.0)
 browser (2.1.0)
+buftok (0.2.0)
 builder (3.2.2)
 bundler (1.11.2)
 byebug (9.0.5, 9.0.4, 8.2.5, 8.2.2, 8.2.1)
 capybara (2.7.1)
 chartkick (1.5.2)
+chronic (0.10.2)
 chunky_png (1.3.5)
 cliver (0.3.2)
 coderay (1.1.1, 1.1.0)
@@ -245,26 +250,38 @@ compass-import-once (1.0.5)
 concurrent-ruby (1.0.2, 1.0.0)
 d3-rails (3.5.16)
 debug_inspector (0.0.2)
+descendants_tracker (0.0.4)
 descriptive_statistics (2.4.0)
 devise (4.1.1)
+domain_name (0.5.20161129)
 em-websocket (0.5.1)
+equalizer (0.0.11)
 errbase (0.0.3)
 erubis (2.7.0)
 eventmachine (1.2.0.1)
 execjs (2.7.0, 2.6.0)
 faker (1.6.3)
+faraday (0.10.1, 0.9.2)
 ffi (1.9.10)
 font-awesome-rails (4.6.3.0)
 formatador (0.2.5)
 geocoder (1.3.4)
+geokit (1.10.0)
 gifme (0.0.8)
+github_api (0.14.5)
+github_cli (0.6.2)
 globalid (0.3.6)
 gon (6.0.1)
 groupdate (2.5.3)
 guard-compat (1.2.1)
 hash-deep-merge (0.1.1)
+hashie (3.4.6)
 highcharts-rails (4.2.5)
 hightop (0.1.4)
+htmlentities (4.3.4)
+http (2.1.0)
+http-cookie (1.0.3)
+http-form_data (1.0.1)
 http_parser.rb (0.6.0)
 i18n (0.7.0)
 io-console (0.4.3)
@@ -275,7 +292,9 @@ jekyll-sass-converter (1.3.0)
 jekyll-watch (1.3.0)
 jquery-rails (4.1.1, 4.1.0)
 json (1.8.3, 1.8.1)
+jwt (1.5.6)
 kramdown (1.9.0)
+launchy (2.4.3)
 lazy_high_charts (1.5.5)
 liquid (3.0.6)
 listen (3.0.5)
@@ -284,23 +303,34 @@ lumberjack (1.0.10)
 lunchy (0.10.4)
 mail (2.6.4, 2.6.3)
 materialize-sass (0.97.6)
+memoizable (0.4.2)
 mercenary (0.3.5)
 method_source (0.8.2)
-mime-types (2.99)
+mime (0.4.3)
+mime-types (3.1, 2.99)
 mime-types-data (3.2016.0521)
+mini_exiftool (2.8.0)
 mini_portile2 (2.1.0, 2.0.0)
 minitest (5.9.0, 5.8.4, 5.8.3)
 multi_json (1.12.1, 1.12.0, 1.11.2)
+multi_xml (0.6.0)
+multipart-post (2.0.0)
 mysql2 (0.4.4)
+naught (1.1.0)
 nenv (0.3.0)
-nokogiri (1.6.7.2, 1.6.7.1)
+nokogiri (1.6.8.1, 1.6.7.2, 1.6.7.1)
 notiffany (0.1.0)
+oauth (0.5.1)
+oauth2 (1.2.0)
 orm_adapter (0.5.0)
+parser (2.3.3.1)
 pg (0.18.4)
 pkg-config (1.1.7)
 poltergeist (1.9.0)
+powerpack (0.1.1)
 pry (0.10.3, 0.9.12.6)
 psych (2.0.8)
+public_suffix (2.0.5)
 rack (1.6.4)
 rack-attack (4.4.1)
 rack-cors (0.3.1)
@@ -317,6 +347,7 @@ rails_12factor (0.0.3)
 rails_serve_static_assets (0.0.5)
 rails_stdout_logging (0.0.5)
 railties (4.2.5, 4.2.2)
+rainbow (2.2.1)
 rainbowvis_rails (0.0.1)
 rake (11.2.2, 11.1.2, 10.5.0, 10.4.2)
 rb-fsevent (0.9.7, 0.9.6)
@@ -325,29 +356,41 @@ rdoc (4.2.2, 4.2.1, 4.2.0)
 referer-parser (0.3.0)
 request_store (1.3.1)
 responders (2.2.0)
+retryable (2.0.4)
 rouge (1.10.1)
+rubocop (0.45.0)
+ruby-progressbar (1.8.1)
 ruby_dep (1.3.1)
 safe_yaml (1.0.4)
 safely_block (0.1.1)
-sass (3.4.22, 3.4.21, 3.4.19)
+sass (3.4.23, 3.4.22, 3.4.21, 3.4.19)
 sass-rails (5.0.4)
 sdoc (0.4.1)
 seed_dump (3.2.4)
+sequel (4.0.0)
 shellany (0.0.1)
+simple_oauth (0.3.1)
 slop (3.6.0)
+spider (0.5.1)
 spring (1.7.1, 1.6.2)
 sprockets (3.6.0, 3.5.2)
 sprockets-rails (3.0.4, 3.0.1, 3.0.0)
 sqlite3 (1.3.11)
+t (3.1.0)
 table_print (1.5.6)
 thor (0.19.1)
 thread_safe (0.3.5)
 tilt (2.0.5, 2.0.4, 2.0.2)
 token_phrase (1.0.6)
 truncate_html (0.9.3)
+tty (0.0.11)
 turbolinks (2.5.3)
+twitter (6.0.0)
 tzinfo (1.2.2)
 uglifier (3.0.0, 2.7.2)
+unf (0.1.4)
+unf_ext (0.0.7.2)
+unicode-display_width (1.1.2)
 user_agent_parser (2.3.0)
 uuidtools (2.1.5)
 warden (1.2.6)
@@ -356,108 +399,841 @@ websocket-driver (0.6.3)
 websocket-extensions (0.1.2)
 xpath (2.0.0)
 yajl-ruby (1.1.0)
+zip (2.0.2)
 ```
 
 ## Go src packages
-> `pushd /Users/ia/gocode/src/; tree -L 3 >> /Users/ia/.dotfiles/README.md; popd;`
+> `pushd /Users/ia/gocode/src/; tree -L 3 >> /Users/ia/.dotfiles/TOC.md; popd;`
 
 ```
 .
+├── bitbucket.org
+│   └── liamstask
+│       └── go-imgur
+├── cloud.google.com
+│   └── go
+│       ├── AUTHORS
+│       ├── CONTRIBUTING.md
+│       ├── CONTRIBUTORS
+│       ├── LICENSE
+│       ├── README.md
+│       ├── appveyor.yml
+│       ├── authexample_test.go
+│       ├── bigquery
+│       ├── bigtable
+│       ├── civil
+│       ├── cloud.go
+│       ├── cmd
+│       ├── compute
+│       ├── container
+│       ├── datastore
+│       ├── debugger
+│       ├── errorreporting
+│       ├── errors
+│       ├── examples
+│       ├── iam
+│       ├── internal
+│       ├── key.json.enc
+│       ├── language
+│       ├── license_test.go
+│       ├── logging
+│       ├── longrunning
+│       ├── monitoring
+│       ├── old-news.md
+│       ├── pubsub
+│       ├── speech
+│       ├── storage
+│       ├── trace
+│       ├── translate
+│       └── vision
+├── code.gitea.io
+│   └── gitea
+│       ├── CHANGELOG.md
+│       ├── CONTRIBUTING.md
+│       ├── DCO
+│       ├── Dockerfile
+│       ├── Dockerfile.rpi
+│       ├── LICENSE
+│       ├── MAINTAINERS
+│       ├── Makefile
+│       ├── README.md
+│       ├── README_GITEA.md
+│       ├── README_ZH.md
+│       ├── cmd
+│       ├── conf
+│       ├── custom
+│       ├── darwin.gitea
+│       ├── data
+│       ├── docker
+│       ├── gogs
+│       ├── linux.gitea
+│       ├── main.go
+│       ├── models
+│       ├── modules
+│       ├── options
+│       ├── public
+│       ├── routers
+│       ├── scripts
+│       ├── templates
+│       └── vendor
 ├── github.com
+│   ├── BeepBoopHQ
+│   │   └── go-slackbot
+│   ├── BurntSushi
+│   │   └── toml
 │   ├── Massad
 │   │   └── gin-boilerplate
 │   ├── PuerkitoBio
 │   │   └── goquery
+│   ├── Sirupsen
+│   │   └── logrus
 │   ├── Unknwon
-│   │   └── cae
+│   │   ├── cae
+│   │   ├── com
+│   │   ├── i18n
+│   │   └── paginater
 │   ├── andybalholm
 │   │   └── cascadia
+│   ├── armon
+│   │   └── consul-api
+│   ├── aryann
+│   │   └── difflib
+│   ├── asim
+│   │   └── quadtree
+│   ├── benbjohnson
+│   │   └── ego
+│   ├── bmizerany
+│   │   └── assert
 │   ├── boj
 │   │   └── redistore
 │   ├── boltdb
-│   │   └── bolt
+│   │   ├── bolt
+│   │   └── boltd
+│   ├── bradfitz
+│   │   └── gomemcache
+│   ├── cenkalti
+│   │   └── backoff
+│   ├── certifi
+│   │   └── gocertifi
+│   ├── cheggaaa
+│   │   └── pb
+│   ├── chris-skud
+│   │   └── go-wit
+│   ├── codahale
+│   │   └── charlie
+│   ├── codegangsta
+│   │   ├── cli
+│   │   ├── envy
+│   │   ├── gin
+│   │   └── inject
+│   ├── coreos
+│   │   └── go-etcd
+│   ├── couchbase
+│   │   ├── gomemcached
+│   │   └── goutils
+│   ├── couchbaselabs
+│   │   └── go-couchbase
+│   ├── cpuguy83
+│   │   └── go-md2man
+│   ├── creack
+│   │   └── httpreq
+│   ├── cupcake
+│   │   └── rdb
 │   ├── daviddengcn
 │   │   └── go-colortext
 │   ├── ddo
 │   │   └── go-spin
+│   ├── deckarep
+│   │   └── gosx-notifier
+│   ├── deet
+│   │   └── simpleline
+│   ├── dghubble
+│   │   ├── go-twitter
+│   │   ├── oauth1
+│   │   └── sling
+│   ├── dgrijalva
+│   │   └── jwt-go
+│   ├── dustin
+│   │   └── go-broadcast
+│   ├── edsrzf
+│   │   └── mmap-go
+│   ├── elazarl
+│   │   └── go-bindata-assetfs
+│   ├── fsnotify
+│   │   └── fsnotify
+│   ├── fvbock
+│   │   └── endless
 │   ├── garyburd
 │   │   └── redigo
+│   ├── getsentry
+│   │   └── raven-go
 │   ├── gin-gonic
 │   │   ├── contrib
 │   │   └── gin
+│   ├── gizak
+│   │   └── termui
+│   ├── go-fsnotify
+│   │   └── fsnotify
 │   ├── go-gorp
 │   │   └── gorp
+│   ├── go-macaron
+│   │   ├── binding
+│   │   ├── cache
+│   │   ├── captcha
+│   │   ├── csrf
+│   │   ├── gzip
+│   │   ├── i18n
+│   │   ├── inject
+│   │   ├── session
+│   │   └── toolbox
+│   ├── go-martini
+│   │   └── martini
+│   ├── go-sql-driver
+│   │   └── mysql
+│   ├── go-xorm
+│   │   ├── builder
+│   │   ├── core
+│   │   └── xorm
 │   ├── gogits
-│   │   └── git
+│   │   ├── chardet
+│   │   ├── cron
+│   │   ├── git
+│   │   ├── git-module
+│   │   ├── go-gogs-client
+│   │   ├── go-libravatar
+│   │   └── gogs
 │   ├── golang
-│   │   └── protobuf
+│   │   ├── geo
+│   │   ├── lint
+│   │   ├── protobuf
+│   │   └── snappy
+│   ├── gonum
+│   │   ├── blas
+│   │   ├── floats
+│   │   ├── internal
+│   │   ├── lapack
+│   │   └── matrix
+│   ├── google
+│   │   ├── go-github
+│   │   └── go-querystring
+│   ├── googleapis
+│   │   └── gax-go
+│   ├── gopherjs
+│   │   └── gopherjs
 │   ├── gorilla
 │   │   ├── context
+│   │   ├── mux
 │   │   ├── securecookie
 │   │   ├── sessions
 │   │   └── websocket
+│   ├── hashicorp
+│   │   ├── go-version
+│   │   └── hcl
+│   ├── influxdb
+│   │   └── influxdb
+│   ├── issue9
+│   │   └── identicon
+│   ├── jaytaylor
+│   │   └── html2text
+│   ├── jessevdk
+│   │   └── go-flags
+│   ├── jjinux
+│   │   └── gotetris
+│   ├── jordic
+│   │   └── boltxpl
+│   ├── kardianos
+│   │   └── osext
+│   ├── kelseyhightower
+│   │   └── envconfig
+│   ├── klauspost
+│   │   ├── compress
+│   │   ├── cpuid
+│   │   └── crc32
+│   ├── kr
+│   │   ├── pretty
+│   │   ├── pty
+│   │   └── text
+│   ├── labstack
+│   │   ├── echo
+│   │   └── gommon
+│   ├── lazywei
+│   │   └── go-opencv
 │   ├── lib
 │   │   └── pq
+│   ├── lunny
+│   │   ├── log
+│   │   └── nodb
+│   ├── magiconair
+│   │   └── properties
 │   ├── manucorporat
-│   │   └── sse
+│   │   ├── sse
+│   │   └── stats
+│   ├── martini-contrib
+│   │   └── binding
+│   ├── mattn
+│   │   ├── go-colorable
+│   │   ├── go-isatty
+│   │   ├── go-runewidth
+│   │   ├── go-shellwords
+│   │   └── go-sqlite3
+│   ├── mcuadros
+│   │   └── go-version
 │   ├── microcosm-cc
 │   │   └── bluemonday
+│   ├── miku
+│   │   └── kat
+│   ├── mitchellh
+│   │   ├── colorstring
+│   │   ├── go-wordwrap
+│   │   ├── gox
+│   │   ├── iochan
+│   │   └── mapstructure
+│   ├── neelance
+│   │   └── sourcemap
+│   ├── nfnt
+│   │   └── resize
+│   ├── nlopes
+│   │   └── slack
+│   ├── nsf
+│   │   ├── gocode
+│   │   └── termbox-go
+│   ├── odeke-em
+│   │   ├── cache
+│   │   ├── cli-spinner
+│   │   ├── command
+│   │   ├── drive
+│   │   ├── exponential-backoff
+│   │   ├── extractor
+│   │   ├── go-utils
+│   │   ├── go-uuid
+│   │   ├── log
+│   │   ├── meddler
+│   │   ├── pretty-words
+│   │   ├── ripper
+│   │   ├── rsc
+│   │   ├── semalim
+│   │   ├── statos
+│   │   └── xon
 │   ├── olahol
 │   │   └── melody
 │   ├── oschwald
 │   │   ├── geoip2-golang
 │   │   └── maxminddb-golang
+│   ├── pelletier
+│   │   ├── go-buffruneio
+│   │   └── go-toml
+│   ├── pkg
+│   │   └── errors
+│   ├── rcrowley
+│   │   └── go-metrics
+│   ├── robfig
+│   │   └── go-cache
+│   ├── rogpeppe
+│   │   └── godef
+│   ├── rotblauer
+│   │   ├── bildRoam
+│   │   ├── catTracks
+│   │   ├── cellurautomata
+│   │   ├── crime-and-trumpishment
+│   │   ├── gifit
+│   │   ├── gone-painting
+│   │   ├── imgit
+│   │   ├── pAINT
+│   │   ├── pAINTbyNumbers
+│   │   ├── quadtree
+│   │   ├── tileTester
+│   │   └── trackpoints
 │   ├── russross
 │   │   └── blackfriday
+│   ├── rwcarlsen
+│   │   └── goexif
+│   ├── satori
+│   │   └── go.uuid
 │   ├── sergi
 │   │   └── go-diff
 │   ├── shurcooL
 │   │   ├── github_flavored_markdown
+│   │   ├── go
+│   │   ├── gopherjslib
 │   │   ├── highlight_diff
 │   │   ├── highlight_go
+│   │   ├── httpfs
+│   │   ├── markdownfmt
 │   │   └── sanitized_anchor_name
+│   ├── siddontang
+│   │   ├── go
+│   │   ├── go-snappy
+│   │   ├── ledisdb
+│   │   └── rdb
+│   ├── skratchdot
+│   │   └── open-golang
 │   ├── sourcegraph
 │   │   ├── annotate
-│   │   └── syntaxhighlight
-│   └── tools
-│       └── godep
+│   │   ├── syntaxhighlight
+│   │   └── thyme
+│   ├── spf13
+│   │   ├── afero
+│   │   ├── cast
+│   │   ├── cobra
+│   │   ├── jwalterweatherman
+│   │   ├── pflag
+│   │   └── viper
+│   ├── stathat
+│   │   └── go
+│   ├── syndtr
+│   │   └── goleveldb
+│   ├── tcnksm
+│   │   ├── ghr
+│   │   ├── go-gitconfig
+│   │   └── go-latest
+│   ├── tools
+│   │   └── godep
+│   ├── tylerb
+│   │   └── graceful
+│   ├── ugorji
+│   │   └── go
+│   ├── unrolled
+│   │   └── render
+│   ├── urfave
+│   │   └── cli
+│   ├── valyala
+│   │   └── fasttemplate
+│   ├── walle
+│   │   └── wiki
+│   ├── whilei
+│   │   └── go-gogs-cli
+│   ├── xordataexchange
+│   │   └── crypt
+│   └── yvasiyarov
+│       ├── go-metrics
+│       ├── gorelic
+│       └── newrelic_platform_go
 ├── golang.org
 │   └── x
 │       ├── crypto
+│       ├── debug
 │       ├── net
+│       ├── oauth2
+│       ├── sync
 │       ├── sys
+│       ├── text
+│       ├── time
 │       └── tools
-└── gopkg.in
-    ├── dietsche
-    │   └── textbelt.v1
-    ├── go-playground
-    │   └── validator.v8
-    └── yaml.v2
-        ├── LICENSE
-        ├── LICENSE.libyaml
-        ├── README.md
-        ├── apic.go
-        ├── decode.go
-        ├── decode_test.go
-        ├── emitterc.go
-        ├── encode.go
-        ├── encode_test.go
-        ├── parserc.go
-        ├── readerc.go
-        ├── resolve.go
-        ├── scannerc.go
-        ├── sorter.go
-        ├── suite_test.go
-        ├── writerc.go
-        ├── yaml.go
-        ├── yamlh.go
-        └── yamlprivateh.go
+├── google.golang.org
+│   ├── api
+│   │   ├── AUTHORS
+│   │   ├── CONTRIBUTING.md
+│   │   ├── CONTRIBUTORS
+│   │   ├── GettingStarted.md
+│   │   ├── LICENSE
+│   │   ├── Makefile
+│   │   ├── NOTES
+│   │   ├── README.md
+│   │   ├── TODO
+│   │   ├── acceleratedmobilepageurl
+│   │   ├── adexchangebuyer
+│   │   ├── adexchangebuyer2
+│   │   ├── adexchangeseller
+│   │   ├── admin
+│   │   ├── adsense
+│   │   ├── adsensehost
+│   │   ├── analytics
+│   │   ├── analyticsreporting
+│   │   ├── androidenterprise
+│   │   ├── androidpublisher
+│   │   ├── api-list.json
+│   │   ├── appengine
+│   │   ├── appsactivity
+│   │   ├── appstate
+│   │   ├── autoscaler
+│   │   ├── bigquery
+│   │   ├── blogger
+│   │   ├── books
+│   │   ├── calendar
+│   │   ├── civicinfo
+│   │   ├── classroom
+│   │   ├── cloudbilling
+│   │   ├── cloudbuild
+│   │   ├── clouddebugger
+│   │   ├── clouderrorreporting
+│   │   ├── cloudlatencytest
+│   │   ├── cloudmonitoring
+│   │   ├── cloudresourcemanager
+│   │   ├── cloudtrace
+│   │   ├── clouduseraccounts
+│   │   ├── compute
+│   │   ├── consumersurveys
+│   │   ├── container
+│   │   ├── content
+│   │   ├── coordinate
+│   │   ├── customsearch
+│   │   ├── dataflow
+│   │   ├── dataproc
+│   │   ├── datastore
+│   │   ├── deploymentmanager
+│   │   ├── dfareporting
+│   │   ├── discovery
+│   │   ├── dns
+│   │   ├── doubleclickbidmanager
+│   │   ├── doubleclicksearch
+│   │   ├── drive
+│   │   ├── examples
+│   │   ├── firebasedynamiclinks
+│   │   ├── firebaserules
+│   │   ├── fitness
+│   │   ├── freebase
+│   │   ├── fusiontables
+│   │   ├── games
+│   │   ├── gamesconfiguration
+│   │   ├── gamesmanagement
+│   │   ├── gan
+│   │   ├── genomics
+│   │   ├── gensupport
+│   │   ├── gmail
+│   │   ├── google-api-go-generator
+│   │   ├── googleapi
+│   │   ├── groupsmigration
+│   │   ├── groupssettings
+│   │   ├── iam
+│   │   ├── identitytoolkit
+│   │   ├── integration-tests
+│   │   ├── internal
+│   │   ├── iterator
+│   │   ├── key.json.enc
+│   │   ├── kgsearch
+│   │   ├── language
+│   │   ├── lib
+│   │   ├── licensing
+│   │   ├── logging
+│   │   ├── manager
+│   │   ├── manufacturers
+│   │   ├── mapsengine
+│   │   ├── mirror
+│   │   ├── ml
+│   │   ├── monitoring
+│   │   ├── oauth2
+│   │   ├── option
+│   │   ├── pagespeedonline
+│   │   ├── partners
+│   │   ├── people
+│   │   ├── playmoviespartner
+│   │   ├── plus
+│   │   ├── plusdomains
+│   │   ├── prediction
+│   │   ├── proximitybeacon
+│   │   ├── pubsub
+│   │   ├── qpxexpress
+│   │   ├── replicapool
+│   │   ├── replicapoolupdater
+│   │   ├── reseller
+│   │   ├── resourceviews
+│   │   ├── runtimeconfig
+│   │   ├── safebrowsing
+│   │   ├── script
+│   │   ├── servicecontrol
+│   │   ├── servicemanagement
+│   │   ├── serviceregistry
+│   │   ├── sheets
+│   │   ├── siteverification
+│   │   ├── slides
+│   │   ├── spectrum
+│   │   ├── speech
+│   │   ├── sqladmin
+│   │   ├── storage
+│   │   ├── storagetransfer
+│   │   ├── support
+│   │   ├── surveys
+│   │   ├── tagmanager
+│   │   ├── taskqueue
+│   │   ├── tasks
+│   │   ├── toolresults
+│   │   ├── translate
+│   │   ├── transport
+│   │   ├── urlshortener
+│   │   ├── vision
+│   │   ├── webfonts
+│   │   ├── webmasters
+│   │   ├── youtube
+│   │   ├── youtubeanalytics
+│   │   └── youtubereporting
+│   ├── appengine
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── aetest
+│   │   ├── appengine.go
+│   │   ├── appengine_test.go
+│   │   ├── appengine_vm.go
+│   │   ├── blobstore
+│   │   ├── capability
+│   │   ├── channel
+│   │   ├── cloudsql
+│   │   ├── cmd
+│   │   ├── datastore
+│   │   ├── delay
+│   │   ├── demos
+│   │   ├── errors.go
+│   │   ├── file
+│   │   ├── identity.go
+│   │   ├── image
+│   │   ├── internal
+│   │   ├── log
+│   │   ├── mail
+│   │   ├── memcache
+│   │   ├── module
+│   │   ├── namespace.go
+│   │   ├── namespace_test.go
+│   │   ├── remote_api
+│   │   ├── runtime
+│   │   ├── search
+│   │   ├── socket
+│   │   ├── taskqueue
+│   │   ├── timeout.go
+│   │   ├── urlfetch
+│   │   ├── user
+│   │   └── xmpp
+│   ├── genproto
+│   │   ├── CONTRIBUTING.md
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── googleapis
+│   │   ├── protobuf
+│   │   └── regen.sh
+│   └── grpc
+│       ├── CONTRIBUTING.md
+│       ├── Documentation
+│       ├── LICENSE
+│       ├── Makefile
+│       ├── PATENTS
+│       ├── README.md
+│       ├── backoff.go
+│       ├── backoff_test.go
+│       ├── balancer.go
+│       ├── balancer_test.go
+│       ├── benchmark
+│       ├── call.go
+│       ├── call_test.go
+│       ├── clientconn.go
+│       ├── clientconn_test.go
+│       ├── codegen.sh
+│       ├── codes
+│       ├── coverage.sh
+│       ├── credentials
+│       ├── doc.go
+│       ├── examples
+│       ├── grpclb
+│       ├── grpclog
+│       ├── health
+│       ├── interceptor.go
+│       ├── internal
+│       ├── interop
+│       ├── metadata
+│       ├── naming
+│       ├── peer
+│       ├── reflection
+│       ├── rpc_util.go
+│       ├── rpc_util_test.go
+│       ├── server.go
+│       ├── server_test.go
+│       ├── stats
+│       ├── stream.go
+│       ├── stress
+│       ├── tap
+│       ├── test
+│       ├── testdata
+│       ├── trace.go
+│       └── transport
+├── gopkg.in
+│   ├── airbrake
+│   │   └── gobrake.v2
+│   ├── appleboy
+│   │   └── gin-jwt.v2
+│   ├── asn1-ber.v1
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── ber.go
+│   │   ├── ber_test.go
+│   │   ├── content_int.go
+│   │   ├── header.go
+│   │   ├── header_test.go
+│   │   ├── identifier.go
+│   │   ├── identifier_test.go
+│   │   ├── length.go
+│   │   ├── length_test.go
+│   │   ├── suite_test.go
+│   │   ├── tests
+│   │   └── util.go
+│   ├── bufio.v1
+│   │   ├── LICENSE
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   ├── buffer.go
+│   │   ├── buffer_test.go
+│   │   ├── bufio.go
+│   │   ├── bufio_test.go
+│   │   └── export_test.go
+│   ├── cheggaaa
+│   │   └── pb.v1
+│   ├── dgrijalva
+│   │   └── jwt-go.v3
+│   ├── dietsche
+│   │   └── textbelt.v1
+│   ├── editorconfig
+│   │   └── editorconfig-core-go.v1
+│   ├── gemnasium
+│   │   └── logrus-airbrake-hook.v2
+│   ├── go-playground
+│   │   └── validator.v8
+│   ├── gographics
+│   │   └── imagick.v2
+│   ├── gomail.v2
+│   │   ├── CHANGELOG.md
+│   │   ├── CONTRIBUTING.md
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── auth.go
+│   │   ├── auth_test.go
+│   │   ├── doc.go
+│   │   ├── example_test.go
+│   │   ├── message.go
+│   │   ├── message_test.go
+│   │   ├── mime.go
+│   │   ├── mime_go14.go
+│   │   ├── send.go
+│   │   ├── send_test.go
+│   │   ├── smtp.go
+│   │   ├── smtp_test.go
+│   │   └── writeto.go
+│   ├── ini.v1
+│   │   ├── LICENSE
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   ├── README_ZH.md
+│   │   ├── error.go
+│   │   ├── ini.go
+│   │   ├── ini_test.go
+│   │   ├── key.go
+│   │   ├── key_test.go
+│   │   ├── parser.go
+│   │   ├── section.go
+│   │   ├── section_test.go
+│   │   ├── struct.go
+│   │   ├── struct_test.go
+│   │   └── testdata
+│   ├── ldap.v2
+│   │   ├── LICENSE
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   ├── add.go
+│   │   ├── bind.go
+│   │   ├── client.go
+│   │   ├── compare.go
+│   │   ├── conn.go
+│   │   ├── conn_test.go
+│   │   ├── control.go
+│   │   ├── control_test.go
+│   │   ├── debug.go
+│   │   ├── del.go
+│   │   ├── dn.go
+│   │   ├── dn_test.go
+│   │   ├── doc.go
+│   │   ├── error.go
+│   │   ├── error_test.go
+│   │   ├── example_test.go
+│   │   ├── filter.go
+│   │   ├── filter_test.go
+│   │   ├── ldap.go
+│   │   ├── ldap_test.go
+│   │   ├── modify.go
+│   │   ├── passwdmodify.go
+│   │   ├── search.go
+│   │   └── search_test.go
+│   ├── macaron.v1
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── context.go
+│   │   ├── context_test.go
+│   │   ├── fixtures
+│   │   ├── logger.go
+│   │   ├── logger_test.go
+│   │   ├── macaron.go
+│   │   ├── macaron_test.go
+│   │   ├── macaronlogo.png
+│   │   ├── recovery.go
+│   │   ├── recovery_test.go
+│   │   ├── render.go
+│   │   ├── render_test.go
+│   │   ├── response_writer.go
+│   │   ├── response_writer_test.go
+│   │   ├── return_handler.go
+│   │   ├── return_handler_test.go
+│   │   ├── router.go
+│   │   ├── router_test.go
+│   │   ├── static.go
+│   │   ├── static_test.go
+│   │   ├── tree.go
+│   │   └── tree_test.go
+│   ├── neurosnap
+│   │   └── sentences.v1
+│   ├── pipe.v2
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── pipe.go
+│   │   └── pipe_test.go
+│   ├── redis.v2
+│   │   ├── LICENSE
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   ├── command.go
+│   │   ├── commands.go
+│   │   ├── doc.go
+│   │   ├── error.go
+│   │   ├── example_test.go
+│   │   ├── export_test.go
+│   │   ├── multi.go
+│   │   ├── parser.go
+│   │   ├── parser_test.go
+│   │   ├── pipeline.go
+│   │   ├── pool.go
+│   │   ├── pubsub.go
+│   │   ├── rate_limit.go
+│   │   ├── rate_limit_test.go
+│   │   ├── redis.go
+│   │   ├── redis_test.go
+│   │   ├── script.go
+│   │   ├── sentinel.go
+│   │   ├── sentinel_test.go
+│   │   └── testdata
+│   ├── urfave
+│   │   └── cli.v1
+│   └── yaml.v2
+│       ├── LICENSE
+│       ├── LICENSE.libyaml
+│       ├── README.md
+│       ├── apic.go
+│       ├── decode.go
+│       ├── decode_test.go
+│       ├── emitterc.go
+│       ├── encode.go
+│       ├── encode_test.go
+│       ├── parserc.go
+│       ├── readerc.go
+│       ├── resolve.go
+│       ├── scannerc.go
+│       ├── sorter.go
+│       ├── suite_test.go
+│       ├── writerc.go
+│       ├── yaml.go
+│       ├── yamlh.go
+│       └── yamlprivateh.go
+└── honnef.co
+    └── go
+        └── js
 
-70 directories, 19 files
+600 directories, 221 files
 ```
 
 ## NPM modules
-> `pushd ~/.node/lib/; npm ls >> /Users/ia/.dotfiles/README.md; popd;`
+> `pushd ~/.node/lib/; npm ls >> /Users/ia/.dotfiles/TOC.md; popd;`
 
 ```
 /Users/ia/.node/lib
@@ -1165,6 +1941,11 @@ yajl-ruby (1.1.0)
 │   ├── sax@1.1.4
 │   └─┬ xmlbuilder@4.1.0
 │     └── lodash@3.10.1
+├─┬ d3-geo-projection@1.2.1
+│ ├─┬ commander@2.9.0
+│ │ └── graceful-readlink@1.0.1
+│ ├── d3-array@1.0.2
+│ └── d3-geo@1.4.0
 ├─┬ electron-prebuilt@0.37.1
 │ ├─┬ electron-download@2.1.0
 │ │ ├─┬ debug@2.2.0
@@ -6463,6 +7244,122 @@ yajl-ruby (1.1.0)
 │   │ └── readable-stream@1.0.33
 │   └─┬ vinyl@0.4.6
 │     └── clone@0.2.0
+├─┬ gulp-cli@1.2.2
+│ ├── archy@1.0.0
+│ ├─┬ chalk@1.1.3
+│ │ ├── ansi-styles@2.2.1
+│ │ ├── escape-string-regexp@1.0.5
+│ │ ├─┬ has-ansi@2.0.0
+│ │ │ └── ansi-regex@2.0.0
+│ │ ├── strip-ansi@3.0.1
+│ │ └── supports-color@2.0.0
+│ ├─┬ fancy-log@1.2.0
+│ │ └── time-stamp@1.0.1
+│ ├─┬ gulplog@1.0.0
+│ │ └─┬ glogg@1.0.0
+│ │   └── sparkles@1.0.0
+│ ├── interpret@1.0.1
+│ ├─┬ liftoff@2.2.5
+│ │ ├── extend@3.0.0
+│ │ ├─┬ findup-sync@0.4.2
+│ │ │ ├─┬ detect-file@0.1.0
+│ │ │ │ └── fs-exists-sync@0.1.0
+│ │ │ ├── is-glob@2.0.1
+│ │ │ └─┬ resolve-dir@0.1.0
+│ │ │   ├── expand-tilde@1.2.2
+│ │ │   └─┬ global-modules@0.2.2
+│ │ │     ├─┬ global-prefix@0.1.4
+│ │ │     │ ├── ini@1.3.4
+│ │ │     │ ├─┬ osenv@0.1.3
+│ │ │     │ │ └── os-tmpdir@1.0.1
+│ │ │     │ └─┬ which@1.2.10
+│ │ │     │   └── isexe@1.1.2
+│ │ │     └── is-windows@0.2.0
+│ │ ├── flagged-respawn@0.3.2
+│ │ ├── rechoir@0.6.2
+│ │ └── resolve@1.1.7
+│ ├── lodash.isfunction@3.0.8
+│ ├── lodash.isplainobject@4.0.4
+│ ├── lodash.isstring@4.0.1
+│ ├─┬ lodash.sortby@4.5.0
+│ │ ├── lodash._baseeach@4.1.3
+│ │ ├── lodash._baseflatten@4.2.1
+│ │ ├─┬ lodash._baseiteratee@4.7.0
+│ │ │ └─┬ lodash._stringtopath@4.8.0
+│ │ │   └── lodash._basetostring@4.12.0
+│ │ └── lodash.rest@4.0.3
+│ ├─┬ matchdep@1.0.1
+│ │ ├─┬ findup-sync@0.3.0
+│ │ │ └─┬ glob@5.0.15
+│ │ │   ├─┬ inflight@1.0.5
+│ │ │   │ └── wrappy@1.0.2
+│ │ │   ├── inherits@2.0.1
+│ │ │   ├─┬ minimatch@3.0.2
+│ │ │   │ └─┬ brace-expansion@1.1.6
+│ │ │   │   ├── balanced-match@0.4.2
+│ │ │   │   └── concat-map@0.0.1
+│ │ │   ├── once@1.3.3
+│ │ │   └── path-is-absolute@1.0.0
+│ │ ├─┬ micromatch@2.3.11
+│ │ │ ├─┬ arr-diff@2.0.0
+│ │ │ │ └── arr-flatten@1.0.1
+│ │ │ ├── array-unique@0.2.1
+│ │ │ ├─┬ braces@1.8.5
+│ │ │ │ ├─┬ expand-range@1.8.2
+│ │ │ │ │ └─┬ fill-range@2.2.3
+│ │ │ │ │   ├── is-number@2.1.0
+│ │ │ │ │   ├─┬ isobject@2.1.0
+│ │ │ │ │   │ └── isarray@1.0.0
+│ │ │ │ │   ├── randomatic@1.1.5
+│ │ │ │ │   └── repeat-string@1.5.4
+│ │ │ │ ├── preserve@0.2.0
+│ │ │ │ └── repeat-element@1.1.2
+│ │ │ ├─┬ expand-brackets@0.1.5
+│ │ │ │ └── is-posix-bracket@0.1.1
+│ │ │ ├── extglob@0.3.2
+│ │ │ ├── filename-regex@2.0.0
+│ │ │ ├── is-extglob@1.0.0
+│ │ │ ├─┬ kind-of@3.0.3
+│ │ │ │ └── is-buffer@1.1.3
+│ │ │ ├── normalize-path@2.0.1
+│ │ │ ├─┬ object.omit@2.0.0
+│ │ │ │ ├─┬ for-own@0.1.4
+│ │ │ │ │ └── for-in@0.1.5
+│ │ │ │ └── is-extendable@0.1.1
+│ │ │ ├─┬ parse-glob@3.0.4
+│ │ │ │ ├─┬ glob-base@0.3.0
+│ │ │ │ │ └── glob-parent@2.0.0
+│ │ │ │ └── is-dotfile@1.0.2
+│ │ │ └─┬ regex-cache@0.4.3
+│ │ │   ├── is-equal-shallow@0.1.3
+│ │ │   └── is-primitive@2.0.0
+│ │ └── stack-trace@0.0.9
+│ ├── mute-stdout@1.0.0
+│ ├── pretty-hrtime@1.0.2
+│ ├─┬ semver-greatest-satisfied-range@1.0.0
+│ │ ├── semver@4.3.6
+│ │ └── semver-regex@1.0.0
+│ ├─┬ tildify@1.2.0
+│ │ └── os-homedir@1.0.1
+│ ├─┬ v8flags@2.0.11
+│ │ └── user-home@1.1.1
+│ ├─┬ wreck@6.3.0
+│ │ ├── boom@2.10.1
+│ │ └── hoek@2.16.3
+│ └─┬ yargs@3.32.0
+│   ├── camelcase@2.1.1
+│   ├─┬ cliui@3.2.0
+│   │ └── wrap-ansi@2.0.0
+│   ├── decamelize@1.2.0
+│   ├─┬ os-locale@1.4.0
+│   │ └─┬ lcid@1.0.0
+│   │   └── invert-kv@1.0.0
+│   ├─┬ string-width@1.0.1
+│   │ ├─┬ code-point-at@1.0.0
+│   │ │ └── number-is-nan@1.0.0
+│   │ └── is-fullwidth-code-point@1.0.0
+│   ├── window-size@0.1.4
+│   └── y18n@3.2.1
 ├─┬ gulp-concat@2.6.0
 │ ├─┬ concat-with-sourcemaps@1.0.4
 │ │ └── source-map@0.5.3
@@ -8038,6 +8935,14 @@ yajl-ruby (1.1.0)
 │ └─┬ simctl@0.0.6
 │   ├── shelljs@0.2.6
 │   └── tail@0.4.0
+├─┬ js-beautify@1.6.3
+│ ├─┬ config-chain@1.1.10
+│ │ ├── ini@1.3.4
+│ │ └── proto-list@1.2.4
+│ ├─┬ mkdirp@0.5.1
+│ │ └── minimist@0.0.8
+│ └─┬ nopt@3.0.6
+│   └── abbrev@1.0.9
 ├─┬ mocha@2.3.3
 │ ├── commander@2.3.0
 │ ├─┬ debug@2.0.0
@@ -8057,6 +8962,11 @@ yajl-ruby (1.1.0)
 │ ├─┬ mkdirp@0.5.0
 │ │ └── minimist@0.0.8
 │ └── supports-color@1.2.0
+├─┬ ndjson-cli@0.3.0
+│ ├── acorn@4.0.4
+│ ├─┬ commander@2.9.0
+│ │ └── graceful-readlink@1.0.1
+│ └── resolve@1.2.0
 ├─┬ node-repl@2.0.2
 │ └─┬ strip-bom@1.0.0
 │   ├── first-chunk-stream@1.0.0
@@ -8387,6 +9297,77 @@ yajl-ruby (1.1.0)
 │   ├─┬ is-absolute@0.1.7
 │   │ └── is-relative@0.1.3
 │   └── isexe@1.1.2
+├─┬ psd-cli@0.2.0
+│ ├── async@1.5.0
+│ ├─┬ chalk@1.1.1
+│ │ ├── ansi-styles@2.2.1
+│ │ ├── escape-string-regexp@1.0.5
+│ │ ├─┬ has-ansi@2.0.0
+│ │ │ └── ansi-regex@2.0.0
+│ │ ├── strip-ansi@3.0.1
+│ │ └── supports-color@2.0.0
+│ ├─┬ commander@2.9.0
+│ │ └── graceful-readlink@1.0.1
+│ ├── file-type@3.3.0
+│ ├─┬ psd@3.1.0
+│ │ ├─┬ coffee-script@1.7.1
+│ │ │ └── mkdirp@0.3.5
+│ │ ├── coffeescript-module@0.2.1
+│ │ ├── iconv-lite@0.4.13
+│ │ ├── jspack@0.0.4
+│ │ ├── lodash@2.4.2
+│ │ ├── parse-engine-data@0.1.2
+│ │ ├── pngjs@0.4.0
+│ │ └── rsvp@3.0.21
+│ └── read-chunk@1.0.1
+├─┬ random-word-cli@1.0.0
+│ ├─┬ meow@3.7.0
+│ │ ├─┬ camelcase-keys@2.1.0
+│ │ │ └── camelcase@2.1.1
+│ │ ├── decamelize@1.2.0
+│ │ ├─┬ loud-rejection@1.6.0
+│ │ │ ├─┬ currently-unhandled@0.4.1
+│ │ │ │ └── array-find-index@1.0.2
+│ │ │ └── signal-exit@3.0.2
+│ │ ├── map-obj@1.0.1
+│ │ ├── minimist@1.2.0
+│ │ ├─┬ normalize-package-data@2.3.5
+│ │ │ ├── hosted-git-info@2.1.5
+│ │ │ ├─┬ is-builtin-module@1.0.0
+│ │ │ │ └── builtin-modules@1.1.1
+│ │ │ ├── semver@5.3.0
+│ │ │ └─┬ validate-npm-package-license@3.0.1
+│ │ │   ├─┬ spdx-correct@1.0.2
+│ │ │   │ └── spdx-license-ids@1.2.2
+│ │ │   └── spdx-expression-parse@1.0.4
+│ │ ├── object-assign@4.1.1
+│ │ ├─┬ read-pkg-up@1.0.1
+│ │ │ ├─┬ find-up@1.1.2
+│ │ │ │ ├── path-exists@2.1.0
+│ │ │ │ └─┬ pinkie-promise@2.0.1
+│ │ │ │   └── pinkie@2.0.4
+│ │ │ └─┬ read-pkg@1.1.0
+│ │ │   ├─┬ load-json-file@1.1.0
+│ │ │   │ ├── graceful-fs@4.1.11
+│ │ │   │ ├─┬ parse-json@2.2.0
+│ │ │   │ │ └─┬ error-ex@1.3.0
+│ │ │   │ │   └── is-arrayish@0.2.1
+│ │ │   │ ├── pify@2.3.0
+│ │ │   │ └─┬ strip-bom@2.0.0
+│ │ │   │   └── is-utf8@0.2.1
+│ │ │   └── path-type@1.1.0
+│ │ ├─┬ redent@1.0.0
+│ │ │ ├─┬ indent-string@2.1.0
+│ │ │ │ └─┬ repeating@2.0.1
+│ │ │ │   └─┬ is-finite@1.0.2
+│ │ │ │     └── number-is-nan@1.0.1
+│ │ │ └─┬ strip-indent@1.0.1
+│ │ │   └── get-stdin@4.0.1
+│ │ └── trim-newlines@1.0.0
+│ └─┬ random-word@2.0.0
+│   ├─┬ unique-random-array@1.0.0
+│   │ └── unique-random@1.0.0
+│   └── word-list@2.0.0
 ├─┬ rimraf@2.5.2
 │ └─┬ glob@7.0.3
 │   ├─┬ inflight@1.0.4
@@ -8398,6 +9379,15 @@ yajl-ruby (1.1.0)
 │   │   └── concat-map@0.0.1
 │   ├── once@1.3.3
 │   └── path-is-absolute@1.0.0
+├─┬ shapefile@0.6.1
+│ ├── array-source@0.0.3
+│ ├─┬ commander@2.9.0
+│ │ └── graceful-readlink@1.0.1
+│ ├─┬ path-source@0.1.2
+│ │ └── file-source@0.6.1
+│ ├── slice-source@0.4.1
+│ ├── stream-source@0.3.4
+│ └── text-encoding@0.6.1
 ├── shelljs@0.5.3
 ├─┬ slack-cli@1.0.15
 │ ├── async@0.9.2
@@ -8481,6 +9471,23 @@ yajl-ruby (1.1.0)
 │   ├── options@0.0.6
 │   ├── ultron@1.0.2
 │   └── UNMET OPTIONAL DEPENDENCY utf-8-validate@1.1.x
+├─┬ snips-cli@1.2.1
+│ ├─┬ chalk@1.1.3
+│ │ ├── ansi-styles@2.2.1
+│ │ ├── escape-string-regexp@1.0.5
+│ │ ├─┬ has-ansi@2.0.0
+│ │ │ └── ansi-regex@2.0.0
+│ │ ├── strip-ansi@3.0.1
+│ │ └── supports-color@2.0.0
+│ ├─┬ commander@2.9.0
+│ │ └── graceful-readlink@1.0.1
+│ ├─┬ copy-paste@1.3.0
+│ │ ├── iconv-lite@0.4.13
+│ │ └── sync-exec@0.6.2
+│ ├─┬ front-matter@1.0.0
+│ │ └── yaml-js@0.1.3
+│ ├── lodash@3.10.1
+│ └── shelljs@0.5.3
 ├─┬ speed-test@1.7.0
 │ ├─┬ chalk@1.1.3
 │ │ ├── ansi-styles@2.2.1
@@ -8599,6 +9606,241 @@ yajl-ruby (1.1.0)
 │   │   │ └── strip-json-comments@1.0.4
 │   │   └── registry-url@3.1.0
 │   └── semver-diff@2.1.0
+├─┬ svgexport@0.3.2
+│ ├── async@1.5.2
+│ └─┬ phantomjs-prebuilt@2.1.14
+│   ├── es6-promise@4.0.5
+│   ├─┬ extract-zip@1.5.0
+│   │ ├─┬ concat-stream@1.5.0
+│   │ │ ├── inherits@2.0.3
+│   │ │ ├─┬ readable-stream@2.0.6
+│   │ │ │ ├── core-util-is@1.0.2
+│   │ │ │ ├── isarray@1.0.0
+│   │ │ │ ├── process-nextick-args@1.0.7
+│   │ │ │ ├── string_decoder@0.10.31
+│   │ │ │ └── util-deprecate@1.0.2
+│   │ │ └── typedarray@0.0.6
+│   │ ├── debug@0.7.4
+│   │ ├─┬ mkdirp@0.5.0
+│   │ │ └── minimist@0.0.8
+│   │ └─┬ yauzl@2.4.1
+│   │   └─┬ fd-slicer@1.0.1
+│   │     └── pend@1.2.0
+│   ├─┬ fs-extra@1.0.0
+│   │ ├── graceful-fs@4.1.11
+│   │ ├── jsonfile@2.4.0
+│   │ └── klaw@1.3.1
+│   ├─┬ hasha@2.2.0
+│   │ ├── is-stream@1.1.0
+│   │ └─┬ pinkie-promise@2.0.1
+│   │   └── pinkie@2.0.4
+│   ├── kew@0.7.0
+│   ├── progress@1.1.8
+│   ├─┬ request@2.79.0
+│   │ ├── aws-sign2@0.6.0
+│   │ ├── aws4@1.5.0
+│   │ ├── caseless@0.11.0
+│   │ ├─┬ combined-stream@1.0.5
+│   │ │ └── delayed-stream@1.0.0
+│   │ ├── extend@3.0.0
+│   │ ├── forever-agent@0.6.1
+│   │ ├─┬ form-data@2.1.2
+│   │ │ └── asynckit@0.4.0
+│   │ ├─┬ har-validator@2.0.6
+│   │ │ ├─┬ chalk@1.1.3
+│   │ │ │ ├── ansi-styles@2.2.1
+│   │ │ │ ├── escape-string-regexp@1.0.5
+│   │ │ │ ├─┬ has-ansi@2.0.0
+│   │ │ │ │ └── ansi-regex@2.1.1
+│   │ │ │ ├── strip-ansi@3.0.1
+│   │ │ │ └── supports-color@2.0.0
+│   │ │ ├─┬ commander@2.9.0
+│   │ │ │ └── graceful-readlink@1.0.1
+│   │ │ └─┬ is-my-json-valid@2.15.0
+│   │ │   ├── generate-function@2.0.0
+│   │ │   ├─┬ generate-object-property@1.2.0
+│   │ │   │ └── is-property@1.0.2
+│   │ │   ├── jsonpointer@4.0.1
+│   │ │   └── xtend@4.0.1
+│   │ ├─┬ hawk@3.1.3
+│   │ │ ├── boom@2.10.1
+│   │ │ ├── cryptiles@2.0.5
+│   │ │ ├── hoek@2.16.3
+│   │ │ └── sntp@1.0.9
+│   │ ├─┬ http-signature@1.1.1
+│   │ │ ├── assert-plus@0.2.0
+│   │ │ ├─┬ jsprim@1.3.1
+│   │ │ │ ├── extsprintf@1.0.2
+│   │ │ │ ├── json-schema@0.2.3
+│   │ │ │ └── verror@1.3.6
+│   │ │ └─┬ sshpk@1.10.2
+│   │ │   ├── asn1@0.2.3
+│   │ │   ├── assert-plus@1.0.0
+│   │ │   ├── bcrypt-pbkdf@1.0.0
+│   │ │   ├─┬ dashdash@1.14.1
+│   │ │   │ └── assert-plus@1.0.0
+│   │ │   ├── ecc-jsbn@0.1.1
+│   │ │   ├─┬ getpass@0.1.6
+│   │ │   │ └── assert-plus@1.0.0
+│   │ │   ├── jodid25519@1.0.2
+│   │ │   ├── jsbn@0.1.0
+│   │ │   └── tweetnacl@0.14.5
+│   │ ├── is-typedarray@1.0.0
+│   │ ├── isstream@0.1.2
+│   │ ├── json-stringify-safe@5.0.1
+│   │ ├─┬ mime-types@2.1.14
+│   │ │ └── mime-db@1.26.0
+│   │ ├── oauth-sign@0.8.2
+│   │ ├── qs@6.3.0
+│   │ ├── stringstream@0.0.5
+│   │ ├─┬ tough-cookie@2.3.2
+│   │ │ └── punycode@1.4.1
+│   │ ├── tunnel-agent@0.4.3
+│   │ └── uuid@3.0.1
+│   ├─┬ request-progress@2.0.1
+│   │ └── throttleit@1.0.0
+│   └─┬ which@1.2.12
+│     └── isexe@1.1.2
+├─┬ tern@0.20.0
+│ ├── acorn@3.3.0
+│ ├─┬ enhanced-resolve@2.3.0
+│ │ ├── graceful-fs@4.1.11
+│ │ ├─┬ memory-fs@0.3.0
+│ │ │ ├─┬ errno@0.1.4
+│ │ │ │ └── prr@0.0.0
+│ │ │ └─┬ readable-stream@2.2.2
+│ │ │   ├── buffer-shims@1.0.0
+│ │ │   ├── core-util-is@1.0.2
+│ │ │   ├── isarray@1.0.0
+│ │ │   ├── process-nextick-args@1.0.7
+│ │ │   ├── string_decoder@0.10.31
+│ │ │   └── util-deprecate@1.0.2
+│ │ ├── object-assign@4.1.1
+│ │ └── tapable@0.2.6
+│ ├─┬ glob@3.2.11
+│ │ ├── inherits@2.0.3
+│ │ └── minimatch@0.3.0
+│ ├─┬ minimatch@0.2.14
+│ │ ├── lru-cache@2.7.3
+│ │ └── sigmund@1.0.1
+│ └── resolve-from@2.0.0
+├─┬ time-tracker-cli@2.0.0
+│ ├─┬ babel-polyfill@6.22.0
+│ │ ├── babel-runtime@6.22.0
+│ │ ├── core-js@2.4.1
+│ │ └── regenerator-runtime@0.10.1
+│ ├─┬ chalk@1.1.3
+│ │ ├── ansi-styles@2.2.1
+│ │ ├── escape-string-regexp@1.0.5
+│ │ ├─┬ has-ansi@2.0.0
+│ │ │ └── ansi-regex@2.1.1
+│ │ ├── strip-ansi@3.0.1
+│ │ └── supports-color@2.0.0
+│ ├─┬ cli-table@0.3.1
+│ │ └── colors@1.0.3
+│ ├─┬ commander@2.9.0
+│ │ └── graceful-readlink@1.0.1
+│ ├─┬ configstore@2.1.0
+│ │ ├─┬ dot-prop@3.0.0
+│ │ │ └── is-obj@1.0.1
+│ │ ├── graceful-fs@4.1.11
+│ │ ├─┬ mkdirp@0.5.1
+│ │ │ └── minimist@0.0.8
+│ │ ├── object-assign@4.1.1
+│ │ ├── os-tmpdir@1.0.2
+│ │ ├─┬ osenv@0.1.4
+│ │ │ └── os-homedir@1.0.2
+│ │ ├── uuid@2.0.3
+│ │ ├─┬ write-file-atomic@1.3.1
+│ │ │ ├── imurmurhash@0.1.4
+│ │ │ └── slide@1.1.6
+│ │ └── xdg-basedir@2.0.0
+│ ├─┬ flat@2.0.1
+│ │ └── is-buffer@1.1.4
+│ ├─┬ inquirer@3.0.1
+│ │ ├── ansi-escapes@1.4.0
+│ │ ├─┬ cli-cursor@2.1.0
+│ │ │ └─┬ restore-cursor@2.0.0
+│ │ │   ├─┬ onetime@2.0.0
+│ │ │   │ └── mimic-fn@1.1.0
+│ │ │   └── signal-exit@3.0.2
+│ │ ├── cli-width@2.1.0
+│ │ ├─┬ external-editor@2.0.1
+│ │ │ └── tmp@0.0.31
+│ │ ├── figures@2.0.0
+│ │ ├── lodash@4.17.4
+│ │ ├── mute-stream@0.0.7
+│ │ ├─┬ run-async@2.3.0
+│ │ │ └── is-promise@2.1.0
+│ │ ├── rx@4.1.0
+│ │ ├─┬ string-width@2.0.0
+│ │ │ └── is-fullwidth-code-point@2.0.0
+│ │ └── through@2.3.8
+│ ├── moment@2.17.1
+│ ├── omelette@0.3.1
+│ └─┬ update-notifier@1.0.3
+│   ├─┬ boxen@0.6.0
+│   │ ├─┬ ansi-align@1.1.0
+│   │ │ └─┬ string-width@1.0.2
+│   │ │   └── is-fullwidth-code-point@1.0.0
+│   │ ├── camelcase@2.1.1
+│   │ ├── cli-boxes@1.0.0
+│   │ ├── filled-array@1.1.0
+│   │ ├─┬ repeating@2.0.1
+│   │ │ └── is-finite@1.0.2
+│   │ ├─┬ string-width@1.0.2
+│   │ │ ├── code-point-at@1.1.0
+│   │ │ └─┬ is-fullwidth-code-point@1.0.0
+│   │ │   └── number-is-nan@1.0.1
+│   │ └─┬ widest-line@1.0.0
+│   │   └─┬ string-width@1.0.2
+│   │     └── is-fullwidth-code-point@1.0.0
+│   ├── is-npm@1.0.0
+│   ├─┬ latest-version@2.0.0
+│   │ └─┬ package-json@2.4.0
+│   │   ├─┬ got@5.7.1
+│   │   │ ├─┬ create-error-class@3.0.2
+│   │   │ │ └── capture-stack-trace@1.0.0
+│   │   │ ├── duplexer2@0.1.4
+│   │   │ ├── is-redirect@1.0.0
+│   │   │ ├── is-retry-allowed@1.1.0
+│   │   │ ├── is-stream@1.1.0
+│   │   │ ├── lowercase-keys@1.0.0
+│   │   │ ├── node-status-codes@1.0.0
+│   │   │ ├─┬ parse-json@2.2.0
+│   │   │ │ └─┬ error-ex@1.3.0
+│   │   │ │   └── is-arrayish@0.2.1
+│   │   │ ├─┬ pinkie-promise@2.0.1
+│   │   │ │ └── pinkie@2.0.4
+│   │   │ ├── read-all-stream@3.1.0
+│   │   │ ├─┬ readable-stream@2.2.2
+│   │   │ │ ├── buffer-shims@1.0.0
+│   │   │ │ ├── core-util-is@1.0.2
+│   │   │ │ ├── inherits@2.0.3
+│   │   │ │ ├── isarray@1.0.0
+│   │   │ │ ├── process-nextick-args@1.0.7
+│   │   │ │ ├── string_decoder@0.10.31
+│   │   │ │ └── util-deprecate@1.0.2
+│   │   │ ├── timed-out@3.1.3
+│   │   │ ├── unzip-response@1.0.2
+│   │   │ └─┬ url-parse-lax@1.0.0
+│   │   │   └── prepend-http@1.0.4
+│   │   ├─┬ registry-auth-token@3.1.0
+│   │   │ └─┬ rc@1.1.6
+│   │   │   ├── deep-extend@0.4.1
+│   │   │   ├── ini@1.3.4
+│   │   │   ├── minimist@1.2.0
+│   │   │   └── strip-json-comments@1.0.4
+│   │   └── registry-url@3.1.0
+│   ├── lazy-req@1.1.0
+│   └─┬ semver-diff@2.1.0
+│     └── semver@5.3.0
+├─┬ topojson@2.2.0
+│ ├─┬ topojson-client@2.1.0
+│ │ └─┬ commander@2.9.0
+│ │   └── graceful-readlink@1.0.1
+│ ├── topojson-server@2.0.0
+│ └── topojson-simplify@2.0.0
 ├── tsc@1.20150623.0
 ├─┬ tsd@0.6.5
 │ ├── assertion-error@1.0.0
@@ -8929,6 +10171,65 @@ yajl-ruby (1.1.0)
 │ └── xtend@4.0.1
 ├─┬ vtop@0.5.5
 │ ├── blessed@0.0.37
+│ ├─┬ blessed-contrib@3.5.5
+│ │ ├── ansi-term@0.0.2
+│ │ ├─┬ chalk@1.1.3
+│ │ │ ├── ansi-styles@2.2.1
+│ │ │ ├── escape-string-regexp@1.0.5
+│ │ │ ├── has-ansi@2.0.0
+│ │ │ └── supports-color@2.0.0
+│ │ ├─┬ drawille-canvas-blessed-contrib@0.1.3
+│ │ │ ├── bresenham@0.0.3
+│ │ │ ├── drawille-blessed-contrib@1.0.0
+│ │ │ └── gl-matrix@2.3.2
+│ │ ├── lodash@4.14.1
+│ │ ├─┬ map-canvas@0.1.5
+│ │ │ └─┬ xml2js@0.4.17
+│ │ │   ├── sax@1.2.1
+│ │ │   └── xmlbuilder@4.2.1
+│ │ ├── marked@0.3.6
+│ │ ├─┬ marked-terminal@1.6.1
+│ │ │ ├─┬ cardinal@0.5.0
+│ │ │ │ ├── ansicolors@0.2.1
+│ │ │ │ └─┬ redeyed@0.5.0
+│ │ │ │   └── esprima-fb@12001.1.0-dev-harmony-fb
+│ │ │ ├─┬ cli-table@0.3.1
+│ │ │ │ └── colors@1.0.3
+│ │ │ ├─┬ lodash.assign@3.2.0
+│ │ │ │ ├─┬ lodash._baseassign@3.2.0
+│ │ │ │ │ └── lodash._basecopy@3.0.1
+│ │ │ │ ├─┬ lodash._createassigner@3.1.1
+│ │ │ │ │ ├── lodash._bindcallback@3.0.1
+│ │ │ │ │ ├── lodash._isiterateecall@3.0.9
+│ │ │ │ │ └── lodash.restparam@3.6.1
+│ │ │ │ └─┬ lodash.keys@3.1.2
+│ │ │ │   ├── lodash._getnative@3.9.1
+│ │ │ │   ├── lodash.isarguments@3.0.9
+│ │ │ │   └── lodash.isarray@3.0.4
+│ │ │ └── node-emoji@0.1.0
+│ │ ├─┬ memory-streams@0.1.0
+│ │ │ └─┬ readable-stream@1.0.34
+│ │ │   ├── core-util-is@1.0.2
+│ │ │   ├── isarray@0.0.1
+│ │ │   └── string_decoder@0.10.31
+│ │ ├── memorystream@0.3.1
+│ │ ├─┬ picture-tube@0.0.4
+│ │ │ ├── buffers@0.1.1
+│ │ │ ├── charm@0.1.2
+│ │ │ ├─┬ event-stream@0.9.8
+│ │ │ │ └── optimist@0.2.8
+│ │ │ ├─┬ optimist@0.3.7
+│ │ │ │ └── wordwrap@0.0.3
+│ │ │ ├── png-js@0.1.1
+│ │ │ └── request@2.9.203
+│ │ ├─┬ sparkline@0.1.2
+│ │ │ ├── here@0.0.2
+│ │ │ └─┬ nopt@2.1.2
+│ │ │   └── abbrev@1.0.9
+│ │ ├─┬ strip-ansi@3.0.1
+│ │ │ └── ansi-regex@2.0.0
+│ │ ├── term-canvas@0.0.5
+│ │ └── x256@0.0.2
 │ ├── commander@2.2.0
 │ ├── drawille@0.1.1
 │ ├─┬ glob@4.0.4
@@ -8942,9 +10243,508 @@ yajl-ruby (1.1.0)
 │ ├── os-utils@0.0.14
 │ ├─┬ read@1.0.5
 │ │ └── mute-stream@0.0.6
+│ ├─┬ request@2.74.0
+│ │ ├── aws-sign2@0.6.0
+│ │ ├── aws4@1.4.1
+│ │ ├─┬ bl@1.1.2
+│ │ │ └─┬ readable-stream@2.0.6
+│ │ │   ├── isarray@1.0.0
+│ │ │   ├── process-nextick-args@1.0.7
+│ │ │   └── util-deprecate@1.0.2
+│ │ ├── caseless@0.11.0
+│ │ ├─┬ combined-stream@1.0.5
+│ │ │ └── delayed-stream@1.0.0
+│ │ ├── extend@3.0.0
+│ │ ├── forever-agent@0.6.1
+│ │ ├─┬ form-data@1.0.0-rc4
+│ │ │ └── async@1.5.2
+│ │ ├─┬ har-validator@2.0.6
+│ │ │ ├─┬ commander@2.9.0
+│ │ │ │ └── graceful-readlink@1.0.1
+│ │ │ ├─┬ is-my-json-valid@2.13.1
+│ │ │ │ ├── generate-function@2.0.0
+│ │ │ │ ├─┬ generate-object-property@1.2.0
+│ │ │ │ │ └── is-property@1.0.2
+│ │ │ │ ├── jsonpointer@2.0.0
+│ │ │ │ └── xtend@4.0.1
+│ │ │ └─┬ pinkie-promise@2.0.1
+│ │ │   └── pinkie@2.0.4
+│ │ ├─┬ hawk@3.1.3
+│ │ │ ├── boom@2.10.1
+│ │ │ ├── cryptiles@2.0.5
+│ │ │ ├── hoek@2.16.3
+│ │ │ └── sntp@1.0.9
+│ │ ├─┬ http-signature@1.1.1
+│ │ │ ├── assert-plus@0.2.0
+│ │ │ ├─┬ jsprim@1.3.0
+│ │ │ │ ├── extsprintf@1.0.2
+│ │ │ │ ├── json-schema@0.2.2
+│ │ │ │ └── verror@1.3.6
+│ │ │ └─┬ sshpk@1.9.2
+│ │ │   ├── asn1@0.2.3
+│ │ │   ├── assert-plus@1.0.0
+│ │ │   ├─┬ dashdash@1.14.0
+│ │ │   │ └── assert-plus@1.0.0
+│ │ │   ├── ecc-jsbn@0.1.1
+│ │ │   ├─┬ getpass@0.1.6
+│ │ │   │ └── assert-plus@1.0.0
+│ │ │   ├── jodid25519@1.0.2
+│ │ │   ├── jsbn@0.1.0
+│ │ │   └── tweetnacl@0.13.3
+│ │ ├── is-typedarray@1.0.0
+│ │ ├── isstream@0.1.2
+│ │ ├── json-stringify-safe@5.0.1
+│ │ ├─┬ mime-types@2.1.11
+│ │ │ └── mime-db@1.23.0
+│ │ ├── node-uuid@1.4.7
+│ │ ├── oauth-sign@0.8.2
+│ │ ├── qs@6.2.1
+│ │ ├── stringstream@0.0.5
+│ │ ├── tough-cookie@2.3.1
+│ │ └── tunnel-agent@0.4.3
 │ └─┬ sudo@1.0.3
 │   ├── inpath@1.0.2
 │   └── pidof@1.0.2
+├─┬ waldo-top@1.0.8
+│ ├── blessed@0.1.81
+│ ├─┬ blessed-contrib@3.5.5
+│ │ ├── ansi-term@0.0.2
+│ │ ├─┬ chalk@1.1.3
+│ │ │ ├── ansi-styles@2.2.1
+│ │ │ ├── escape-string-regexp@1.0.5
+│ │ │ ├── has-ansi@2.0.0
+│ │ │ └── supports-color@2.0.0
+│ │ ├─┬ drawille-canvas-blessed-contrib@0.1.3
+│ │ │ ├── bresenham@0.0.3
+│ │ │ ├── drawille-blessed-contrib@1.0.0
+│ │ │ └── gl-matrix@2.3.2
+│ │ ├── lodash@4.14.1
+│ │ ├─┬ map-canvas@0.1.5
+│ │ │ └─┬ xml2js@0.4.17
+│ │ │   ├── sax@1.2.1
+│ │ │   └── xmlbuilder@4.2.1
+│ │ ├── marked@0.3.6
+│ │ ├─┬ marked-terminal@1.6.1
+│ │ │ ├─┬ cardinal@0.5.0
+│ │ │ │ ├── ansicolors@0.2.1
+│ │ │ │ └─┬ redeyed@0.5.0
+│ │ │ │   └── esprima-fb@12001.1.0-dev-harmony-fb
+│ │ │ ├─┬ cli-table@0.3.1
+│ │ │ │ └── colors@1.0.3
+│ │ │ ├─┬ lodash.assign@3.2.0
+│ │ │ │ ├─┬ lodash._baseassign@3.2.0
+│ │ │ │ │ └── lodash._basecopy@3.0.1
+│ │ │ │ ├─┬ lodash._createassigner@3.1.1
+│ │ │ │ │ ├── lodash._bindcallback@3.0.1
+│ │ │ │ │ ├── lodash._isiterateecall@3.0.9
+│ │ │ │ │ └── lodash.restparam@3.6.1
+│ │ │ │ └─┬ lodash.keys@3.1.2
+│ │ │ │   ├── lodash._getnative@3.9.1
+│ │ │ │   ├── lodash.isarguments@3.0.9
+│ │ │ │   └── lodash.isarray@3.0.4
+│ │ │ └── node-emoji@0.1.0
+│ │ ├─┬ memory-streams@0.1.0
+│ │ │ └─┬ readable-stream@1.0.34
+│ │ │   ├── core-util-is@1.0.2
+│ │ │   ├── inherits@2.0.1
+│ │ │   ├── isarray@0.0.1
+│ │ │   └── string_decoder@0.10.31
+│ │ ├── memorystream@0.3.1
+│ │ ├─┬ picture-tube@0.0.4
+│ │ │ ├── buffers@0.1.1
+│ │ │ ├── charm@0.1.2
+│ │ │ ├─┬ event-stream@0.9.8
+│ │ │ │ └── optimist@0.2.8
+│ │ │ ├─┬ optimist@0.3.7
+│ │ │ │ └── wordwrap@0.0.3
+│ │ │ ├── png-js@0.1.1
+│ │ │ └── request@2.9.203
+│ │ ├─┬ sparkline@0.1.2
+│ │ │ ├── here@0.0.2
+│ │ │ └─┬ nopt@2.1.2
+│ │ │   └── abbrev@1.0.9
+│ │ ├─┬ strip-ansi@3.0.1
+│ │ │ └── ansi-regex@2.0.0
+│ │ ├── term-canvas@0.0.5
+│ │ └── x256@0.0.2
+│ ├─┬ dns@0.2.2
+│ │ ├─┬ hbo-dnsd@0.9.8
+│ │ │ └── defaultable@0.7.2
+│ │ ├─┬ native-dns@0.6.1
+│ │ │ ├── ipaddr.js@1.2.0
+│ │ │ ├─┬ native-dns-cache@0.0.2
+│ │ │ │ └── binaryheap@0.0.3
+│ │ │ └─┬ native-dns-packet@0.1.1
+│ │ │   └─┬ buffercursor@0.0.12
+│ │ │     └─┬ verror@1.6.1
+│ │ │       └── extsprintf@1.2.0
+│ │ ├── node-options@0.0.6
+│ │ ├─┬ tomahawk@0.1.6
+│ │ │ ├─┬ body-parser@1.5.0
+│ │ │ │ ├── bytes@1.0.0
+│ │ │ │ ├── depd@0.4.2
+│ │ │ │ ├── iconv-lite@0.4.4
+│ │ │ │ ├── media-typer@0.2.0
+│ │ │ │ ├── qs@0.6.6
+│ │ │ │ ├── raw-body@1.3.0
+│ │ │ │ └─┬ type-is@1.3.2
+│ │ │ │   └── mime-types@1.0.1
+│ │ │ ├─┬ connect@3.0.2
+│ │ │ │ ├─┬ debug@1.0.3
+│ │ │ │ │ └── ms@0.6.2
+│ │ │ │ ├─┬ finalhandler@0.0.2
+│ │ │ │ │ ├─┬ debug@1.0.2
+│ │ │ │ │ │ └── ms@0.6.2
+│ │ │ │ │ └── escape-html@1.0.1
+│ │ │ │ ├── parseurl@1.1.3
+│ │ │ │ └── utils-merge@1.0.0
+│ │ │ ├─┬ errorhandler@1.1.1
+│ │ │ │ ├─┬ accepts@1.0.7
+│ │ │ │ │ ├── mime-types@1.0.1
+│ │ │ │ │ └── negotiator@0.4.7
+│ │ │ │ └── escape-html@1.0.1
+│ │ │ ├─┬ express@4.6.1
+│ │ │ │ ├─┬ accepts@1.0.7
+│ │ │ │ │ ├── mime-types@1.0.1
+│ │ │ │ │ └── negotiator@0.4.7
+│ │ │ │ ├── buffer-crc32@0.2.3
+│ │ │ │ ├── cookie@0.1.2
+│ │ │ │ ├── cookie-signature@1.0.4
+│ │ │ │ ├─┬ debug@1.0.3
+│ │ │ │ │ └── ms@0.6.2
+│ │ │ │ ├── depd@0.3.0
+│ │ │ │ ├── escape-html@1.0.1
+│ │ │ │ ├── finalhandler@0.0.3
+│ │ │ │ ├── fresh@0.2.2
+│ │ │ │ ├── media-typer@0.2.0
+│ │ │ │ ├── merge-descriptors@0.0.2
+│ │ │ │ ├── methods@1.1.0
+│ │ │ │ ├── parseurl@1.1.3
+│ │ │ │ ├── path-to-regexp@0.1.3
+│ │ │ │ ├─┬ proxy-addr@1.0.1
+│ │ │ │ │ └── ipaddr.js@0.1.2
+│ │ │ │ ├── qs@0.6.6
+│ │ │ │ ├── range-parser@1.0.0
+│ │ │ │ ├─┬ send@0.6.0
+│ │ │ │ │ ├─┬ finished@1.2.2
+│ │ │ │ │ │ └── ee-first@1.0.3
+│ │ │ │ │ ├── mime@1.2.11
+│ │ │ │ │ └── ms@0.6.2
+│ │ │ │ ├── serve-static@1.3.2
+│ │ │ │ ├─┬ type-is@1.3.2
+│ │ │ │ │ └── mime-types@1.0.1
+│ │ │ │ ├── utils-merge@1.0.0
+│ │ │ │ └── vary@0.1.0
+│ │ │ ├─┬ morgan@1.2.0
+│ │ │ │ ├── basic-auth@1.0.0
+│ │ │ │ ├── bytes@1.0.0
+│ │ │ │ ├── depd@0.4.2
+│ │ │ │ └─┬ finished@1.2.2
+│ │ │ │   └── ee-first@1.0.3
+│ │ │ ├── node-options@0.0.6
+│ │ │ ├─┬ socket.io@1.0.6
+│ │ │ │ ├── debug@0.7.4
+│ │ │ │ ├─┬ engine.io@1.3.1
+│ │ │ │ │ ├── base64id@0.1.0
+│ │ │ │ │ ├── debug@0.6.0
+│ │ │ │ │ ├─┬ engine.io-parser@1.0.6
+│ │ │ │ │ │ ├── after@0.8.1
+│ │ │ │ │ │ ├── arraybuffer.slice@0.0.6
+│ │ │ │ │ │ ├── base64-arraybuffer@0.1.2
+│ │ │ │ │ │ ├── blob@0.0.2
+│ │ │ │ │ │ └── utf8@2.0.0
+│ │ │ │ │ └─┬ ws@0.4.31
+│ │ │ │ │   ├── commander@0.6.1
+│ │ │ │ │   ├── nan@0.3.2
+│ │ │ │ │   ├── options@0.0.5
+│ │ │ │ │   └── tinycolor@0.0.1
+│ │ │ │ ├─┬ has-binary-data@0.1.1
+│ │ │ │ │ └── isarray@0.0.1
+│ │ │ │ ├─┬ socket.io-adapter@0.2.0
+│ │ │ │ │ └─┬ socket.io-parser@2.1.2
+│ │ │ │ │   ├─┬ emitter@1.0.1
+│ │ │ │ │   │ └── indexof@0.0.1
+│ │ │ │ │   ├── isarray@0.0.1
+│ │ │ │ │   └── json3@3.2.6
+│ │ │ │ ├─┬ socket.io-client@1.0.6
+│ │ │ │ │ ├── component-bind@1.0.0
+│ │ │ │ │ ├── component-emitter@1.1.2
+│ │ │ │ │ ├─┬ engine.io-client@1.3.1
+│ │ │ │ │ │ ├── component-inherit@0.0.3
+│ │ │ │ │ │ ├─┬ engine.io-parser@1.0.6
+│ │ │ │ │ │ │ ├── after@0.8.1
+│ │ │ │ │ │ │ ├── arraybuffer.slice@0.0.6
+│ │ │ │ │ │ │ ├── base64-arraybuffer@0.1.2
+│ │ │ │ │ │ │ ├── blob@0.0.2
+│ │ │ │ │ │ │ └── utf8@2.0.0
+│ │ │ │ │ │ ├─┬ has-cors@1.0.3
+│ │ │ │ │ │ │ └── global@2.0.1
+│ │ │ │ │ │ ├─┬ parsejson@0.0.1
+│ │ │ │ │ │ │ └─┬ better-assert@1.0.0
+│ │ │ │ │ │ │   └── callsite@1.0.0
+│ │ │ │ │ │ ├─┬ parseqs@0.0.2
+│ │ │ │ │ │ │ └─┬ better-assert@1.0.0
+│ │ │ │ │ │ │   └── callsite@1.0.0
+│ │ │ │ │ │ ├─┬ ws@0.4.31
+│ │ │ │ │ │ │ ├── commander@0.6.1
+│ │ │ │ │ │ │ ├── nan@0.3.2
+│ │ │ │ │ │ │ ├── options@0.0.5
+│ │ │ │ │ │ │ └── tinycolor@0.0.1
+│ │ │ │ │ │ └── xmlhttprequest@1.5.0
+│ │ │ │ │ ├── indexof@0.0.1
+│ │ │ │ │ ├── object-component@0.0.3
+│ │ │ │ │ ├─┬ parseuri@0.0.2
+│ │ │ │ │ │ └─┬ better-assert@1.0.0
+│ │ │ │ │ │   └── callsite@1.0.0
+│ │ │ │ │ └── to-array@0.1.3
+│ │ │ │ └─┬ socket.io-parser@2.2.0
+│ │ │ │   ├─┬ emitter@1.0.1
+│ │ │ │   │ └── indexof@0.0.1
+│ │ │ │   ├── isarray@0.0.1
+│ │ │ │   └── json3@3.2.6
+│ │ │ └─┬ winston@0.7.3
+│ │ │   ├── async@0.2.10
+│ │ │   ├── colors@0.6.2
+│ │ │   ├── cycle@1.0.3
+│ │ │   ├── eyes@0.1.8
+│ │ │   ├── pkginfo@0.3.0
+│ │ │   ├─┬ request@2.16.6
+│ │ │   │ ├── aws-sign@0.2.0
+│ │ │   │ ├── cookie-jar@0.2.0
+│ │ │   │ ├── forever-agent@0.2.0
+│ │ │   │ ├─┬ form-data@0.0.10
+│ │ │   │ │ └─┬ combined-stream@0.0.5
+│ │ │   │ │   └── delayed-stream@0.0.5
+│ │ │   │ ├─┬ hawk@0.10.2
+│ │ │   │ │ ├── boom@0.3.8
+│ │ │   │ │ ├── cryptiles@0.1.3
+│ │ │   │ │ ├── hoek@0.7.6
+│ │ │   │ │ └── sntp@0.1.4
+│ │ │   │ ├── json-stringify-safe@3.0.0
+│ │ │   │ ├── mime@1.2.11
+│ │ │   │ ├── node-uuid@1.4.1
+│ │ │   │ ├── oauth-sign@0.2.0
+│ │ │   │ ├── qs@0.5.6
+│ │ │   │ └── tunnel-agent@0.2.0
+│ │ │   └── stack-trace@0.0.9
+│ │ ├── tomahawk-plugin-kv-memory-store@0.0.3
+│ │ └─┬ winston@0.7.3
+│ │   ├── async@0.2.10
+│ │   ├── colors@0.6.2
+│ │   ├── cycle@1.0.3
+│ │   ├── eyes@0.1.8
+│ │   ├── pkginfo@0.3.1
+│ │   ├─┬ request@2.16.6
+│ │   │ ├── aws-sign@0.2.0
+│ │   │ ├── cookie-jar@0.2.0
+│ │   │ ├── forever-agent@0.2.0
+│ │   │ ├─┬ form-data@0.0.10
+│ │   │ │ └─┬ combined-stream@0.0.7
+│ │   │ │   └── delayed-stream@0.0.5
+│ │   │ ├─┬ hawk@0.10.2
+│ │   │ │ ├── boom@0.3.8
+│ │   │ │ ├── cryptiles@0.1.3
+│ │   │ │ ├── hoek@0.7.6
+│ │   │ │ └── sntp@0.1.4
+│ │   │ ├── json-stringify-safe@3.0.0
+│ │   │ ├── mime@1.2.11
+│ │   │ ├── oauth-sign@0.2.0
+│ │   │ ├── qs@0.5.6
+│ │   │ └── tunnel-agent@0.2.0
+│ │   └── stack-trace@0.0.9
+│ ├─┬ global-modules@0.2.3
+│ │ ├─┬ global-prefix@0.1.4
+│ │ │ ├── ini@1.3.4
+│ │ │ ├─┬ osenv@0.1.3
+│ │ │ │ └── os-homedir@1.0.1
+│ │ │ └─┬ which@1.2.10
+│ │ │   └── isexe@1.1.2
+│ │ └── is-windows@0.2.0
+│ ├─┬ maxmind@1.3.0
+│ │ ├── big-integer@1.6.15
+│ │ └─┬ lru-cache@4.0.1
+│ │   ├── pseudomap@1.0.2
+│ │   └── yallist@2.0.0
+│ ├─┬ phantomjs-prebuilt@2.1.10
+│ │ ├── es6-promise@3.2.1
+│ │ ├─┬ extract-zip@1.5.0
+│ │ │ ├─┬ concat-stream@1.5.0
+│ │ │ │ ├── inherits@2.0.1
+│ │ │ │ ├─┬ readable-stream@2.0.6
+│ │ │ │ │ ├── core-util-is@1.0.2
+│ │ │ │ │ ├── isarray@1.0.0
+│ │ │ │ │ ├── process-nextick-args@1.0.7
+│ │ │ │ │ ├── string_decoder@0.10.31
+│ │ │ │ │ └── util-deprecate@1.0.2
+│ │ │ │ └── typedarray@0.0.6
+│ │ │ ├── debug@0.7.4
+│ │ │ ├─┬ mkdirp@0.5.0
+│ │ │ │ └── minimist@0.0.8
+│ │ │ └─┬ yauzl@2.4.1
+│ │ │   └─┬ fd-slicer@1.0.1
+│ │ │     └── pend@1.2.0
+│ │ ├─┬ fs-extra@0.30.0
+│ │ │ ├── graceful-fs@4.1.4
+│ │ │ ├── jsonfile@2.3.1
+│ │ │ ├── klaw@1.3.0
+│ │ │ ├── path-is-absolute@1.0.0
+│ │ │ └─┬ rimraf@2.5.4
+│ │ │   └─┬ glob@7.0.5
+│ │ │     ├── fs.realpath@1.0.0
+│ │ │     ├─┬ inflight@1.0.5
+│ │ │     │ └── wrappy@1.0.2
+│ │ │     ├── inherits@2.0.1
+│ │ │     ├─┬ minimatch@3.0.2
+│ │ │     │ └─┬ brace-expansion@1.1.6
+│ │ │     │   ├── balanced-match@0.4.2
+│ │ │     │   └── concat-map@0.0.1
+│ │ │     └─┬ once@1.3.3
+│ │ │       └── wrappy@1.0.2
+│ │ ├─┬ hasha@2.2.0
+│ │ │ ├── is-stream@1.1.0
+│ │ │ └─┬ pinkie-promise@2.0.1
+│ │ │   └── pinkie@2.0.4
+│ │ ├── kew@0.7.0
+│ │ ├── progress@1.1.8
+│ │ ├─┬ request@2.74.0
+│ │ │ ├── aws-sign2@0.6.0
+│ │ │ ├── aws4@1.4.1
+│ │ │ ├─┬ bl@1.1.2
+│ │ │ │ └─┬ readable-stream@2.0.6
+│ │ │ │   ├── core-util-is@1.0.2
+│ │ │ │   ├── inherits@2.0.1
+│ │ │ │   ├── isarray@1.0.0
+│ │ │ │   ├── process-nextick-args@1.0.7
+│ │ │ │   ├── string_decoder@0.10.31
+│ │ │ │   └── util-deprecate@1.0.2
+│ │ │ ├── caseless@0.11.0
+│ │ │ ├─┬ combined-stream@1.0.5
+│ │ │ │ └── delayed-stream@1.0.0
+│ │ │ ├── extend@3.0.0
+│ │ │ ├── forever-agent@0.6.1
+│ │ │ ├─┬ form-data@1.0.0-rc4
+│ │ │ │ └── async@1.5.2
+│ │ │ ├─┬ har-validator@2.0.6
+│ │ │ │ ├─┬ chalk@1.1.3
+│ │ │ │ │ ├── ansi-styles@2.2.1
+│ │ │ │ │ ├── escape-string-regexp@1.0.5
+│ │ │ │ │ ├─┬ has-ansi@2.0.0
+│ │ │ │ │ │ └── ansi-regex@2.0.0
+│ │ │ │ │ ├─┬ strip-ansi@3.0.1
+│ │ │ │ │ │ └── ansi-regex@2.0.0
+│ │ │ │ │ └── supports-color@2.0.0
+│ │ │ │ ├─┬ commander@2.9.0
+│ │ │ │ │ └── graceful-readlink@1.0.1
+│ │ │ │ ├─┬ is-my-json-valid@2.13.1
+│ │ │ │ │ ├── generate-function@2.0.0
+│ │ │ │ │ ├─┬ generate-object-property@1.2.0
+│ │ │ │ │ │ └── is-property@1.0.2
+│ │ │ │ │ ├── jsonpointer@2.0.0
+│ │ │ │ │ └── xtend@4.0.1
+│ │ │ │ └─┬ pinkie-promise@2.0.1
+│ │ │ │   └── pinkie@2.0.4
+│ │ │ ├─┬ hawk@3.1.3
+│ │ │ │ ├── boom@2.10.1
+│ │ │ │ ├── cryptiles@2.0.5
+│ │ │ │ ├── hoek@2.16.3
+│ │ │ │ └── sntp@1.0.9
+│ │ │ ├─┬ http-signature@1.1.1
+│ │ │ │ ├── assert-plus@0.2.0
+│ │ │ │ ├─┬ jsprim@1.3.0
+│ │ │ │ │ ├── extsprintf@1.0.2
+│ │ │ │ │ ├── json-schema@0.2.2
+│ │ │ │ │ └── verror@1.3.6
+│ │ │ │ └─┬ sshpk@1.8.3
+│ │ │ │   ├── asn1@0.2.3
+│ │ │ │   ├── assert-plus@1.0.0
+│ │ │ │   ├── dashdash@1.14.0
+│ │ │ │   ├── ecc-jsbn@0.1.1
+│ │ │ │   ├── getpass@0.1.6
+│ │ │ │   ├── jodid25519@1.0.2
+│ │ │ │   ├── jsbn@0.1.0
+│ │ │ │   └── tweetnacl@0.13.3
+│ │ │ ├── is-typedarray@1.0.0
+│ │ │ ├── isstream@0.1.2
+│ │ │ ├── json-stringify-safe@5.0.1
+│ │ │ ├─┬ mime-types@2.1.11
+│ │ │ │ └── mime-db@1.23.0
+│ │ │ ├── node-uuid@1.4.7
+│ │ │ ├── oauth-sign@0.8.2
+│ │ │ ├── qs@6.2.1
+│ │ │ ├── stringstream@0.0.5
+│ │ │ ├── tough-cookie@2.3.0
+│ │ │ └── tunnel-agent@0.4.3
+│ │ ├─┬ request-progress@2.0.1
+│ │ │ └── throttleit@1.0.0
+│ │ └─┬ which@1.2.10
+│ │   └── isexe@1.1.2
+│ ├─┬ promise-phantom@3.1.1
+│ │ ├── co@4.6.0
+│ │ ├── mkpath@1.0.0
+│ │ ├─┬ node-phantom-simple@2.2.4
+│ │ │ └─┬ debug@2.2.0
+│ │ │   └── ms@0.7.1
+│ │ └─┬ tmp@0.0.28
+│ │   └── os-tmpdir@1.0.1
+│ └─┬ request@2.74.0
+│   ├── aws-sign2@0.6.0
+│   ├── aws4@1.4.1
+│   ├─┬ bl@1.1.2
+│   │ └─┬ readable-stream@2.0.6
+│   │   ├── isarray@1.0.0
+│   │   ├── process-nextick-args@1.0.7
+│   │   └── util-deprecate@1.0.2
+│   ├── caseless@0.11.0
+│   ├─┬ combined-stream@1.0.5
+│   │ └── delayed-stream@1.0.0
+│   ├── extend@3.0.0
+│   ├── forever-agent@0.6.1
+│   ├─┬ form-data@1.0.0-rc4
+│   │ └── async@1.5.2
+│   ├─┬ har-validator@2.0.6
+│   │ ├─┬ commander@2.9.0
+│   │ │ └── graceful-readlink@1.0.1
+│   │ ├─┬ is-my-json-valid@2.13.1
+│   │ │ ├── generate-function@2.0.0
+│   │ │ ├─┬ generate-object-property@1.2.0
+│   │ │ │ └── is-property@1.0.2
+│   │ │ ├── jsonpointer@2.0.0
+│   │ │ └── xtend@4.0.1
+│   │ └─┬ pinkie-promise@2.0.1
+│   │   └── pinkie@2.0.4
+│   ├─┬ hawk@3.1.3
+│   │ ├── boom@2.10.1
+│   │ ├── cryptiles@2.0.5
+│   │ ├── hoek@2.16.3
+│   │ └── sntp@1.0.9
+│   ├─┬ http-signature@1.1.1
+│   │ ├── assert-plus@0.2.0
+│   │ ├─┬ jsprim@1.3.0
+│   │ │ ├── extsprintf@1.0.2
+│   │ │ ├── json-schema@0.2.2
+│   │ │ └── verror@1.3.6
+│   │ └─┬ sshpk@1.9.2
+│   │   ├── asn1@0.2.3
+│   │   ├── assert-plus@1.0.0
+│   │   ├─┬ dashdash@1.14.0
+│   │   │ └── assert-plus@1.0.0
+│   │   ├── ecc-jsbn@0.1.1
+│   │   ├─┬ getpass@0.1.6
+│   │   │ └── assert-plus@1.0.0
+│   │   ├── jodid25519@1.0.2
+│   │   ├── jsbn@0.1.0
+│   │   └── tweetnacl@0.13.3
+│   ├── is-typedarray@1.0.0
+│   ├── isstream@0.1.2
+│   ├── json-stringify-safe@5.0.1
+│   ├─┬ mime-types@2.1.11
+│   │ └── mime-db@1.23.0
+│   ├── node-uuid@1.4.7
+│   ├── oauth-sign@0.8.2
+│   ├── qs@6.2.1
+│   ├── stringstream@0.0.5
+│   ├── tough-cookie@2.3.1
+│   └── tunnel-agent@0.4.3
 ├─┬ webpack@1.12.14
 │ ├── async@1.5.2
 │ ├── clone@1.0.2
