@@ -4,7 +4,7 @@
 
 tocpath="$HOME"/.dotfiles/TOC.md
 
-echo "" > $tocpath # overwrites the previous README
+> $tocpath # overwrites the previous README
 
 echo "
 ## Cloc

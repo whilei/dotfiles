@@ -25,25 +25,9 @@ alias v="vim"
 # make executable
 alias chx="chmod +x"
 
-# Open Safari on a localhost port $1.
-lh(){
-	open -a "Safari" "http://localhost:$1"
-}
-
 # Power management; ie [sleepnow | displaysleepnow | lock | boot]
 # -a, -b, -c :: all, battery, charger
 alias pms="pmset" # [-a | -b | -c ]... (0 for sleep, displaysleep, disksleep is never)
-
-# Open applications.
-
-# usage: $ slime . \or $ slime ../some/where/else
-alias slime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias atom='/usr/local/bin/atom'
-alias safari="open -a safari"
-alias firefox="open -a firefox"
-alias chrome="open -a google\ chrome"
-alias joyce="open -a ulysses"
-alias vlc="vlc *.mp3"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/,
 # so says holman. What he said.

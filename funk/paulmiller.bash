@@ -41,6 +41,7 @@ function size() {
       }
       {gsub(/^[0-9]+/, human($1)); print}'
 }
+alias sizes="size" # cuz I forget
 
 # $ git log --no-merges --pretty=format:"%ae" | stats
 # # => 514 a@example.com

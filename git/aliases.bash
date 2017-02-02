@@ -14,6 +14,8 @@ alias gll='git --no-pager log --oneline --decorate --color --graph'
 # Accepts -<3> arg to limit number shown.
 alias glg='git --no-pager log --pretty=format:"%cr [%h] %s" --graph --stat'
 
+alias gr="git remote -v"
+
 alias gpo="git push origin"
 alias gpu="git push upstream"
 alias gpg="git push github"
