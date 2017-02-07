@@ -363,13 +363,6 @@ you should place your code here."
      '((sh . t)
        (racket . t)))
 
-    ;; The following lines were added to fix racket execution in babel.
-    ;; See https://github.com/greghendershott/racket-mode#configure
-    ;; (setq racket-racket-program "/Applications/Racket v6.2.1/bin/racket")
-    ;; (setq racket-raco-program "/Applications/Racket v6.2.1/bin/raco")
-
-    ;; (setq org-reveal-title-slide "<h1 class='title'>%t</h1><h2 class='author'>%a</h2><h2 style='text-transform: lowercase'>&#64;webappzero</h2>")
-
     (setq org-reveal-title-slide "")
     (setenv "PATH" (concat (getenv "PATH") ":/Users/ia/.node/bin"))
     (setq exec-path (append exec-path '("/Users/ia/.node/bin")))

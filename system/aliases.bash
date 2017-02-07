@@ -41,3 +41,5 @@ alias cleaningladies="source ~/.dotfiles/system/housekeep.sh"
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesk="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesk="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+alias iftop="iftop -i en1"
