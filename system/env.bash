@@ -31,3 +31,8 @@ export -f date_stamp
 alias datestamp="date_stamp" # cuz I forget
 alias timestamp="date_stamp"
 alias time_stamp="date_stamp"
+
+today_date() {
+	date +%Y-%m-%d
+}
+alias date_today="today_date"

@@ -53,3 +53,7 @@ alias fv="f -e vim"
 # (Use: f|d|a fuzzyterm
 # (Use: ie cd `d dot`
 eval "$(fasd --init auto)"
+
+alias imgls="lsimg"
+alias lscatimg="lsimg"
+alias catimgls="lsimg"

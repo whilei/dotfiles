@@ -1,1 +1,1 @@
-alias sf="ssh freya"
+alias ssf="ssh freya"

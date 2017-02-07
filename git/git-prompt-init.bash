@@ -82,3 +82,10 @@ ps1_sm() {
 # Turn it on.
 ps1_lg
 
+# Cuz I forget.
+alias ps1_low="ps1_llg"
+alias ps1_small="ps1_sm"
+alias ps1_sml="ps1_sm"
+alias ps1_short="ps1_sm"
+alias ps1_norm="ps1_lg"
+
