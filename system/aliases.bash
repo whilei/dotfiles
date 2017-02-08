@@ -42,4 +42,6 @@ alias cleaningladies="source ~/.dotfiles/system/housekeep.sh"
 alias hidedesk="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesk="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-alias iftop="iftop -i en1"
+alias iiftop="sudo iftop -i en1 -o 10s"
+
+alias scw="screencapture -W -t jpg ~/Pictures/screenshots/`date_stamp`.jpg"
