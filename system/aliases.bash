@@ -44,4 +44,3 @@ alias showdesk="defaults write com.apple.finder CreateDesktop -bool true && kill
 
 alias iiftop="sudo iftop -i en1 -o 10s"
 
-alias scw="screencapture -W -t jpg ~/Pictures/screenshots/`date_stamp`.jpg"

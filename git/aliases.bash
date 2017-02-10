@@ -70,3 +70,7 @@ function gitpushsubforce() {
 	git push "$1" `git subtree split --prefix "$3" "$2"`:master --force
 }
 
+# re init to winit
+gitwinit() {
+	cp -r ~/.git_template/hooks/ ./.git/hooks/
+}

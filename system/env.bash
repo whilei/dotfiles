@@ -36,3 +36,4 @@ today_date() {
 	date +%Y-%m-%d
 }
 alias date_today="today_date"
+alias scw="screencapture -W -t jpg ~/Pictures/screenshots/`date_stamp`.jpg"
