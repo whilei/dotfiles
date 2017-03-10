@@ -18,5 +18,5 @@ color_scheme=0
 delay=15
 left_meters=CPU AllCPUs Memory Memory Memory 
 left_meter_modes=3 1 1 2 3 
-right_meters=CPUTemp Uptime Battery Load LoadAverage FanRPM CPUTemp Tasks 
+right_meters=CPUTemp CPUTemp Uptime Battery Load LoadAverage FanRPM Tasks 
 right_meter_modes=3 2 2 2 2 2 2 2 

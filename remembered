@@ -4,3 +4,5 @@ find_git_configs ./ sed # -i.back
 identify IMG_2004.jpg  # 
 ipconfig getifaddr en1 # 
 ./0verhair\! "34:81:c4:3b:64:28 or e0:28:6d:07:c3:eb or c8:0e:14:82:3a:9f or 08:96:d7:ac:4f:1f" # 
+git config --get-regexp alias # 
+for file in ./**/*.mp3; do mv ./So # viel

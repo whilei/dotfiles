@@ -12,3 +12,8 @@ alias dockup="docker-compose up"
 alias grm="go run main.go"
 alias drive_export_png="drive pull --export png --explicitly-export --exports-dir png_exports --same-exports-dir directory"
 alias gogogs='./darwin.gitea web -c custom/conf/dev.app.ini'
+
+alias be="bundle exec"
+alias becapdep="bundle exec cap production deploy"
+alias becapres="bundle exec cap production puma:restart"
+

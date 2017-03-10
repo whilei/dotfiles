@@ -74,3 +74,10 @@ function gitpushsubforce() {
 gitwinit() {
 	cp -r ~/.git_template/hooks/ ./.git/hooks/
 }
+
+alias gitalias="git config --get-regexp alias"
+alias gitaliases="git config --get-regexp alias"
+alias galias="git config --get-regexp alias"
+alias git_alias="git config --get-regexp alias"
+alias git_aliases="git config --get-regexp alias"
+

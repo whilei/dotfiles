@@ -15,6 +15,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     nginx
      swift
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -125,22 +126,23 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(base16-google-dark
+   dotspacemacs-themes '(base16-google-light
+                         base16-google-dark
                          monokai
                          base16-github
-                         base16-google-light
                          cyberpunk
                          inkpot)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
 
+   ;; This doesn't work for me.
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   ;; dotspacemacs-default-font '("Source Code Pro"
-                               ;; :size 13
-                               ;; :weight normal
-                               ;; :width normal
-                               ;; :powerline-scale 1.1)
+  dotspacemacs-default-font '("Menlo"
+                              :size 11
+                              :weight normal
+                              :width normal
+                              :powerline-scale 1.1)
 
    ;; The leader key
    dotspacemacs-leader-key "SPC"
@@ -268,6 +270,8 @@ values."
 (defun dotspacemacs/user-init ()
   (setq-default
 
+    auto-highlight-symbol t
+
     ;; Center point mode.
     center-line 1
 
@@ -301,6 +305,8 @@ values."
   	sp-highlight-wrap-overlay nil
   	sp-highlight-wrap-tag-overlay nil
 
+    spacemacs/symbol-highlight t
+
     ;; Whitespace mode
     ;; direct from TheBB
     whitespace-style '(face tab tab-mark newline-mark)
@@ -325,16 +331,20 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
   (with-eval-after-load 'smartparens
     (show-smartparens-global-mode -1))
     (dolist (e '(("tmpl" . web-mode))))
     (dolist (e '(("\\.tmpl\\" . web-mode))))
     (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
+
   (use-package editorconfig
     :config (editorconfig-mode 1))
+
   ;; try to fix golang color syntax...
   ;; https://github.com/syl20bnr/spacemacs/issues/7393
   ;; (fset 'xterm-color-unfontify-region 'font-lock-default-unfontify-region)
+
   (add-hook 'markdown-mode-hook 'pandoc-mode)
   (add-hook 'pandoc-mode-hook 'pandoc-load-default-settings)
   (add-hook 'web-mode-hook 'evil-matchit-mode)
@@ -367,8 +377,14 @@ you should place your code here."
     (setenv "PATH" (concat (getenv "PATH") ":/Users/ia/.node/bin"))
     (setq exec-path (append exec-path '("/Users/ia/.node/bin")))
     (require 'org-drill))                         (enable-theme 'monokai)))
+    (setq-default word-wrap t)
+
+    ;; This works. #font
+    ;; (set-frame-font "Menlo-11" nil t)
+
 )
 
+;;Oldskool as was
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
@@ -377,6 +393,15 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(paradox-github-token t))
+
+;; ;; Default
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.)
+;;  )
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
