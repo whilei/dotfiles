@@ -106,9 +106,9 @@ bind u:${hyper} throw ${external} ${fullsize}
 
 bind e:${shiftcontrol} focus 'Emacs'
 bind s:${shiftcontrol} focus 'Sublime Text'
+bind g:${shiftcontrol} focus 'Gogland-EAP'
 bind w:${shiftcontrol} focus 'Atom'
 bind x:${shiftcontrol} focus 'Xcode'
-# bind e:${shiftcontrol} focus 'Eclipse'
 
 bind o:${shiftcontrol} focus 'Postman'
 
@@ -126,6 +126,7 @@ bind f:${shiftcontrol} focus 'Finder'
 
 bind m:${shiftcontrol} focus 'Messages'
 bind n:${shiftcontrol} focus 'iTunes'
+bind l:${shiftcontrol} focus 'Slack'
 
 bind v:${shiftcontrol} focus 'VLC'
 bind p:${shiftcontrol} focus 'Photos'

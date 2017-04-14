@@ -6,6 +6,7 @@ alias gc="git commit -m"
 alias gitit='git add -A && git commit -m'
 
 alias gs='git status -sb'
+alias gd='git diff --color | diff-so-fancy'
 
 function gl() {
   git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

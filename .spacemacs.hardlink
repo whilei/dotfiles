@@ -44,7 +44,7 @@ values."
      python
      (ranger :variables
              ranger-show-preview t)
-     ruby
+     ;; ruby
      ruby-on-rails
      semantic
      (shell :variables
