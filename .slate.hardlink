@@ -129,7 +129,7 @@ bind n:${shiftcontrol} focus 'iTunes'
 bind l:${shiftcontrol} focus 'Slack'
 
 bind v:${shiftcontrol} focus 'VLC'
-bind p:${shiftcontrol} focus 'Photos'
+# bind p:${shiftcontrol} focus 'Photos'
 bind r:${shiftcontrol} focus 'Preview'
 
 

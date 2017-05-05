@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 alias hp="gitpushsub web master web"
 alias hr="heroku run"
 alias hrw="heroku run --remote web"
@@ -16,4 +18,12 @@ alias gogogs='./darwin.gitea web -c custom/conf/dev.app.ini'
 alias be="bundle exec"
 alias becapdep="bundle exec cap production deploy"
 alias becapres="bundle exec cap production puma:restart"
+
+function ging {
+	pushd /Users/ia/gocode/src/github.com/ethereumproject/go-ethereum;
+	go install ./cmd/geth;
+	popd;
+}
+
+
 

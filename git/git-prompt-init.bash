@@ -64,9 +64,12 @@ GIT_PS1_SHOWUPSTREAM="auto,verbose"
 
 # PS1=${COLOR_PURPLE}'\u@\h'${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' \$ '
 
+ethericon=$(echo -e "\xE2\x9F\xA0")
+dollars=$ethericon # '$'
+
 # user@comp ~> \u@\h
 ps1_lg() {
-	PS1=${COLOR_PURPLE}${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' \$ '
+	PS1=${COLOR_PURPLE}${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' '${COLOR_YELLOW}${dollars}${color_reset}' '
 }
 # For when I'm using a small terminal and a long $CWD.
 # Just set the input on a newline beneath CWD, GITINFO, ie
@@ -74,10 +77,10 @@ ps1_lg() {
 # ia@mh cwd `git status`
 # $ echo
 ps1_llg(){
-	PS1=${COLOR_PURPLE}${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n\$ '
+	PS1=${COLOR_PURPLE}${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${COLOR_YELLOW}'\$'${color_reset}' '
 }
 ps1_sm() {
-    PS1=':\w \$ '
+    PS1=':\w '${COLOR_YELLOW}'\$'${color_reset}' '
 }
 # Turn it on.
 ps1_lg
