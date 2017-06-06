@@ -1,8 +1,10 @@
 [user]
 	name = Mr. Is
 	email = isaac.ardis@gmail.com
+	signingkey = 7419D94C
 [core]
 	excludesfile = /Users/ia/.gitignore_global
+	quotepath = false
 [push]
     default = current
 [pull]
@@ -14,10 +16,12 @@
 	wipe = !git stash && git stash drop
 	# Undo your last commit as though you had never made it.
 	uncommit = reset --soft HEAD~
-	
+
 	save = !git add -A && git commit -m ':floppy_disk:'
 	wip = commit -am ":hammer:"
-	
+	typo = commit -am ":eyeglasses:"
+    fuck = commit -am ':fu: :computer:'
+
 	# Not that useful now that [push]default is set to current.
   pushit = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""
 
@@ -28,8 +32,10 @@
 	remotes = remote -v
 	r = remote -v
 	rr = remote rename
+	rename = remote rename
 	rurl = remote set-url
-	
+	set-url = remote set-url
+
 	# Diffables.
 	# with stats.
   diffstat = diff --stat -r
@@ -52,3 +58,14 @@
 	lg = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	# Flow da chart.
 	ll = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %Cgreen(%cr)%Creset %s' --date=relative
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[init]
+	templatedir = ~/.git_template
+[gpg]
+	program = gpg2
+#[commit]
+#	gpgsign = true
