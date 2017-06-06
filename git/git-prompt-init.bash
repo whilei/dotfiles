@@ -77,13 +77,13 @@ ps1_lg() {
 # ia@mh cwd `git status`
 # $ echo
 ps1_llg(){
-	PS1=${COLOR_PURPLE}${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${COLOR_YELLOW}'\$'${color_reset}' '
+	PS1=${COLOR_PURPLE}${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${COLOR_YELLOW}${dollars}${color_reset}' '
 }
 ps1_sm() {
-    PS1=':\w '${COLOR_YELLOW}'\$'${color_reset}' '
+    PS1=':\w '${COLOR_YELLOW}${dollars}${color_reset}' '
 }
 # Turn it on.
-ps1_lg
+ps1_llg
 
 # Cuz I forget.
 alias ps1_low="ps1_llg"

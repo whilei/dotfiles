@@ -25,5 +25,6 @@ function ging {
 	popd;
 }
 
+alias bb="boltbrowser"
 
 

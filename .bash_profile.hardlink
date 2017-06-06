@@ -1,6 +1,9 @@
 # make sure my .path file gets sourced
 [[ -s "$HOME/.path" ]] && source "$HOME/.path"
 
+# Ensure GPG2 can prompt for password.
+export GPG_TTY=$(tty)
+
 # Load from dotfiles.
 # do like holman
 export DOTS=$HOME/.dotfiles

@@ -1,7 +1,9 @@
 alias gg='git grep'
 
 alias ga="git add"
-alias gc="git commit -m"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gcam="git commit --amend"
 
 alias gitit='git add -A && git commit -m'
 
@@ -19,7 +21,7 @@ alias gr="git remote -v"
 
 alias gpo="git push origin"
 alias gpu="git push upstream"
-alias gpg="git push github"
+# alias gpg="git push github"
 alias gpb="git push bitbucket"
 alias gpa="git push gogs"
 alias gph="git push heroku"
