@@ -20,7 +20,7 @@
 	save = !git add -A && git commit -m ':floppy_disk:'
 	wip = commit -am ":hammer:"
 	typo = commit -am ":eyeglasses:"
-    fuck = commit -am ':fu: :computer:'
+    fuck = commit -am ':computer: :gun:'
 
 	# Not that useful now that [push]default is set to current.
   pushit = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""
