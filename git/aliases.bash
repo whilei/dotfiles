@@ -1,5 +1,3 @@
-alias gg='git grep'
-
 alias ga="git add"
 
 alias gc="git commit"
@@ -9,6 +7,7 @@ alias gcam="git commit --amend"
 
 # Quick commit with message.
 alias gitit='git add -A && git commit -m'
+alias GITIT='git add -A && git commit -S -m' # signed commit
 
 # Status
 alias gs='git status -sb'
