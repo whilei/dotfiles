@@ -14,31 +14,30 @@
 [alias]
 	# Undo all changes since last commit and leave no evidence.
 	wipe = !git stash && git stash drop
+
 	# Undo your last commit as though you had never made it.
 	uncommit = reset --soft HEAD~
 
 	save = !git add -A && git commit -m ':floppy_disk:'
+    SAVE = !git add -A && git commit -S -m ':floppy_disk:'
 	wip = commit -am ":hammer:"
-	typo = commit -am ":eyeglasses:"
+	WIP = commit -Sam ":hammer:"
+	typo = commit -am ":eyeglasses: :pen:"
+	TYPO = commit -Sam ":eyeglasses: :pen:"
     fuck = commit -am ':computer: :gun:'
+    FUCK = commit -Sam ':computer: :gun:'
 
-	# Not that useful now that [push]default is set to current.
-  pushit = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""
-
-	# Branchables.
+    # Checkout or create-and-checkout a branch.
 	go = checkout -B
 
 	# Remotes.
 	remotes = remote -v
-	r = remote -v
-	rr = remote rename
 	rename = remote rename
-	rurl = remote set-url
-	set-url = remote set-url
+	url = remote set-url
 
 	# Diffables.
 	# with stats.
-  diffstat = diff --stat -r
+    diffstat = diff --stat -r
 	# show changes.
 	changes = diff --name-status -r
 
@@ -52,12 +51,6 @@
 	# Recent branch action by last commit per. I think.
 	recently = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 
-	# List files that were changed.
-	# I don't use these nearly as much as $ gl and $ glp aliases.
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
-	lg = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	# Flow da chart.
-	ll = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %Cgreen(%cr)%Creset %s' --date=relative
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f

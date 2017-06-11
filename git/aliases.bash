@@ -3,6 +3,7 @@ alias ga="git add"
 alias gc="git commit"
 alias gC="git commit -S" # signed commit
 alias gcm="git commit -m"
+alias gCm="git commit -S -m"
 alias gcam="git commit --amend"
 
 # Quick commit with message.
@@ -18,13 +19,13 @@ alias gd='git diff --color | diff-so-fancy'
 # Pretty logs.
 # - can use with '-n' flag, where n is number of commits from head.
 ## Oneline pretty with graph and fancy colors and all the things.
-alias gl='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
+alias gl='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 ## ... with raw commit message (subject+body)
-alias gL='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset %n%C(yellow)%B%Creset" --abbrev-commit --date=relative'
+alias gL='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset %n%C(yellow)%B%Creset" --abbrev-commit --date=relative'
 ## ... the works, with file stats.
-alias GL='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
+alias GL='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
 ## ... all stats, no commit messages
-alias Gl='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative --stat'
+alias Gl='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative --stat'
 
 alias gr="git remote"
 # Show remotes.
