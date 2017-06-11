@@ -10,12 +10,13 @@ alias gitit='git add -A && git commit -m'
 alias gs='git status -sb'
 alias gd='git diff --color | diff-so-fancy'
 
-function gl() {
-  git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-}
+alias gl='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
+alias gL='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
+
 alias gll='git --no-pager log --oneline --decorate --color --graph'
 # Accepts -<3> arg to limit number shown.
 alias glg='git --no-pager log --pretty=format:"%cr [%h] %s" --graph --stat'
+
 
 alias gr="git remote -v"
 

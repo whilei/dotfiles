@@ -1,0 +1,277 @@
+=== RUN   TestNumber
+--- PASS: TestNumber (0.03s)
+=== RUN   TestPutReceipt
+--- PASS: TestPutReceipt (0.00s)
+=== RUN   TestDifficultyBombFreeze
+--- PASS: TestDifficultyBombFreeze (0.00s)
+=== RUN   TestDifficultyBombFreezeTestnet
+--- PASS: TestDifficultyBombFreezeTestnet (0.00s)
+=== RUN   TestDifficultyBombExplode
+--- PASS: TestDifficultyBombExplode (0.00s)
+=== RUN   TestDifficultyBombExplodeTestnet
+--- PASS: TestDifficultyBombExplodeTestnet (0.00s)
+=== RUN   TestCalcDifficulty1
+--- PASS: TestCalcDifficulty1 (0.00s)
+=== RUN   TestLastBlock
+--- PASS: TestLastBlock (0.00s)
+=== RUN   TestExtendCanonicalHeaders
+--- PASS: TestExtendCanonicalHeaders (0.01s)
+=== RUN   TestExtendCanonicalBlocks
+--- PASS: TestExtendCanonicalBlocks (0.02s)
+=== RUN   TestShorterForkHeaders
+--- PASS: TestShorterForkHeaders (0.02s)
+=== RUN   TestShorterForkBlocks
+--- PASS: TestShorterForkBlocks (0.04s)
+=== RUN   TestLongerForkHeaders
+--- PASS: TestLongerForkHeaders (0.03s)
+=== RUN   TestLongerForkBlocks
+--- PASS: TestLongerForkBlocks (0.06s)
+=== RUN   TestEqualForkHeaders
+--- PASS: TestEqualForkHeaders (0.02s)
+=== RUN   TestEqualForkBlocks
+--- PASS: TestEqualForkBlocks (0.04s)
+=== RUN   TestBrokenHeaderChain
+--- PASS: TestBrokenHeaderChain (0.00s)
+=== RUN   TestBrokenBlockChain
+--- PASS: TestBrokenBlockChain (0.00s)
+=== RUN   TestChainInsertions
+--- SKIP: TestChainInsertions (0.00s)
+	blockchain_test.go:360: Skipped: outdated test files
+=== RUN   TestChainMultipleInsertions
+--- SKIP: TestChainMultipleInsertions (0.00s)
+	blockchain_test.go:399: Skipped: outdated test files
+=== RUN   TestReorgLongHeaders
+--- PASS: TestReorgLongHeaders (0.00s)
+=== RUN   TestReorgLongBlocks
+--- PASS: TestReorgLongBlocks (0.00s)
+=== RUN   TestReorgShortHeaders
+--- PASS: TestReorgShortHeaders (0.00s)
+=== RUN   TestReorgShortBlocks
+--- PASS: TestReorgShortBlocks (0.00s)
+=== RUN   TestInsertHeaderChainBadHash
+--- PASS: TestInsertHeaderChainBadHash (0.00s)
+=== RUN   TestInsertChainBadHash
+--- PASS: TestInsertChainBadHash (0.00s)
+=== RUN   TestReorgBadHeaderHashes
+--- PASS: TestReorgBadHeaderHashes (0.00s)
+=== RUN   TestReorgBadBlockHashes
+--- PASS: TestReorgBadBlockHashes (0.00s)
+=== RUN   TestHeadersInsertNonceError
+--- PASS: TestHeadersInsertNonceError (0.05s)
+=== RUN   TestBlocksInsertNonceError
+--- PASS: TestBlocksInsertNonceError (0.08s)
+=== RUN   TestFastVsFullChains
+--- PASS: TestFastVsFullChains (2.14s)
+=== RUN   TestLightVsFastVsFullChainHeads
+--- PASS: TestLightVsFastVsFullChainHeads (1.06s)
+=== RUN   TestChainTxReorgs
+--- PASS: TestChainTxReorgs (0.01s)
+=== RUN   TestLogReorgs
+--- PASS: TestLogReorgs (0.00s)
+=== RUN   TestReorgSideEvent
+--- PASS: TestReorgSideEvent (0.26s)
+=== RUN   TestCanonicalBlockRetrieval
+--- SKIP: TestCanonicalBlockRetrieval (0.00s)
+	blockchain_test.go:1256: Skipped: needs updating
+=== RUN   TestEIP155Transition
+--- PASS: TestEIP155Transition (0.01s)
+=== RUN   TestPowVerification
+--- PASS: TestPowVerification (0.89s)
+=== RUN   TestPowConcurrentVerification2
+--- PASS: TestPowConcurrentVerification2 (0.11s)
+=== RUN   TestPowConcurrentVerification8
+--- PASS: TestPowConcurrentVerification8 (0.11s)
+=== RUN   TestPowConcurrentVerification32
+--- PASS: TestPowConcurrentVerification32 (0.10s)
+=== RUN   TestPowConcurrentAbortion2
+--- PASS: TestPowConcurrentAbortion2 (0.18s)
+=== RUN   TestPowConcurrentAbortion8
+--- PASS: TestPowConcurrentAbortion8 (0.16s)
+=== RUN   TestPowConcurrentAbortion32
+--- PASS: TestPowConcurrentAbortion32 (0.19s)
+=== RUN   TestConfigErrorProperties
+--- PASS: TestConfigErrorProperties (0.00s)
+=== RUN   TestChainConfig_IsHomestead
+--- PASS: TestChainConfig_IsHomestead (0.00s)
+=== RUN   TestChainConfig_IsDiehard
+--- PASS: TestChainConfig_IsDiehard (0.00s)
+=== RUN   TestChainConfig_IsExplosion
+--- PASS: TestChainConfig_IsExplosion (0.00s)
+=== RUN   TestMakeGenesisDump
+--- PASS: TestMakeGenesisDump (0.00s)
+=== RUN   TestMakeGenesisDump2
+--- PASS: TestMakeGenesisDump2 (0.95s)
+=== RUN   TestChainConfig_GetFeature
+--- PASS: TestChainConfig_GetFeature (0.00s)
+=== RUN   TestChainConfig_GetFeature2_EventuallyGetAllPossibleFeatures
+--- PASS: TestChainConfig_GetFeature2_EventuallyGetAllPossibleFeatures (0.00s)
+=== RUN   TestChainConfig_GetFeature3_NeverGetNonexistantFeatures
+--- PASS: TestChainConfig_GetFeature3_NeverGetNonexistantFeatures (0.00s)
+=== RUN   TestChainConfig_GetFeature4_WorkForHighNumbers
+--- PASS: TestChainConfig_GetFeature4_WorkForHighNumbers (0.00s)
+=== RUN   TestChainConfig_GetChainID
+--- PASS: TestChainConfig_GetChainID (0.04s)
+=== RUN   TestChainConfig_GetFeature5_DefaultEIP155
+--- PASS: TestChainConfig_GetFeature5_DefaultEIP155 (0.00s)
+=== RUN   TestChainConfig_GetFeature6_DefaultGasTables
+--- PASS: TestChainConfig_GetFeature6_DefaultGasTables (0.00s)
+=== RUN   TestChainConfig_GetFeature7_DefaultDifficulty
+--- PASS: TestChainConfig_GetFeature7_DefaultDifficulty (0.00s)
+=== RUN   TestChainConfig_SortForks
+--- PASS: TestChainConfig_SortForks (0.00s)
+=== RUN   TestChainConfig_GetSigner
+--- PASS: TestChainConfig_GetSigner (0.00s)
+=== RUN   TestSufficientChainConfig_IsValid
+--- PASS: TestSufficientChainConfig_IsValid (0.00s)
+=== RUN   TestDifficultyFrontier
+--- PASS: TestDifficultyFrontier (0.07s)
+=== RUN   TestHeaderStorage
+--- PASS: TestHeaderStorage (0.00s)
+=== RUN   TestBodyStorage
+--- PASS: TestBodyStorage (0.00s)
+=== RUN   TestBlockStorage
+--- PASS: TestBlockStorage (0.00s)
+=== RUN   TestPartialBlockStorage
+--- PASS: TestPartialBlockStorage (0.00s)
+=== RUN   TestTdStorage
+--- PASS: TestTdStorage (0.00s)
+=== RUN   TestCanonicalMappingStorage
+--- PASS: TestCanonicalMappingStorage (0.00s)
+=== RUN   TestHeadStorage
+--- PASS: TestHeadStorage (0.00s)
+=== RUN   TestTransactionStorage
+--- PASS: TestTransactionStorage (0.00s)
+=== RUN   TestReceiptStorage
+--- PASS: TestReceiptStorage (0.00s)
+=== RUN   TestBlockReceiptStorage
+--- PASS: TestBlockReceiptStorage (0.00s)
+=== RUN   TestMipmapBloom
+--- PASS: TestMipmapBloom (0.00s)
+=== RUN   TestMipmapChain
+--- PASS: TestMipmapChain (0.30s)
+=== RUN   TestInvalidTransactions
+--- PASS: TestInvalidTransactions (0.00s)
+=== RUN   TestTransactionQueue
+--- PASS: TestTransactionQueue (0.01s)
+=== RUN   TestRemoveTx
+--- PASS: TestRemoveTx (0.00s)
+=== RUN   TestNegativeValue
+--- PASS: TestNegativeValue (0.00s)
+=== RUN   TestTransactionChainFork
+--- PASS: TestTransactionChainFork (0.00s)
+=== RUN   TestTransactionDoubleNonce
+--- PASS: TestTransactionDoubleNonce (0.00s)
+=== RUN   TestMissingNonce
+--- PASS: TestMissingNonce (0.00s)
+=== RUN   TestNonceRecovery
+--- PASS: TestNonceRecovery (0.00s)
+=== RUN   TestRemovedTxEvent
+--- PASS: TestRemovedTxEvent (0.00s)
+=== RUN   TestTransactionDropping
+--- PASS: TestTransactionDropping (0.00s)
+=== RUN   TestTransactionPostponing
+--- PASS: TestTransactionPostponing (0.09s)
+=== RUN   TestTransactionQueueLimiting
+--- PASS: TestTransactionQueueLimiting (0.05s)
+=== RUN   TestTransactionPendingLimiting
+--- PASS: TestTransactionPendingLimiting (0.04s)
+=== RUN   TestTransactionQueueLimitingEquivalency
+--- PASS: TestTransactionQueueLimitingEquivalency (0.09s)
+=== RUN   TestTransactionPendingLimitingEquivalency
+--- PASS: TestTransactionPendingLimitingEquivalency (0.09s)
+=== RUN   ExampleGenerateChain
+--- PASS: ExampleGenerateChain (0.01s)
+PASS
+ok  	github.com/ethereumproject/go-ethereum/core	7.978s
+=== RUN   TestNodeIteratorCoverage
+--- PASS: TestNodeIteratorCoverage (0.01s)
+=== RUN   Test
+OK: 2 passed
+--- PASS: Test (0.00s)
+=== RUN   TestNewNonce
+--- PASS: TestNewNonce (0.00s)
+=== RUN   TestRemove
+--- PASS: TestRemove (0.00s)
+=== RUN   TestReuse
+--- PASS: TestReuse (0.00s)
+=== RUN   TestRemoteNonceChange
+--- PASS: TestRemoteNonceChange (0.00s)
+=== RUN   TestSetNonce
+--- PASS: TestSetNonce (0.00s)
+=== RUN   TestNull
+--- PASS: TestNull (0.00s)
+=== RUN   TestSnapshotEmpty
+--- PASS: TestSnapshotEmpty (0.00s)
+=== RUN   TestSnapshot2
+--- PASS: TestSnapshot2 (0.00s)
+=== RUN   TestUpdateLeaks
+--- PASS: TestUpdateLeaks (0.40s)
+=== RUN   TestIntermediateLeaks
+--- PASS: TestIntermediateLeaks (0.03s)
+=== RUN   TestSnapshotRandom
+--- PASS: TestSnapshotRandom (13.92s)
+=== RUN   TestEmptyStateSync
+--- PASS: TestEmptyStateSync (0.00s)
+=== RUN   TestIterativeStateSyncIndividual
+--- PASS: TestIterativeStateSyncIndividual (0.01s)
+=== RUN   TestIterativeStateSyncBatched
+--- PASS: TestIterativeStateSyncBatched (0.01s)
+=== RUN   TestIterativeDelayedStateSync
+--- PASS: TestIterativeDelayedStateSync (0.01s)
+=== RUN   TestIterativeRandomStateSyncIndividual
+--- PASS: TestIterativeRandomStateSyncIndividual (0.01s)
+=== RUN   TestIterativeRandomStateSyncBatched
+--- PASS: TestIterativeRandomStateSyncBatched (0.01s)
+=== RUN   TestIterativeRandomDelayedStateSync
+--- PASS: TestIterativeRandomDelayedStateSync (0.01s)
+=== RUN   TestIncompleteStateSync
+--- PASS: TestIncompleteStateSync (3.00s)
+PASS
+ok  	github.com/ethereumproject/go-ethereum/core/state	17.546s
+=== RUN   TestBlockEncoding
+--- PASS: TestBlockEncoding (0.00s)
+	block_test.go:55: transaction data 0x{0 a c350 c4200bd360 a  1b 9bea4c4daac7c7c52e093e6a4c35dbbcf8856f1af7b059ba20253e70848d094f 8a8fae537ce25ed8cb5af9adac3f141af69bd515bd2ba031522df09b97dd72b1}, hash 0x77b19baa4de67e45a7b26e4a220bccdbb6731885aa9927064e239ca232023215
+=== RUN   TestBloom
+--- PASS: TestBloom (0.00s)
+=== RUN   TestChainId
+--- PASS: TestChainId (0.00s)
+=== RUN   TestClassicChainId
+--- PASS: TestClassicChainId (0.00s)
+=== RUN   TestMordenChainId
+--- PASS: TestMordenChainId (0.00s)
+=== RUN   TestCompatibleSign
+--- PASS: TestCompatibleSign (0.00s)
+=== RUN   TestChainIdSigner_Equal
+--- PASS: TestChainIdSigner_Equal (0.00s)
+=== RUN   TestTransactionSigHash
+--- PASS: TestTransactionSigHash (0.00s)
+=== RUN   TestTransactionEncode
+--- PASS: TestTransactionEncode (0.00s)
+=== RUN   TestRecipientEmpty
+--- PASS: TestRecipientEmpty (0.00s)
+=== RUN   TestRecipientNormal
+--- PASS: TestRecipientNormal (0.00s)
+=== RUN   TestTransactionPriceNonceSort
+--- PASS: TestTransactionPriceNonceSort (0.52s)
+PASS
+ok  	github.com/ethereumproject/go-ethereum/core/types	0.641s
+?   	github.com/ethereumproject/go-ethereum/core/vendor/github.com/hashicorp/golang-lru	[no test files]
+?   	github.com/ethereumproject/go-ethereum/core/vendor/github.com/hashicorp/golang-lru/simplelru	[no test files]
+=== RUN   TestGasIsEmpty
+--- PASS: TestGasIsEmpty (0.00s)
+=== RUN   TestInit
+--- PASS: TestInit (0.00s)
+PASS
+ok  	github.com/ethereumproject/go-ethereum/core/vm	0.087s
+=== RUN   TestDefaults
+--- PASS: TestDefaults (0.00s)
+=== RUN   TestEnvironment
+--- PASS: TestEnvironment (0.00s)
+=== RUN   TestExecute
+--- PASS: TestExecute (0.00s)
+=== RUN   TestCall
+--- PASS: TestCall (0.00s)
+=== RUN   ExampleExecute
+--- PASS: ExampleExecute (0.00s)
+PASS
+ok  	github.com/ethereumproject/go-ethereum/core/vm/runtime	0.217s
