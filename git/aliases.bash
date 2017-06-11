@@ -1,33 +1,43 @@
 alias gg='git grep'
 
 alias ga="git add"
+
 alias gc="git commit"
+alias gC="git commit -S" # signed commit
 alias gcm="git commit -m"
 alias gcam="git commit --amend"
 
+# Quick commit with message.
 alias gitit='git add -A && git commit -m'
 
+# Status
 alias gs='git status -sb'
+
+# Pretty diff  (gem dependency).
 alias gd='git diff --color | diff-so-fancy'
 
+# Pretty logs.
+# - all can be used with '-n' flag, where n is number of commits from head.
+## Oneliner (only subject)
 alias gl='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
+## Show with all message (subject and body) and show stats
+alias gL='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset %n%C(yellow)%B%Creset" --abbrev-commit --date=relative'
+## ... and with file stats.
 alias gL='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
 
-alias gll='git --no-pager log --oneline --decorate --color --graph'
-# Accepts -<3> arg to limit number shown.
-alias glg='git --no-pager log --pretty=format:"%cr [%h] %s" --graph --stat'
-
-
-alias gr="git remote -v"
+alias gr="git remote"
+# Show remotes.
+alias grv="git remote -v"
 
 alias gpo="git push origin"
 alias gpu="git push upstream"
-# alias gpg="git push github"
 alias gpb="git push bitbucket"
 alias gpa="git push gogs"
 alias gph="git push heroku"
-alias gpall="git remote | xargs -L1 git push --all" # push to all remotes for a given repo
-gpallr() {
+# Push to all remotes.
+alias gP="git remote | xargs -L1 git push --all" # push to all remotes for a given repo
+# Push an argued branch/--tags to all remotes.
+GP() {
 	branch=$1
 	for r in $(git remote);
 	do
@@ -39,9 +49,11 @@ alias pull="git pull"
 
 alias gf="git fetch"
 
-# Checkout branch.
+# Branches
+#
+## Checkout branch.
 alias gco="git checkout"
-# Checkout new branch.
+## Checkout new branch.
 alias gcb="git checkout -b" # note .gitconfig has git go, which is like a gnarly version of this
 # Delete branch.
 alias gbd="git branch -D" # definitely delete. no fucking around.
@@ -51,6 +63,7 @@ alias gbl="git branch --list"
 alias gm="git merge"
 alias greb="git rebase"
 
+# External program.
 alias ggui="gitup"
 
 # https://github.com/paulmillr/dotfiles/blob/master/home/.zshrc.sh
@@ -79,6 +92,7 @@ gitwinit() {
 	cp -r ~/.git_template/hooks/ ./.git/hooks/
 }
 
+# Show registered git aliases.
 alias gitalias="git config --get-regexp alias"
 alias gitaliases="git config --get-regexp alias"
 alias galias="git config --get-regexp alias"
