@@ -19,13 +19,14 @@ alias gd='git diff --color | diff-so-fancy'
 # Pretty logs.
 # - can use with '-n' flag, where n is number of commits from head.
 ## Oneline pretty with graph and fancy colors and all the things.
-alias gl='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
+## Note: You can use '[gl] --branches=branch' to override wildcard. Wildcard hides remotes.
+alias gl='git log --branches=* --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 ## ... with raw commit message (subject+body)
-alias gL='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset %n%C(yellow)%B%Creset" --abbrev-commit --date=relative'
+alias gL='git log --branches=* --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset %+s%+b" --abbrev-commit --date=relative'
 ## ... the works, with file stats.
-alias GL='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
+alias GL='git log --branches=* --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
 ## ... all stats, no commit messages
-alias Gl='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative --stat'
+alias Gl='git log --branches=* --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative --stat'
 
 alias gr="git remote"
 # Show remotes.
@@ -33,9 +34,12 @@ alias grv="git remote -v"
 
 alias gpo="git push origin"
 alias gpu="git push upstream"
-alias gpb="git push bitbucket"
+alias gpw="git push whilei"
 alias gpa="git push gogs"
+
+alias gpb="git push bitbucket"
 alias gph="git push heroku"
+
 # Push to all remotes.
 alias gP="git remote | xargs -L1 git push --all" # push to all remotes for a given repo
 # Push an argued branch/--tags to all remotes.
@@ -48,6 +52,10 @@ GP() {
 }
 
 alias pull="git pull"
+alias pullor="git pull origin"
+alias pullup="git pull upstream"
+alias pullar="git pull gogs"
+alias pullwh="git pull whilei"
 
 alias gf="git fetch"
 

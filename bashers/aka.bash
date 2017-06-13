@@ -19,11 +19,7 @@ alias be="bundle exec"
 alias becapdep="bundle exec cap production deploy"
 alias becapres="bundle exec cap production puma:restart"
 
-function ging {
-	pushd /Users/ia/gocode/src/github.com/ethereumproject/go-ethereum;
-	go install ./cmd/geth;
-	popd;
-}
+alias ging="go install github.com/ethereumproject/go-ethereum/cmd/geth"
 
 alias bb="boltbrowser"
 

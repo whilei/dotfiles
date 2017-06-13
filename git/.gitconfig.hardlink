@@ -49,7 +49,7 @@
 	recent-branches = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname)' refs/heads refs/remotes
 
 	# Recent branch action by last commit per. I think.
-	recently = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+	bs = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 
 [filter "lfs"]
 	required = true
