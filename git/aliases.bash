@@ -3,8 +3,7 @@ alias hamster="master"
 alias idiot="git"
 alias dummy="git"
 
-alias kk="git"
-alias K="git"
+alias k="git"
 
 alias ga="git add"
 
