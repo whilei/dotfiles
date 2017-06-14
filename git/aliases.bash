@@ -27,13 +27,13 @@ alias gd='git diff --color | diff-so-fancy'
 # - can use with '-n' flag, where n is number of commits from head.
 ## Oneline pretty with graph and fancy colors and all the things.
 ## Note: You can use '[gl] --branches=branch' to override wildcard. Wildcard hides remotes.
-alias gl='git log --branches=* --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
+alias gl='git log --branches=* --graph --pretty=format:"%Cred%h%Creset %C(cyan)[%G?] %C(bold blue)<%an>%Creset %C(auto)%d%Creset %s %Cgreen(%cr) " --abbrev-commit --date=relative'
 ## ... with raw commit message (subject+body)
-alias gL='git log --branches=* --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset %+s%+b" --abbrev-commit --date=relative'
+alias gL='git log --branches=* --graph --pretty=format:"%Cred%h%Creset %C(cyan)[%G?] %C(bold blue)<%an>%Creset %C(auto)%d%Creset %Cgreen(%cr)  %+s%+b" --abbrev-commit --date=relative'
 ## ... the works, with file stats.
-alias GL='git log --branches=* --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
+alias GL='git log --branches=* --graph --pretty=format:"%Cred%h%Creset %C(cyan)[%G?] %C(bold blue)<%an>%Creset %C(auto)%d%Creset %Cgreen(%cr)  %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
 ## ... all stats, no commit messages
-alias Gl='git log --branches=* --graph --pretty=format:"%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr) %C(cyan)[%G?] %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative --stat'
+alias Gl='git log --branches=* --graph --pretty=format:"%Cred%h%Creset %C(cyan)[%G?] %C(bold blue)<%an>%Creset %C(auto)%d%Creset %Cgreen(%cr) " --abbrev-commit --date=relative --stat'
 
 alias gr="git remote"
 # Show remotes.
