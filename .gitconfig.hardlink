@@ -17,6 +17,7 @@
 
 	# Undo your last commit as though you had never made it.
 	uncommit = reset --soft HEAD~
+    rid = reset --hard HEAD
 
 	save = !git add -A && git commit -m ':floppy_disk:'
     SAVE = !git add -A && git commit -S -m ':floppy_disk:'
@@ -29,6 +30,12 @@
 
     # Checkout or create-and-checkout a branch.
 	go = checkout -B
+
+    # Stash.
+    st = stash
+    sts = stash save
+    stl = stash list
+    stp = stash pop
 
 	# Remotes.
 	remotes = remote -v
