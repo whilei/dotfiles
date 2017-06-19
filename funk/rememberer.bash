@@ -8,6 +8,6 @@
 # Usage: remember "!!"
 #      : remember "drive pull -export png -explicitly-export ..."
 
-remember() {
+rr() {
 	echo "$1 # $2" >> "$DOTS_PATH"/remembered
 }

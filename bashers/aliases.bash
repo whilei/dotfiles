@@ -1,5 +1,5 @@
 # http://stackoverflow.com/questions/3510673/find-and-kill-a-process-in-one-line-using-bash-and-regex
-killer(){
+killit(){
 	kill $(ps aux | grep "$1" | awk '{print $2}')
 }
 
@@ -27,6 +27,5 @@ edme() {
 }
 
 # Google Drive CLI
-
 alias dp="drive push -verbose"
 

@@ -5,6 +5,7 @@ alias g="git"
 alias k="git" # why k? kuz :fu:
 
 alias ga="git add"
+alias gai="git add -i"
 
 alias gc="git commit"
 alias gC="git commit -S" # signed commit
@@ -34,9 +35,8 @@ alias GL='git log --branches=* --graph --pretty=format:"%Cred%h%Creset %C(cyan)%
 ## ... all stats, no commit messages
 alias Gl='git log --branches=* --graph --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %Cgreen(%cr) " --abbrev-commit --date=relative --stat'
 
-alias gr="git remote"
 # Show remotes.
-alias grv="git remote -v"
+alias gr="git remote -v"
 
 alias gpo="git push origin"
 alias gpu="git push upstream"

@@ -38,9 +38,8 @@
     stp = stash pop
 
 	# Remotes.
-	remotes = remote -v
-	rename = remote rename
-	url = remote set-url
+    rem = remote
+	rems = remote -v
 
 	# Diffables.
 	# with stats.
