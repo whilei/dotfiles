@@ -8,7 +8,8 @@ knote() {
 	echo "$*" > "$pp"
 	echo "K, noted: $pp"
 	echo '...'
-	tail -n10 "$pp"
-	pbcopy "$pp"
+	tail "$pp"
 	echo "Copied knote path to clipboard: $pp"
+	# '-n': copy to clipboard without newline
+	echo -n "$pp" | pbcopy
 }
