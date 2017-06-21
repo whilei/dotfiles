@@ -11,5 +11,5 @@ knote() {
 	tail "$pp"
 	echo "Copied knote path to clipboard: $pp"
 	# '-n': copy to clipboard without newline
-	echo -n "$pp" | pbcopy
+	echo "$pp" | pbcopy
 }
