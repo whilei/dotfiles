@@ -8,8 +8,6 @@ mkcd(){
 	 mkdir -p "$@" && cd "$@" # thanks cowboy. this is better
 }
 
-alias eachdir=". ~/.dotfiles/bashers/each-dir.sh"
-
 # The best rysyncer.
 # The -a flag is for archive, which "ensures that symbolic links, devices, attributes, permissions, ownerships, etc. are preserved in the transfer"; the -z flag compresses files during the transfer; -v is for verbose; and --progress shows you your progress. I've enshrined this in an alias:
 # Copy the files pointed to by the symbolic links ("transform symlink into referent file/dir") with the --L flag:
@@ -19,8 +17,6 @@ alias yps="rsync -avzu --delete --progress -h --backup --backup-dir='backup_$(da
 
 # EZ v
 alias v="vim"
-
-# alias t="touch"
 
 # make executable
 alias chx="chmod +x"
@@ -32,15 +28,26 @@ alias pms="pmset" # [-a | -b | -c ]... (0 for sleep, displaysleep, disksleep is 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/,
 # so says holman. What he said.
 alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume 7'"
+alias to11="osascript -e 'set volume 7'"
 
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
-
-alias cleaningladies="source ~/.dotfiles/system/housekeep.sh"
 
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesk="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesk="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hide_desk="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias show_desk="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hide_desktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias show_desktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hidem="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showem="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+# ... Because I can never remember exactly what past me thought was a memorable name.
 
 alias iiftop="sudo iftop -i en1 -o 10s"
 
+alias zzz="pmset sleepnow"
+alias zz="pmset displaysleepnow"
+
+alias snots="open $HOME/Pictures/screenshots"
