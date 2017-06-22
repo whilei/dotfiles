@@ -1,4 +1,6 @@
 # Set bash ps1 with git status.
+# These beginning and ending brackets help bash know
+# how much room the prompt will take up.
 color_red='\[\e[31m\]'
 color_blue='\[\e[34m\]'
 color_reset='\[\e[0m\]'
@@ -8,25 +10,25 @@ color_yellow_bg='\[\e[43m\]'
 color_white_on_blue='\[\e[0;37;44m\]'
 
 color_white_on_purp='\[\e[37;45m\]'
-color_white_on_red='\[\e[37;41m'
+color_white_on_red='\[\e[37;41m\]'
 
-COLOR_NC='\e[0m' # No Color
-COLOR_WHITE='\e[1;37m'
-COLOR_BLACK='\e[0;30m'
-COLOR_BLUE='\e[0;34m'
-COLOR_LIGHT_BLUE='\e[1;34m'
-COLOR_GREEN='\e[0;32m'
-COLOR_LIGHT_GREEN='\e[1;32m'
-COLOR_CYAN='\e[0;36m'
-COLOR_LIGHT_CYAN='\e[1;36m'
-COLOR_RED='\e[0;31m'
-COLOR_LIGHT_RED='\e[1;31m'
-COLOR_PURPLE='\e[0;35m'
-COLOR_LIGHT_PURPLE='\e[1;35m'
-COLOR_BROWN='\e[0;33m'
-COLOR_YELLOW='\e[1;33m'
-COLOR_GRAY='\e[0;30m'
-COLOR_LIGHT_GRAY='\e[0;37m'
+COLOR_NC='\[\e[0m\]' # No Color
+COLOR_WHITE='\[\e[1;37m\]'
+COLOR_BLACK='\[\e[0;30m\]'
+COLOR_BLUE='\[\e[0;34m\]'
+COLOR_LIGHT_BLUE='\[\e[1;34m\]'
+COLOR_GREEN='\[\e[0;32m\]'
+COLOR_LIGHT_GREEN='\[\e[1;32m\]'
+COLOR_CYAN='\[\e[0;36m\]'
+COLOR_LIGHT_CYAN='\[\e[1;36m\]'
+COLOR_RED='\[\e[0;31m\]'
+COLOR_LIGHT_RED='\[\e[1;31m\]'
+COLOR_PURPLE='\[\e[0;35m\]'
+COLOR_LIGHT_PURPLE='\[\e[1;35m\]'
+COLOR_BROWN='\[\e[0;33m\]'
+COLOR_YELLOW='\[\e[1;33m\]'
+COLOR_GRAY='\[\e[0;30m\]'
+COLOR_LIGHT_GRAY='\[\e[0;37m\]'
 
 # COLOR_WHITE_ON_PURPLE='\[\e[37;35m\]'
 
@@ -60,16 +62,13 @@ GIT_PS1_SHOWUPSTREAM="auto,verbose"
 #     git           always compare HEAD to @{upstream}
 #     svn           always compare HEAD to your SVN upstream
 
-
-
-# PS1=${COLOR_PURPLE}'\u@\h'${color_reset}':'${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' \$ '
-
 ethericon=$(echo -e "\xE2\x9F\xA0")
-dollars=$ethericon # '$'
+dollar=$ethericon # '$'
+time_p="\t\[$(tput sgr0)\]" # HH:MM:SS
 
 # user@comp ~> \u@\h
 ps1_lg() {
-	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' '${COLOR_YELLOW}${dollars}${color_reset}' '
+	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' '${COLOR_YELLOW}${dollar}${color_reset}' '
 }
 # For when I'm using a small terminal and a long $CWD.
 # Just set the input on a newline beneath CWD, GITINFO, ie
@@ -77,13 +76,13 @@ ps1_lg() {
 # ia@mh cwd `git status`
 # $ echo
 ps1_llg(){
-	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${COLOR_YELLOW}${dollars}${color_reset}' '
+	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${COLOR_YELLOW}${dollar}${color_reset}' '
 }
 ps1_sm() {
-    PS1=':\w '${COLOR_YELLOW}${dollars}${color_reset}' '
+    PS1=':\w '${COLOR_YELLOW}${dollar}${color_reset}' '
 }
 # Turn it on.
-ps1_llg
+ps1_lg
 
 # Cuz I forget.
 alias ps1_low="ps1_llg"
