@@ -6,10 +6,10 @@ knote() {
 	local p="$(random-word)-$(random-word)"
 	local pp="$HOME"/.knotes/"$p".txt
 	echo "$*" > "$pp"
-	echo "K, noted: $pp"
-	echo '...'
+	echo '---'
 	tail "$pp"
-	echo "Copied knote path to clipboard: $pp"
+	echo '---'
+	echo "[K, noted. Copied knote path to clipboard] $pp"
 	# '-n': copy to clipboard without newline
-	echo "$pp" | pbcopy
+	echo -n "$pp" | pbcopy
 }
