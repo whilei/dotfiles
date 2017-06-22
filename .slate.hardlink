@@ -101,6 +101,7 @@ bind down:${hyper}  nudge +0   +10%
 ## Concrete position binders
 
 bind u:${hyper} throw ${external} ${fullsize}
+bind b:${hyper} throw ${laptop} ${fullsize}
 
 ## Focus binders
 
@@ -108,16 +109,18 @@ bind e:${shiftcontrol} focus 'Emacs'
 bind s:${shiftcontrol} focus 'Sublime Text'
 bind g:${shiftcontrol} focus 'Gogland-EAP'
 bind w:${shiftcontrol} focus 'Atom'
+bind ;:${shiftcontrol} focus 'Atom'
 bind x:${shiftcontrol} focus 'Xcode'
 
 bind o:${shiftcontrol} focus 'Postman'
 
 bind z:${shiftcontrol} focus 'iTerm2'
+bind space:shift focus 'iTerm2'
 bind t:${shiftcontrol} focus 'Terminal'
-bind h:${shiftcontrol} focus 'HyperTerm'
 
 bind a:${shiftcontrol} focus 'Safari'
 bind c:${shiftcontrol} focus 'Google Chrome'
+bind h:${shiftcontrol} focus 'Google Chrome'
 
 bind u:${shiftcontrol} focus 'Ulysses'
 bind i:${shiftcontrol} focus 'iA Writer'
@@ -134,9 +137,6 @@ bind r:${shiftcontrol} focus 'Preview'
 
 
 ## Layout binders
-
-# don't use it that much
-bind t:${hyper} layout terminal
 
 ## Grid binders
 
