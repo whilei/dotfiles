@@ -115,7 +115,6 @@ bind x:${shiftcontrol} focus 'Xcode'
 bind o:${shiftcontrol} focus 'Postman'
 
 bind z:${shiftcontrol} focus 'iTerm2'
-bind space:shift focus 'iTerm2'
 bind t:${shiftcontrol} focus 'Terminal'
 
 bind a:${shiftcontrol} focus 'Safari'
