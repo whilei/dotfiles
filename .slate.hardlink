@@ -117,9 +117,10 @@ bind o:${shiftcontrol} focus 'Postman'
 bind z:${shiftcontrol} focus 'iTerm2'
 bind t:${shiftcontrol} focus 'Terminal'
 
-bind a:${shiftcontrol} focus 'Safari'
+# bind a:${shiftcontrol} focus 'Safari'
+bind r:${shiftcontrol} focus 'Safari'
+bind a:${shiftcontrol} focus 'Google Chrome'
 bind c:${shiftcontrol} focus 'Google Chrome'
-bind h:${shiftcontrol} focus 'Google Chrome'
 
 bind u:${shiftcontrol} focus 'Ulysses'
 bind i:${shiftcontrol} focus 'iA Writer'

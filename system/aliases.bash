@@ -51,3 +51,5 @@ alias zzz="pmset sleepnow"
 alias zz="pmset displaysleepnow"
 
 alias snots="open $HOME/Pictures/screenshots"
+alias og="open -g"
+alias ogh="open -g hammerspoon://"

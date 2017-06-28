@@ -39,9 +39,13 @@ alias Gl='git log --branches=* --graph --pretty=format:"%Cred%h%Creset %C(cyan)%
 alias gr="git remote -v"
 
 alias gpo="git push origin"
+alias gpot="git push origin --tags"
 alias gpu="git push upstream"
+alias gput="git push upstream --tags"
 alias gpw="git push whilei"
+alias gpwt="git push whilei --tags"
 alias gpa="git push gogs"
+alias gpat="git push gogs --tags"
 
 alias gpb="git push bitbucket"
 alias gph="git push heroku"
@@ -80,6 +84,9 @@ alias gbl="git branch --list"
 # Merge, rebase.
 alias gm="git merge"
 alias greb="git rebase"
+alias grebi="git rebase -i"
+alias hh="HEAD" #  eg git reset --hard hh
+alias hh.="HEAD~" # eg grebi h.4
 
 # External program.
 alias ggui="gitup"
