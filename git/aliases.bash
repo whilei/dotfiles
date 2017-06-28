@@ -85,8 +85,6 @@ alias gbl="git branch --list"
 alias gm="git merge"
 alias greb="git rebase"
 alias grebi="git rebase -i"
-alias hh="HEAD" #  eg git reset --hard hh
-alias hh.="HEAD~" # eg grebi h.4
 
 # External program.
 alias ggui="gitup"
