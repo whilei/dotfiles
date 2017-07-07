@@ -64,7 +64,10 @@
 	process = git-lfs filter-process
 [init]
 	templatedir = ~/.git_template
+[github]
+    user=whilei
 [gpg]
 	program = gpg2
 #[commit]
 #	gpgsign = true
+

@@ -1,3 +1,6 @@
+
+git config --global github.token $GITHUB_WHILEI_OAUTH_TOKEN 2>&1 > /dev/null
+
 alias idiot="git"
 alias dummy="git"
 
