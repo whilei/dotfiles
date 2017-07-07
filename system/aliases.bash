@@ -15,7 +15,7 @@ alias yp="rsync -avz -L --progress -h" # copy (?)
 alias ypu="rsync -avzu --progress -h" # update
 alias yps="rsync -avzu --delete --progress -h --backup --backup-dir='backup_$(date +\%Y-\%m-\%d)'" # synchronize
 
-# EZ v
+# get dat EZ v
 alias v="vim"
 
 # make executable
@@ -23,6 +23,7 @@ alias chx="chmod +x"
 
 # Power management; ie [sleepnow | displaysleepnow | lock | boot]
 # -a, -b, -c :: all, battery, charger
+# Tinkering with settings requires sudo.
 alias pms="pmset" # [-a | -b | -c ]... (0 for sleep, displaysleep, disksleep is never)
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/,
@@ -45,11 +46,16 @@ alias hidem="defaults write com.apple.finder CreateDesktop -bool false && killal
 alias showem="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 # ... Because I can never remember exactly what past me thought was a memorable name.
 
+alias htop="sudo htop"
 alias iiftop="sudo iftop -i en1 -o 10s"
 
 alias zzz="pmset sleepnow"
-alias zz="pmset displaysleepnow"
 
 alias snots="open $HOME/Pictures/screenshots"
+
 alias og="open -g"
 alias ogh="open -g hammerspoon://"
+
+vf() {
+	vim "$(fzf --height 50%)"
+}

@@ -52,7 +52,14 @@ alias fv="f -e vim"
 # Initialize FASD.
 # (Use: f|d|a fuzzyterm
 # (Use: ie cd `d dot`
-eval "$(fasd --init auto)"
+fasd_cache="$HOME/.fasd-init-bash"
+if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+  fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+fi
+source "$fasd_cache"
+unset fasd_cache
+unalias zz
+alias zz="pmset displaysleepnow"
 
 alias imgls="lsimg"
 alias lscatimg="lsimg"
