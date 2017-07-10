@@ -89,6 +89,9 @@ alias gm="git merge"
 alias greb="git rebase"
 alias grebi="git rebase -i"
 
+# Tags
+alias rmrftags="git tag | xargs git tag -d"
+
 # External program.
 alias ggui="gitup"
 
