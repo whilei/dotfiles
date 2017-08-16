@@ -70,4 +70,5 @@
 	program = gpg2
 #[commit]
 #	gpgsign = true
-
+[diff "bin"]
+    textconv = hexdump -v -C
