@@ -90,6 +90,8 @@ alias greb="git rebase"
 alias grebi="git rebase -i"
 
 # Tags
+alias gta="git tag -a"
+alias gtl="git tag --list"
 alias rmrftags="git tag | xargs git tag -d"
 
 # External program.
