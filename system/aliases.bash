@@ -21,6 +21,13 @@ alias v="vim"
 # make executable
 alias chx="chmod +x"
 
+alias tailff="tail -f -n1000"
+alias tailf="tail -f"
+
+alias yank="pbcopy"
+alias paste="pbpaste"
+
+
 # Power management; ie [sleepnow | displaysleepnow | lock | boot]
 # -a, -b, -c :: all, battery, charger
 # Tinkering with settings requires sudo.
