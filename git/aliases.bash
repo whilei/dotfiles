@@ -130,3 +130,17 @@ alias galias="git config --get-regexp alias"
 alias git_alias="git config --get-regexp alias"
 alias git_aliases="git config --get-regexp alias"
 
+# fuzzy git branch checkout-ing
+# https://coderwall.com/p/ba8afa/git-branch-fuzzy-search-checkout
+# cof -> check out fuzzy (where co is already 'checkout')
+cof() {
+    local branches branch
+    branches=$(git branch -a) &&
+    branch=$(echo "$branches" | fzf +s +m -e) &&
+    git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
+}
+
+alias gcof="cof"
+alias cofz="cof"
+alias coz="cof"
+
