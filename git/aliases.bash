@@ -159,3 +159,16 @@ alias fzgbd="bdf"
 alias fgbd="bdf"
 alias fzgbd="bdf"
 
+cot() {
+	local tags tag
+	tags=$(git tag --list) &&
+	tag=$(echo "$tags" | fzf +s +m -e) &&
+	git checkout $(echo "$tag")
+}
+
+alias cotf="cot"
+alias cotfz="cot"
+alias cotz="cot"
+alias fzcot="cot"
+alias fcot="cot"
+

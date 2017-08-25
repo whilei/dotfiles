@@ -119,7 +119,7 @@ bind t:${shiftcontrol} focus 'Terminal'
 
 # bind a:${shiftcontrol} focus 'Safari'
 bind r:${shiftcontrol} focus 'Safari'
-bind a:${shiftcontrol} focus 'Google Chrome'
+bind a:${shiftcontrol} focus 'Google Chrome' # 'Chromium'
 bind c:${shiftcontrol} focus 'Google Chrome'
 
 bind u:${shiftcontrol} focus 'Ulysses'
@@ -132,7 +132,7 @@ bind n:${shiftcontrol} focus 'iTunes'
 bind l:${shiftcontrol} focus 'Slack'
 
 bind v:${shiftcontrol} focus 'VLC'
-# bind p:${shiftcontrol} focus 'Photos'
+bind p:${shiftcontrol} focus 'Photos'
 bind r:${shiftcontrol} focus 'Preview'
 
 

@@ -66,3 +66,12 @@ alias ogh="open -g hammerspoon://"
 vf() {
 	vim "$(fzf --height 50%)"
 }
+
+alias dbright="dbrightness"
+alias dbb="dbrightness"
+alias kbright="kbrightness"
+alias kbb="kbrightness"
+alias b="blink"
+
+alias bb="blink 3 0.3"
+
