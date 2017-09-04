@@ -73,5 +73,11 @@ alias kbright="kbrightness"
 alias kbb="kbrightness"
 alias b="blink"
 
-alias bb="blink 3 0.3"
+alias bb="blink 4 0.2"
+
+flash(){
+	local ob=$(dbb)
+	blink 5 0.05
+	dbb 0.05 && sleep 0.1 && dbb $ob
+}
 
