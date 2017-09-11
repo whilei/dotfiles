@@ -15,4 +15,6 @@ alias emojifz="femoji"
 alias emofz="femoji"
 alias emoji="femoji"
 alias fzji="femoji"
+alias emojime="femoji"
+alias getemoji="femoji"
 
