@@ -29,3 +29,8 @@ edme() {
 # Google Drive CLI
 alias dp="drive push -verbose"
 
+len() {
+	local str="$*"
+	local size=${#str}
+	echo -n $size
+}
