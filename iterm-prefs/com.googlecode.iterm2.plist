@@ -769,11 +769,13 @@
 	<key>HotKeyTogglesWindow</key>
 	<true/>
 	<key>Hotkey</key>
-	<true/>
+	<false/>
 	<key>HotkeyChar</key>
-	<integer>32</integer>
+	<integer>0</integer>
 	<key>HotkeyCode</key>
-	<integer>49</integer>
+	<integer>0</integer>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>524288</integer>
 	<key>LoadPrefsFromCustomFolder</key>
@@ -823,7 +825,7 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>63 486 735 382 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 382 620 392 0 0 1440 900 </string>
+	<string>410 364 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>142 160 599 519 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -2400,8 +2402,28 @@
 			</dict>
 			<key>Guid</key>
 			<string>93E400C7-B692-4A00-B1E6-6075CE268C16</string>
+			<key>Has Hotkey</key>
+			<true/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
+			<key>HotKey Characters</key>
+			<string> </string>
+			<key>HotKey Characters Ignoring Modifiers</key>
+			<string> </string>
+			<key>HotKey Key Code</key>
+			<integer>49</integer>
+			<key>HotKey Modifier Flags</key>
+			<integer>524288</integer>
+			<key>HotKey Window Animates</key>
+			<true/>
+			<key>HotKey Window AutoHides</key>
+			<true/>
+			<key>HotKey Window Dock Click Action</key>
+			<integer>0</integer>
+			<key>HotKey Window Floats</key>
+			<false/>
+			<key>HotKey Window Reopens On Activation</key>
+			<false/>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Jobs to Ignore</key>
@@ -6878,7 +6900,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-08-23T16:02:39Z</date>
+	<date>2017-09-20T13:12:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -22514,7 +22536,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.15</string>
+	<string>3.1.1</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
