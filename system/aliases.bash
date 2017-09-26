@@ -81,3 +81,8 @@ flash(){
 	dbb 0.05 && sleep 0.1 && dbb $ob
 }
 
+myip(){
+	ipconfig getifaddr en1
+}
+alias whatismyip="myip"
+alias getmyip="myip"
