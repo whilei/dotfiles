@@ -107,6 +107,8 @@ ccd() {
     dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
 
+alias cdd="ccd"
+
 # fuzzy grep open via ag
 vg() {
   local file
@@ -134,6 +136,8 @@ cdr() {
   cd "$DIR"
 }
 
+alias cdb="cdr" # cd return, cd back
+
 # fd - cd to selected directory
 cdf() {
   local dir
@@ -141,3 +145,5 @@ cdf() {
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
+
+alias cdt="cdf" # cd follow, cd to
