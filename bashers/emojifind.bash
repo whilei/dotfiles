@@ -7,11 +7,12 @@ femoji(){
 	do
 	   :
 	   echo $i
-	done | fzf +s +m -e | pbcopy
+	done | fzf +s +m -e | tr -d '\n' | pbcopy
 }
 
 alias fzemoji="femoji"
 alias emojifz="femoji"
+alias emojif="femoji"
 alias emofz="femoji"
 alias emoji="femoji"
 alias fzji="femoji"
