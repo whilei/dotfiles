@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+for f in $*; do
+	echo "------------------------------------------"
+	echo "Signing (.sig) $f"
+	gpg --detach-sign "$f"
+
+	echo "Signing (.asc) $f"
+	gpg --detach-sign --armor "$f"
+
+	echo "Verifying $f.sig"
+	gpg --verify "$f.sig"
+
+	echo "Verifying $f.asc"
+	gpg --verify "$f.asc"
+	echo "------------------------------------------"
+done
