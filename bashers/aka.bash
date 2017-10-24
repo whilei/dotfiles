@@ -19,8 +19,19 @@ alias be="bundle exec"
 alias becapdep="bundle exec cap production deploy"
 alias becapres="bundle exec cap production puma:restart"
 
-alias ging="go install github.com/ethereumproject/go-ethereum/cmd/geth"
+# alias ging="go install github.com/ethereumproject/go-ethereum/cmd/geth"
 
 alias bb="boltbrowser"
 
+nameyyasdf() {
+	local branch=$(git rev-parse --abbrev-ref HEAD)
+	branch=$(echo -n $branch)
+	local name="$branch.$(date +%y-%m-%d-%H-%M-%S)"
+	echo -n "$name"
+}
+
+ging(){
+	# echo "$branch-$(date)"  # `janus version -format TAG_OR_NIGHTLY`
+	go install -ldflags "-X main.Version="source.`janus version -format TAG_OR_NIGHTLY`.`nameyyasdf` github.com/ethereumproject/go-ethereum/cmd/geth
+}
 
