@@ -24,14 +24,17 @@ alias becapres="bundle exec cap production puma:restart"
 alias bb="boltbrowser"
 
 nameyyasdf() {
-	local branch=$(git rev-parse --abbrev-ref HEAD)
+	local gpath=$GOPATH/src/github.com/ethereumproject/go-ethereum
+	local branch=$(git -C $gpath rev-parse --abbrev-ref HEAD)
 	branch=$(echo -n $branch)
 	local name="$branch.$(date +%y-%m-%d-%H-%M-%S)"
 	echo -n "$name"
 }
 
+
 ging(){
+	local gpath=$GOPATH/src/github.com/ethereumproject/go-ethereum
 	# echo "$branch-$(date)"  # `janus version -format TAG_OR_NIGHTLY`
-	go install -ldflags "-X main.Version="source.`janus version -format TAG_OR_NIGHTLY`.`nameyyasdf` github.com/ethereumproject/go-ethereum/cmd/geth
+	go install -ldflags "-X main.Version="source.`janus version -dir $gpath -format TAG_OR_NIGHTLY`.`nameyyasdf` github.com/ethereumproject/go-ethereum/cmd/geth
 }
 
