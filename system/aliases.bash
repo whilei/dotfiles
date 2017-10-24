@@ -86,3 +86,16 @@ myip(){
 }
 alias whatismyip="myip"
 alias getmyip="myip"
+
+# Get last modified file (last modified file -- lmf)
+# eg
+# vi `lf`
+# tail -f `lf`
+# mv `lf` ../othername
+lmf() {
+	local f=$(gls -AltrpH --color | tail -1 | cut -f9- -d" ")
+	echo -n "$f"
+}
+
+alias lfm="lmf"
+
