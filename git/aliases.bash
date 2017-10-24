@@ -38,6 +38,17 @@ alias GL='git log --branches=* --graph --pretty=format:"%Cred%h%Creset %C(cyan)%
 ## ... all stats, no commit messages
 alias Gl='git log --branches=* --graph --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %Cgreen(%cr) " --abbrev-commit --date=relative --stat'
 
+## -- on current branch or otherwise if --branches= is specified
+alias glb='git log --graph --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %s %Cgreen(%cr) " --abbrev-commit --date=relative'
+## ... with raw commit message (subject+body)
+alias gLb='git log --graph --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %Cgreen(%cr)  %+s%+b" --abbrev-commit --date=relative'
+## ... the works, with file stats.
+alias GLb='git log --graph --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %Cgreen(%cr)  %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
+## ... all stats, no commit messages
+alias Glb='git log --graph --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %Cgreen(%cr) " --abbrev-commit --date=relative --stat'
+
+
+
 # Show remotes.
 alias gr="git remote -v"
 
