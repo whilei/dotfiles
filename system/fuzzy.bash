@@ -16,6 +16,7 @@ alias coz="cof"
 alias fzco="cof"
 alias fzgco="cof"
 alias fco="cof"
+alias cob="cof"
 
 bdf() {
 	local branches branch
@@ -120,6 +121,9 @@ vg() {
      vi $file
   fi
 }
+alias vf="vg"
+alias vlf="vg"
+alias vff="vg"
 
 # fdr - cd to selected parent directory
 cdr() {
