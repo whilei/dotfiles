@@ -135,6 +135,17 @@ bind v:${shiftcontrol} focus 'VLC'
 bind p:${shiftcontrol} focus 'Photos'
 bind r:${shiftcontrol} focus 'Preview'
 
+bind f2 focus 'iTerm2'
+bind f3 focus 'Google Chrome'
+bind f4 focus 'Google Chrome'
+
+bind f5 focus 'Gogland-EAP'
+bind f6 focus 'Atom'
+bind f7 focus 'Sublime Text'
+bind f8 focus 'Xcode'
+
+bind f9 focus 'Slack'
+bind f10 focus 'Messages'
 
 ## Layout binders
 
