@@ -6,7 +6,7 @@
 alias l="gls -lAhp --color"
 alias ll='gls -lAhp --color' # cuz i'm used to it
 alias lll='gls -lAhpR --color' # recursive
-alias lt="gls -AltrpH --color" # recent at bottom
+alias lt="gls -Altrph --color" # recent at bottom
 alias lsd="ls -lahd */" # list directories
 export listy="command gls -lAhp --color" # Reusable `ll`-as-command.
 
