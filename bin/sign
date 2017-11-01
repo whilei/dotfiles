@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Signs all globbed arguments with gpg2.
+# Creates both binary and ascii versions.
+
 for f in $*; do
 	echo "------------------------------------------"
 	echo "Signing (.sig) $f"
