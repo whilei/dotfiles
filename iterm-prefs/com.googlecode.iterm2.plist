@@ -10,6 +10,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>BracketedPasteMode</key>
 	<true/>
 	<key>ConvertDosNewlines</key>
@@ -827,7 +829,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>520 562 400 129 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 364 620 392 0 0 1440 877 </string>
+	<string>407 1398 620 392 -243 900 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>142 160 599 519 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -6902,7 +6904,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-19T17:36:36Z</date>
+	<date>2017-10-27T17:14:29Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -22540,7 +22542,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.1</string>
+	<string>3.1.4</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
