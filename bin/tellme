@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -e
+
+asdf=$(dbrightness)
+
+flash() {
+	# get original display brightness
+	local ob=$(dbrightness)
+	blink 5 0.05
+	dbrightness 0.05 && sleep 0.1 && dbrightness $ob
+}
+
+flash
+sleep 0.5
+flash
+sleep 0.5
+say isaac i am finished with the things
+
+dbrightness=asdf
+unset asdf
