@@ -139,13 +139,15 @@ bind f2 focus 'iTerm2'
 bind f3 focus 'Google Chrome'
 bind f4 focus 'Google Chrome'
 
-bind f5 focus 'Gogland-EAP'
+bind f5 focus 'GoLand'
 bind f6 focus 'Atom'
 bind f7 focus 'Sublime Text'
-bind f8 focus 'Xcode'
+bind f8 focus 'Emacs'
 
 bind f9 focus 'Slack'
 bind f10 focus 'Messages'
+bind f11 focus 'Gitter'
+bind f13 focus 'Gitter'
 
 ## Layout binders
 
@@ -157,4 +159,10 @@ bind g:${mash} grid padding:5 0:6,3 1:8,3
 # Window hints
 
 bind `:cmd ${showHintsLeftHand}
+
+# Shell bindings
+bind 1:ctrl shell '/Users/ia/.dotfiles/bin/open/downloads'
+bind 2:ctrl shell '/Users/ia/.dotfiles/bin/open/screenshots'
+bind 3:ctrl shell path:/Users/ia/gocode/src/github.com/ethereumproject/go-ethereum '/Users/ia/.dotfiles/bin/ging'
+bind 0:ctrl shell '/Users/ia/.dotfiles/bin/etc_address_opener'
 
