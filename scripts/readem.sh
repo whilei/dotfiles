@@ -24,9 +24,17 @@ tree >> $tocpath # --dirsfirst -alLhtDFC 4 -I .git
 echo "\`\`\`" >> $tocpath
 echo
 
+echo "
+## Aliases
+> alias
+" >> $tocpath
+echo "\`\`\`" >> $tocpath
+alias >> $tocpath
+echo "\`\`\`" >> $tocpath
+echo
 
 echo "
-## ... and the 5 most recently modified
+## The 5 most recently modified
 > gfind . -not -path \"*.git*\" -type f -printf \"%-.22T+ %M %n %-8u %-8g %8s %Tx %.8TX %p\\n\" | sort | cut -f 2- -d ' ' | tail -5	>> $tocpath
 " >> $tocpath
 echo "\`\`\`" >> $tocpath
