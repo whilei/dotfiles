@@ -29,7 +29,6 @@ echo "
 > alias
 " >> $tocpath
 echo "\`\`\`" >> $tocpath
-alias >> $tocpath
 echo "\`\`\`" >> $tocpath
 echo
 
