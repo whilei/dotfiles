@@ -1,0 +1,7 @@
+open -a 'Google Chrome Canary' https://github.com
+open -a 'Google Chrome Canary' https://goggable.areteh.co:3000
+open -a Slack
+open -a Gitter
+open -a GoLand
+
+say good morning sunshine
