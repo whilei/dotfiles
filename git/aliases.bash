@@ -80,6 +80,7 @@ alias pullor="git pull origin"
 alias pullup="git pull upstream"
 alias pullar="git pull gogs"
 alias pullwh="git pull whilei"
+alias gplum="git pull upstream master"
 
 alias gf="git fetch"
 
