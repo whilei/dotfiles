@@ -18,6 +18,17 @@ alias fzgco="cof"
 alias fco="cof"
 alias cob="cof"
 
+# Same as 'cof', but uses only last 10 active branches... +'s' for faSSSSt, speed
+cofs() {
+    local branches branch
+    branches=$(git bssimple) &&
+	# --tac = reverse order of input, while +s = do not sort
+    branch=$(echo "$branches" | fzf --tac +m -e) &&
+    git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
+}
+alias gcofs="cofs"
+alias coff="cofs" # In case I think fast begins with f.
+
 bdf() {
 	local branches branch
 	branches=$(git branch -a) &&
