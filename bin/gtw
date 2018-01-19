@@ -1,7 +1,13 @@
+#!/usr/bin/env bash
+
 open -a 'Google Chrome Canary' https://github.com
 open -a 'Google Chrome Canary' https://goggable.areteh.co:3000
+
+# Where dat dispatcher
 open -a Slack
+open -a Discord
 open -a Gitter
+
 open -a GoLand
 
 say good morning sunshine
