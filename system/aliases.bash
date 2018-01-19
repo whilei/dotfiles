@@ -99,3 +99,8 @@ lmf() {
 
 alias lfm="lmf"
 
+# Remove blank lines
+alias squish="sed '/^\s*$/d'"
+
+# Math for science
+alias calc="insect"
