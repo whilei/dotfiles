@@ -118,6 +118,8 @@ function cherry() {
   done
 }
 
+alias gcp="git cherry-pick"
+
 # http://stackoverflow.com/questions/7539382/how-can-i-deploy-push-only-a-subdirectory-of-my-git-repo-to-heroku
 function gitpushsub() {
 	# git subtree push --prefix output heroku master
