@@ -21,8 +21,8 @@ alias v="vim"
 # make executable
 alias chx="chmod +x"
 
-alias tailff="tail -f -n1000"
-alias tailf="tail -f"
+alias tailff="tail -F -n100"
+alias tailf="tail -F"
 
 alias yank="pbcopy"
 alias paste="pbpaste"
