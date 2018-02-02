@@ -21,8 +21,10 @@
 
 	save = !git add -A && git commit -m ':floppy_disk:'
     SAVE = !git add -A && git commit -S -m ':floppy_disk:'
-	wip = commit -am ":hammer:"
-	WIP = commit -Sam ":hammer:"
+
+	wip = !git add -A && git commit -m ':hammer:'
+    WIP = !git add -A && git commit -S -m ':hammer:'
+
 	typo = commit -am ":eyeglasses: :pen:"
 	TYPO = commit -Sam ":eyeglasses: :pen:"
     fuck = commit -am ':computer: :gun:'
@@ -38,8 +40,9 @@
     stp = stash pop
 
 	# Remotes.
-    rem = remote
-	rems = remote -v
+	remotes = remote -v
+	rename = remote rename
+	url = remote set-url
 
 	# Diffables.
 	# with stats.
@@ -57,6 +60,9 @@
 	# Recent branch action by last commit per. I think.
 	bs = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 
+	# Same sort as above, but only return HEAD word
+	bssimple = for-each-ref --sort=committerdate refs/heads/ --format='%(refname:short)'
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
@@ -64,11 +70,12 @@
 	process = git-lfs filter-process
 [init]
 	templatedir = ~/.git_template
-[github]
-    user=whilei
 [gpg]
-	program = gpg2
+	program = gpg
 #[commit]
 #	gpgsign = true
-[diff "bin"]
-    textconv = hexdump -v -C
+[github]
+	token = ba20f5f58fe4f26b1d351dd8e3fbbc943b2a5a5b
+	user = whilei
+[ghi]
+	token = !security find-internet-password -a whilei -s github.com -l 'ghi token' -w
