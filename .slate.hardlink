@@ -146,8 +146,8 @@ bind f8 focus 'Emacs'
 
 bind f9 focus 'Slack'
 bind f10 focus 'Messages'
-bind f11 focus 'Gitter'
-bind f13 focus 'Gitter'
+bind f11 focus 'Discord'
+bind f12 focus 'Gitter'
 
 ## Layout binders
 

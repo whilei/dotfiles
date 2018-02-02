@@ -831,15 +831,15 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 364 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>224 231 606 469 0 0 1920 1057 </string>
+	<string>142 160 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>304 118 918 452 0 0 1440 877 </string>
+	<string>309 235 1016 512 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>581 216 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 500 1440 378 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>74 459 549 400 0 0 1440 877 </string>
+	<string>761 94 570 400 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 0 1440 900 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -2441,7 +2441,7 @@
 			<key>Horizontal Spacing</key>
 			<real>0.90000000000000002</real>
 			<key>HotKey Activated By Modifier</key>
-			<false/>
+			<true/>
 			<key>HotKey Alternate Shortcuts</key>
 			<array/>
 			<key>HotKey Characters</key>
@@ -7623,7 +7623,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-28T16:45:17Z</date>
+	<date>2018-01-29T15:00:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
