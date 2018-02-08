@@ -21,7 +21,7 @@ alias gitit='git add -A && git commit -m'
 alias GITIT='git add -A && git commit -S -m' # signed commit
 
 # Status
-alias gs='git status -sb'
+alias gs='git status -sb && git show HEAD --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %s %Cgreen(%cr) " --stat --abbrev-commit --date=relative'
 
 # Pretty diff  (gem dependency).
 alias gd='git diff --color | diff-so-fancy'

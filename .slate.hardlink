@@ -144,7 +144,7 @@ bind f6 focus 'Atom'
 bind f7 focus 'Sublime Text'
 bind f8 focus 'Emacs'
 
-bind f9 focus 'Slack'
+bind f9 focus 'Keybase'
 bind f10 focus 'Messages'
 bind f11 focus 'Discord'
 bind f12 focus 'Gitter'

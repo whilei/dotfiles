@@ -104,3 +104,6 @@ alias squish="sed '/^\s*$/d'"
 
 # Math for science
 alias calc="insect"
+
+alias kb="keybase"
+
