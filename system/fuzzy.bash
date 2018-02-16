@@ -36,6 +36,7 @@ bdf() {
 	git branch -d $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
 
+alias gbdd="bdf"
 alias gbdf="bdf"
 alias bdfz="bdf"
 alias fzgbd="bdf"

@@ -81,8 +81,13 @@ ps1_llg(){
 ps1_sm() {
     PS1=':\w '${COLOR_YELLOW}${dollar}${color_reset}' '
 }
+bfgdollar='$'
+ps1_bfg(){
+	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}' '
+}
 # Turn it on.
-ps1_lg
+# ps1_lg
+ps1_bfg
 
 # Cuz I forget.
 alias ps1_low="ps1_llg"
