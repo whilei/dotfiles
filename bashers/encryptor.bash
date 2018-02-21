@@ -27,7 +27,11 @@ sha(){
 		echo "Use"
 		echo "$ sha256 file"
 	else
-		openssl sha -sha256 $1
+		local output="$(openssl sha -sha256 $1)"
+		echo "$output"
+		local justsha="$( echo $output | cut -d ' ' -f2)"
+		echo "$justsha" | pbcopy
+		echo "Copied '$justsha' to clipboard!"
 	fi
 }
 alias sha256="sha"
