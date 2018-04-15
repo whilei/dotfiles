@@ -68,7 +68,7 @@ time_p="\t\[$(tput sgr0)\]" # HH:MM:SS
 
 # user@comp ~> \u@\h
 ps1_lg() {
-	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' '${COLOR_YELLOW}${dollar}${color_reset}' '
+	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' '${COLOR_LIGHT_GREEN}${dollar}${color_reset}' '
 }
 # For when I'm using a small terminal and a long $CWD.
 # Just set the input on a newline beneath CWD, GITINFO, ie
@@ -76,7 +76,7 @@ ps1_lg() {
 # ia@mh cwd `git status`
 # $ echo
 ps1_llg(){
-	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${COLOR_YELLOW}${dollar}${color_reset}' '
+	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${COLOR_LIGHT_GREEN}${dollar}${color_reset}' '
 }
 ps1_sm() {
     PS1=':\w '${COLOR_YELLOW}${dollar}${color_reset}' '
