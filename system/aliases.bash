@@ -107,3 +107,6 @@ alias calc="insect"
 
 alias kb="keybase"
 
+alias what="compgen -A function" # list all functions can run
+alias What="compgen -A function -abck" # all functions, aliases, built-ins, keywords
+alias inpath="compgen -A function"
