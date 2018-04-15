@@ -833,7 +833,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>142 160 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>309 235 1016 512 0 0 1440 877 </string>
+	<string>309 196 937 512 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>581 216 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -968,21 +968,29 @@
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.79334010909938213</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.7933502197265625</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.79333145149646667</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.45978686868714835</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.4597930908203125</real>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.45978148173964373</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -1093,12 +1101,16 @@
 			<false/>
 			<key>Foreground Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.75610913827249193</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.7561187744140625</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.75610088696563804</real>
 			</dict>
 			<key>Guid</key>
 			<string>1781E78E-6809-4EFF-AF9E-E5644F908ACC</string>
@@ -7623,7 +7635,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-01-29T15:00:04Z</date>
+	<date>2018-03-22T01:01:06Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
