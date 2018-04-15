@@ -17,6 +17,7 @@ alias fzco="cof"
 alias fzgco="cof"
 alias fco="cof"
 alias cob="cof"
+alias gcbb="cof"
 
 # Same as 'cof', but uses only last 10 active branches... +'s' for faSSSSt, speed
 cofs() {
@@ -36,6 +37,7 @@ bdf() {
 	git branch -d $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
 
+alias gbdd="bdf"
 alias gbdf="bdf"
 alias bdfz="bdf"
 alias fzgbd="bdf"
@@ -54,6 +56,7 @@ alias cotfz="cot"
 alias cotz="cot"
 alias fzcot="cot"
 alias fcot="cot"
+alias gtll="cot"
 
 # fstash - easier way to deal with stashes
 # type fstash to get a list of your stashes
