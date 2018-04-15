@@ -4,3 +4,4 @@ node_modules
 app/bower_components
 .DS_Store
 .bash_history
+.idea/
