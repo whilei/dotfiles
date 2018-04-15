@@ -9,6 +9,7 @@ alias k="git" # why k? kuz :fu:
 
 alias ga="git add"
 alias gai="git add -i"
+alias gri="git reset -p" # same thing as gai, but for reset. hm, cool.
 
 alias gc="git commit"
 alias gC="git commit -S" # signed commit
@@ -22,10 +23,23 @@ alias GITIT='git add -A && git commit -S -m' # signed commit
 
 # Status
 alias gs='git status -sb'
-alias gss='git status -sb && git show HEAD --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %s %Cgreen(%cr) " --stat --abbrev-commit --date=relative'
+alias gss='git show HEAD --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %s %Cgreen(%cr) " --stat --abbrev-commit --date=relative'
 
 # Pretty diff  (gem dependency).
-alias gd='git diff --color | diff-so-fancy'
+gd(){
+	if [ -z "$@" ];then
+		git diff --color | diff-so-fancy
+	else
+		git diff --color -- "$@" | diff-so-fancy
+	fi
+}
+gdc(){
+	if [ -z "$@" ];then
+		git diff --color --cached | diff-so-fancy
+	else
+		git diff --color --cached -- "$@" | diff-so-fancy
+	fi
+}
 
 # Pretty logs.
 # - can use with '-n' flag, where n is number of commits from head.
