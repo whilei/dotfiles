@@ -3,9 +3,9 @@
 open -a 'Google Chrome Canary' https://github.com
 
 # Where dat dispatcher
-open -a Slack
-open -a Discord
-open -a Gitter
+open -a Keybase
+# open -a Discord
+# open -a Gitter
 
 open -a GoLand
 
