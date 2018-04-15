@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+lastComMes() {
+	# swap spaces for -'s
+	local mess=$(git log -1 --pretty=%B | head -1 | sed --expression='s/ /-/g')
+	echo -n "$mess"
+}
+
+nameyyasdf() {
+    local gpath=$GOPATH/src/github.com/ethereumproject/go-ethereum
+    local branch=$(git -C $gpath rev-parse --abbrev-ref HEAD)
+    branch=$(echo -n $branch)
+	local name="[branch=$branch,commit=$(lastComMes),built=$(date +%b/%d%a-%T)]"
+    echo -n "$name"
+}
+
+gingg(){
+    local gpath=$GOPATH/src/github.com/ethereumproject/go-ethereum
+    # echo "$branch-$(date)"  # `janus version -format TAG_OR_NIGHTLY`
+	# local CGO_LDFLAGS="$GOPATH/src/github.com/ethereumproject/sputnikvm-ffi/c/libsputnikvm.a -ldl -lresolv"
+	# -tags=sputnikvm
+    env GOOS=linux go install -ldflags "-X main.Version="whilei.`janus version -dir $gpath -format TAG_OR_NIGHTLY``nameyyasdf` github.com/ethereumproject/go-ethereum/cmd/geth
+}
+
+gingg
