@@ -3,6 +3,11 @@ export VISUAL=vim
 #export EDITOR='slime -w'
 export EDITOR="$VISUAL"
 
+HISTSIZE=10000
+HISTFILESIZE=100000
+shopt -s histappend
+stty -ixon  # turn of suspend/freeze behavior (ctrl-s)
+
 # the emacs train...
 # start a daemon on launchctrl for fast startup??...
 # per HN folk @ ycombi
