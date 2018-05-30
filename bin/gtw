@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-open -a 'Google Chrome Canary' https://github.com
+open -a 'Google Chrome Canary' https://github.com/notifications
 
 # Where dat dispatcher
 open -a Keybase
 # open -a Discord
 # open -a Gitter
 
-open -a GoLand
+# open -a "Visual Studio Code"
+open -a "GoLand"
 
 say good morning sunshine
