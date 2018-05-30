@@ -21,6 +21,16 @@ alias gcam="git commit --amend"
 alias gitit='git add -A && git commit -m'
 alias GITIT='git add -A && git commit -S -m' # signed commit
 
+giton(){
+	if (( $# != 2)); then
+		echo "Use: $ gitonup <remote> <branch>"
+	fi
+	git fetch "$1"
+	git checkout -B "$2"
+	git rebase "$1/$2"
+}
+
+
 # Status
 alias gs='git status -sb'
 alias gss='git show HEAD --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %s %Cgreen(%cr) " --stat --abbrev-commit --date=relative'
