@@ -99,18 +99,21 @@ bind up:${hyper}    nudge +0   -10%
 bind down:${hyper}  nudge +0   +10%
 
 ## Concrete position binders
-
 bind u:${hyper} throw ${external} ${fullsize}
 bind b:${hyper} throw ${laptop} ${fullsize}
+
+
 
 ## Focus binders
 
 bind e:${shiftcontrol} focus 'Emacs'
 bind s:${shiftcontrol} focus 'Sublime Text'
-bind g:${shiftcontrol} focus 'Gogland-EAP'
+bind g:${shiftcontrol} focus 'GoLand'
+bind .:${shiftcontrol} focus 'GoLand'
 bind w:${shiftcontrol} focus 'Atom'
 bind ;:${shiftcontrol} focus 'Atom'
 bind x:${shiftcontrol} focus 'Xcode'
+bind v:${shiftcontrol} focus 'Code' # Visual Studio Code
 
 bind o:${shiftcontrol} focus 'Postman'
 
@@ -138,12 +141,13 @@ bind r:${shiftcontrol} focus 'Preview'
 
 bind f2 focus 'iTerm2'
 bind f3 focus 'Google Chrome'
-bind f4 focus 'Google Chrome'
+bind f4 focus 'Safari'
 
 bind f5 focus 'GoLand'
 bind f6 focus 'Atom'
 bind f7 focus 'Sublime Text'
-bind f8 focus 'Xcode'
+# bind f8 focus 'Xcode'
+bind f8 focus 'Code'
 
 bind f9 focus 'Keybase'
 bind f10 focus 'Messages'
@@ -161,9 +165,4 @@ bind g:${mash} grid padding:5 0:6,3 1:8,3
 
 bind `:cmd ${showHintsLeftHand}
 
-# Shell bindings
-bind 1:ctrl shell '/Users/ia/.dotfiles/bin/open/downloads'
-bind 2:ctrl shell '/Users/ia/.dotfiles/bin/open/screenshots'
-bind 3:ctrl shell path:/Users/ia/gocode/src/github.com/ethereumproject/go-ethereum '/Users/ia/.dotfiles/bin/ging'
-bind 0:ctrl shell '/Users/ia/.dotfiles/bin/etc_address_opener'
 
