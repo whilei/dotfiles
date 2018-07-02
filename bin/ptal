@@ -1,0 +1,269 @@
+#!/usr/bin/env bash
+
+# Use:
+# -----------------------------------------
+# Comment your code like this:
+#
+# PTAL Hey team, PTAL. I don't understand this invariant shit.
+#
+# or
+#
+# PTAL-
+# Dear team,
+# Please kindly
+# stop using spaces
+# instead of tabs
+# because if you don't
+# I'll come find you
+# and punch you in the abs.
+# :heart:
+# PTAL-
+#
+# -------------------------------------------
+# Then, after you push your branch and make a PR, do something like the following
+# to automatically post the comments from your code to the Github PR.
+#
+# $ ptal -p 123 -r whilei/go-ethereum
+#
+#
+# You can also configure custom delimiters for parsing comments to POST
+# from the git diff. Delimiters that might integrate with your code style already include:
+# - NOTE(satyanadella)
+# - NOTE:
+# - TODO
+# - WTF
+# - FIXME
+
+# Github owner/repo
+gh_or="whilei/go-ethereum"
+
+# Github PR id.
+pull_id=""       # will be a number, but httpie will take care of that
+
+# Commit hash (used for Github API post).
+# If not provided as an argument value, it will be inferred by `git rev-parse HEAD`.
+ch=""            # commit hash
+
+# Default branch to compare HEAD against, eg. git diff <compare>..HEAD.
+compare="master" # optional, branch to diff against
+# NOTE: you should be ON the branch you want to compare to, eg. feat/fix-things (TODO?)
+
+# Default one-line comment delimiter (prefix).
+# Anything following this (with preceeding whitespace trimed) wtill become a comment.
+# For seamless integration with how you may already be writing comments,
+# just set the delimiter flag, eg. -o 'NOTE(whilei)'
+delim_oneliner="PTAL"
+
+# Default multi-line comment delimiter.
+# Anything between these will become a comment.
+# Any non-whitespace characters immediatey following the delimiter will be interpreted
+# as a code-comment escape character and trimmed also. Eg.
+#
+# PTAL-#
+# this is a comment
+# where leading `#` symbols
+# will get trimmed
+# PTAL-
+#
+# You can use a normal comment tags easily, too, like:
+#
+# NOTE(whilei)-#
+# this is another comment
+#
+# (and there can be blank lines too!)
+# and it will get posted
+# NOTE(whilei)-
+delim_multiline='PTAL-'
+
+dryrun=0
+quiet=0 # Don't echo all diff lines.
+interactive=1
+
+# Logger helpers.
+GREEN='\033[1;32m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+echo_green() {
+	echo -e "${GREEN}$1${NC}"
+}
+echo_red() {
+	echo -e "${RED}$1${NC}"
+}
+
+echoer() {
+	case "$1" in
+	stat)
+		echo "--------------------------"
+		echo_green ">>> $2"
+		echo
+		;;
+	env)
+		echo " -> $2: $3" #
+		;;
+	esac
+}
+
+usage() {
+	echoer stat Usage
+	echo "  -d <dry run> (don't actually make the POST request, just echo what would happen)"
+	echo "  -p 123 <pull request id>"
+	echo "  -q quiet; don't echo line-by-line"
+	echo "  -r $gh_or <github :owner/:repo>"
+	echo "  -b $compare <git branch to diff against>"
+	echo "  -c 288ed4c6fc5768b452c0b388145d3a26feb57bad <commit hash> Default: \`git rev-parse HEAD\`"
+	echo "  -o $delim_oneliner <delimiter for single-line comments>   Default: $delim_oneliner"
+	echo "  -m $delim_multiline <delimiter for multi-line comments>   Default: $delim_multiline"
+	echo
+	echo "eg. $ ptal -p 123 -r $gh_or -d"
+	echo
+	echo ">>> A couple examples for how to use comments in the code to be postable:"
+	echo "
+  1.
+
+// $delim_oneliner I don't understand where this variable comes from. :eyeglasses:
+"
+	echo "
+  2.
+
+// $delim_multiline// 
+// Um, actually, 
+// I don't understand...
+// anything.
+// $delim_multiline
+"
+}
+
+# Give help.
+if [[ "$1" == "*h*" ]]; then
+	usage
+	exit 0
+fi
+
+# Check dependencies are in order.
+check() {
+	if [[ "$pull_id" == "" ]]; then usage && echo "* problem: pull_id=$pull_id" && exit 1; fi
+	if [[ "$GITHUB_TOKEN" == "" ]]; then "You must configure an environment variable GITHUB_TOKEN to enable authorized Github API requests." && exit 1; fi
+	hash curl 2>/dev/null || echo "You must have curl installed."
+}
+
+while getopts 'p:r:c:b:o:m:hdq' flag; do
+	case "${flag}" in
+	a) interactive=0 ;; # a_utomatic
+	p) pull_id="${OPTARG}" ;;
+	r) gh_or="${OPTARG}" ;;
+	b) compare="${OPTARG}" ;;
+	c) ch="${OPTARG}" ;;
+	o) delim_oneliner="${OPTARG}" ;;
+	m) delim_multiline="${OPTARG}" ;;
+	d) dryrun=1 ;;
+	q) quiet=1 ;;
+	*) usage && exit 0 ;;
+	esac
+done
+check
+
+# could get fancy and infer from git remote, but whatever for now
+head_commit_hash=$(git rev-parse HEAD)
+: ${ch:=$head_commit_hash}
+
+echoer env gh_or "$gh_or"
+echoer env pull_id "$pull_id"
+echoer env ch "$ch"
+echoer env compare "$compare"
+
+postcomment() {
+
+	if [[ $dryrun == 0 ]]; then echoer stat "Posting comment..."; else echo_red ">>> Would be posting..."; fi
+	echo_green "        | commit=$ch"
+	echo_green "        | file=$2"
+	echo_green "        | n=$1"
+	echo_green "        | comment=$3"
+	echo
+	if [[ $dryrun == 0 ]]; then
+		bod='"body":"'"$3\\n\\n<div align='right'><sup>Posted with <a href='https://gist.github.com/whilei/54758c05e7355130ce95127645415efa'>PTAL</a></sup></div>"'"'
+		com='"commit_id":"'"$ch"'"'
+		path='"path":"'"$2"'"'
+		pos='"position":'"$1"
+		str='{'"$bod,$com,$path,$pos"'}'
+		url="https://api.github.com/repos/$gh_or/pulls/$pull_id/comments"
+		if curl -o /dev/null -H "Content-Type: application/json" -H "Authorization: token $GITHUB_TOKEN" -X POST \
+			--data "$str" \
+			"$url"; then
+			echo_green "OK! -- POST $url\\n"
+		else
+			echo_red "SHIT!\\n" && exit 1
+		fi
+	fi
+	comment=""
+}
+
+set -e
+
+# Get the diff.
+diff=$(git diff "$compare"..HEAD)
+echo "$diff" >diff.txt
+
+file=""
+n=0
+multiline_n=0
+multiline=0
+comment_prefix=""
+comment=""
+fn=0
+while read -r line; do
+	n=$((n + 1))
+	
+	if [[ $quiet == 0 ]]; then echo "$n: $line"; fi
+	if echo "$line" | grep -q -E '^(\+\+\+|\-\-\-)'; then
+		fn=$((fn + 1))
+
+		new_file=$(echo "$line" | sed -E 's/(\-\-\-|\+\+\+)\ (a|b)\/(.*)/\3/')
+
+		if [[ "$new_file" != "$file" ]]; then 
+			echo ">> parsing diff@ $new_file"
+		fi
+		file="$new_file"
+		
+		if [[ "$file" == "*vendor*" ]]; then echo "> vendor, skipping... "&& continue; fi
+	fi
+
+	# The position value equals the number of lines down from THE FIRST "@@" hunk header in the file you want to add a comment.
+	# The line just below the "@@" line is position 1, the next line is position 2, and so on.
+	# The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
+	if echo "$line" | grep -q -E '^@@'; then 
+		if [[ "$fn" -gt 0 ]]; then
+			n=0	
+			fn=0
+		fi
+	fi
+
+	# multiliners
+	if echo "$line" | grep -q -e "$delim_multiline"; then
+		# begin multiline
+		if [[ $multiline == 0 ]]; then
+			multiline=1
+			multiline_n=$n
+			comment_prefix="$(echo "$line" | sed -E 's/.*'"'$delim_multiline'"'(.*)/\1/')" # eg. PTAL-#  or  PTAL-//
+			# end multiline
+		else
+			postcomment "$multiline_n" "$file" "$comment"
+			multiline=0
+		fi
+		continue
+	fi
+
+	if [[ $multiline == 1 ]]; then
+		l_comment="$(echo "$line" | sed -E 's/.*'"'$comment_prefix'"'(\s*)(.*)/\2/')"
+		if [[ "$l_comment" == "+" ]] || [[ "$l_comment" == "-" ]]; then l_comment=""; fi # Cuz I suck at regex.
+		comment="$comment$l_comment\\n"
+	fi
+
+	# one liners
+	if echo "$line" | grep -q "$delim_oneliner"; then
+		comment=$(echo "$line" | sed -E 's/(.*)'"'$delim_oneliner'"'(\s*)(.*)/\3/')
+		postcomment "$n" "$file" "$comment"
+	fi
+
+done <diff.txt
+
+rm ./diff.txt

@@ -4,6 +4,8 @@
 # Ensure GPG2 can prompt for password.
 export GPG_TTY=$(tty)
 
+export SHELL=/usr/bin/local/bash
+
 # Load from dotfiles.
 # do like holman
 export DOTS=$HOME/.dotfiles

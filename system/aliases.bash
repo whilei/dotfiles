@@ -18,6 +18,8 @@ alias yps="rsync -avzu --delete --progress -h --backup --backup-dir='backup_$(da
 # get dat EZ v
 alias v="vim"
 
+alias les="less" # less is les
+
 # make executable
 alias chx="chmod +x"
 

@@ -87,7 +87,7 @@ git diff $(git log --pretty=format:%h -2 --reverse | tr "\n" " ")
 # reset the last modified time for each file in a git repo to its last commit time
 git ls-files | while read file; do echo $file; touch -d $(git log --date=local -1 --format="@%ct" "$file") "$file"; done
 
-# get author and email of a commit 
+# get author and email of a commit
 git --no-pager show -s --format='%an <%ae> on %cd' --date=short {commithash}
 
 # information about an author by giving it's name or email

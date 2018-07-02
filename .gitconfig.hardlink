@@ -25,10 +25,10 @@
 	wip = !git add -A && git commit -m ':hammer:'
     WIP = !git add -A && git commit -S -m ':hammer:'
 
-	typo = commit -am ":eyeglasses: :pen:"
-	TYPO = commit -Sam ":eyeglasses: :pen:"
-    fuck = commit -am ':computer: :gun:'
-    FUCK = commit -Sam ':computer: :gun:'
+	typo = !git add -A && git commit -m ":eyeglasses: :pen:"
+	TYPO = !git add -A && git commit -S -m ":eyeglasses: :pen:"
+    fuck = !git add -A && git commit -m ":computer: :gun:"
+    FUCK = !git add -A && git commit -S -m ":computer: :gun:"
 
     # Checkout or create-and-checkout a branch.
 	go = checkout -B
@@ -79,3 +79,6 @@
 	user = whilei
 [ghi]
 	token = !security find-internet-password -a whilei -s github.com -l 'ghi token' -w
+[difftool "sourcetree"]
+	cmd = kdiff \"$LOCAL\" \"$REMOTE\"
+	path =
