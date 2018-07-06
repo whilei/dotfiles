@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 
-open -a 'Google Chrome Canary' https://github.com/notifications
+nohup konsole
+nohup yakuake
+nohup google-chrome
+nohup emacs --insecure
+nohup run_keybase
 
-# Where dat dispatcher
-open -a Keybase
-# open -a Discord
-# open -a Gitter
-
-# open -a "Visual Studio Code"
-open -a "GoLand"
-
-say good morning sunshine
