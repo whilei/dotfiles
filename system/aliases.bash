@@ -26,8 +26,9 @@ alias chx="chmod +x"
 alias tailff="tail -F -n100"
 alias tailf="tail -F"
 
-alias yank="pbcopy"
-alias paste="pbpaste"
+# alias yank="pbcopy"
+# alias paste="pbpaste"
+alias cb="xsel -b"
 
 
 # Power management; ie [sleepnow | displaysleepnow | lock | boot]
