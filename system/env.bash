@@ -42,3 +42,7 @@ today_date() {
 }
 alias date_today="today_date"
 alias scw="screencapture -W -t jpg ~/Pictures/screenshots/`date_stamp`.jpg"
+
+
+export LC_TYPE=UTF-8
+export GPG_TTY=`tty`
