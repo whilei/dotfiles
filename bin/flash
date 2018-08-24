@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+backlightp='/sys/class/backlight/intel_backlight/brightness'
+keylightp='/sys/class/leds/tpacpi::kbd_backlight/brightness'
+oback=$(cat "$backlightp")
+okey=$(cat "$keylightp")
+
+say finished
+for i in {0..6}; do
+	declare kb sc
+	if [ $((i%2)) -eq 0 ]; then 
+		kb=0
+		sc=20000
+	else 
+		kb=2
+		sc=2000
+	fi
+	echo "$kb" | sudo tee "$keylightp" > /dev/null
+	echo "$sc" | sudo tee "$backlightp" > /dev/null
+	sleep 1
+done
+
+echo "$okey" | sudo tee "$keylightp" > /dev/null
+echo "$oback" | sudo tee "$backlightp" > /dev/null
+
