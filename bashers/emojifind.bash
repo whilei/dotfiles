@@ -7,7 +7,7 @@ femoji(){
 	do
 	   :
 	   echo $i
-	done | fzf +s +m -e | tr -d '\n' | pbcopy
+	done | fzf +s +m -e | tr -d '\n' | xsel -b
 }
 
 alias fzemoji="femoji"
