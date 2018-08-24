@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+local endpoints endpoint
+endpoints=$(find /home/ia/ProtonVPN/ProtonVPN_*_configs)
+endpoint=$(echo "$endpoints" | fzf --tac +m -e) &&
+sudo openvpn "$endpoint"
+
