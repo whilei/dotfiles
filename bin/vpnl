@@ -2,9 +2,10 @@
 
 f(){
 local endpoints endpoint
-endpoints=$(find /home/ia/ProtonVPN/ProtonVPN_*_configs)
+endpoints=$(find $HOME/ProtonVPN/ProtonVPN_*_configs)
 endpoint=$(echo "$endpoints" | fzf --tac +m -e) &&
-sudo openvpn --config "$endpoint" --verb 6 --up /etc/openvpn/vpnfailsafe.sh --down /etc/openvpn/vpnfailsafe.sh --auth-user-pass /home/ia/opass.txt
+# sudo openvpn --config "$endpoint" --verb 6 --up /etc/openvpn/vpnfailsafe.sh --down /etc/openvpn/vpnfailsafe.sh --auth-user-pass $HOME/opass.txt
+sudo openvpn --config "$endpoint" --verb 6 --auth-user-pass $HOME/opass.txt
 }
 f
 
