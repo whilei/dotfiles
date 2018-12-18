@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa_b5c6
+ssh-add ~/.ssh/id_rsa_b5c7
+

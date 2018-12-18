@@ -78,11 +78,11 @@ alias b="blink"
 
 alias bb="blink 4 0.2"
 
-flash(){
-	local ob=$(dbb)
-	blink 5 0.05
-	dbb 0.05 && sleep 0.1 && dbb $ob
-}
+# flash(){
+# 	local ob=$(dbb)
+# 	blink 5 0.05
+# 	dbb 0.05 && sleep 0.1 && dbb $ob
+# }
 
 myip(){
 	ipconfig getifaddr en1
@@ -105,11 +105,15 @@ alias lfm="lmf"
 # Remove blank lines
 alias squish="sed '/^\s*$/d'"
 
-# Math for science
-alias calc="insect"
-
 alias kb="keybase"
 
 alias what="compgen -A function" # list all functions can run
 alias What="compgen -A function -abck" # all functions, aliases, built-ins, keywords
+alias whatall="what"
+alias Whatall="What"
 alias inpath="compgen -A function"
+
+# alias nmon="echo lnd- | nmon"
+
+alias agq="ag -Q"
+

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-nohup konsole
-nohup yakuake
-nohup google-chrome
-nohup emacs --insecure
-nohup run_keybase
+nohup konsole & 
+nohup yakuake & 
+nohup google-chrome &
+nohup emacs --insecure &
+nohup run_keybase &
 

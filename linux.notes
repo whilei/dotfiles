@@ -3,6 +3,7 @@ lspci
 sudo ifconfig
 hcitool
 
+nmcli con down <wifiname>
 nmcli con down Extreme
 nmcli con up Extreme
 nmcli d wifi list
@@ -19,8 +20,31 @@ ln -sf /usr/share/zoneinfo/Asia/Hong_Kong /etc/localtime
 gpgconf --reload gpg-agent
 gpg-agent --daemon
 
+gpg
+
 # To open the portal for a free wifi that requires some kind of authentication, connect to the wifi, then visit a non-https (http only) site such as www.weather.com
 
 hcitool scan
-bluetoothctl
 
+# connect to bt
+bluetoothctl
+- devices
+- pairable on
+- pairable off
+- scan on
+- devices
+** it works! 
+- pair <MAC>
+- trust <MAC>
+- connect <MAC>
+
+# display current network usage
+sudo nload -m
+
+# get some info about graphics and shit
+glxinfo | grep OpenGL
+
+# see all your networks w/ plaintext passwordz
+cat /etc/NetworkManager/system-connections/ 
+
+alsamixer

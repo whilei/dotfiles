@@ -3,8 +3,8 @@ export VISUAL=vim
 #export EDITOR='slime -w'
 export EDITOR="$VISUAL"
 
-HISTSIZE=10000
-HISTFILESIZE=100000
+HISTSIZE=100000
+HISTFILESIZE=1000000
 shopt -s histappend
 stty -ixon  # turn of suspend/freeze behavior (ctrl-s)
 
@@ -42,7 +42,6 @@ today_date() {
 }
 alias date_today="today_date"
 alias scw="screencapture -W -t jpg ~/Pictures/screenshots/`date_stamp`.jpg"
-
 
 export LC_TYPE=UTF-8
 export GPG_TTY=`tty`

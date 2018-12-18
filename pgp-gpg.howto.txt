@@ -1,0 +1,4 @@
+gpg --keyserver pgp.mit.edu --recv A50DB0BC
+gpg --sign-key A50DB0BC
+gpg --keyserver pgp.mit.edu --send-keys A50DB0BC
+

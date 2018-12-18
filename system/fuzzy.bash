@@ -108,6 +108,17 @@ fterm() {
   fi
 }
 
+# fint - kill process with SIGINT
+fint() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-2}
+  fi
+}
+
 # fasd & fzf change directory - open best matched file using `fasd` if given argument, filter output of `fasd` using `fzf` else
 vv() {
     [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return

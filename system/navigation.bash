@@ -37,11 +37,11 @@ alias sbx="cd ~/sandbox; $listy;"
 alias desk="cd ~/Desktop; $listy;"
 
 # Read filenames containing $2 along with line of matched occurence
-fff() {
+ffff() {
 	find $1 -type f -print0 | xargs grep "$2"
 }
 # Just filenames (no matching line)
-ffn() {
+fffn() {
 	find $1 -type f -print0 | xargs grep -l "$2"
 }
 
@@ -64,3 +64,6 @@ alias zz="pmset displaysleepnow"
 alias imgls="lsimg"
 alias lscatimg="lsimg"
 alias catimgls="lsimg"
+
+# default catimg max width instead of terminal width
+alias catimg="catimg -w 100"

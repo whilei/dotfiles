@@ -1,0 +1,1 @@
+godoc -http=:6060 -goroot=/home/ia/go/src

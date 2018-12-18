@@ -1,5 +1,4 @@
-
-git config --global github.token $GITHUB_WHILEI_OAUTH_TOKEN 2>&1 > /dev/null
+git config --global github.token $GITHUB_WHILEI_OAUTH_TOKEN 2>&1 >/dev/null
 
 alias idiot="git"
 alias dummy="git"
@@ -21,8 +20,8 @@ alias gcam="git commit --amend"
 alias gitit='git add -A && git commit -m'
 alias GITIT='git add -A && git commit -S -m' # signed commit
 
-giton(){
-	if (( $# != 2)); then
+giton() {
+	if (($# != 2)); then
 		echo "Use: $ gitonup <remote> <branch>"
 	fi
 	git fetch "$1"
@@ -30,21 +29,20 @@ giton(){
 	git rebase "$1/$2"
 }
 
-
 # Status
 alias gs='git status -sb'
 alias gss='git show HEAD --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %s %Cgreen(%cr) " --stat --abbrev-commit --date=relative'
 
 # Pretty diff  (gem dependency).
-gd(){
-	if [ -z "$@" ];then
+gd() {
+	if [ -z "$@" ]; then
 		git diff --color | diff-so-fancy
 	else
 		git diff --color -- "$@" | diff-so-fancy
 	fi
 }
-gdc(){
-	if [ -z "$@" ];then
+gdc() {
+	if [ -z "$@" ]; then
 		git diff --color --cached | diff-so-fancy
 	else
 		git diff --color --cached -- "$@" | diff-so-fancy
@@ -72,8 +70,6 @@ alias GLb='git log --graph --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold b
 ## ... all stats, no commit messages
 alias Glb='git log --graph --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset %Cgreen(%cr) " --abbrev-commit --date=relative --stat'
 
-
-
 # Show remotes.
 alias gr="git remote -v"
 
@@ -86,17 +82,20 @@ alias gpwt="git push whilei --tags"
 alias gpa="git push gogs"
 alias gpat="git push gogs --tags"
 
+alias bwop="git push bwo"
+
 alias gpb="git push bitbucket"
 alias gph="git push heroku"
+
+alias gp-="TODO: push all remotes"
 
 # Push to all remotes.
 alias gP="git remote | xargs -L1 git push --all" # push to all remotes for a given repo
 # Push an argued branch/--tags to all remotes.
 GP() {
 	branch=$1
-	for r in $(git remote);
-	do
-		git push $r $branch;
+	for r in $(git remote); do
+		git push $r $branch
 	done
 }
 
@@ -136,11 +135,11 @@ alias ggui="gitup"
 
 # https://github.com/paulmillr/dotfiles/blob/master/home/.zshrc.sh
 function cherry() {
-  args=$@
-  for commit in "$@"; do
-    echo $commit
-    git cherry-pick -n "$commit"
-  done
+	args=$@
+	for commit in "$@"; do
+		echo $commit
+		git cherry-pick -n "$commit"
+	done
 }
 
 alias gcp="git cherry-pick"
@@ -154,7 +153,7 @@ function gitpushsub() {
 
 function gitpushsubforce() {
 	# git push heroku `git subtree split --prefix output master`:master --force
-	git push "$1" `git subtree split --prefix "$3" "$2"`:master --force
+	git push "$1" $(git subtree split --prefix "$3" "$2"):master --force
 }
 
 # re init to winit
