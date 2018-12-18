@@ -3,12 +3,12 @@
 # Navigation
 
 ## Better ls
-alias l="ls -lAhp --color"
-alias ll='ls -lAhp --color' # cuz i'm used to it
-alias lll='ls -lAhpR --color' # recursive
-alias lt="ls -Altrph --color" # recent at bottom
+alias l="ls -lAhpG"
+alias ll='ls -lAhpG' # cuz i'm used to it
+alias lll='ls -lAhpRG' # recursive
+alias lt="ls -AltrphG" # recent at bottom
 alias lsd="ls -lahd */" # list directories
-export listy="command ls -lAhp --color" # Reusable `ll`-as-command.
+export listy="command ls -lAhpG" # Reusable `ll`-as-command.
 
 ## Relative
 alias ..="cd .."
