@@ -58,6 +58,15 @@ alias fzcot="cot"
 alias fcot="cot"
 alias gtll="cot"
 
+# fuzzy find commit
+ffcom() {
+	local coms com
+	coms=$(git log --oneline -100) &&
+	com=$(echo "$coms" | fzf +s +m -e) &&
+	read -r c _ <<< "$com" &&
+	echo "$c"
+}
+
 # fstash - easier way to deal with stashes
 # type fstash to get a list of your stashes
 # enter shows you the contents of the stash
