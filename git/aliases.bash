@@ -92,7 +92,7 @@ alias gph="git push heroku"
 # Push to all remotes.
 alias gP="git remote | xargs -L1 git push --all" # push to all remotes for a given repo
 # Push an argued branch/--tags to all remotes.
-GP() {
+GPR() {
 	branch=$1
 	for r in $(git remote);
 	do
@@ -119,6 +119,11 @@ alias gcb="git checkout -b" # note .gitconfig has git go, which is like a gnarly
 
 # Delete branch.
 alias gbd="git branch -D" # definitely delete. no fucking around.
+gpbd() {
+	if [[ "$#" -ne 2 ]]; then echo 'Use: git push "$1" --delete "$2"' && exit 1; fi
+	git push "$1" --delete "$2"
+}
+
 alias gbl="git branch --list"
 
 # Merge, rebase.
