@@ -116,6 +116,13 @@ alias gco="git checkout"
 ## Checkout new branch.
 alias gcb="git checkout -b" # note .gitconfig has git go, which is like a gnarly version of this
 
+# checkout a branch with the same name from one fetch from a remote
+gcbr(){
+	remote_branch="$1" # eg. whilei/fix/stuff
+	local_branch=${1#*/} # eg. fix/stuff
+	git checkout -B "$local_branch" "$remote_branch"
+}
+
 # Delete branch.
 alias gbd="git branch -D" # definitely delete. no fucking around.
 gpbd() {
