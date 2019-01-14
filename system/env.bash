@@ -26,7 +26,7 @@ alias starte="emacs -nw --daemon > ~/logs/emacs.log 2>&1 &"
 
 export RBGOGS_PATH=/Users/ia/rotblauer/rbgogs
 
-
+# I cannot believe I fucking did this.
 # set date string
 date_stamp() {
 	date +%d-%m-%y@%H_%M_%S

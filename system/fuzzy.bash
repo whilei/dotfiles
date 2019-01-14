@@ -3,63 +3,38 @@
 # fuzzy git branch checkout-ing
 # https://coderwall.com/p/ba8afa/git-branch-fuzzy-search-checkout
 # cof -> check out fuzzy (where co is already 'checkout')
-cof() {
+ffgco() {
     local branches branch
     branches=$(git branch -a) &&
     branch=$(echo "$branches" | fzf +s +m -e) &&
     git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
 
-alias gcof="cof"
-alias cofz="cof"
-alias coz="cof"
-alias fzco="cof"
-alias fzgco="cof"
-alias fco="cof"
-alias cob="cof"
-alias gcbb="cof"
-
-# Same as 'cof', but uses only last 10 active branches... +'s' for faSSSSt, speed
-cofs() {
+# Same as above, but uses only last 10 active branches... +'s' for faSSSSt, speed
+fgco() {
     local branches branch
     branches=$(git bssimple) &&
 	# --tac = reverse order of input, while +s = do not sort
     branch=$(echo "$branches" | fzf --tac +m -e) &&
     git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
-alias gcofs="cofs"
-alias coff="cofs" # In case I think fast begins with f.
 
-bdf() {
+ffgbd() {
 	local branches branch
 	branches=$(git branch -a) &&
 	branch=$(echo "$branches" | fzf +s +m -e) &&
 	git branch -d $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
 
-alias gbdd="bdf"
-alias gbdf="bdf"
-alias bdfz="bdf"
-alias fzgbd="bdf"
-alias fgbd="bdf"
-alias fzgbd="bdf"
-
-cot() {
+ffgct() {
 	local tags tag
 	tags=$(git tag --list) &&
 	tag=$(echo "$tags" | fzf +s +m -e) &&
 	git checkout $(echo "$tag")
 }
 
-alias cotf="cot"
-alias cotfz="cot"
-alias cotz="cot"
-alias fzcot="cot"
-alias fcot="cot"
-alias gtll="cot"
-
 # fuzzy find commit
-ffcom() {
+ffgl() {
 	local coms com
 	coms=$(git log --oneline -100) &&
 	com=$(echo "$coms" | fzf +s +m -e) &&
@@ -67,12 +42,12 @@ ffcom() {
 	echo "$c"
 }
 
-# fstash - easier way to deal with stashes
+# ffstash - easier way to deal with stashes
 # type fstash to get a list of your stashes
 # enter shows you the contents of the stash
 # ctrl-d shows a diff of the stash against your current HEAD
 # ctrl-b checks the stash out as a branch, for easier merging
-fstash() {
+ffstash() {
   local out q k sha
   while out=$(
     git stash list --pretty="%C(yellow)%h %>(14)%Cgreen%cr %C(blue)%gs" |
@@ -95,6 +70,7 @@ fstash() {
     fi
   done
 }
+
 # fkill - kill process
 fkill() {
   local pid
@@ -118,23 +94,21 @@ fterm() {
 }
 
 # fasd & fzf change directory - open best matched file using `fasd` if given argument, filter output of `fasd` using `fzf` else
-vv() {
+ffvim() {
     [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return
     local file
-    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && $EDITOR "${file}" || return 1
 }
 
 # fasd & fzf change directory - jump using `fasd` if given argument, filter output of `fasd` using `fzf` else
-ccd() {
+cdd() {
     [ $# -gt 0 ] && fasd_cd -d "$*" && return
     local dir
     dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
 
-alias cdd="ccd"
-
 # fuzzy grep open via ag
-vg() {
+fagvim() {
   local file
 
   file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1 " +" $2}')"
@@ -149,7 +123,7 @@ alias vlf="vg"
 alias vff="vg"
 
 # fdr - cd to selected parent directory
-cdr() {
+cdup() {
   local declare dirs=()
   get_parent_dirs() {
     if [[ -d "${1}" ]]; then dirs+=("$1"); else return; fi
@@ -163,8 +137,6 @@ cdr() {
   cd "$DIR"
 }
 
-alias cdb="cdr" # cd return, cd back
-
 # fd - cd to selected directory
 cdf() {
   local dir
@@ -173,4 +145,3 @@ cdf() {
   cd "$dir"
 }
 
-alias cdt="cdf" # cd follow, cd to
