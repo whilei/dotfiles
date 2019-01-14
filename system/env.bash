@@ -26,10 +26,9 @@ alias starte="emacs -nw --daemon > ~/logs/emacs.log 2>&1 &"
 
 export RBGOGS_PATH=/Users/ia/rotblauer/rbgogs
 
-# I cannot believe I fucking did this.
 # set date string
 date_stamp() {
-	date +%d-%m-%y@%H_%M_%S
+  date %Y-%m-%dT%H-%M-%S
 }
 # Export the function so it can be used anywhere in another command, ie $ vim `date_stamp`.md
 export -f date_stamp
@@ -37,11 +36,10 @@ alias datestamp="date_stamp" # cuz I forget
 alias timestamp="date_stamp"
 alias time_stamp="date_stamp"
 
-today_date() {
+today_date_stamp() {
 	date +%Y-%m-%d
 }
 alias date_today="today_date"
-alias scw="screencapture -W -t jpg ~/Pictures/screenshots/`date_stamp`.jpg"
 
 export LC_TYPE=UTF-8
 export GPG_TTY=`tty`

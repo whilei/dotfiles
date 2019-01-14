@@ -61,10 +61,7 @@ alias iiftop="sudo iftop -i en1 -o 10s"
 
 alias zzz="pmset sleepnow"
 
-alias snots="open $HOME/Pictures/screenshots"
-
-alias og="open -g"
-alias ogh="open -g hammerspoon://"
+alias xopen="xdg-open"
 
 vf() {
 	vim "$(fzf --height 50%)"
@@ -105,7 +102,8 @@ alias lfm="lmf"
 # Remove blank lines
 alias squish="sed '/^\s*$/d'"
 
-alias kb="keybase"
+# Math for science
+alias calc="insect"
 
 alias what="compgen -A function" # list all functions can run
 alias What="compgen -A function -abck" # all functions, aliases, built-ins, keywords
