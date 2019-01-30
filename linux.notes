@@ -48,3 +48,16 @@ glxinfo | grep OpenGL
 cat /etc/NetworkManager/system-connections/ 
 
 alsamixer
+
+sudo fdisk -l
+sudo mount -t exfat /dev/sda1 /mnt
+sudo mount /dev/sda1 /mnt
+
+npm install -g spoof
+sudo spoof randomize en0
+
+ifconfig
+ip link show wlp0s20f3 # c0:b6:f9:2c:a1:00
+ip link set dev wlp0s20f3 down
+ip link set dev wlp0s20f3 address XX:XX:XX:XX:XX:XX
+ip link set dev wlp0s20f3 up

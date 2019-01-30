@@ -19,11 +19,19 @@ fgco() {
     git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
 
+ffgcor(){
+	local branches branch br
+	branches=$(git branch --all) &&
+	branch=$(echo "$branches" | fzf +s +m -e) &&
+	branch=$(echo "$branch" | sed "s|.* remotes/||") &&
+	git checkout -b "${branch#*/}" "${branch}"
+}
+
 ffgbd() {
 	local branches branch
 	branches=$(git branch -a) &&
 	branch=$(echo "$branches" | fzf +s +m -e) &&
-	git branch -d $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
+	git branch -D $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
 
 ffgct() {
@@ -36,7 +44,7 @@ ffgct() {
 # fuzzy find commit
 ffgl() {
 	local coms com
-	coms=$(git log --oneline -100) &&
+	coms=$(git log --oneline --branches=* -100) &&
 	com=$(echo "$coms" | fzf +s +m -e) &&
 	read -r c _ <<< "$com" &&
 	echo "$c"
