@@ -35,3 +35,6 @@ len() {
 	echo -n $size
 }
 
+# last modified file in cwd
+alias lmf="find . -maxdepth 1 -type f -printf '%T@ %Tc %p\n' | sort -n | tail -1 | cut -d' ' -f9"
+alias lmd="find . -maxdepth 1 -type d -not -name '.git' -printf '%T@ %Tc %p\n' | sort -n | tail -1 | cut -d' ' -f9"
