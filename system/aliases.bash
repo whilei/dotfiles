@@ -92,10 +92,10 @@ alias getmyip="myip"
 # vi `lf`
 # tail -f `lf`
 # mv `lf` ../othername
-lmf() {
-	local f=$(gls -AltrpH --color | tail -1 | cut -f9- -d" ")
-	echo -n "$f"
-}
+# lmf() {
+# 	local f=$(gls -AltrpH --color | tail -1 | cut -f9- -d" ")
+# 	echo -n "$f"
+# }
 
 alias lfm="lmf"
 
@@ -114,4 +114,14 @@ alias inpath="compgen -A function"
 # alias nmon="echo lnd- | nmon"
 
 alias agq="ag -Q"
+
+ports(){
+	echo 'SELECT DISTINCT process.name, listening.port, process.pid FROM processes AS process JOIN listening_ports AS listening ON process.pid = listening.pid WHERE listening.address = "0.0.0.0";' | osqueryi
+}
+# export -f ports
+
+alias xo='xdg-open'
+
+# https://stackoverflow.com/questions/6841143/how-to-set-font-color-for-stdout-and-stderr
+color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
