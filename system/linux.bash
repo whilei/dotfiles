@@ -55,7 +55,8 @@ alias changetz="settz"
 alias wtftimezone="settz" # make it easier for What grepping; NOTE to self: wtf_keyword might be a useful convention for greppable alias refs
 
 # screen locker
-alias sit="slock" # locks input w/ black screen
+# alias sit="slock" # locks input w/ black screen
+alias kiosk="xtrlock"
 # set() {
 # 	xtrlock
 # }
