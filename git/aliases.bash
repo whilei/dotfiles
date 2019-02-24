@@ -22,6 +22,7 @@ alias GITIT='git add -A && git commit -S -m' # signed commit
 
 alias grph='git rev-parse HEAD' # git rev parse head
 alias grpb='git rev-parse --abbrev-ref HEAD --' # git rev parse branch
+alias gdlt='git describe --abbrev=0 --tags' # git describe latest tag
 
 giton() {
 	if (($# != 2)); then
