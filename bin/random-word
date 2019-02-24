@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+shuf -n1  /usr/share/dict/words | sed 's/[^0-9a-Z]//g' | tr '[[:upper:]]' '[[:lower:]]'

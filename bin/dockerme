@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+
+d=$(pwd)
+sudo usermod -aG docker ${USER}
+su - ${USER}
+cd $d
+id -nG
+

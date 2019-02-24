@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+set -e
+
+GITHIS_OWNER="$1"
+GITHIS_REPO="$2"
+GITHIS_TOKEN="$3"
+
+usage(){
+	echo "Usage: ./script github_owner github_repo github_token_var_name"
+	echo
+	echo "NOTE:	Requires 'jj' command line JSON tool to be installed and available in PATH"
+}
+
+if [[ -z "$GITHIS_OWNER" ]]; then usage; exit 1; fi
+if [[ -z "$GITHIS_REPO" ]]; then usage; exit 1; fi
+if [[ -z "$GITHIS_TOKEN" ]]; then usage; exit 1; fi
+command -v jj >/dev/null 2>&1 || { usage; exit 1; }
+
+page=1
+
+jjcom=$(which jj)
+
+mkdir -p raw
+
+get_issues(){
+	2>&1 curl \
+	--silent --show-error \
+	-H "Authorization: token ${!GITHIS_TOKEN}" \
+	-D .response-header \
+	'https://api.github.com/repos/'$GITHIS_OWNER/$GITHIS_REPO'/issues?state=all&page='$page'&per_page=100&sort=updated' | tee .response.json
+
+	echo "finished request"
+
+	n=0
+	max=$(cat .response.json | $jjcom '#')
+
+	while [[ $n -lt $max ]]; do
+		echo "handling issue index $n"
+		j="$jjcom -i .response.json -n $n"
+		[[ ! -z $($j) ]] || break
+		[[ ! -z $($j.pull_request) ]] && n=$((n+1)) && continue
+		
+		issue_filename="$($j.number).$($j.user.login)"
+
+		mkdir -p $($j.state)
+
+		cat <<EOF > $($j.state)/$issue_filename.txt
+$($j.title)
+
+$($j.body)
+
+assignee=$($j'.assignee.login') labels=$($j'.labels.#.name') created_at=$($j.created_at) updated_at=$($j.updated_at) closed_at=$($j.closed_at)
+EOF
+
+		echo $($j) > raw/$issue_filename.json
+
+
+		n=$((n+1))
+	done
+}
+
+echo "next" > .response-header
+
+while grep -q 'next' .response-header; do
+	get_issues
+	page=$((page+1))
+done
+
+

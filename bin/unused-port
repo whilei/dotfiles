@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()'
+
+# https://stackoverflow.com/questions/8842404/get-random-port-for-udp-socket
