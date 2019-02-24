@@ -61,3 +61,16 @@ ip link show wlp0s20f3 # c0:b6:f9:2c:a1:00
 ip link set dev wlp0s20f3 down
 ip link set dev wlp0s20f3 address XX:XX:XX:XX:XX:XX
 ip link set dev wlp0s20f3 up
+
+
+# record audio from sound card
+pacmd list | grep ".\monitor"
+pacat --record -d alsa_output.pci-0000_00_1f.3.analog-stereo.monitor > dump.raw
+sox -t raw -r 44100 -e signed-integer -L -b 16 -c 2 dump.raw output.wav
+xdg-open output.wav
+
+parec --list-file-formats
+parec -d alsa_output.pci-0000_00_1f.3.analog-stereo.monitor --file-format=wav output.wav
+
+xev
+
