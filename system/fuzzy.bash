@@ -50,6 +50,37 @@ ffgl() {
 	echo "$c"
 }
 
+# fuzzy find commit on this branch
+ffglb() {
+	local coms com
+	coms=$(git log --oneline -100) &&
+	com=$(echo "$coms" | fzf +s +m -e) &&
+	read -r c _ <<< "$com" &&
+	echo "$c"
+}
+
+# fuzzy find commit and show
+# ffgl+show = ffgls
+ffgls(){
+	local coms com
+	coms=$(git log --oneline --branches=* -100) &&
+	com=$(echo "$coms" | fzf +s +m -e) &&
+	read -r c _ <<< "$com" &&
+	git show "$c" &&
+	ffgls
+}
+
+# fuzzy find commit on this branch and show
+# ffgl+show = ffgls
+ffglbs(){
+	local coms com
+	coms=$(git log --oneline -100) &&
+	com=$(echo "$coms" | fzf +s +m -e) &&
+	read -r c _ <<< "$com" &&
+	git show "$c" &&
+	ffglbs
+}
+
 # ffstash - easier way to deal with stashes
 # type fstash to get a list of your stashes
 # enter shows you the contents of the stash
@@ -77,6 +108,16 @@ ffstash() {
       git stash show -p $sha
     fi
   done
+}
+
+# fuzzy ssh
+
+ffssh(){
+	local hn hns
+	hns=$(cat ~/.ssh/config | grep 'Host ' | awk '{print $2}') && 
+	hn=$(echo "$hns" | fzf +s +m -e --tac) &&
+	echo "sshing $hn ..." &&
+	ssh "$hn"
 }
 
 # fkill - kill process
