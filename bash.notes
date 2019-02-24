@@ -1,0 +1,31 @@
+## Navigating the CLI
+
+| com                        | action                                 | note     |
+| ---                        | ---                                    | ---      |
+| `ctrl` + `a`               | move to beginning of line              |          |
+| `ctrl` + `e`               | move to end of line                    |          |
+| `alt` + `b`                | move one word backward                 |          |
+| `alt` + `f`                | move one word forward                  |          |
+| `ctrl` + `b`               | move one character backward            |          |
+| `ctrl` + `f`               | move one character forward             |          |
+| `ctrl` + `t`               | exchange two adjacent characters       |          |
+| `alt` + `t`                | exchange two adjacent words            |          |
+| `alt` + `l`                | lowercase rest of word                 |          |
+| `alt` + `c`                | uppercase rest of word                 |          |
+| `ctrl` + `v`               | insert raw character                   | Verbatim |
+| `alt` + `#`                | comment current line (prepend #)       |          |
+| `ctrl` + `w`               | delete the last word                   |          |
+| `ctrl` + `h`               | delete character to left               |          |
+| `ctrl` + `d`               | delete character to right              |          |
+| `ctrl` + `u`               | delete the whole line                  |          |
+| `ctrl` + `y`               | paste the kill buffer to terminal      |          |
+| `ctrl` + `x`, `ctrl` + `u` | incremental undo                       |          |
+| `alt` + `r`                | undo all changes to line               |          |
+| `ctrl` + `x`, `ctrl` + `e` | open current command in VISUAL editor  |          |
+| `ctrl` + `r`               | search history backward                |          |
+| `ctrl` + `s`               | search history forward                 |          |
+| `alt` + `.`                | insert last argument from last command |          |
+| `$ set -o vi`              | set input mode to vi                   |          |
+| `ctrl` + `l`               | clear screen                           |          |
+
+> https://catonmat.net
