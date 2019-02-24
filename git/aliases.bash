@@ -20,6 +20,9 @@ alias gcam="git commit --amend"
 alias gitit='git add -A && git commit -m'
 alias GITIT='git add -A && git commit -S -m' # signed commit
 
+alias grph='git rev-parse HEAD' # git rev parse head
+alias grpb='git rev-parse --abbrev-ref HEAD --' # git rev parse branch
+
 giton() {
 	if (($# != 2)); then
 		echo "Use: $ gitonup <remote> <branch>"
