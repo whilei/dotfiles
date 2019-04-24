@@ -1,0 +1,174 @@
+#!/usr/bin/env bash
+
+help() {
+	if [[ ! -z "$1" ]]
+	then 
+		echo "Error: $1"
+		trap 'exit 1' RETURN
+	fi
+	cat <<EOF
+
+Overview:
+
+  Queries the Github APIv3 to collect all pull requests and their comments from a repository. 
+  The token you use must have read access to the repository.
+  
+  Data will be referenced and stored as such:
+
+    ${ISSUES_DIR}/.response.json     <- temporary
+    ${ISSUES_DIR}/.response-header   <- temporary
+    ${ISSUES_DIR}/.state
+    ${ISSUES_DIR}/<issue_number>.json
+    ${ISSUES_DIR}/<issue_number>_<issuecomment_id>.json
+
+	The '${ISSUES_DIR}/.state' file will contain an ISO8601 datetime, which the script will use
+	as the 'since' parameter for it's queries, to avoid a lot of redundancy and API use.
+	When the script is finished, it will update this value with the datetime at which
+	the script began to run.
+
+	Developer's note: 
+	  With Github's v3 API, all Pull Requests are Issues, but not
+		all Issues are Pull Requests. Since I'm reusing the script that clones Issues,
+		and since Pull Requests are (kind of) Issues, I'm going to leave the variable
+		and function names the same, changing as little as possible.
+
+Dependencies:
+
+  - jj , https://github.com/tidwall/jj , Must be in PATH
+	- Environment variable GITHUB_TOKEN must be set in order to access the Github API.
+
+Basic use:
+
+  Run:
+
+    $0 :owner/:repo
+
+Advanced use:
+
+  Force re-download.
+
+	  rm ./${ISSUES_DIR}/.state
+
+  Download all issues+issuecomments since ____.
+
+	  vim ./${ISSUES_DIR}/.state/
+
+EOF
+}
+
+ISSUES_DIR=".gh-pullrequests"
+
+owner_repo="$1"
+[[ -z "$owner_repo" ]] && help "Invalid argument(s)"
+[[ $# -gt 1 ]] && help "Invalid argument(s)"
+[[ -z "$GITHUB_TOKEN" ]] && help "GITHUB_TOKEN not set"
+command -v jj || { help "Dependency unmet"; }
+
+mkdir -p ${ISSUES_DIR}
+
+[[ -f ${ISSUES_DIR}/.state && $(wc -l <${ISSUES_DIR}/.state) -gt 0 ]] || date --date="2009-01-02 03:04:05" +"%Y-%m-%dT%H:%M:%SZ" >${ISSUES_DIR}/.state
+
+# Because we'll want to use a datetime for state that doesn't leave much
+# abyss time;
+# say this script took 12 minues to run (which it doesn't, but bear with me),
+# then if someone posted a comment during those 12 minutes and we were to
+# stamp the state with the time of the script's completion -- and not it's start --
+# then unbeknownst the us, that comment would be permanently foresaken to an
+# abysmal pergatory of unremembrance.
+start="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+
+# It's possible these could be refactored to be DRYer.
+# But there's something to be said for saying something.
+process_issues() {
+	local _n=0
+	local _max; _max=$(jj -i ${ISSUES_DIR}/.response.json '#')
+
+	while [[ $_n -lt $_max ]]; do
+		echo "Processing issue index $_n"
+		_j_cmd=/"$(which jj) -i ${ISSUES_DIR}/.response.json -n $_n"
+		[[ ! -z $($_j_cmd) ]] || break
+		[[ -z $($_j_cmd.pull_request) ]] && _n=$((_n + 1)) && continue
+
+		_issue_number="$(printf '%05d' $($_j_cmd.number))"
+		$_j_cmd >"${ISSUES_DIR}/${_issue_number}.json"
+
+		curl > ${ISSUES_DIR}/${_issue_number}.patch 2>&1 \
+			-L --silent --show-error \
+			-H "Authorization: token ${GITHUB_TOKEN}" \
+			-D "${ISSUES_DIR}/.response-header" \
+			"$($_j_cmd.pull_request.patch_url)"
+
+		_n=$((_n + 1))
+	done
+}
+
+get_issues() {
+	# Squirrel girl alert: Developer preview for reactions summary
+	# https://developer.github.com/v3/issues/#reactions-summary
+	curl >${ISSUES_DIR}/.response.json 2>&1 \
+		--silent --show-error \
+		-H "Authorization: token ${GITHUB_TOKEN}" \
+		-H "Accept: application/vnd.github.squirrel-girl-preview" \
+		-D "${ISSUES_DIR}/.response-header" \
+		'https://api.github.com/repos/'"${owner_repo}"'/issues?state=all&page='$1'&per_page=100&sort=updated&since='"$(head -n1 <${ISSUES_DIR}/.state)"
+
+	echo "Finished issues request"
+	grep -v "200" ${ISSUES_DIR}/.response.json && process_issues
+}
+
+process_issuecomments() {
+	local _n=0
+	local _max; _max=$(jj -i ./${ISSUES_DIR}/.response.json '#')
+
+	while [[ $_n -lt $_max ]]; do
+		echo "Processing issuecomment index $_n"
+		_j_cmd=/"$(which jj) -i ${ISSUES_DIR}/.response.json -n $_n"
+		[[ ! -z $($_j_cmd) ]] || break
+
+		_issue_number="$(printf '%05d' $(basename $($_j_cmd.issue_url)))" # HACK
+
+		# We need a way to tell Issue Comments vs. PR Comments 
+		# This assumes that Issues have been downloaded before their respective comments.
+		[[ ! -f "${ISSUES_DIR}/${_issue_number}.json" ]] && _n=$((_n + 1)) && continue
+
+		_issuecomment_number="$($_j_cmd.id)"
+
+		$_j_cmd >"${ISSUES_DIR}/${_issue_number}_${_issuecomment_number}.json"
+
+		_n=$((_n + 1))
+	done
+}
+
+get_issuecomments() {
+	# Squirrel girl alert: Developer preview for reactions summary
+	# https://developer.github.com/v3/issues/comments/#reactions-summary-1
+	curl >${ISSUES_DIR}/.response.json 2>&1 \
+		--silent --show-error \
+		-H "Authorization: token ${GITHUB_TOKEN}" \
+		-H "Accept: application/vnd.github.squirrel-girl-preview" \
+		-D "${ISSUES_DIR}/.response-header" \
+		'https://api.github.com/repos/'"${owner_repo}"'/issues/comments?state=all&page='$1'&per_page=100&sort=updated&since='"$(head -n1 <${ISSUES_DIR}/.state)"
+
+	echo "Finished issuecomments request"
+	grep -v "200" ${ISSUES_DIR}/.response.json && process_issuecomments
+}
+
+onexit() {
+	rm ${ISSUES_DIR}/.response{.json,-header}
+	echo "${start}" >${ISSUES_DIR}/.state
+}
+trap onexit EXIT
+
+touch ${ISSUES_DIR}/.response-header
+
+page=1
+while grep -q 'next' ${ISSUES_DIR}/.response-header || [[ $page == 1 ]]; do
+	get_issues ${page}
+	page=$((page + 1))
+done
+
+page=1
+while grep -q 'next' ${ISSUES_DIR}/.response-header || [[ $page == 1 ]]; do
+	get_issuecomments ${page}
+	page=$((page + 1))
+done

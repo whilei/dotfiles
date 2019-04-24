@@ -125,3 +125,9 @@ alias xo='xdg-open'
 # https://stackoverflow.com/questions/6841143/how-to-set-font-color-for-stdout-and-stderr
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
+dateiso(){
+	date +%Y-%m-%dT%H:%M:%S%z
+}
+export -f dateiso
+
+alias pj='pijul'

@@ -9,6 +9,8 @@ ffgco() {
     branch=$(echo "$branches" | fzf +s +m -e) &&
     git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
+alias 'gcoff'='ffgco'
+alias 'coff'='ffgco'
 
 # Same as above, but uses only last 10 active branches... +'s' for faSSSSt, speed
 fgco() {
@@ -18,7 +20,10 @@ fgco() {
     branch=$(echo "$branches" | fzf --tac +m -e) &&
     git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
+alias gcoo='fgco'
+alias cof='fgco'
 
+# checkout branch with auto name, ala 'hub'
 ffgcor(){
 	local branches branch br
 	branches=$(git branch --all) &&
@@ -26,6 +31,7 @@ ffgcor(){
 	branch=$(echo "$branch" | sed "s|.* remotes/||") &&
 	git checkout -b "${branch#*/}" "${branch}"
 }
+alias gcorr='ffgcor'
 
 ffgbd() {
 	local branches branch
@@ -33,6 +39,7 @@ ffgbd() {
 	branch=$(echo "$branches" | fzf +s +m -e) &&
 	git branch -D $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
+alias gbdd='ffgbd'
 
 ffgct() {
 	local tags tag
@@ -40,6 +47,7 @@ ffgct() {
 	tag=$(echo "$tags" | fzf +s +m -e) &&
 	git checkout $(echo "$tag")
 }
+alias gctt='ffgct'
 
 # fuzzy find commit
 ffgl() {
@@ -49,6 +57,8 @@ ffgl() {
 	read -r c _ <<< "$com" &&
 	echo "$c"
 }
+alias glff='ffgl'
+alias gll='ffgl'
 
 # fuzzy find commit on this branch
 ffglb() {
@@ -58,6 +68,7 @@ ffglb() {
 	read -r c _ <<< "$com" &&
 	echo "$c"
 }
+alias glbb='ffglb'
 
 # fuzzy find commit and show
 # ffgl+show = ffgls
@@ -69,6 +80,7 @@ ffgls(){
 	git show "$c" &&
 	ffgls
 }
+alias glss='ffgls'
 
 # fuzzy find commit on this branch and show
 # ffgl+show = ffgls
@@ -80,6 +92,7 @@ ffglbs(){
 	git show "$c" &&
 	ffglbs
 }
+alias glbss='ffglbs'
 
 # ffstash - easier way to deal with stashes
 # type fstash to get a list of your stashes
@@ -159,6 +172,7 @@ ffvim() {
     local file
     file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && $EDITOR "${file}" || return 1
 }
+alias vimm='ffvim'
 
 # fasd & fzf change directory - jump using `fasd` if given argument, filter output of `fasd` using `fzf` else
 cdd() {
@@ -178,9 +192,7 @@ fagvim() {
      vi $file
   fi
 }
-alias vf="vg"
-alias vlf="vg"
-alias vff="vg"
+alias vag="fagvim"
 
 # fdr - cd to selected parent directory
 cdup() {
