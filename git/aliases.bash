@@ -39,19 +39,24 @@ alias gss='git show HEAD --pretty=format:"%Cred%h%Creset %C(cyan)%G? %C(bold blu
 
 # Pretty diff  (gem dependency).
 gd() {
-	if [ -z "$@" ]; then
+	if [[ -z "$@" ]]; then
 		git diff --color | diff-so-fancy
 	else
 		git diff --color -- "$@" | diff-so-fancy
 	fi
 }
 gdc() {
-	if [ -z "$@" ]; then
+	if [[ -z "$@" ]]; then
 		git diff --color --cached | diff-so-fancy
 	else
 		git diff --color --cached -- "$@" | diff-so-fancy
 	fi
 }
+
+alias gdstat="git diff --stat"
+alias gdstatsh="git diff --shortstat"
+alias gdstatd="git diff --dirstat"
+
 
 # Pretty logs.
 # - can use with '-n' flag, where n is number of commits from head.
@@ -183,3 +188,14 @@ alias gitaliases="git config --get-regexp alias"
 alias galias="git config --get-regexp alias"
 alias git_alias="git config --get-regexp alias"
 alias git_aliases="git config --get-regexp alias"
+
+# gcb- is used to check out a branch using the current
+# branch name as a prefix.
+# This is useful for half-baked development branches that
+# you'll probably never use again or know why there is a 
+# branch with the suffix '-2'.
+gcb-() {
+	git checkout -b "$(git rev-parse --abbrev-ref HEAD)$1"
+	
+}
+

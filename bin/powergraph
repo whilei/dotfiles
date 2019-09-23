@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+clear
+
+#if [ "$ac_adapter" = "on" ]; then
+#	notify-send "AC Adapter" "The AC Adapter is on."
+#else
+#	notify-send "AC Adapter" "The AC Adapter is off."
+#fi
+
+while :; do
+
+	# Don't run script if connected to A/C.
+	ac_adapter=$(acpi -a | cut -d' ' -f3 | cut -d- -f1)
+	if [[ "$ac_adapter" == "on" ]]; then
+		clear
+		echo Running on A/C.
+		tail -n 79 /home/ia/.powerdata > /tmp/powerdata
+		echo 0 >> /tmp/powerdata
+		mv /tmp/powerdata /home/ia/.powerdata
+		sleep 2
+		continue
+	fi
+
+	touch /home/ia/.powerdata
+	tail -n 79 /home/ia/.powerdata > /tmp/powerdata
+	awk '{print $1*10^-6 " W"}' /sys/class/power_supply/BAT0/power_now | cut -d' ' -f1 >> /tmp/powerdata
+	mv /tmp/powerdata /home/ia/.powerdata
+	pd="$(tail -1 /home/ia/.powerdata)"
+	echo -n "${pd:0:4} W  "
+	cat /home/ia/.powerdata | spark
+
+	sleep 2
+
+done

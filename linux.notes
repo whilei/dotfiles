@@ -75,3 +75,24 @@ parec -d alsa_output.pci-0000_00_1f.3.analog-stereo.monitor --file-format=wav ou
 xev
 
 ncdu
+
+apt-get install --only-upgrade code
+
+# nvidia graphics drivers and stuff
+
+nvidia-settings
+lsmod | grep nvidia
+lsmod | grep nouveau
+lspci -vnn | grep VGA -A 25
+ubuntu-drivers devices
+glxinfo | grep -i vendor
+find /dev -group video
+
+
+prime-select nvidia
+prime-select intel
+prime-select query
+
+xrandr --query
+
+

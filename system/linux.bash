@@ -35,6 +35,7 @@ setkb(){
 	echo "$1" | sudo tee '/sys/class/leds/tpacpi::kbd_backlight/brightness'
 	cat '/sys/class/leds/tpacpi::kbd_backlight/max_brightness'
 }
+alias kbback="setkb"
 
 alias lopen="xdg-open"
 
