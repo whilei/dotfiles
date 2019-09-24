@@ -1,0 +1,40 @@
+! xmodmap for the Norman layout.
+! http://normanlayout.info
+
+keycode  24 =            q             Q       adiaeresis        Adiaeresis            
+keycode  25 =            w             W            aring             Aring            
+keycode  26 =            d             D   dead_diaeresis        asciitilde            
+keycode  27 =            f             F           atilde            Atilde            
+keycode  28 =            k             K   dead_abovering        asciitilde            
+keycode  29 =            j             J          dstroke           Dstroke            
+keycode  30 =            u             U           uacute            Uacute            
+keycode  31 =            r             R       dead_grave        asciitilde            
+keycode  32 =            l             L          lstroke           Lstroke            
+keycode  33 =    semicolon         colon       odiaeresis        Odiaeresis            
+keycode  34 =  bracketleft     braceleft    guillemotleft             U2039            
+keycode  35 = bracketright    braceright   guillemotright             U203a            
+keycode  51 =    backslash           bar       asciitilde        asciitilde            
+                                                                                      
+keycode  38 =            a             A           aacute            Aacute            
+keycode  39 =            s             S           ssharp        asciitilde            
+keycode  40 =            e             E           eacute            Eacute            
+keycode  41 =            t             T       dead_acute  dead_doubleacute            
+keycode  42 =            g             G      dead_ogonek        asciitilde            
+keycode  43 =            y             Y       udiaeresis        Udiaeresis            
+keycode  44 =            n             N           ntilde            Ntilde            
+keycode  45 =            i             I           iacute            Iacute            
+keycode  46 =            o             O           oacute            Oacute            
+keycode  47 =            h             H       dead_caron        asciitilde            
+keycode  48 =   apostrophe      quotedbl           otilde            Otilde            
+                                                                                      
+keycode  52 =            z             Z               ae                AE            
+keycode  53 =            x             X  dead_circumflex        asciitilde            
+keycode  54 =            c             C         ccedilla          Ccedilla            
+keycode  55 =            v             V               oe                OE            
+keycode  56 =            b             B       dead_breve        asciitilde            
+keycode  57 =            p             P           oslash          Ooblique            
+keycode  58 =            m             M      dead_macron        asciitilde            
+keycode  59 =        comma          less     dead_cedilla        asciitilde            
+keycode  60 =       period       greater    dead_abovedot        asciitilde            
+keycode  61 =        slash      question     questiondown        asciitilde            
+ 
