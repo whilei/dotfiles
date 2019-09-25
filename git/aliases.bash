@@ -199,3 +199,4 @@ gcb-() {
 	
 }
 
+alias gitiam="git config --list | grep user"
