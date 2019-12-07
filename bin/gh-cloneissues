@@ -71,6 +71,47 @@ mkdir -p ${ISSUES_DIR}
 # abysmal pergatory of unremembrance.
 start="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 
+process_issue_events() {
+	  local _n=0
+	  local _max; _max=$(jj -i ./${ISSUES_DIR}/.response-events.json '#')
+
+	  while [[ $_n -lt $_max ]]; do
+		    echo "Processing issue events issue_number: $1 index: $_n"
+		    _j_cmd=/"$(which jj) -i ${ISSUES_DIR}/.response-events.json -n $_n"
+		    [[ ! -z $($_j_cmd) ]] || break
+
+		    _issue_number="$1"
+
+        # Ensure issue/pr for the id'd event resource actually exists.
+		    # NOTE This assumes that Issues and PRs have been downloaded before their respective comments.
+		    [[ ! -f "${ISSUES_DIR}/${_issue_number}.json" ]] && _n=$((_n + 1)) && continue
+
+		    _issueevent_number="$($_j_cmd.id)"
+
+		    $_j_cmd >"${ISSUES_DIR}/${_issue_number}_event_${_issueevent_number}.json"
+
+		    _n=$((_n + 1))
+	  done
+}
+
+get_issue_events() {
+    issue_number="$(echo $1 | sed -E 's/^0+//')"
+
+    # Sailor V preview: get lock reasons
+	  curl >${ISSUES_DIR}/.response-events.json 2>&1 \
+        --silent --show-error \
+        -H "Authorization: token ${GITHUB_TOKEN}" \
+        -H "Accept: application/vnd.github.symmetra-preview+json" \
+        -H "Accept: application/vnd.github.starfox-preview+json" \
+        -H "Accept: application/vnd.github.sailor-v-preview+json" \
+        -D "${ISSUES_DIR}/.response-events-header" \
+        'https://api.github.com/repos/'"${owner_repo}"'/issues/'${issue_number}'/events?page='$2'&per_page=100&sort=updated&since='"$(head -n1 <${ISSUES_DIR}/.state)"
+
+	  echo "Finished issues events request issue_number ${issue_number}"
+
+	  grep -v "200" ${ISSUES_DIR}/.response-events.json && process_issue_events ${1} # Use issue_number WITHOUT leading 0's trimmed
+}
+
 # It's possible these could be refactored to be DRYer.
 # But there's something to be said for saying something.
 process_issues() {
@@ -85,6 +126,12 @@ process_issues() {
 
 		_issue_number="$(printf '%05d' $($_j_cmd.number))"
 		$_j_cmd >"${ISSUES_DIR}/${_issue_number}.json"
+
+    page=1
+    while grep -q 'next' ${ISSUES_DIR}/.response-events-header || [[ $page == 1 ]]; do
+	      get_issue_events ${_issue_number} ${page}
+	      page=$((page + 1))
+    done
 
 		_n=$((_n + 1))
 	done
@@ -143,11 +190,13 @@ get_issuecomments() {
 
 onexit() {
 	rm ${ISSUES_DIR}/.response{.json,-header}
+  rm -rf ${ISSUES_DIR}/.response-events{.json,-header} # use flags to allow fail
 	echo "${start}" >${ISSUES_DIR}/.state
 }
 trap onexit EXIT
 
 touch ${ISSUES_DIR}/.response-header
+touch ${ISSUES_DIR}/.response-events-header
 
 page=1
 while grep -q 'next' ${ISSUES_DIR}/.response-header || [[ $page == 1 ]]; do

@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+action="$1"
+if [[ -z "$action" ]]; then
+
+	PS3='Please enter your choice: '
+	options=("start" "restart" "status" "stop" "daemon-reload")
+	select opt in "${options[@]}"; do
+		case $opt in
+		"start")
+			action=start
+			break
+			;;
+		"restart")
+			action=restart
+			break
+			;;
+		"stop")
+			action=stop
+			break
+			;;
+		"status")
+			action=status
+			break
+			;;
+		"daemon-reload")
+			set -e
+			sudo systemctl daemon-reload
+			exit 0
+			;;
+		*) echo "invalid option $REPLY" ;;
+		esac
+	done
+fi
+
+echo "You chose action: $action"
+
+f() {
+	local endpoints endpoint
+	endpoints=$(find /etc/systemd/system)
+	endpoint=$(echo "$endpoints" | fzf --tac +m -e) &&
+	set -x
+	sudo systemctl "$action" "$(basename $endpoint)"
+	if [[ "$action" != status ]]; then sudo systemctl status "$endpoint"; fi
+}
+f

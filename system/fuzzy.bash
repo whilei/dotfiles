@@ -68,7 +68,6 @@ ffglb() {
 	read -r c _ <<< "$com" &&
 	echo "$c"
 }
-alias glbb='ffglb'
 
 # fuzzy find commit and show
 # ffgl+show = ffgls
@@ -181,18 +180,46 @@ cdd() {
     dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
 
+ffrm() {
+    local fi
+    fi="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && rm "${fi}" || return 1
+}
+
+ffrmr() {
+    local dir
+    dir="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && rm -r "${dir}/" || return 1
+}
+
+ffrmrf() {
+    local dir
+    dir="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && rm -rf "${dir}" || return 1
+}
+
 # fuzzy grep open via ag
 fagvim() {
   local file
-
   file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1 " +" $2}')"
 
-  if [[ -n $file ]]
+  if [[ -f $file ]]
   then
-     vi $file
+     vim $file
   fi
 }
 alias vag="fagvim"
+
+
+# fuzzy grep open via ag
+fagvim2() {
+  local file
+  file="$(ag --nobreak --noheading $@ | fzf -0 -1 +m | awk -F: '{print $1 " +" $2}')"
+
+  if [[ -f $file ]]
+  then
+     vim $file
+  fi
+}
+alias vag2="fagvim2"
+
 
 # fdr - cd to selected parent directory
 cdup() {
@@ -217,3 +244,11 @@ cdf() {
   cd "$dir"
 }
 
+alias fl="fzf --preview 'cat {}'"
+
+# using ripgrep combined with preview
+# find-in-file - usage: fif <searchTerm>
+fif() {
+	if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+	rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+}

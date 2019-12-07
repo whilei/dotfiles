@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+# Get a list of all repositories for ORG or USER.
+#
+# To disambiguate between the repository source types (ORG/USER)
+# you should prefix the name:
+#
+#  users/whilei
+#  orgs/rotblauer
+
+set -e
+
+tmp_response_f=/tmp/gh-repos
+tmp_header_response_f=$(mktemp)
+
+on_exit() {
+	rm $tmp_response_f*
+	rm $tmp_header_response_f
+}
+trap on_exit EXIT
+
+# users/whilei, orgs/rotblauer
+gh_source="$1"
+gh_repos_type=sources
+
+# Can be one of all, public, private, forks, sources, member. Default: all
+# https://developer.github.com/v3/repos/#list-organization-repositories
+if [[ ! -z "$2" ]]; then
+	gh_repos_type="$2"
+fi
+
+if [[ -z "$gh_source" ]]; then
+	echo Argument cannot be empty; need github owner.
+	exit 1
+fi
+
+get_repos(){
+	>&2 echo Getting repos page $1 ...
+
+	curl >"${tmp_response_f}-$1.json" 2>&1 \
+		--silent --show-error \
+		-H "Authorization: token ${GITHUB_TOKEN}" \
+		-D "${tmp_header_response_f}" \
+		'https://api.github.com/'"${gh_source}"'/repos?page='"$1"'&per_page=100&type='"$gh_repos_type"
+}
+
+page=1
+while grep -q 'next' ${tmp_header_response_f} || [[ $page == 1 ]]; do
+	get_repos ${page}
+	page=$((page + 1))
+done
+
+# Merge the arrays in each file together to a single array.
+# https://github.com/stedolan/jq/issues/805
+cat "$tmp_response_f"-*.json | jq -s '[.[][]]'
+
+

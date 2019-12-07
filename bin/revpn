@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Restart a currently running OpenVPN process.
+# Useful for on-wake.
+
+cmd=$(ps -ax -o cmd= | grep openvpn | grep -v sudo | grep -v grep); pkill openvpn && $cmd

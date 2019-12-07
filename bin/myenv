@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -x
+uname -a
+node -v
+npm -v
+go version
+cargo version
+set +x

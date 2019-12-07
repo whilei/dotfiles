@@ -138,3 +138,9 @@ record() {
 	parec -d alsa_output.pci-0000_00_1f.3.analog-stereo.monitor --file-format=wav "$out"
 }
 
+alias tmuxsd='tmuxinator start dash'
+
+alias on.modify='inotifywait -q -m -r --event modify'
+alias on.create='inotifywait -q -m -r --event modify'
+alias on.create,modify='inotifywait -q -m -r --event modify --event create'
+alias on.modify,create='inotifywait -q -m -r --event modify --event create'

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+ppath="$1"
+shift
+
+mt="$(mktemp)"
+chmod +x "$mt"
+trap "rm $mt" EXIT
+
+inotifywait -q -m -r --format '%w%f' -e modify "$ppath" \
+	| while read -r file; do
+
+	if [[ $file =~ .swp$ ]]; then
+		continue
+	fi
+
+	cp "$file" "$mt"
+	clear
+
+	cmdl="$(printf '%s ' $@)"
+	cmdl="${cmdl//\%f/$mt}"
+
+	echo "Date:    $(date --iso-8601=seconds)"
+	echo "File:    $file"
+	echo "Temp:    $mt"
+	echo "Command: ${cmdl//$mt/$file}"
+	echo
+	exec "$cmdl"
+done
+

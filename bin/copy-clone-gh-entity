@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Clone or fetch all repos for entity from Github
+
+if [[ -z "${GITHUB_TOKEN}" ]]; then
+    echo "Empty GITHUB_TOKEN";
+    exit 1
+fi
+
+. ~/.dotfiles/bin/github-repos-ls orgs/etclabscore all > .repos.json
+
+cat .repos.json | jj '#.full_name' -l | sed 's/"//g' | while read -r line; do
+    echo "==> $line";
+    
+done

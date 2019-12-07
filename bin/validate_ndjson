@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+for f in ./*.json; do         while read -r line; do          echo "$line" | jq -e . >/dev/null 2>&1  || echo "$f" - "$line" - ${PIPESTATUS[1]};      done < "$f"; done

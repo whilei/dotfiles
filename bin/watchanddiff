@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+p="$1"
+
+if [[ -z "$p" ]]; then p="."; fi
+
+while true; do
+	clear
+	inotifywait -q -m -r --event modify --format '%w%f' "$p" | git diff --color -- "$1" | diff-so-fancy
+done
+

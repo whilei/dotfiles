@@ -1,0 +1,144 @@
+#!/usr/bin/env bash
+
+help() {
+	if [[ ! -z "$1" ]]
+	then
+		echo "Error: $1"
+		trap 'exit 1' RETURN
+	fi
+	cat <<EOF
+
+Overview:
+
+  Queries the Github APIv3 to collect all events from a repository.
+  The token you use must have read access to the repository.
+
+  Data will be referenced and stored as such:
+
+    ${EVENTS_DIR}/.response.json     <- temporary
+    ${EVENTS_DIR}/.response-header   <- temporary
+    ${EVENTS_DIR}/.state
+    ${EVENTS_DIR}/<issue_number>.json
+    ${EVENTS_DIR}/<issue_number>_<issuecomment_id>.json
+
+	The '${EVENTS_DIR}/.state' file will contain an ISO8601 datetime, which the script will use
+	as the 'since' parameter for it's queries, to avoid a lot of redundancy and API use.
+	When the script is finished, it will update this value with the datetime at which
+	the script began to run.
+
+Dependencies:
+
+  - jj , https://github.com/tidwall/jj , Must be in PATH
+	- Environment variable GITHUB_TOKEN must be set in order to access the Github API.
+
+Basic use:
+
+  Run:
+
+    $0 :owner/:repo
+
+Advanced use:
+
+  Force re-download.
+
+	  rm ./${EVENTS_DIR}/.state
+
+  Download all issues+issuecomments since ____.
+
+	  vim ./${EVENTS_DIR}/.state/
+
+EOF
+}
+
+EVENTS_DIR=".gh-events"
+
+owner_repo="$1"
+[[ -z "$owner_repo" ]] && help "Invalid argument(s)"
+[[ $# -gt 1 ]] && help "Invalid argument(s)"
+[[ -z "$GITHUB_TOKEN" ]] && help "GITHUB_TOKEN not set"
+command -v jj || { help "Dependency unmet"; }
+
+mkdir -p ${EVENTS_DIR}
+
+[[ -f ${EVENTS_DIR}/.state && $(wc -l <${EVENTS_DIR}/.state) -gt 0 ]] || date --date="2009-01-02 03:04:05" +"%Y-%m-%dT%H:%M:%SZ" >${EVENTS_DIR}/.state
+
+# Because we'll want to use a datetime for state that doesn't leave much
+# abyss time;
+# say this script took 12 minues to run (which it doesn't, but bear with me),
+# then if someone posted a comment during those 12 minutes and we were to
+# stamp the state with the time of the script's completion -- and not it's start --
+# then unbeknownst the us, that comment would be permanently foresaken to an
+# abysmal pergatory of unremembrance.
+start="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+should_update_state=0
+
+process_repo_events() {
+	  local _n=0
+	  local _max; _max=$(jj -i ./${EVENTS_DIR}/.response.json '#')
+
+	  while [[ $_n -lt $_max ]]; do
+		    echo "Processing repo events issue_number: $1 index: $_n"
+		    _j_cmd=/"$(which jj) -i ${EVENTS_DIR}/.response.json -n $_n"
+		    [[ ! -z $($_j_cmd) ]] || break
+
+		    _event_number="$($_j_cmd.id)"
+
+		    $_j_cmd >"${EVENTS_DIR}/${_event_number}.json"
+
+		    _n=$((_n + 1))
+	  done
+}
+
+get_repo_events() {
+    etag=""
+    if [[ -f ${EVENTS_DIR}/.etag ]]; then
+        etag="$(cat ${EVENTS_DIR}/.etag | sed 's/^ETag://g' | sed -E 's/\s//g' | head -n1)"
+    fi
+
+    # Sailor V preview: get lock reasons
+    curl >${EVENTS_DIR}/.response.json 2>&1 \
+    --silent --show-error \
+    -H "Authorization: token ${GITHUB_TOKEN}" \
+    -H "If-None-Match: ${etag}" \
+    -H "Accept: application/vnd.github.sailor-v-preview+json" \
+    -H "Accept: application/vnd.github.symmetra-preview+json" \
+    -D "${EVENTS_DIR}/.response-header" \
+    'https://api.github.com/repos/'"${owner_repo}"'/issues/events?page='$1'&per_page=100&sort=updated'
+
+	  echo "Finished repo events request"
+
+    if grep -q "400" ${EVENTS_DIR}/.response-header; then
+        echo "Bad request."
+        exit 1
+    fi
+    if grep -q "304" ${EVENTS_DIR}/.response-header; then
+        should_update_state=1
+        echo "No news is good news."
+        exit 0
+    fi
+
+    if grep -q "200" ${EVENTS_DIR}/.response-header; then
+        process_repo_events
+        cat "${EVENTS_DIR}/.response-header" | grep -E '^ETag' > ${EVENTS_DIR}/.etag
+    else
+        echo Weird response.
+        exit 1
+    fi
+}
+
+onexit() {
+	rm -rf ${EVENTS_DIR}/.response{.json,-header}
+  if [[ $should_update_state -eq 0 ]]; then
+    echo "${start}" >${EVENTS_DIR}/.state
+  fi
+}
+trap onexit EXIT
+
+touch ${EVENTS_DIR}/.response-header
+
+page=1
+while grep -q 'next' ${EVENTS_DIR}/.response-header || [[ $page == 1 ]]; do
+	get_repo_events ${page}
+	page=$((page + 1))
+done
+
