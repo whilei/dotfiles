@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+while :; do clear; data="$(journalctl -u sensor-data-line-loop.service -n80 | grep -v Start |grep -v end | cut -d',' -f2)"; echo "$data" | spark; echo "$data" | tail -n1; sleep 5; done

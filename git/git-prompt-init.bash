@@ -81,7 +81,8 @@ ps1_llg(){
 ps1_sm() {
     PS1=':\w '${COLOR_YELLOW}${dollar}${color_reset}' '
 }
-bfgdollar='$'
+# bfgdollar='$'
+bfgdollar='>'
 ps1_bfg(){
 	PS1=${COLOR_GREEN}'\h'${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}' '
 }

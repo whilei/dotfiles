@@ -93,6 +93,7 @@ get_repo_events() {
     etag=""
     if [[ -f ${EVENTS_DIR}/.etag ]]; then
         etag="$(cat ${EVENTS_DIR}/.etag | sed 's/^ETag://g' | sed -E 's/\s//g' | head -n1)"
+	echo "Found etag: $etag"
     fi
 
     # Sailor V preview: get lock reasons
@@ -105,21 +106,20 @@ get_repo_events() {
     -D "${EVENTS_DIR}/.response-header" \
     'https://api.github.com/repos/'"${owner_repo}"'/issues/events?page='$1'&per_page=100&sort=updated'
 
-	  echo "Finished repo events request"
+    echo "Finished repo events request"
 
     if grep -q "400" ${EVENTS_DIR}/.response-header; then
+        should_update_state=1
         echo "Bad request."
         exit 1
     fi
     if grep -q "304" ${EVENTS_DIR}/.response-header; then
-        should_update_state=1
         echo "No news is good news."
         exit 0
     fi
 
     if grep -q "200" ${EVENTS_DIR}/.response-header; then
         process_repo_events
-        cat "${EVENTS_DIR}/.response-header" | grep -E '^ETag' > ${EVENTS_DIR}/.etag
     else
         echo Weird response.
         exit 1
@@ -127,10 +127,13 @@ get_repo_events() {
 }
 
 onexit() {
-	rm -rf ${EVENTS_DIR}/.response{.json,-header}
+  if grep -q -E "(200|304)" ${EVENTS_DIR}/.response-header; then
+    cat "${EVENTS_DIR}/.response-header" | grep -E '^ETag' > ${EVENTS_DIR}/.etag
+  fi
   if [[ $should_update_state -eq 0 ]]; then
     echo "${start}" >${EVENTS_DIR}/.state
   fi
+  rm -rf ${EVENTS_DIR}/.response{.json,-header}
 }
 trap onexit EXIT
 

@@ -4,8 +4,27 @@ f(){
 local endpoints endpoint
 endpoints=$(find /home/ia/ProtonVPN/ProtonVPN_*_configs*)
 endpoint=$(echo "$endpoints" | fzf --tac +m -e) &&
+
 #sudo openvpn --config "$endpoint" --verb 6 --up /etc/openvpn/vpnfailsafe.sh --down /etc/openvpn/vpnfailsafe.sh --auth-user-pass /home/ia/opass.txt --script-security 2
-sudo openvpn --config "$endpoint" --verb 6 --auth-user-pass /home/ia/opass.txt --script-security 2 --up /etc/openvpn/scripts/update-systemd-resolved --down /etc/openvpn/scripts/update-systemd-resolved
+
+# sudo openvpn --config "$endpoint" \
+# 	--verb 6 \
+# 	--auth-user-pass /home/ia/opass.txt \
+# 	--script-security 2 \
+# 	--up /etc/openvpn/scripts/update-systemd-resolved \
+# 	--up-restart \
+# 	--down /etc/openvpn/scripts/update-systemd-resolved
+# 	--down-pre 
+
+# --up-restart \
+sudo openvpn --config "$endpoint" \
+	--setenv PATH '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' \
+ 	--verb 6 \
+ 	--auth-user-pass /home/ia/opass.txt \
+ 	--script-security 2 \
+ 	--up /etc/openvpn/scripts/update-resolved-w-failsafe \
+ 	--down /etc/openvpn/scripts/update-resolved-w-failsafe-rev \
+ 	--down-pre 
 }
 f
 

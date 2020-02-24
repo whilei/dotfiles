@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+diff_file=0
+
+ppath="."
+
+while getopts ":fp:" o; do
+	case "${o}" in
+	f)
+		diff_file=1
+		;;
+	p)
+		p=${OPTARG}
+		ppath="$p"
+		;;
+	*)
+		echo Bad usage.
+		exit 1
+		;;
+	esac
+done
+shift $((OPTIND - 1))
+
+pushd $ppath
+
+onexit() {
+	popd
+}
+trap onexit EXIT
+
+inotifywait -q -m -r --format '%w%f' -e modify "$ppath" |
+	while read -r file; do
+
+		if [[ $file =~ .*\.git.* ]]; then continue; fi
+		if [[ $file =~ .swp$ ]]; then continue; fi
+		if [[ $file =~ ~$ ]]; then continue; fi
+		if [[ $file =~ xml$ ]]; then continue; fi
+
+		clear
+
+		echo "Date:    $(date --iso-8601=seconds)"
+		echo "File:    $file"
+		echo
+
+		if [[ $diff_file -eq 0 ]]; then
+			git --no-pager diff --color | diff-so-fancy
+		else
+			git --no-pager diff --color -- "$file" | diff-so-fancy
+		fi
+	done

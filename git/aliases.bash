@@ -66,19 +66,30 @@ alias gdstat="git diff --stat"
 alias gdstatsh="git diff --shortstat"
 alias gdstatd="git diff --dirstat"
 
+alias ggd="clear; tmux clear-history; gd"
+alias ggdc="clear; tmux clear-history; gdc"
 
 # Pretty logs.
 # - can use with '-n' flag, where n is number of commits from head.
 ## Oneline pretty with graph and fancy colors and all the things.
 ## Note: You can use '[gl] --branches=branch' to override wildcard. Wildcard hides remotes.
 gl_base_fmt='%Cred%h%Creset %C(cyan)%G? %C(bold blue)%an%Creset%C(auto)%d%Creset'
-alias gl='git log --remotes=* --branches=* --graph --boundary --pretty=format:"$gl_base_fmt %s %Cgreen(%cr) " --abbrev-commit --date=relative'
+
+alias gl='git log --branches=* --graph --boundary --pretty=format:"$gl_base_fmt %s %Cgreen(%cr) " --abbrev-commit --date=relative'
 ## ... with raw commit message (subject+body)
-alias gL='git log --remotes=* --branches=* --graph --boundary --pretty=format:"$gl_base_fmt %Cgreen(%cr)  %+s%+b" --abbrev-commit --date=relative'
+alias gL='git log --branches=* --graph --boundary --pretty=format:"$gl_base_fmt %Cgreen(%cr)  %+s%+b" --abbrev-commit --date=relative'
 ## ... the works, with file stats.
-alias GL='git log --remotes=* --branches=* --graph --boundary --pretty=format:"$gl_base_fmt  %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
+alias GL='git log --branches=* --graph --boundary --pretty=format:"$gl_base_fmt  %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
 ## ... all stats, no commit messages
-alias Gl='git log --remotes=* --branches=* --graph --boundary --pretty=format:"$gl_base_fmt  %Cgreen(%cr) " --abbrev-commit --date=relative --stat'
+alias Gl='git log --branches=* --graph --boundary --pretty=format:"$gl_base_fmt  %Cgreen(%cr) " --abbrev-commit --date=relative --stat'
+
+alias glr='git log --remotes=* --branches=* --graph --boundary --pretty=format:"$gl_base_fmt %s %Cgreen(%cr) " --abbrev-commit --date=relative'
+## ... with raw commit message (subject+body)
+alias gLr='git log --remotes=* --branches=* --graph --boundary --pretty=format:"$gl_base_fmt %Cgreen(%cr)  %+s%+b" --abbrev-commit --date=relative'
+## ... the works, with file stats.
+alias GLr='git log --remotes=* --branches=* --graph --boundary --pretty=format:"$gl_base_fmt  %n%C(yellow)%B%Creset" --abbrev-commit --date=relative --stat'
+## ... all stats, no commit messages
+alias Glr='git log --remotes=* --branches=* --graph --boundary --pretty=format:"$gl_base_fmt  %Cgreen(%cr) " --abbrev-commit --date=relative --stat'
 
 ## -- on current branch or otherwise if --branches= is specified
 alias glb='git log --graph --pretty=format:"$gl_base_fmt  %s %Cgreen(%cr) " --abbrev-commit --date=relative'

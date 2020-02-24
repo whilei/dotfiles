@@ -138,9 +138,18 @@ record() {
 	parec -d alsa_output.pci-0000_00_1f.3.analog-stereo.monitor --file-format=wav "$out"
 }
 
+recaudio() {
+	out=${1:-output.wav}
+	if [[ ! -z "$1" ]]; then out="$1"; fi
+	outputs="$(pacmd list-sink-inputs | awk '$1 == "index:" {print $2}')"
+
+	parec -d alsa_output.pci-0000_00_1f.3.analog-stereo.monitor --file-format=wav "$out"
+}
+
 alias tmuxsd='tmuxinator start dash'
 
 alias on.modify='inotifywait -q -m -r --event modify'
 alias on.create='inotifywait -q -m -r --event modify'
 alias on.create,modify='inotifywait -q -m -r --event modify --event create'
 alias on.modify,create='inotifywait -q -m -r --event modify --event create'
+

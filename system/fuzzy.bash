@@ -41,6 +41,17 @@ ffgbd() {
 }
 alias gbdd='ffgbd'
 
+ffgbdr() {
+	if [[ -z "$1" ]]; then
+		echo "Need remote name at which should --delete branches"
+		return 1
+	fi
+	local branches branch
+	branches=$(git branch -a) &&
+	branch=$(echo "$branches" | fzf +s +m -e) &&
+	git push "$1" --delete $(echo "$branch" | sed "s:.* remotes/$1/::" | sed "s:.* ::")
+}
+
 ffgct() {
 	local tags tag
 	tags=$(git tag --list) &&

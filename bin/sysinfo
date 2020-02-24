@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# find_first uses 'find' to find a first match for a file type with name $1.
+# Upon finding the first match, the function returns.
+# This is used here to see if the cwd contains files with extensions pertaining to language versions
+# that would want to be reported.
+find_first(){
+	while IFS= read -r file; do
+		# echo "($1 matches $file)" 1>&2
+		return 0	
+	done < <(find . -type f -name "$1")
+	return 1
+}
+
+echo '---'
+echo '### System and Version Info'
+
+# System information.
+echo "- OS: $(lsb_release -d | sed 's/Description:\s*//') ($(lsb_release -c | sed 's/Codename:\s*//'))"
+
+# If git directory exists, print git HEAD information.
+[[ -d .git ]] && echo "- Git HEAD: [\`$(git rev-parse --abbrev-ref HEAD)\`] \`$(git rev-parse HEAD)\`"
+
+echo '```'
+
+find_first '*.go' && go version
+
+# There are a lot of possible extensions for javascript. These are a few of them.
+js_extensions=(js jsx ts tsx)
+for e in "${js_extensions[@]}"; do
+	find_first "*.$e" && echo "node version: $(node -v)" && echo "npm version: $(npm -v)" && break
+done
+
+find_first '*.py' && python3 -V
+
+find_first '*.rb' && ruby -v
+
+echo '```'
+echo '---'

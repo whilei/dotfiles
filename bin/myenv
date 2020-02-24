@@ -6,4 +6,6 @@ node -v
 npm -v
 go version
 cargo version
+
+[[ -d .git ]] && git rev-parse HEAD && git rev-parse --abbrev-ref HEAD
 set +x
