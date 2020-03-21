@@ -12,6 +12,8 @@ mkcd(){
 # The -a flag is for archive, which "ensures that symbolic links, devices, attributes, permissions, ownerships, etc. are preserved in the transfer"; the -z flag compresses files during the transfer; -v is for verbose; and --progress shows you your progress. I've enshrined this in an alias:
 # Copy the files pointed to by the symbolic links ("transform symlink into referent file/dir") with the --L flag:
 alias yp="rsync -avz -L --progress -h" # copy (?)
+alias ypr="rsync -avz --no-t -L --progress -h --no-perms --omit-dir-times" # This fixes permissions issues like cant set times, no perms, blah blah. All probably related to user issues on the sender side, but workaround for.
+alias yprr="rsync -Prltvc -h --no-t --omit-dir-times --no-perms" # backup strict kind that usually doesn't error
 alias ypu="rsync -avzu --progress -h" # update
 alias yps="rsync -avzu --delete --progress -h --backup --backup-dir='backup_$(date +\%Y-\%m-\%d)'" # synchronize
 
@@ -153,3 +155,4 @@ alias on.create='inotifywait -q -m -r --event modify'
 alias on.create,modify='inotifywait -q -m -r --event modify --event create'
 alias on.modify,create='inotifywait -q -m -r --event modify --event create'
 
+alias wgetn='wget --no-check-certificate'

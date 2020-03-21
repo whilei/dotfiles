@@ -21,8 +21,9 @@ alias gCm="git commit -S -m"
 alias gcam="git commit --amend"
 
 alias gmcm="gitm commit -m"
-alias gmCm="gitm commit -S -m"
 alias gmcam="gitm commit --amend"
+
+alias gmeow="gitm commit -S -s -m"
 
 # Quick commit with message.
 alias gitit='git add -A && git commit -m'

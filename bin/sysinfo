@@ -22,7 +22,7 @@ echo "- OS: $(lsb_release -d | sed 's/Description:\s*//') ($(lsb_release -c | se
 [[ -d .git ]] && echo "- Git HEAD: [\`$(git rev-parse --abbrev-ref HEAD)\`] \`$(git rev-parse HEAD)\`"
 
 echo '```'
-
+echo "gcc version: $(gcc -v |& tail -1)"
 find_first '*.go' && go version
 
 # There are a lot of possible extensions for javascript. These are a few of them.
