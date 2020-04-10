@@ -103,3 +103,9 @@ find / -type f -size +50M -exec du -h {} \; | sort -n
 # Resize a volume that magically got bigger (eg Digital Ocean volume increase)
 # This fixes `df -h` not showing the right disk usage for the volume.
 resize2fs /dev/sda
+
+lsblk |& grep sd
+blkid | grep Samsung
+ls -lha /dev/disk/by-uuid/
+# vim /etc/fstab
+

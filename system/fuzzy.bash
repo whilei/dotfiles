@@ -12,6 +12,13 @@ ffgco() {
 alias 'gcoff'='ffgco'
 alias 'coff'='ffgco'
 
+ffbranch() {
+	local branches branch
+	branches=$(git branch -a) &&
+	branch=$(echo "$branches" | fzf +s +m -e) &&
+	echo "$branch"
+}
+
 # Same as above, but uses only last 10 active branches... +'s' for faSSSSt, speed
 fgco() {
     local branches branch
@@ -23,7 +30,7 @@ fgco() {
 alias gcoo='fgco'
 alias cof='fgco'
 
-# checkout branch with auto name, ala 'hub'
+# checkout branch from remote with auto name, ala 'hub'
 ffgcor(){
 	local branches branch br
 	branches=$(git branch --all) &&

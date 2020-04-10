@@ -24,6 +24,10 @@ alias gmcm="gitm commit -m"
 alias gmcam="gitm commit --amend"
 
 alias gmeow="gitm commit -S -s -m"
+gmeowc(){
+	gitm commit -S -s -m "$(goc): $*"
+}
+export -f gmeowc
 
 # Quick commit with message.
 alias gitit='git add -A && git commit -m'
@@ -242,3 +246,4 @@ git-mkdclone(){
 	popd
 }
 export -f git-mkdclone
+
