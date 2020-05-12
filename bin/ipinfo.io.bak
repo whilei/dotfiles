@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+mkdir -p /home/ia/ipinfo.io
+curl --silent -H "Authorization: Bearer $IPINFO_IO_TOKEN" https://ipinfo.io/json > /home/ia/ipinfo.io/json
+cat /home/ia/ipinfo.io/json | jq -r '.city + ", " + .region + " [" + .country + "]"' > ipinfo.io/locale
+
