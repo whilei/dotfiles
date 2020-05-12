@@ -29,6 +29,8 @@ gmeowc(){
 }
 export -f gmeowc
 
+alias gmeowi="git add -i && git diff-index --cached --quiet HEAD || gitm commit -S -s"
+
 # Quick commit with message.
 alias gitit='git add -A && git commit -m'
 alias gititm='git add -A && gitm commit -m'
@@ -247,3 +249,9 @@ git-mkdclone(){
 }
 export -f git-mkdclone
 
+iagnore(){
+	[[ ! -d .git ]] && exit 1;
+	mkdir -p .git/info
+	${EDITOR} .git/info/exclude
+}
+export -f iagnore

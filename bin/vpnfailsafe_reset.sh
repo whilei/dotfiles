@@ -18,3 +18,6 @@ for chain in INPUT OUTPUT FORWARD; do
         iptables -X "VPNFAILSAFE_$chain"
     fi
 done
+
+/home/ia/.dotfiles/bin/ipinfo.io
+

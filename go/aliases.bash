@@ -24,3 +24,4 @@ gotvf() {
 	unset failsN
 	unset passesN
 }
+alias gotestcases="sed -n 's/func.*\(Test.*\)(.*/\1/p' | xargs | sed 's/ /|/g'"

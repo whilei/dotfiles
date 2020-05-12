@@ -109,3 +109,19 @@ blkid | grep Samsung
 ls -lha /dev/disk/by-uuid/
 # vim /etc/fstab
 
+alsamixer
+/usr/bin/amixer -c 0 sset "Auto-Mute Mode" Disabled
+alsactl store
+# to disable automute, it seems necessary to disable the LED-follow thing too
+# Mic-Mute-LED Mode = Follow Mute
+
+# Python programs, wget, youtube-dl, all failing because 'failed to verify certificate'
+# I used a --no-check-certificate to fix most problems, until speedtest-cli didn't have that flag.
+# This fixes the problem, at least for speedtest-cli.
+# https://github.com/ritiek/spotify-downloader/issues/480
+sudo update-ca-certificates --fresh
+export SSL_CERT_DIR=/etc/ssl/certs
+
+# and making sure your system time syncs correctly is also important, but wasn't directly relevant in my case
+sudo apt-get install ntp
+
