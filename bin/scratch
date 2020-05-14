@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+fi=$(mktemp -p $HOME/sandbox)
+
+$EDITOR "$fi"
+
+echo "$fi"
+read -p 'Do you wish to DELETE this file? (yY|*)' answer 
+
+case $answer in
+[yY] ) rm "$fi"
+	echo "Deleted $fi"
+	;;
+*) echo "Not deleting."
+	;;
+esac
