@@ -8,3 +8,12 @@ docker_clean_cache(){
 	sudo docker rm $(sudo docker ps --filter=status=exited --filter=status=created -q)
 	sudo docker rmi -f $(sudo docker images -a -q)
 }
+
+# stop all containers: 
+# docker kill $(docker ps -q)
+# 
+# remove all containers
+# docker rm $(docker ps -a -q)
+# 
+# remove all docker images
+# docker rmi $(docker images -q)
