@@ -125,3 +125,10 @@ export SSL_CERT_DIR=/etc/ssl/certs
 # and making sure your system time syncs correctly is also important, but wasn't directly relevant in my case
 sudo apt-get install ntp
 
+# generate a password
+openssl rand -base64 32
+openssl rand -base64 18
+
+nmcli radio wifi off
+nmcli radio wifi on
+

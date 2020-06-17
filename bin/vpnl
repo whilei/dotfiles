@@ -13,6 +13,7 @@ sudo openvpn --config "$endpoint" \
  	--auth-user-pass /home/ia/opass.txt \
  	--script-security 2 \
  	--up /etc/openvpn/scripts/update-resolved-w-failsafe \
+	--route-up /etc/openvpn/scripts/fix-routes-up.sh \
  	--down /etc/openvpn/scripts/update-resolved-w-failsafe-rev \
  	--down-pre 
 

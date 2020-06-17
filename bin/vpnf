@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+f() {
+  (sleep 20 && /home/ia/.dotfiles/bin/ipinfo.io) &
+  rsync -Pavz -e "ssh -i /home/ia/.ssh/id_rsa_mm2" pi@192.168.0.115:/tmp/openvpn_fastest.txt /tmp/openvpn_fastest.txt
+  fn=$(basename $(cat /tmp/openvpn_fastest.txt))
+  endpoint=$(find /home/ia/ProtonVPN -type f -name "$fn")
+
+  sudo openvpn --config "$endpoint" \
+    --setenv PATH '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' \
+    --verb 6 \
+    --auth-user-pass /home/ia/opass.txt \
+    --script-security 2 \
+    --up /etc/openvpn/scripts/update-resolved-w-failsafe \
+    --route-up /etc/openvpn/scripts/fix-routes-up.sh \
+    --down /etc/openvpn/scripts/update-resolved-w-failsafe-rev \
+    --down-pre
+}
+f
