@@ -5,6 +5,7 @@ alias dummy="git"
 
 alias g="git"
 alias k="git" # why k? kuz :fu:
+alias gitnp="git --no-pager"
 
 alias ga="git add"
 alias gai="git add -i"
@@ -28,6 +29,12 @@ gmeowc(){
 	gitm commit -S -s -m "$(goc): $*"
 }
 export -f gmeowc
+
+ameow(){
+  git add .
+  gitm commit -S -s -m "$*"
+}
+export -f ameow
 
 alias gmeowi="git add -i && git diff-index --cached --quiet HEAD || gitm commit -S -s"
 

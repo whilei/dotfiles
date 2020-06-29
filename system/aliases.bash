@@ -150,9 +150,14 @@ recaudio() {
 
 alias tmuxsd='tmuxinator start dash'
 
-alias on.modify='inotifywait -q -m -r --event modify'
-alias on.create='inotifywait -q -m -r --event modify'
-alias on.create,modify='inotifywait -q -m -r --event modify --event create'
-alias on.modify,create='inotifywait -q -m -r --event modify --event create'
+# alias on.modify='inotifywait -q -m -r --event modify'
+# alias on.create='inotifywait -q -m -r --event modify'
+# alias on.create,modify='inotifywait -q -m -r --event modify --event create'
+# alias on.modify,create='inotifywait -q -m -r --event modify --event create'
+
+watchi() {
+  while inotifywait --exclude .swp --exclude .idea -e modify -e create -e delete -r .; do $@; done;
+}
+
 
 alias wgetn='wget --no-check-certificate'
