@@ -161,3 +161,12 @@ watchi() {
 
 
 alias wgetn='wget --no-check-certificate'
+
+alias ws="websocat -B 650000"
+trim(){
+  awk '{$1=$1};1'
+}
+export -f trim
+
+alias unic="unipicker"
+alias unicb="unipicker --copy" # unic + cb (cb=clip board)

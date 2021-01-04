@@ -39,6 +39,7 @@ ffgcor(){
 	git checkout -b "${branch#*/}" "${branch}"
 }
 alias gcorr='ffgcor'
+alias ffgcbr="ffgcor"
 
 ffgbd() {
 	local branches branch

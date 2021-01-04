@@ -84,7 +84,7 @@ ps1_sm() {
 # bfgdollar='$'
 bfgdollar='>'
 ps1_bfg(){
-	PS1=${COLOR_GREEN}'\h'${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}' '
+  PS1=${COLOR_GREEN}'\h'${color_reset}' '${COLOR_CYAN}$(date --iso-8601=m)${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}' '
 }
 # Turn it on.
 # ps1_lg

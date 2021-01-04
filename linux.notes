@@ -132,3 +132,10 @@ openssl rand -base64 18
 nmcli radio wifi off
 nmcli radio wifi on
 
+sudo docker system prune -a
+sudo docker rm $(sudo docker ps -a -q)
+
+mount -o remount,uid=1000,gid=1000 /home/ia/SAMSUNG_T5
+mount /dev/sdb1 /home/ia/SAMSUNG_T5 -o uid=1000 -o gid=1000 -o nonempty
+
+

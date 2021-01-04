@@ -26,7 +26,12 @@ alias gmcam="gitm commit --amend"
 
 alias gmeow="gitm commit -S -s -m"
 gmeowc(){
-	gitm commit -S -s -m "$(goc): $*"
+	# gitm commit -S -s -m "$(goc): $*"
+  echo "$(goc): $*" > /tmp/commit_message.txt
+  echo >> /tmp/commit_message.txt
+  echo "Date: $(date --rfc-3339 seconds)" >> /tmp/commit_message.txt
+  # optionally, can use -F- to use stdin for git commit message
+	gitm commit -S -s -F /tmp/commit_message.txt
 }
 export -f gmeowc
 
@@ -115,6 +120,8 @@ alias GLb='git log --graph --pretty=format:"$gl_base_fmt  %Cgreen(%cr)  %n%C(yel
 alias Glb='git log --graph --pretty=format:"$gl_base_fmt  %Cgreen(%cr) " --abbrev-commit --date=relative --stat'
 
 alias glbb="glb --simplify-by-decoration" # only show branch heads
+
+
 
 # --simplify-by-decoration
 # --decorate-refs=refs/heads/feature
