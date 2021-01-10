@@ -1,0 +1,5 @@
+dir=/home/ia/dev/qmk_firmware/
+file=ergodox_ez_isaac.hex
+code_size=32256
+pos_x=0
+pos_y=18
