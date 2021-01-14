@@ -43,4 +43,6 @@ xinput set-prop 12 171 1.5, 0.0, 0.0, 0.0, 1.5, 0.0, 0.0, 0.0, 1.0
 xinput set-prop 15 'Evdev Scrolling Distance' 1 3 5
 xinput set-prop 15 'Device Accel Constant Deceleration' 3
 
+. /home/ia/.dotfiles/private/env.bash
 
+xrdb -merge /home/ia/.Xresources
