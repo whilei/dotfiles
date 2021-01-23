@@ -139,3 +139,6 @@ mount -o remount,uid=1000,gid=1000 /home/ia/SAMSUNG_T5
 mount /dev/sdb1 /home/ia/SAMSUNG_T5 -o uid=1000 -o gid=1000 -o nonempty
 
 
+xmodmap -pm
+
+xmodmap -e 'add mod3 = Scroll_Lock'

@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+usage() {
+  echo "${0} clones a repository to an owner/repo nested path, eg. https://github.com/name/repo.git to ./name/repo.git"
+  echo
+  echo "    @ARG1: required - clone url"
+  echo
+  echo "    ${0} <github.clone_url>"
+}
+
+[[ -z "${1}" ]] && { usage; exit 1; }
+
+main() {
+  owner="$(basename $(dirname ${1}))"
+  echo "owner: "${owner}
+
+  repo="$(basename "${1}" | cut -d'.' -f1)"
+  echo "repo: "${repo}
+  
+  mkdir -p "${owner}"
+  git clone "${1}" "${owner}/${repo}"
+}
+
+main "$@"
+

@@ -69,6 +69,7 @@ export PATH=$PATH:/home/ia/dev/phacility/arcanist/bin
 export PATH=$PATH:/home/ia/bin/pycharm-professional-2019.2.4/bin
 export PATH=$PATH:/home/ia/.dotfiles/private/bin
 # export PATH=$PATH:/home/ia/firefox
+export PATH=$PATH:/home/ia/Qt/Tools/QtCreator/bin
 
 . <(ethrpc completion) || true
 
