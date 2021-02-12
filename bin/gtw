@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-nohup konsole & 
-nohup firefox &
-nohup emacs --insecure &
-nohup discord &
+ps -aux | grep firefox | grep -v grep || nohup ffox &
+ps -aux | grep goland | grep -v grep || nohup golang &
+ps -aux | grep konsole | grep -v grep || nohup konsole &
+
+
+
 
 
 

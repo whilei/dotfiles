@@ -11,6 +11,8 @@ color_white_on_blue='\[\e[0;37;44m\]'
 
 color_white_on_purp='\[\e[37;45m\]'
 color_white_on_red='\[\e[37;41m\]'
+color_red_on_white='\[\e[31;47m\]'
+color_green_on_blue='\[\e[32;44m\]'
 
 COLOR_NC='\[\e[0m\]' # No Color
 COLOR_WHITE='\[\e[1;37m\]'
@@ -81,11 +83,12 @@ ps1_llg(){
 ps1_sm() {
     PS1=':\w '${COLOR_YELLOW}${dollar}${color_reset}' '
 }
+
 # bfgdollar='$'
-bfgdollar='>'
+# bfgdollar='>'
+bfgdollar=''
 ps1_bfg(){
-  # %:::z timezone to necessary precision
-  PS1=${COLOR_GREEN}'\h''@'$(date +%m-%dT%H:%M:%S)${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}' '
+  PS1=${COLOR_LIGHT_BLUE}'$(openssl rand -hex 2)'${color_reset}${COLOR_GREEN}' $(date +%m-%d\ %H:%M:%S)'${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}''
 }
 # Turn it on.
 # ps1_lg

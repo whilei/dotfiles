@@ -170,3 +170,9 @@ export -f trim
 
 alias unic="unipicker"
 alias unicb="unipicker --copy" # unic + cb (cb=clip board)
+
+# ltf: get the last modified file in a directory
+ltf() { ls -ltr "${1}" | tail -1 | rev | cut -d' ' -f1 | rev ; }
+export -f ltf
+
+
