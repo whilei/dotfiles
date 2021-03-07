@@ -142,3 +142,11 @@ mount /dev/sdb1 /home/ia/SAMSUNG_T5 -o uid=1000 -o gid=1000 -o nonempty
 xmodmap -pm
 
 xmodmap -e 'add mod3 = Scroll_Lock'
+
+# To get an AwesomeWM client instance/ class from the CLI:
+xprop WM_CLASS
+https://awesomewm.org/doc/api/classes/client.html#client.class
+
+
+
+

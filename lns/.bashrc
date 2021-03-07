@@ -150,3 +150,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$HOME/.dotfiles/git/git-completion.bash" ] && source "$HOME/.dotfiles/git/git-completion.bash"
 
 export SSL_CERT_DIR=/etc/ssl/certs
+
+# https://github.com/sindresorhus/guides/blob/main/npm-global-without-sudo.md
+# NPM_PACKAGES="${HOME}/.npm-packages"
+# export PATH="$PATH:$NPM_PACKAGES/bin"
+# Preserve MANPATH if you already defined it somewhere in your config.
+# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
+# export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"

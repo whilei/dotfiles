@@ -27,8 +27,8 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # Go PATH
-#export GOROOT=$HOME/go1.13.5.linux-amd64/go
-export GOROOT=$HOME/go1.15.5.linux-amd64
+#export GOROOT=$HOME/go1.15.5.linux-amd64
+export GOROOT=$HOME/go1.16.linux-amd64
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
