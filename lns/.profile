@@ -72,6 +72,7 @@ export PATH=$PATH:/home/ia/.dotfiles/private/bin
 export PATH=$PATH:/home/ia/Qt/Tools/QtCreator/bin
 export PATH=$PATH:/usr/local/android-studio/bin
 # export PATH="$PATH:/usr/lib/dart/bin"
+export PATH=$PATH:/home/ia/.emacs.d/bin
 
 . <(ethrpc completion) || true
 

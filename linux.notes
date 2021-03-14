@@ -147,6 +147,5 @@ xmodmap -e 'add mod3 = Scroll_Lock'
 xprop WM_CLASS
 https://awesomewm.org/doc/api/classes/client.html#client.class
 
-
-
-
+ip route | grep default
+arp-scan --interface=wlp0s20f3 --localnet
