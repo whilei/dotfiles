@@ -88,7 +88,8 @@ ps1_sm() {
 # bfgdollar='>'
 bfgdollar=''
 ps1_bfg(){
-  PS1=${COLOR_LIGHT_BLUE}'$(openssl rand -hex 2)'${color_reset}${COLOR_GREEN}' $(date +%m-%d\ %H:%M:%S)'${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}''
+  # PS1=${COLOR_LIGHT_BLUE}'$(openssl rand -hex 1)'${color_reset}${COLOR_GREEN}' $(date +%m-%d\ %H:%M:%S)'${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}''
+  PS1=${COLOR_LIGHT_BLUE}'$(echo {a..z} |fold -w2 | shuf -n3 | xargs -e printf '%s')'${color_reset}${COLOR_GREEN}' $(date +%m-%d\ %H:%M:%S)'${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}''
 }
 # Turn it on.
 # ps1_lg
