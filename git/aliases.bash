@@ -1,28 +1,12 @@
 git config --global github.token $GITHUB_WHILEI_OAUTH_TOKEN 2>&1 >/dev/null
 
-alias idiot="git"
-alias dummy="git"
-
-alias g="git"
-alias k="git" # why k? kuz :fu:
-alias gitnp="git --no-pager"
+alias ,np="--no-pager"
 
 alias ga="git add"
 alias gai="git add -i"
 alias gri="git reset -p" # same thing as gai, but for reset. hm, cool.
 
-alias gc="git commit"
-alias gC="git commit -S" # signed commit
-
-alias gmc="gitm commit"
-alias gmC="gitm commit -S" # signed commit
-
-alias gcm="git commit -m"
-alias gCm="git commit -S -m"
-alias gcam="git commit --amend"
-
-alias gmcm="gitm commit -m"
-alias gmcam="gitm commit --amend"
+alias ,ca="commit -S --amend"
 
 alias gmeow="gitm commit -S -s -m"
 gmeowc(){
@@ -41,11 +25,10 @@ ameow(){
 }
 export -f ameow
 
-alias gmeowi="git add -i && git diff-index --cached --quiet HEAD || gitm commit -S -s"
-
 # Quick commit with message.
 alias gitit='git add -A && git commit -m'
 alias gititm='git add -A && gitm commit -m'
+alias GITIT='git add -A && git commit -S -m' # signed commit
 alias GITITm='git add -A && gitm commit -S -m' # signed commit
 
 alias grph='git rev-parse HEAD' # git rev parse head
@@ -133,22 +116,6 @@ alias glbb="glb --simplify-by-decoration" # only show branch heads
 # Show remotes.
 alias gr="git remote -v"
 
-alias gpo="git push origin"
-alias gpot="git push origin --tags"
-alias gpu="git push upstream"
-alias gput="git push upstream --tags"
-alias gpw="git push whilei"
-alias gpwt="git push whilei --tags"
-alias gpa="git push gogs"
-alias gpat="git push gogs --tags"
-
-alias bwop="git push bwo"
-
-alias gpb="git push bitbucket"
-alias gph="git push heroku"
-
-alias gp-="TODO: push all remotes"
-
 # Push to all remotes.
 alias gP="git remote | xargs -L1 git push --all" # push to all remotes for a given repo
 # Push an argued branch/--tags to all remotes.
@@ -159,20 +126,12 @@ GPR() {
 	done
 }
 
-alias pull="git pull"
-alias pullor="git pull origin"
-alias pullup="git pull upstream"
-alias pullar="git pull gogs"
-alias pullwh="git pull whilei"
-alias gplum="git pull upstream master"
-
-alias gf="git fetch"
-
 # Branches
 #
 ## Checkout branch.
 alias co="git checkout"
 alias gco="git checkout"
+
 ## Checkout new branch.
 alias gcb="git checkout -b" # note .gitconfig has git go, which is like a gnarly version of this
 
@@ -193,17 +152,12 @@ gpbd() {
 alias gbl="git branch --list"
 
 # Merge, rebase.
-alias gm="git merge"
-alias greb="git rebase"
-alias grebi="git rebase -i"
+alias ,rei="rebase -S -i"
 
 # Tags
-alias gta="git tag -a"
+# alias gta="git tag -a"
 alias gtl="git tag --list -n3"
-alias rmrftags="git tag | xargs git tag -d"
-
-# External program.
-alias ggui="gitup"
+# alias rmrftags="git tag | xargs git tag -d"
 
 # https://github.com/paulmillr/dotfiles/blob/master/home/.zshrc.sh
 function cherry() {
@@ -214,31 +168,31 @@ function cherry() {
 	done
 }
 
-alias gcp="git cherry-pick"
+alias ,chp="cherry-pick -S -s"
 
-# http://stackoverflow.com/questions/7539382/how-can-i-deploy-push-only-a-subdirectory-of-my-git-repo-to-heroku
-function gitpushsub() {
-	# git subtree push --prefix output heroku master
-	git subtree push --prefix "$3" "$1" "$2"
-	# ie gitpushsub heroku master spoop-web/
-}
+# # http://stackoverflow.com/questions/7539382/how-can-i-deploy-push-only-a-subdirectory-of-my-git-repo-to-heroku
+# function gitpushsub() {
+# 	# git subtree push --prefix output heroku master
+# 	git subtree push --prefix "$3" "$1" "$2"
+# 	# ie gitpushsub heroku master spoop-web/
+# }
 
-function gitpushsubforce() {
-	# git push heroku `git subtree split --prefix output master`:master --force
-	git push "$1" $(git subtree split --prefix "$3" "$2"):master --force
-}
+# function gitpushsubforce() {
+# 	# git push heroku `git subtree split --prefix output master`:master --force
+# 	git push "$1" $(git subtree split --prefix "$3" "$2"):master --force
+# }
 
-# re init to winit
-gitwinit() {
-	cp -r ~/.git_template/hooks/ ./.git/hooks/
-}
+# # re init to winit
+# gitwinit() {
+# 	cp -r ~/.git_template/hooks/ ./.git/hooks/
+# }
 
-# Show registered git aliases.
-alias gitalias="git config --get-regexp alias"
-alias gitaliases="git config --get-regexp alias"
-alias galias="git config --get-regexp alias"
-alias git_alias="git config --get-regexp alias"
-alias git_aliases="git config --get-regexp alias"
+# # Show registered git aliases.
+# alias gitalias="git config --get-regexp alias"
+# alias gitaliases="git config --get-regexp alias"
+# alias galias="git config --get-regexp alias"
+# alias git_alias="git config --get-regexp alias"
+# alias git_aliases="git config --get-regexp alias"
 
 # gcb- is used to check out a branch using the current
 # branch name as a prefix.
@@ -247,21 +201,20 @@ alias git_aliases="git config --get-regexp alias"
 # branch with the suffix '-2'.
 gcb-() {
 	git checkout -b "$(git rev-parse --abbrev-ref HEAD)$1"
-	
 }
 
 alias gitiam="git config --list | grep user"
 
-git-mkdclone(){
-	remote="$1"
-	d="$(dirname $remote)"
-	d="$(basename $d)"
-	mkdir -p "$d"
-	pushd "$d"
-	git clone "$remote"
-	popd
-}
-export -f git-mkdclone
+# git-mkdclone(){
+# 	remote="$1"
+# 	d="$(dirname $remote)"
+# 	d="$(basename $d)"
+# 	mkdir -p "$d"
+# 	pushd "$d"
+# 	git clone "$remote"
+# 	popd
+# }
+# export -f git-mkdclone
 
 iagnore(){
 	[[ ! -d .git ]] && exit 1;
