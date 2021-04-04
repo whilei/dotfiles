@@ -1,12 +1,8 @@
 git config --global github.token $GITHUB_WHILEI_OAUTH_TOKEN 2>&1 >/dev/null
 
-alias ,np="--no-pager"
-
 alias ga="git add"
 alias gai="git add -i"
 alias gri="git reset -p" # same thing as gai, but for reset. hm, cool.
-
-alias ,ca="commit -S --amend"
 
 alias gmeow="gitm commit -S -s -m"
 gmeowc(){
@@ -151,9 +147,6 @@ gpbd() {
 
 alias gbl="git branch --list"
 
-# Merge, rebase.
-alias ,rei="rebase -S -i"
-
 # Tags
 # alias gta="git tag -a"
 alias gtl="git tag --list -n3"
@@ -167,8 +160,6 @@ function cherry() {
 		git cherry-pick -n "$commit"
 	done
 }
-
-alias ,chp="cherry-pick -S -s"
 
 # # http://stackoverflow.com/questions/7539382/how-can-i-deploy-push-only-a-subdirectory-of-my-git-repo-to-heroku
 # function gitpushsub() {
