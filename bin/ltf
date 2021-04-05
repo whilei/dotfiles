@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# ltf: get the last modified file in a directory
+
+ls -ltr "${1}" | tail -1 | rev | cut -d' ' -f1 | rev 
