@@ -22,12 +22,11 @@ ameow(){
 export -f ameow
 
 # Quick commit with message.
-alias gitit='git add -A && git commit -m'
-alias gititm='git add -A && gitm commit -m'
-alias GITIT='git add -A && git commit -S -m' # signed commit
-alias GITITm='git add -A && gitm commit -S -m' # signed commit
+alias gitit='git add -A && git commit -S -s -m'
+alias gititm='git add -A && gitm commit -S -s -m'
 
 alias grph='git rev-parse HEAD' # git rev parse head
+alias grphc='git rev-parse HEAD | cut -c1-8' # git rev parse head (short)
 alias grpb='git rev-parse --abbrev-ref HEAD --' # git rev parse branch
 alias gdlt='git describe --abbrev=0 --tags' # git describe latest tag
 
