@@ -31,7 +31,7 @@ alias tailf="tail -F"
 # alias yank="pbcopy"
 # alias paste="pbpaste"
 alias cb="xsel -b"
-
+alias cb-clear="xsel -cp && xsel -cs && xsel -cb"
 
 # Power management; ie [sleepnow | displaysleepnow | lock | boot]
 # -a, -b, -c :: all, battery, charger
