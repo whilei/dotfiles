@@ -1,32 +1,35 @@
 #!/usr/bin/env bash
 
 # I want a value in my shell for git branch names that works like cd's '-' value.
-
-# LB 'Last Branch'
-export LB=""
-export __lb_current_branch=""
+# LB: 'Last Branch'
+LB=""
 
 __set_last_branch(){
-  local b="";
-  b=$(2> /dev/null git symbolic-ref --short HEAD)
 
-  if [ -z "$b" ]; then return; fi
+  # Get current branch name.
+  # If we are not in a git-controlled directory, return early.
+  local __lb_new_branch="";
+  __lb_new_branch=$(2> /dev/null git symbolic-ref --short HEAD)
+  if [ -z "$__lb_new_branch" ]; then return; fi
+
+  # We are currently in a git-controlled directory and have a branch name.
+
   
-  if [ "$__lb_current_branch" != "$b" ]; then
-    if [ "$__lb_current_branch" = "" ]; then
-      # Initialize
-      export LB="$b"
-    else
-      # Update
-      export LB="$__lb_current_branch"
-    fi
+  # n0 branch is our latest record of what our branch was prior to this prompt.
+  local __lb_n0_branch=""
+  if [ -f /tmp/__lb_n0_branch ]; then
+    __lb_n0_branch="$(cat /tmp/__lb_n0_branch)"
   fi
 
-  export __lb_current_branch="$b"
+  LB="$(cat /tmp/__lb_n1_branch)"
+  if [ "$__lb_n0_branch" != "$__lb_new_branch" ]; then
+    LB="$__lb_n0_branch"
+    echo "$__lb_n0_branch" > /tmp/__lb_n1_branch
+  fi
+
+  export LB
+  echo "$__lb_new_branch" > /tmp/__lb_n0_branch
 }
 export -f __set_last_branch
 export PROMPT_COMMAND="$PROMPT_COMMAND __set_last_branch;"
-
-
-
 
