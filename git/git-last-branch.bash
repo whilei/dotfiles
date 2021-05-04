@@ -25,7 +25,8 @@ __set_last_branch(){
   touch /tmp/__lb_n1_branch;
 
   local __lb_n0_branch=""
-  __lb_n0_branch="$(cat /tmp/__lb_n0_branch)"
+  # if [ -f /tmp/__lb_n0_branch ]; then __lb_n0_branch="$(cat /tmp/__lb_n0_branch)"; fi
+  _lb_n0_branch="$(cat /tmp/__lb_n0_branch)"
 
   LB="$(cat /tmp/__lb_n1_branch)"
 
