@@ -190,7 +190,6 @@ ffvim() {
     local file
     file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && $EDITOR "${file}" || return 1
 }
-alias vimm='ffvim'
 
 # fasd & fzf change directory - jump using `fasd` if given argument, filter output of `fasd` using `fzf` else
 cdd() {
@@ -199,20 +198,20 @@ cdd() {
     dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
 
-ffrm() {
-    local fi
-    fi="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && rm "${fi}" || return 1
-}
-
-ffrmr() {
-    local dir
-    dir="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && rm -r "${dir}/" || return 1
-}
-
-ffrmrf() {
-    local dir
-    dir="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && rm -rf "${dir}" || return 1
-}
+# ffrm() {
+#     local fi
+#     fi="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && rm "${fi}" || return 1
+# }
+# 
+# ffrmr() {
+#     local dir
+#     dir="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && rm -r "${dir}/" || return 1
+# }
+# 
+# ffrmrf() {
+#     local dir
+#     dir="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && rm -rf "${dir}" || return 1
+# }
 
 # fuzzy grep open via ag
 fagvim() {
@@ -255,7 +254,7 @@ cdup() {
   cd "$DIR"
 }
 
-# fd - cd to selected directory
+# fuzzy cd to some child directory
 cdf() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
@@ -263,7 +262,16 @@ cdf() {
   cd "$dir"
 }
 
-alias fl="fzf --preview 'cat {}'"
+# fuzzy vim some child file
+fim() {
+  local fi
+  fi=$(find ${1:-.} -path '*/\.*' -prune \
+    -o -type f -print 2> /dev/null | fzf +m) &&
+  vim "$fi"
+}
+
+# OK, but lf is better.
+# alias fl="fzf --preview 'cat {}'"
 
 # using ripgrep combined with preview
 # find-in-file - usage: fif <searchTerm>

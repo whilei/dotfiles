@@ -107,15 +107,11 @@ alias squish="sed '/^\s*$/d'"
 # Math for science
 alias calc="insect"
 
+# compgen -a
 alias what="compgen -A function" # list all functions can run
 alias What="compgen -A function -abck" # all functions, aliases, built-ins, keywords
-alias whatall="what"
-alias Whatall="What"
-alias inpath="compgen -A function"
 
 # alias nmon="echo lnd- | nmon"
-
-alias agq="ag -Q"
 
 ports(){
 	echo 'SELECT DISTINCT process.name, listening.port, process.pid FROM processes AS process JOIN listening_ports AS listening ON process.pid = listening.pid WHERE listening.address = "0.0.0.0";' | osqueryi
@@ -171,4 +167,5 @@ export -f trim
 alias unic="unipicker"
 alias unicb="unipicker --copy" # unic + cb (cb=clip board)
 
-
+alias gpge="gpg -u 87A7226A40 --symmetric --cipher-algo AES256"
+alias gpgd="gpg --decrypt"

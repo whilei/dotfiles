@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+dadropbase="$HOME/Dropbox/paper"
+daname=$(date +%d_%m_%y_%H_%M_%S)
+
+while getopts 'f:d:' opt; do
+	case $opt in
+		f) daname="$OPTARG" ;;
+		d) dadropbase="$HOME/Dropbox/paper/$OPTARG" ;;
+		\?) echo "Use either or both -f <filename> -d <dirname>"; exit 1 ;;
+		*) exit 1 ;;
+	esac
+done
+
+fullpath="${dadropbase}/${daname}.md"
+mkdir -p $(dirname $fullpath)
+touch "$fullpath"
+code "$fullpath"
+
