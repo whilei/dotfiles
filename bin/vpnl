@@ -20,6 +20,8 @@ sudo openvpn --config "$endpoint" \
 }
 f
 
+
+
 #sudo openvpn --config "$endpoint" --verb 6 --up /etc/openvpn/vpnfailsafe.sh --down /etc/openvpn/vpnfailsafe.sh --auth-user-pass /home/ia/opass.txt --script-security 2
 
 # sudo openvpn --config "$endpoint" \
