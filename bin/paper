@@ -3,7 +3,7 @@
 # Write on paper. Save to Dropbox/paper/`date_stamp`.md
 
 dadropbase="$HOME/Dropbox/paper"
-daname=$(date +%d_%m_%y_%H_%M_%S)
+daname=$(date +%y_%m_%d_%H_%M_%S)
 
 while getopts 'f:d:' opt; do
 	case $opt in
