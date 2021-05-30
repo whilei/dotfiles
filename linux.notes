@@ -135,6 +135,10 @@ nmcli radio wifi on
 sudo docker system prune -a
 sudo docker rm $(sudo docker ps -a -q)
 
+sudo fdisk -l
+sudo blkid
+sudo lsblk
+
 mount -o remount,uid=1000,gid=1000 /home/ia/SAMSUNG_T5
 mount /dev/sdb1 /home/ia/SAMSUNG_T5 -o uid=1000 -o gid=1000 -o nonempty
 
@@ -154,3 +158,5 @@ gpg --output mydata.encrypted --symmetric --cipher-algo AES256 mydata.data
 gpg --symmetric --cipher-algo AES256 mydata.data
 gpg -u DEADBEEF --symmetric --cipher-algo AES256 mydata.data # yields mydata.data.gpg
 gpg --decrypt mydata.data.gpg
+
+
