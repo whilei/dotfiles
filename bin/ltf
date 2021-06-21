@@ -2,4 +2,18 @@
 
 # ltf: get the last modified file in a directory
 
-ls -ltr "${1}" | tail -1 | rev | cut -d' ' -f1 | rev 
+fullpath=0
+while getopts "f" opt; do
+  case $opt in
+    f) fullpath=1; shift 1 ;;
+    *) echo "Invalid option" ; exit 1 ;;
+  esac
+done
+
+filename=$(ls -ltr "${1}" | tail -1 | rev | cut -d' ' -f1 | rev )
+
+if [[ $fullpath -eq 1 ]]; then
+  filename="$1/$filename"
+fi
+echo $filename
+
