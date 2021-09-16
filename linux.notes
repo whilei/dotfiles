@@ -160,3 +160,6 @@ gpg -u DEADBEEF --symmetric --cipher-algo AES256 mydata.data # yields mydata.dat
 gpg --decrypt mydata.data.gpg
 
 
+for f in ./*; do mv "$f" ~/SAMSUNG_T5_3/Audio/$(echo $f | cut -d':' -f1)_$(echo $f | cut -d':' -f2).mp3; done
+
+rsync -rtDvz

@@ -17,4 +17,5 @@ done
 fullpath="${dadropbase}/${daname}.md"
 mkdir -p $(dirname $fullpath)
 vim "$fullpath"
+echo "$fullpath"
 
