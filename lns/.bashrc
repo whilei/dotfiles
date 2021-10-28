@@ -157,3 +157,4 @@ export SSL_CERT_DIR=/etc/ssl/certs
 # Preserve MANPATH if you already defined it somewhere in your config.
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 # export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+SDK_REGISTRY_TOKEN=sk.eyJ1Ijoicm90YmxhdWVyIiwiYSI6ImNrdXBqN3hpdDRtN24yb2s2cnZpcHNoN3cifQ.lHCBkFYkWYzNlPUH8Bs97Q

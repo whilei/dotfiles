@@ -5,7 +5,7 @@
 # cof -> check out fuzzy (where co is already 'checkout')
 ffgco() {
     local branches branch
-    branches=$(git branch -a) &&
+    branches=$(git branch --sort=-committerdate) &&
     branch=$(echo "$branches" | fzf +s +m -e) &&
     git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
