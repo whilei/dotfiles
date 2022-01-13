@@ -15,6 +15,16 @@ gmeowc(){
 }
 export -f gmeowc
 
+gweowc(){
+	  # gitm commit -S -s -m "$(goc): $*"
+    echo "$(goc): $*" > /tmp/commit_message.txt
+    echo >> /tmp/commit_message.txt
+    echo "Date: $(date --rfc-3339 seconds)" >> /tmp/commit_message.txt
+    # optionally, can use -F- to use stdin for git commit message
+	  git commit -S -s -F /tmp/commit_message.txt
+}
+export -f gweowc
+
 ameow(){
   git add .
   gitm commit -S -s -m "$*"

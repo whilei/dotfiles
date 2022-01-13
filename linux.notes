@@ -172,3 +172,6 @@ nmap -sP 192.168.<mask number>.0/24
 
 # Get default gateway
 ip route show | grep -i 'default via'| awk '{print $3 }'
+
+lsb_release -a
+

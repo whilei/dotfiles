@@ -77,3 +77,4 @@ export PATH=$PATH:/home/ia/.emacs.d/bin
 . <(ethrpc completion) || true
 
 export ZOOM_HOME=${HOME}/zoomus
+export GPG_TTY=$(tty)
