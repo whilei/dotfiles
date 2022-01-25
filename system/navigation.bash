@@ -47,7 +47,7 @@ fffn() {
 
 # Fasd.
 # open fuzzy and popular file with vim
-alias fv="f -e vim"
+# alias fv="f -e vim"
 
 # Initialize FASD.
 # (Use: f|d|a fuzzyterm

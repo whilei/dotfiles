@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Write a journal on paper. Save to Documents/journal/`date_stamp`.md
+
+filenamebase="$HOME/Documents/journal"
+filename=$(date +%Y%m%d_%H%M)
+
+while getopts 'f:d:' opt; do
+	case $opt in
+		f) filename="$OPTARG" ;;
+		d) filenamebase="$HOME/Documents/journal/$OPTARG" ;;
+		\?) echo "Use either or both -f <filename> -d <dirname>"; exit 1 ;;
+		*) exit 1 ;;
+	esac
+done
+
+fullpath="${filenamebase}/${filename}.md"
+mkdir -p $(dirname $fullpath)
+vim "$fullpath"
+echo "$fullpath"
+
