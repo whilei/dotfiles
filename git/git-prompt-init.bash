@@ -65,12 +65,12 @@ GIT_PS1_SHOWUPSTREAM="auto,verbose"
 #     svn           always compare HEAD to your SVN upstream
 
 ethericon=$(echo -e "\xE2\x9F\xA0")
-dollar=$ethericon # '$'
+ethericon=$ethericon # '$'
 time_p="\t\[$(tput sgr0)\]" # HH:MM:SS
 
 # user@comp ~> \u@\h
 ps1_lg() {
-	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' '${COLOR_LIGHT_GREEN}${dollar}${color_reset}' '
+	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}' '${COLOR_LIGHT_GREEN}${ethericon}${color_reset}' '
 }
 # For when I'm using a small terminal and a long $CWD.
 # Just set the input on a newline beneath CWD, GITINFO, ie
@@ -78,10 +78,7 @@ ps1_lg() {
 # ia@mh cwd `git status`
 # $ echo
 ps1_llg(){
-	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${COLOR_LIGHT_GREEN}${dollar}${color_reset}' '
-}
-ps1_sm() {
-    PS1=':\w '${COLOR_YELLOW}${dollar}${color_reset}' '
+	PS1=${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${COLOR_LIGHT_GREEN}${ethericon}${color_reset}' '
 }
 
 # bfgdollar='$'
@@ -91,16 +88,15 @@ ps1_bfg(){
   # PS1=${COLOR_LIGHT_BLUE}'$(openssl rand -hex 1)'${color_reset}${COLOR_GREEN}' $(date +%m-%d\ %H:%M:%S)'${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}''
   PS1=${COLOR_CYAN}'$(echo s e t n i o w d f u r l |fold -w2 | shuf -n3 | xargs -e printf '%s')'${color_reset}${COLOR_GREEN}' $(date +%y-%m-%d\ %H:%M:%S)'${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}''
 }
+
+ps1_sm() {
+    PS1=':\w '${COLOR_YELLOW}${ethericon}${color_reset}' '
+}
+
 # Turn it on.
 # ps1_lg
 ps1_bfg
 
-# Cuz I forget.
-alias ps1_low="ps1_llg"
-alias ps1_small="ps1_sm"
-alias ps1_sml="ps1_sm"
-alias ps1_short="ps1_sm"
-alias ps1_norm="ps1_lg"
 
 
 
