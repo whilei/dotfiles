@@ -15,6 +15,11 @@ gmeowc(){
 }
 export -f gmeowc
 
+ggmeowc(){
+  git add . && gmeowc "$*"
+}
+export -f ggmeowc
+
 gweowc(){
 	  # gitm commit -S -s -m "$(goc): $*"
     echo "$(goc): $*" > /tmp/commit_message.txt
