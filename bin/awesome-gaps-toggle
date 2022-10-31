@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# This script toggles AwesomeWM useless gap sizes.
+
+echo 'if require("awful").screen.focused().selected_tag.gap == 0 then; require("awful").screen.focused().selected_tag.gap = 100; else require("awful").screen.focused().selected_tag.gap = 0; end' | awesome-client
