@@ -177,3 +177,5 @@ ip route show | grep -i 'default via'| awk '{print $3 }'
 
 lsb_release -a
 
+vim /etc/apt/sources.list
+sudo apt autoremove # wow big time

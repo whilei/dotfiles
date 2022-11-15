@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 
 # ltf: get the last modified file in a directory
+usage ()
+{
+  echo
+  echo "* -s: short file path; filename only"
+  echo
+}
 
-fullpath=0
-while getopts "f" opt; do
+fullpath=1
+while getopts "s" opt; do
   case $opt in
-    f) fullpath=1; shift 1 ;;
+    s) fullpath=0; shift 1 ;;
     *) echo "Invalid option" ; exit 1 ;;
   esac
 done
