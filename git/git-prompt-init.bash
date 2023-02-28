@@ -86,7 +86,7 @@ ps1_llg(){
 bfgdollar=''
 ps1_bfg(){
   # PS1=${COLOR_LIGHT_BLUE}'$(openssl rand -hex 1)'${color_reset}${COLOR_GREEN}' $(date +%m-%d\ %H:%M:%S)'${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}''
-  PS1=${COLOR_CYAN}'$(echo s e t n i o w d f u r l |fold -w2 | shuf -n3 | xargs -e printf '%s')'${color_reset}${COLOR_GREEN}' $(date +%y-%m-%dT%H:%M:%S)'${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}''
+  PS1=${COLOR_CYAN}'$(grep -E "^[a-zA-Z]{3}$" /usr/share/dict/words | shuf -n 1 | tr "[:upper:]" "[:lower:]")'${color_reset}${COLOR_GREEN}' $(date +%y-%m-%dT%H:%M:%S)'${color_reset}' '${color_white_on_blue}'\w'${color_reset}' '${color_white_on_red}'$(__git_ps1 "%s")'${color_reset}'\n'${bfgdollar}''
 }
 
 ps1_sm() {
