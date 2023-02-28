@@ -41,6 +41,8 @@ inotifywait -q -m -r --format '%w%f' -e modify "$ppath" |
 		echo "Date:    $(date --iso-8601=seconds)"
 		echo "File:    $file"
 		echo
+    git status -sb
+    echo
 
 		if [[ $diff_file -eq 0 ]]; then
 			git --no-pager diff --color | diff-so-fancy

@@ -1,38 +1,30 @@
 #!/usr/bin/env bash
 
-# awesome-client "local gears = require('gears'); gears.wallpaper.fit('/home/ia/.config/awesome/themes/ia/walls/munkacsy_the-music-room.jpg', 1)"
+echo "DOES NOT WORK DONT KNOW WHY"
 
-# awp black
-# awp random
+{
+cat <<EOF
+  local awful = require "awful"
+  local naughty = require "naughty"
+  local wibox = require "wibox"
 
-# if [[ $1 == "black" ]]; then
-#   awesome-client "local gears = require('gears'); gears.wallpaper.fit('/home/ia/.config/awesome/themes/ia/walls/munkacsy_the-music-room.jpg', 1)"
-# else if [[ $1 == "random" ]]; then
-# else
-#   echo "Use arg 'black' or 'random'"
-#   exit 1
-# fi
+  local chosen_image_path = "$(cat /dev/stdin | tr -d '\n')"
 
-# pics=$(find /home/ia/.config/awesome/themes/ia/walls -type f) &&
-# pick=$(echo "$pics" | fzf +s +m -e) &&
-# awesome-client "local gears = require('gears'); gears.wallpaper.fit('""$pick""', 1)" | awesome-client
+  naughty.notification {
+    title = chosen_image_path
+  }
 
+  awful.wallpaper {
+    screen = awful.screen.focused(),
+    widget = {
+      image = chosen_image_path,
+      resize = true,
+      widget = wibox.widget.imagebox,
+    },
+    valign = "center",
+    halign = "center",
+    widget = wibox.container.place,
+  }
+EOF
+} | awesome-client
 
-main(){
-
-  echo "Choose screen:"
-  local options=("1" "2")
-  select opt in "${options[@]}"; do
-    case $opt in 
-      "1" ) echo "Screen = $opt"; break ;;
-      "2" ) echo "Screen = $opt"; break ;;
-      *) echo "baddddd" && exit 1 ;;
-    esac
-  done
-
-  local pics pick
-  pics=$(find /home/ia/.config/awesome/themes/ia/walls -type f) &&
-  pick=$(echo "$pics" | fzf +s +m -e) &&
-  awesome-client "local gears = require('gears'); gears.wallpaper.fit('$pick', $opt)"
-}
-main

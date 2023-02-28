@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# This script wakes the TV up after being asleep for a while.
+# monitor, wake up, zap, resolution, nvidia, restart
+
+xrandr --output HDMI-0 --auto

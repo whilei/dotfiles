@@ -7,8 +7,8 @@
 # invoke global X session script
 . /etc/X11/Xsession
 
+# Set a fast keyboard repeeat rate.
 xset r rate 160 50
-
 
 # https://superuser.com/questions/629939/how-to-disable-monitor-standby-in-console
 # disable screen sleeping (energy star features)
@@ -26,7 +26,7 @@ xset s off -dpms
 
 # setxkbmap us; xmodmap /home/ia/xmodmap.norman
 # [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
-[[ -f ~/xmodmap.norman_min ]] && xmodmap ~/xmodmap.norman_min
+# [[ -f ~/xmodmap.norman_min ]] && xmodmap ~/xmodmap.norman_min
 
 # Set higher mouse speed for anker mouse
 # xinput list
@@ -46,3 +46,9 @@ xinput set-prop 15 'Device Accel Constant Deceleration' 3
 . /home/ia/.dotfiles/private/env.bash
 
 xrdb -merge /home/ia/.Xresources
+
+# https://wiki.archlinux.org/title/Picom
+# seq 0 3 | xargs -l1 -I@ picom -b -d :0.@
+picom --daemon
+
+

@@ -179,3 +179,33 @@ lsb_release -a
 
 vim /etc/apt/sources.list
 sudo apt autoremove # wow big time
+l /etc/apt/sources.list.d  |grep spot
+#sudo rm /etc/apt/sources.list.d/spotify*
+
+# https://unix.stackexchange.com/questions/77136/xdg-open-default-applications-behavior/107508#107508
+xdg-mime query filetype $PWD
+> inode/directory
+xdg-mime locate -i dolphin.desktop
+xdg-mime default $(locate -i dolphin.desktop) $(xdg-mime query filetype $PWD)
+vim .config/mimeapps.list
+
+xrandr --listmonitors
+xrandr --output HDMI-0 --auto
+xrandr --output HDMI-0 --brightness 0.5
+xrandr --output HDMI-0 --brightness 1.15 # This one's good for the tv in the corner.
+
+hcitool scan
+
+# set/add desktop manager 
+sudo vim /usr/share/xsessions/awesome.desktop
+
+# https://wiki.archlinux.org/title/LightDM
+cat /usr/share/xgreeters/*
+
+  cat /etc/lightdm/display_setup.sh
+  #!/bin/sh
+  
+  xrandr --setprovideroutputsource modesetting NVIDIA-0
+  xrandr --auto
+
+vim .SpaceVim.d/init.toml

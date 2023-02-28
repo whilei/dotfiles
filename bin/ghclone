@@ -18,7 +18,7 @@ main() {
   echo "repo: "${repo}
   
   mkdir -p "${owner}"
-  git clone "${1}" "${owner}/${repo}"
+  git clone "${1}" "${2:-/home/ia/dev}/${owner}/${repo}"
 }
 
 main "$@"

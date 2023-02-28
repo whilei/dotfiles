@@ -227,3 +227,13 @@ iagnore(){
 	${EDITOR} .git/info/exclude
 }
 export -f iagnore
+
+# gsql squashes the last N commits.
+# argument@1: N <integer> How many commits past head to squash.
+gsql(){
+  # https://stackoverflow.com/a/5201642
+  n_back="${1:-1}"
+  git reset --soft HEAD~${n_back} && \
+    git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
+}
+export -f gsql
