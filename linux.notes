@@ -209,3 +209,5 @@ cat /usr/share/xgreeters/*
   xrandr --auto
 
 vim .SpaceVim.d/init.toml
+
+sudo arp-scan --localnet
