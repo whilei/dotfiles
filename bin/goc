@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Get a list of go packages that have changed (are git staged)
+# and concatenate them separated with commas.
+
+prefix_values=()
+
+collect_staged_values(){
+  local debug=0
+     while read -r line; do
+       test ${debug} -eq 1 && echo "line: ${line}"
+        if [[ $line == *.go ]]; then
+            local dname=$(dirname $line)
+            test ${debug} -eq 1 && echo "dname: ${dname}"
+            local pkgname=$(grep -m 1 -E '^package ' "$line" | cut -d' ' -f2)
+            test ${debug} -eq 1 && echo "pkgname: ${pkgname}"
+            if [[ "${pkgname}" != "${dname}" ]] && [[ "${dname}" =~ ${pkgname} ]]; then
+              pkgname="${dname}"
+            fi
+            if [[ "${pkgname}" == "main" ]] && [[ "${dname}" != "." ]]; then
+              pkgname="${dname}"
+            fi
+            test ${debug} -eq 1 && echo "final: ${pkgname}"
+            prefix_values+=("$pkgname")
+        else
+          local dname="$(dirname ${line})"
+          test ${debug} -eq 1 && echo "nongo dname: ${dname}"
+          test "${dname}" == . && prefix_values+=("${line}") || prefix_values+=("${dname}")
+        fi
+    done < <(git --no-pager diff --name-only --cached)
+}
+
+collect_staged_values
+
+IFS=$'\n' uniq_values=($(uniq <<< "${prefix_values[*]}")); unset IFS
+
+joined=$(printf ',%s' "${uniq_values[@]}")
+joined=${joined:1}
+test ! -z "${joined}" && echo "${joined}"
+
